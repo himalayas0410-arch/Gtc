@@ -38,7 +38,7 @@ body {
 }
 
 .gradient-btn {
-    padding: 14px 32px;
+    padding: 10px 24px; /* Reduced side padding slightly for better fit */
     font-size: 14px;
     font-weight: 600;
     color: #fff;
@@ -52,13 +52,16 @@ body {
     background-size: 600% 600%;
     animation: gradientMove 6s ease infinite;
     transition: transform 0.3s ease;
-    text-decoration: none
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap; /* Prevent wrapping */
+    justify-content: center;
 }
 
 .gradient-btn .material-symbols-outlined {
-    position: relative;
-    top: 8px;
-    margin-right: 10px;
+    margin-right: 8px;
+    font-size: 20px;
 }
 
 .gradient-btn:hover {
@@ -85,7 +88,7 @@ body {
 
 .header .gradient-btn {
     position: relative;
-    top: 5px;
+    top: 0px; /* Reset top offset as flex handles centering */
 }
 
 .header .gradient-btn:hover {
