@@ -105,6 +105,19 @@ body {
 .hero-container .carousel-inner {
     border-radius: 12px;
     overflow: hidden;
+    height: 470px; /* Consistent height for both video and image */
+}
+
+.banner-video {
+    width: 100%;
+    height: 470px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-container .carousel-item img {
+    height: 470px;
+    object-fit: cover;
 }
 
 /* ===== Quick Links Floating Sidebar (beside banner) ===== */

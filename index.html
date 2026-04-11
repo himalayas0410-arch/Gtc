@@ -107,44 +107,39 @@
             </div>
         </div>
     </div>
-    <div class="banner d-none">
-
-        <div class="banner-text">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
-                        <h3>
-                            Empowering Global Reach of
-                        </h3>
-                        <h1>Indian Chartered Accountants</h1>
-                        <p>Driving global opportunities, partnerships, and professional excellence for a borderless
-                            future.</p>
-
-                        <a class="blur-btn" href="#">
-                            Explore Global Opportunities <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <video loop muted autoplay>
-            <source src="images/bg.mp4" type="video/mp4">
-
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-
     <div class="hero-container">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+
             <div class="carousel-inner">
+                <!-- Slide 1: Video -->
                 <div class="carousel-item active">
-                    <img src="images/88571wofa2-icai.jpg.jpeg" class="d-block w-100" alt="GCC Summit Dec 2025">
+                    <video autoplay loop muted playsinline class="d-block w-100 banner-video">
+                        <source src="images/bg.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <!-- Slide 2: Image -->
+                <div class="carousel-item">
+                    <img src="images/slide1.jpeg" class="d-block w-100" alt="GCC Summit Dec 2025">
                 </div>
             </div>
+
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </div>
 
 
     <!-- Quick Links Floating Sidebar -->
