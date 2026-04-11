@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GTC - Global Presence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/jsvectormap.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .jvm-tooltip {
+            background: linear-gradient(90deg, rgba(119, 19, 133, 1) 0%, rgba(150, 74, 36, 1) 99%);
+            color: #fff;
+            font-size: 13px;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+            .jvm-tooltip h2 {
+                margin: 0px;
+                padding: 0px;
+            }
+
+            .jvm-tooltip h5 {
+                border-bottom: solid 1px rgba(255,255,255,.5);
+                padding-bottom: 10px;
+                margin-bottom: 20px;
+            }
+
+            .jvm-tooltip p {
+                display: table;
+                padding: 5px 20px;
+                border-radius: 8px;
+                background: rgba(255,255,255,.2)
+            }
+
+            .jvm-tooltip a {
+                color: #fff;
+                font-size: 16px;
+                display: table;
+                margin-top: 20px;
+                text-decoration: none;
+                border-bottom: solid 1px rgba(255,255,255,.5)
+            }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <img src="images/logo.png" class="logo" />
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>
+                                        <a href="about.html">
+                                            About the Directorate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="partnerships.html">
+                                            Featured Global Initiatives
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="opportunities.html">
+                                            Member Opportunities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="events.html">
+                                            Events & Programs
+                                        </a>
+                                    </li>
+
+                                    <li><a href="contact.html">Contact & Engagement</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-3 text-end">
+                            <a class="gradient-btn" href="#">
+                                <span class="material-symbols-outlined">
+                                    account_circle
+                                </span>Member Login
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-2">
+        <div class="mapcontainer">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="maptext">
+                        <small>GLOBAL NETWORK</small>
+                        <h3>ICAI Global Network</h3>
+                        <p>ICAI has built a strong international presence supporting members worldwide.</p>
+                        <a href="contact.html" class="blur-btn2">
+                            Connect with Global Chapters <span class="material-symbols-outlined">
+                                arrow_right_alt
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div id="world-map" style="width: 100%; height: 500px;"></div>
+                    <script src="https://cdn.jsdelivr.net/npm/jsvectormap"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/jsvectormap/dist/maps/world.js"></script>
+                    <script>
+                        const countryData = {
+                            IN: "ICAI HQ",
+                            AE: "Middle East",
+                            GB: "Europe",
+                            US: "North America",
+                            SG: "Asia-Pacific"
+                        };
+
+                        new jsVectorMap({
+                            selector: "#world-map",
+                            map: "world",
+                            regionStyle: {
+                                initial: {
+                                    fill: "#EBBFAE"
+                                },
+                                selected: {
+                                    fill: "#B76ABD"
+                                }
+                            },
+                            selectedRegions: ["IN", "AE", "GB", "US", "SG"],
+                            onRegionTooltipShow: function (event, tooltip, code) {
+                                const html = `<h2>ICAI Network</h2><h5>Global Presence</h5><p>Chapters & Support</p><p>Knowledge exchange</p><a href='contact.html'>Connect</a>`;
+                                if (countryData[code]) {
+                                    tooltip.text(html, true);
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col">
+                <div class="modern-card card1">
+                    <h4>Middle East</h4>
+                    <div class="number">1</div>
+                    <div class="card-hover">
+                        <p>Member engagement, networking, and professional assistance across key GCC markets.</p>
+                        <button class="card-btn">Read More</button>
+                    </div>
+                    <a href="contact.html" class="knowmore">
+                        Connect <span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="modern-card card3">
+                    <h4>Europe</h4>
+                    <div class="number">2</div>
+                    <div class="card-hover">
+                        <p>Knowledge sharing initiatives, collaboration opportunities, and chapter-led programs.</p>
+                        <button class="card-btn">Read More</button>
+                    </div>
+                    <a href="contact.html" class="knowmore">
+                        Connect <span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="modern-card card2">
+                    <h4>North America</h4>
+                    <div class="number">3</div>
+                    <div class="card-hover">
+                        <p>Professional mobility support, technical sessions, and cross-border collaboration.</p>
+                        <button class="card-btn">Read More</button>
+                    </div>
+                    <a href="contact.html" class="knowmore">
+                        Connect <span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="col">
+                <div class="modern-card card4">
+                    <h4>Asia-Pacific</h4>
+                    <div class="number">4</div>
+                    <div class="card-hover">
+                        <p>Regional networking, sector-focused dialogues, and member support programs.</p>
+                        <button class="card-btn">Read More</button>
+                    </div>
+                    <a href="contact.html" class="knowmore">
+                        Connect <span class="material-symbols-outlined">
+                            arrow_right_alt
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="quick-links mt-5 pt-5 pb-5">
+        <div class="container-fluid">
+            <h3 class="section-title mb-4">Services</h3>
+            <div class="row quick-row">
+                <div class="col quick-col">
+                    <a href="contact.html" class="quick-card">
+                        <div class="quick-icon"><i class="bi bi-people"></i></div>
+                        <h6>Networking support</h6>
+                    </a>
+                </div>
+                <div class="col quick-col">
+                    <a href="events.html" class="quick-card">
+                        <div class="quick-icon"><i class="bi bi-journal-text"></i></div>
+                        <h6>Knowledge sharing</h6>
+                    </a>
+                </div>
+                <div class="col quick-col">
+                    <a href="opportunities.html" class="quick-card">
+                        <div class="quick-icon"><i class="bi bi-briefcase"></i></div>
+                        <h6>Professional assistance</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-links pt-5 pb-5">
+        <div class="container-fluid">
+            <h3 class="section-title mb-4">At a glance</h3>
+            <div class="row quick-row">
+                <div class="col quick-col">
+                    <a href="#" class="quick-card">
+                        <div class="quick-icon"><i class="bi bi-globe2"></i></div>
+                        <h6>50+ Countries</h6>
+                    </a>
+                </div>
+                <div class="col quick-col">
+                    <a href="#" class="quick-card">
+                        <div class="quick-icon"><i class="bi bi-geo-alt"></i></div>
+                        <h6>12 Offices</h6>
+                    </a>
+                </div>
+                <div class="col quick-col">
+                    <a href="#" class="quick-card">
+                        <div class="quick-icon"><i class="bi bi-diagram-3"></i></div>
+                        <h6>Global Chapters</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-dark py-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">About ICAI</h5>
+                    <p class="footer-text">
+                        The Institute of Chartered Accountants of India (ICAI) is a statutory body
+                        established by an Act of Parliament, dedicated to developing, regulating,
+                        and supporting Chartered Accountants and students.
+                    </p>
+                    <a href="about.html" class="footer-link">Learn More →</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Programs</h5>
+                    <ul class="footer-list">
+                        <li><a href="partnerships.html">Global Initiatives</a></li>
+                        <li><a href="opportunities.html">Training & Capacity Building</a></li>
+                        <li><a href="opportunities.html">Member Opportunities</a></li>
+                        <li><a href="events.html">Events & Programs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-list">
+                        <li><a href="#">Reports & Publications</a></li>
+                        <li><a href="#">Research & Insights</a></li>
+                        <li><a href="#">Guidelines & Policies</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <div class="footer-contact">
+                        📍 ICAI Bhawan, Indraprastha Marg,<br>
+                        New Delhi – 110002, India
+                    </div>
+                    <div class="footer-contact">
+                        ☎ +91 11 3011 1000
+                    </div>
+                    <div class="footer-contact">
+                        ✉ globaltrade@icai.in
+                    </div>
+                    <div class="social-icons mt-3">
+                        <a href="#">in</a>
+                        <a href="#">X</a>
+                        <a href="#">▶</a>
+                        <a href="#">◎</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="footer-title">Stay Updated</h5>
+                    <p class="footer-text small">
+                        Subscribe to our newsletter for the latest updates and opportunities.
+                    </p>
+                    <div class="newsletter">
+                        <input type="email" placeholder="Enter your email">
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom d-flex justify-content-between flex-wrap">
+                <div>
+                    © 2025 The Institute of Chartered Accountants of India. All Rights Reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
