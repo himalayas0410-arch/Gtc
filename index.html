@@ -59,59 +59,70 @@
 <body>
     <div class="header">
         <div class="container">
-            <div class="row">
-                <div class="col-3">
+            <div class="header-inner">
+                <!-- Logo -->
+                <div class="header-logo">
                     <img src="images/logo.png" class="logo" />
                 </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col-sm-8">
-                            <div class="menu">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>
-                                        <a href="about.html">
-                                            About the Directorate
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="partnerships.html">
-                                            Featured Global Initiatives
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="opportunities.html">
-                                            Member Opportunities
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="events.html">
-                                            Events & Programs
-                                        </a>
-                                    </li>
 
-                                    <li><a href="contact.html">Contact & Engagement</a></li>
+                <!-- Desktop Menu (Hidden on mobile) -->
+                <div class="desktop-menu">
+                    <div class="menu">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About the Directorate</a></li>
+                            <li><a href="partnerships.html">Featured Global Initiatives</a></li>
+                            <li><a href="opportunities.html">Member Opportunities</a></li>
+                            <li><a href="events.html">Events & Programs</a></li>
+                            <li><a href="contact.html">Contact & Engagement</a></li>
+                        </ul>
+                    </div>
+                </div>
 
-                                </ul>
-                            </div>
+                <!-- Header Actions (Search + Login + Mobile Controls) -->
+                <div class="header-actions-group">
+                    <div class="header-actions">
+                        <!-- Desktop Search -->
+                        <div class="search-container" id="searchContainer">
+                            <input type="text" placeholder="Search..." class="search-input">
+                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
                         </div>
-                        <div class="col-sm-4 text-end">
-                            <div class="header-actions">
-                                <div class="search-container">
-                                    <input type="text" placeholder="Search..." class="search-input">
-                                    <span class="material-symbols-outlined search-icon">search</span>
-                                </div>
-                                <a class="gradient-btn" href="#">
-                                    <span class="material-symbols-outlined">
-                                        account_circle
-                                    </span>Member Login
-                                </a>
-                            </div>
-                        </div>
+                        
+                        <!-- Member Login -->
+                        <a class="gradient-btn" href="#">
+                            <span class="material-symbols-outlined">account_circle</span>Member Login
+                        </a>
+                    </div>
+
+                    <!-- Mobile Toggle Buttons -->
+                    <div class="mobile-controls">
+                        <button class="menu-toggle" onclick="toggleMobileMenu()">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Full-Screen Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="overlay-header">
+            <img src="images/logo.png" class="logo" style="max-width: 150px;"/>
+            <button class="close-overlay" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
+                <li><a href="about.html" onclick="toggleMobileMenu()">About the Directorate</a></li>
+                <li><a href="partnerships.html" onclick="toggleMobileMenu()">Featured Global Initiatives</a></li>
+                <li><a href="opportunities.html" onclick="toggleMobileMenu()">Member Opportunities</a></li>
+                <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
+                <li><a href="contact.html" onclick="toggleMobileMenu()">Contact & Engagement</a></li>
+            </ul>
+        </nav>
     </div>
     <div class="hero-container">
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
@@ -490,6 +501,21 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+
+    <script>
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function toggleMobileSearch() {
+            if (window.innerWidth < 768) {
+                const container = document.getElementById('searchContainer');
+                container.classList.toggle('mobile-expanded');
+            }
+        }
+    </script>
 
 </body>
 

@@ -14,16 +14,19 @@ body {
 
 .header {
     padding: 15px 20px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .header .logo {
-    max-width: 300px;
+    max-width: 250px;
+    transition: max-width 0.3s ease;
 }
 
 .menu ul {
     display: flex;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     list-style: none;
     column-gap: 32px;
 }
@@ -32,30 +35,30 @@ body {
     text-decoration: none;
     color: #333;
     font-size: 15px;
-    line-height: 23px;
-    display: block;
     font-weight: 600;
+    transition: color 0.3s;
+}
+
+.menu ul a:hover {
+    color: #d32965;
 }
 
 .gradient-btn {
-    padding: 10px 24px; /* Reduced side padding slightly for better fit */
+    padding: 10px 24px;
     font-size: 14px;
     font-weight: 600;
     color: #fff;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
     background: linear-gradient(270deg, #322873, #d32965, #322873, #660024);
     background-size: 600% 600%;
     animation: gradientMove 6s ease infinite;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    white-space: nowrap; /* Prevent wrapping */
+    white-space: nowrap;
     justify-content: center;
 }
 
@@ -65,45 +68,64 @@ body {
 }
 
 .gradient-btn:hover {
-    transform: scale(1.08);
-}
-
-/* glowing border effect */
-
-
-/* animation */
-@keyframes gradientMove {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.header .gradient-btn {
-    position: relative;
-    top: 0px; /* Reset top offset as flex handles centering */
-}
-
-.header .gradient-btn:hover {
+    transform: scale(1.05);
     color: #fff;
 }
 
-/* Header Actions & Search Bar */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Header Layout System */
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.header-logo {
+    flex-shrink: 0;
+}
+
+.desktop-menu {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.header-actions-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+}
+
 .header-actions {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     gap: 15px;
-    height: 100%;
 }
 
+.mobile-controls {
+    display: none;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    color: #322873;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    font-size: 32px !important;
+}
+
+/* Mobile Search Behavior */
 .search-container {
     position: relative;
     display: flex;
@@ -124,10 +146,6 @@ body {
     color: #333;
 }
 
-.search-input::placeholder {
-    color: #999;
-}
-
 .search-input:focus {
     width: 200px;
     border-color: #d32965;
@@ -141,36 +159,149 @@ body {
     color: #660024;
     font-size: 20px !important;
     cursor: pointer;
-    transition: color 0.3s ease;
+    z-index: 2;
 }
 
-.search-input:focus + .search-icon {
-    color: #d32965;
+/* Mobile Overlay (Full Screen) */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #322873, #660024);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+    visibility: hidden;
 }
 
-/* Header Responsiveness */
+.mobile-overlay.active {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close-overlay {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close-overlay span {
+    font-size: 40px !important;
+}
+
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.mobile-nav li {
+    margin-bottom: 30px;
+}
+
+.mobile-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 700;
+    transition: opacity 0.3s;
+}
+
+.mobile-nav a:hover {
+    opacity: 0.7;
+}
+
+/* Responsiveness Media Queries */
+@media (max-width: 1200px) {
+    .menu ul {
+        column-gap: 20px;
+    }
+    .gradient-btn {
+        padding: 10px 20px;
+    }
+}
+
 @media (max-width: 992px) {
-    .header-actions {
+    .header-inner {
         gap: 10px;
     }
-    
+    .menu ul a {
+        font-size: 13px;
+    }
     .search-input {
         width: 100px;
     }
-    
     .search-input:focus {
-        width: 150px;
+        width: 140px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .desktop-menu {
+        display: none;
+    }
+    
+    .mobile-controls {
+        display: flex;
+        align-items: center;
+    }
+
+    .search-container .search-input {
+        width: 0;
+        padding: 0;
+        border: none;
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .search-container.mobile-expanded .search-input {
+        width: 180px;
+        padding: 10px 35px 10px 15px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        opacity: 1;
+        pointer-events: all;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        top: -10px;
+        z-index: 1;
+    }
+
+    /* Keep Member Login visible but smaller */
+    .gradient-btn {
+        padding: 8px 16px;
+        font-size: 12px;
     }
 }
 
 @media (max-width: 768px) {
-    .header .logo {
-        max-width: 200px;
+    .header-logo .logo {
+        max-width: 150px;
     }
-    
-    .header-actions {
-        margin-top: 15px;
-        justify-content: center;
+}
+
+@media (max-width: 576px) {
+    .header-logo .logo {
+        max-width: 120px;
+    }
+    .header-inner {
+        gap: 5px;
     }
 }
 
