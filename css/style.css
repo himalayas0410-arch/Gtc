@@ -105,19 +105,22 @@ body {
 .hero-container .carousel-inner {
     border-radius: 12px;
     overflow: hidden;
-    height: 470px; /* Consistent height for both video and image */
+    /* Remove fixed height to prevent cropping; use aspect ratio of the main banner (1600x666) */
+    aspect-ratio: 1600 / 666;
+    background: #000;
 }
 
 .banner-video {
     width: 100%;
-    height: 470px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
 .hero-container .carousel-item img {
-    height: 470px;
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Since container matches image aspect ratio, cover is perfect */
 }
 
 /* ===== Quick Links Floating Sidebar (beside banner) ===== */
