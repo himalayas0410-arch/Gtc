@@ -57,31 +57,23 @@
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="header-inner">
-                <!-- Logo -->
+    <div class="header home-header">
+        <!-- Top Tier: Branding & Logos + Utility Actions -->
+        <div class="header-top">
+            <div class="container header-top-container">
                 <div class="header-logo">
-                    <img src="images/logo.png" class="logo" />
-                    <span class="logo-divider"></span>
-                    <img src="images/logogloba.jpeg" class="logo-secondary" />
-                </div>
-
-                <!-- Desktop Menu (Hidden on mobile) -->
-                <div class="desktop-menu">
-                    <div class="menu">
-                        <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About the Directorate</a></li>
-                            <li><a href="partnerships.html">Featured Global Initiatives</a></li>
-                            <li><a href="opportunities.html">Member Opportunities</a></li>
-                            <li><a href="events.html">Events & Programs</a></li>
-                            <li><a href="contact.html">Contact & Engagement</a></li>
-                        </ul>
+                    <div class="logo-group">
+                        <img src="images/logo.png" class="logo" />
+                        <span class="logo-divider"></span>
+                        <img src="images/logogloba.jpeg" class="logo-secondary" />
+                    </div>
+                    <div class="branding-text">
+                        <h3 class="committee-name">Global Trade & Services Committee</h3>
+                        <p class="parent-body">THE INSTITUTE OF CHARTERED ACCOUNTANTS OF INDIA</p>
                     </div>
                 </div>
 
-                <!-- Header Actions (Search + Login + Mobile Controls) -->
+                <!-- Utility Actions moved here -->
                 <div class="header-actions-group">
                     <div class="header-actions">
                         <!-- Desktop Search -->
@@ -105,15 +97,39 @@
                 </div>
             </div>
         </div>
+
+        <!-- Bottom Tier: Navigation Only -->
+        <div class="header-nav">
+            <div class="container">
+                <div class="header-nav-inner">
+                    <!-- Desktop Menu -->
+                    <div class="desktop-menu">
+                        <div class="menu">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About the Directorate</a></li>
+                                <li><a href="partnerships.html">Global Initiatives</a></li>
+                                <li><a href="opportunities.html">Opportunities</a></li>
+                                <li><a href="events.html">Events & Programs</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Full-Screen Mobile Overlay -->
+    <!-- Mobile Overlay Branding Update -->
     <div class="mobile-overlay" id="mobileOverlay">
         <div class="overlay-header">
             <div class="mobile-logo-group">
-                <img src="images/logo.png" class="logo" style="max-width: 100px;"/>
-                <span class="logo-divider" style="background: rgba(255,255,255,0.3);"></span>
-                <img src="images/logogloba.jpeg" class="logo-secondary" style="max-width: 100px;"/>
+                <img src="images/logo.png" class="logo" />
+                <span class="logo-divider" style="background: rgba(255,255,255,0.2);"></span>
+                <img src="images/logogloba.jpeg" class="logo-secondary" />
+                <div class="mobile-branding-text" style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px; margin-left: 10px;">
+                    <div style="color: #fff; font-size: 12px; font-weight: 800; line-height: 1.2;">Global Trade & Committee</div>
+                </div>
             </div>
             <button class="close-overlay" onclick="toggleMobileMenu()">
                 <span class="material-symbols-outlined">close</span>
