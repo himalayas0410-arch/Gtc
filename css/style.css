@@ -18,9 +18,40 @@ body {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 .header .logo {
-    max-width: 250px;
-    transition: max-width 0.3s ease;
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.logo-divider {
+    width: 2px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0 5px;
+}
+
+.header .logo-secondary {
+    height: 75px; /* Further increased as per user request */
+    width: auto;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    transition: all 0.3s ease;
+    margin-top: -2px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .header .logo { height: 45px; }
+    .header .logo-secondary { height: 55px; }
+    .logo-divider { height: 30px; }
 }
 
 .menu ul {
@@ -191,6 +222,23 @@ body {
     margin-bottom: 50px;
     padding-bottom: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-logo-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-logo-group .logo,
+.mobile-logo-group .logo-secondary {
+    max-height: 40px;
+    width: auto;
+}
+
+.mobile-logo-group .logo-secondary {
+    padding-left: 12px;
+    border-left: 1px solid rgba(255,255,255,0.2);
 }
 
 .close-overlay {
