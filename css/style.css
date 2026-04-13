@@ -169,10 +169,30 @@ body {
 }
 
 
+.gradient-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(270deg, #322873, #d32965, #322873, #660024);
+    background-size: 600% 600%;
+    animation: gradientMove 6s ease infinite;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    justify-content: center;
+}
+
 .gradient-btn .material-symbols-outlined {
     margin-right: 8px;
     font-size: 20px;
 }
+
 
 .gradient-btn:hover {
     transform: scale(1.05);
