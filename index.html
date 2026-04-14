@@ -53,23 +53,48 @@
             text-decoration: none;
             border-bottom: solid 1px rgba(255, 255, 255, .5)
         }
+
+        .banner-text {
+            position: relative;
+            z-index: 3;
+            margin-top: 100px;
+            color: #fff;
+        }
+
+        /* Custom Carousel Indicators */
+        .carousel-indicators {
+            bottom: 30px;
+        }
+
+        .carousel-indicators [data-bs-target] {
+            width: 60px;
+            height: 4px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border: none;
+            transition: var(--transition);
+        }
+
+        .carousel-indicators .active {
+            background: var(--grad-glow) !important;
+            width: 90px;
+        }
     </style>
 </head>
 
-<body>
+<body class="tactile-depth">
+    <div id="scrollProgress"></div>
     <div class="header home-header">
-        <!-- Top Tier: Branding & Logos + Utility Actions -->
         <div class="header-top">
             <div class="container header-top-container">
-                <div class="header-logo">
+                <div class="header-logo reveal-up">
                     <div class="logo-group">
                         <img src="images/logo.png" class="logo" />
                         <span class="logo-divider"></span>
-                        <img src="images/logogloba.jpeg" class="logo-secondary" />
+                        <img src="images/logogloba.png" class="logo-secondary" />
                     </div>
                     <div class="branding-text">
                         <h3 class="committee-name">Global Trade & Services Committee</h3>
-                        <p class="parent-body">THE INSTITUTE OF CHARTERED ACCOUNTANTS OF INDIA</p>
                     </div>
                 </div>
 
@@ -106,12 +131,12 @@
                     <div class="desktop-menu">
                         <div class="menu">
                             <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About the Directorate</a></li>
-                                <li><a href="partnerships.html">Global Initiatives</a></li>
-                                <li><a href="opportunities.html">Opportunities</a></li>
-                                <li><a href="events.html">Events & Programs</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                <li style="animation-delay: 0.1s" class="reveal-up"><a href="index.html">Home</a></li>
+                                <li style="animation-delay: 0.2s" class="reveal-up"><a href="about.html">About the Directorate</a></li>
+                                <li style="animation-delay: 0.3s" class="reveal-up"><a href="partnerships.html">Global Initiatives</a></li>
+                                <li style="animation-delay: 0.4s" class="reveal-up"><a href="opportunities.html">Opportunities</a></li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events & Programs</a></li>
+                                <li style="animation-delay: 0.6s" class="reveal-up"><a href="contact.html">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -120,15 +145,18 @@
         </div>
     </div>
 
-    <!-- Mobile Overlay Branding Update -->
+    <!-- Full-Screen Mobile Overlay -->
     <div class="mobile-overlay" id="mobileOverlay">
         <div class="overlay-header">
             <div class="mobile-logo-group">
-                <img src="images/logo.png" class="logo" />
-                <span class="logo-divider" style="background: rgba(255,255,255,0.2);"></span>
-                <img src="images/logogloba.jpeg" class="logo-secondary" />
-                <div class="mobile-branding-text" style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px; margin-left: 10px;">
-                    <div style="color: #fff; font-size: 12px; font-weight: 800; line-height: 1.2;">Global Trade & Committee</div>
+                <div class="logo-images-mb">
+                    <img src="images/logo.png" class="logo" style="max-width: 60px;"/>
+                    <span class="logo-divider" style="background: rgba(255,255,255,0.3);"></span>
+                    <img src="images/logogloba.jpeg" class="logo-secondary" style="max-width: 60px;"/>
+                </div>
+                <div class="mobile-branding-text">
+                    <span class="mb-committee">Global Trade & Services Committee</span>
+                    <span class="mb-parent">The Institute of Chartered Accountants of India</span>
                 </div>
             </div>
             <button class="close-overlay" onclick="toggleMobileMenu()">
@@ -161,6 +189,10 @@
                         <source src="images/bg.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
+                    <div class="carousel-caption d-none d-md-block reveal-up" style="animation-delay: 0.8s">
+                         <h1 class="display-2 fw-bold">Global Impact</h1>
+                         <p class="lead">Empowering Professionals for a Borderless Future.</p>
+                    </div>
                 </div>
                 <!-- Slide 2: Image -->
                 <div class="carousel-item">
@@ -204,6 +236,29 @@
         </div>
     </div>
 
+    <!-- Quick Links Horizontal Tabs Layout -->
+    <div class="quick-links-tabs-section reveal-up" style="animation-delay: 0.7s">
+        <div class="container">
+            <div class="tabs-wrapper">
+                <a href="#" class="tab-pill active">
+                    <i class="bi bi-globe me-2"></i>APO Programs
+                </a>
+                <a href="#" class="tab-pill">
+                    <i class="bi bi-diagram-3 me-2"></i>GCC Initiatives
+                </a>
+                <a href="#" class="tab-pill">
+                    <i class="bi bi-rocket-takeoff me-2"></i>Global Udaan
+                </a>
+                <a href="#" class="tab-pill">
+                    <i class="bi bi-journal-text me-2"></i>ITEC Programs
+                </a>
+                <a href="#" class="tab-pill">
+                    <i class="bi bi-patch-check me-2"></i>Certificate Courses
+                </a>
+            </div>
+        </div>
+    </div>
+
     <div class="container py-5">
         <div class="row">
 
@@ -226,7 +281,7 @@
             </div>
             <div class="col">
 
-                <div class="modern-card card3">
+                <div class="modern-card card2">
                     <h4>Global Services & Professional Mobility</h4>
                     <div class="number">2</div>
                     <div class="card-hover">
@@ -243,7 +298,7 @@
             </div>
             <div class="col">
 
-                <div class="modern-card card2">
+                <div class="modern-card card3">
                     <h4>Policy, Multilateral & Government Affairs</h4>
                     <div class="number">3</div>
                     <div class="card-hover">
@@ -277,7 +332,7 @@
             </div>
             <div class="col">
 
-                <div class="modern-card card1">
+                <div class="modern-card card5">
                     <h4>Capacity Building Programs</h4>
                     <div class="number">5</div>
                     <div class="card-hover">
@@ -298,7 +353,7 @@
 
     <div class="section-divider"></div>
     <div class="container py-4 section-block">
-        <div class="mapcontainer">
+        <div class="mapcontainer reveal-up">
             <div class="row">
                 <div class="col-sm-4">
 
@@ -321,9 +376,41 @@
 
                     <script>
                         const countryData = {
-                            IN: "Population: 1.4 Billion",
-                            US: "GDP: $25 Trillion",
-                            CN: "Manufacturing Hub"
+                            IN: { name: "India", hq: true },
+                            US: { name: "USA", chapters: 12, offices: 4 },
+                            CA: { name: "Canada", chapters: 3, offices: 0 },
+                            GB: { name: "United Kingdom", chapters: 1, offices: 0 },
+                            IE: { name: "Ireland", chapters: 1, offices: 0 },
+                            BE: { name: "Belgium", chapters: 0, offices: 1 },
+                            LU: { name: "Luxembourg", chapters: 1, offices: 0 },
+                            DK: { name: "Denmark", chapters: 0, offices: 1 },
+                            NL: { name: "Netherlands", chapters: 1, offices: 2 },
+                            FR: { name: "France", chapters: 0, offices: 1 },
+                            DE: { name: "Germany", chapters: 0, offices: 1 },
+                            CH: { name: "Switzerland", chapters: 1, offices: 0 },
+                            FI: { name: "Finland", chapters: 0, offices: 1 },
+                            SE: { name: "Sweden", chapters: 0, offices: 1 },
+                            KE: { name: "Kenya", chapters: 1, offices: 0 },
+                            BW: { name: "Botswana", chapters: 1, offices: 0 },
+                            CD: { name: "DR Congo", chapters: 0, offices: 1 },
+                            BH: { name: "Bahrain", chapters: 1, offices: 0 },
+                            JO: { name: "Jordan", chapters: 0, offices: 2 },
+                            QA: { name: "Qatar", chapters: 1, offices: 0 },
+                            KW: { name: "Kuwait", chapters: 1, offices: 0 },
+                            OM: { name: "Oman", chapters: 1, offices: 0 },
+                            SA: { name: "Saudi Arabia", chapters: 3, offices: 0 },
+                            EG: { name: "Egypt", chapters: 1, offices: 0 },
+                            HK: { name: "Hong Kong", chapters: 1, offices: 0 },
+                            ID: { name: "Indonesia", chapters: 1, offices: 0 },
+                            JP: { name: "Japan", chapters: 1, offices: 0 },
+                            TH: { name: "Thailand", chapters: 1, offices: 1 },
+                            VN: { name: "Vietnam", chapters: 0, offices: 2 },
+                            MY: { name: "Malaysia", chapters: 1, offices: 0 },
+                            SG: { name: "Singapore", chapters: 1, offices: 0 },
+                            PG: { name: "Papua New Guinea", chapters: 1, offices: 0 },
+                            AU: { name: "Australia", chapters: 4, offices: 0 },
+                            NZ: { name: "New Zealand", chapters: 1, offices: 0 },
+                            ZA: { name: "South Africa", chapters: 1, offices: 1 }
                         };
 
                         new jsVectorMap({
@@ -337,17 +424,27 @@
                                     fill: "#B76ABD"
                                 }
                             },
-                            selectedRegions: ["IN", "GL", "CN", "BR"],
+                            selectedRegions: Object.keys(countryData),
 
                             onRegionTooltipShow: function (event, tooltip, code) {
+                                const data = countryData[code];
+                                if (!data) return;
 
-                                const name = tooltip.text(); // get default country name
-
-                                const html = `<h2>India</h2><h5>ICAI Headquarters</h5><p>12 Regional Offices</p><p>50+ Global Chapters</p><a href='#'>View Initiatives</a>`;
-                                if (countryData[code]) {
-                                    tooltip.text(html, true);
+                                let html = "";
+                                if (data.hq) {
+                                    html = `<h2>India</h2><h5>ICAI Headquarters</h5><p>12 Regional Offices</p><p>50+ Global Chapters</p><a href='#'>View Initiatives</a>`;
+                                } else {
+                                    html = `<h2>${data.name}</h2><h5>ICAI Presence</h5>`;
+                                    if (data.chapters > 0) {
+                                        html += `<p>${data.chapters} Chapter${data.chapters > 1 ? 's' : ''}</p>`;
+                                    }
+                                    if (data.offices > 0) {
+                                        html += `<p>${data.offices} Representative Office${data.offices > 1 ? 's' : ''}</p>`;
+                                    }
+                                    html += `<a href='#'>View Initiatives</a>`;
                                 }
-
+                                
+                                tooltip.text(html, true);
                             }
                         });
                     </script>
@@ -480,14 +577,17 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Contact Us</h5>
                     <div class="footer-contact">
-                        📍 ICAI Bhawan, Indraprastha Marg,<br>
-                        New Delhi – 110002, India
+                        <strong>Global Trade & Services Committee</strong><br>
+                        The Institute of Chartered Accountants of India,<br>
+                        (Set up by an Act of Parliament)<br>
+                        'ICAI BHAWAN', Indraprastha Marg,<br>
+                        New Delhi - 110002
                     </div>
                     <div class="footer-contact">
-                        ☎ +91 11 3011 1000
+                        ☎ 011-30110542
                     </div>
                     <div class="footer-contact">
-                        ✉ globaltrade@icai.in
+                        ✉ global@icai.in
                     </div>
                     <div class="social-icons mt-3">
                         <a href="#">in</a>
@@ -510,7 +610,7 @@
             <hr class="footer-divider">
             <div class="footer-bottom d-flex justify-content-between flex-wrap">
                 <div>
-                    © 2025 The Institute of Chartered Accountants of India. All Rights Reserved.
+                    © 2026 The Institute of Chartered Accountants of India
                 </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
@@ -525,6 +625,30 @@
         crossorigin="anonymous"></script>
 
     <script>
+        // Scroll Progress Logic
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement, 
+                  b = document.body,
+                  st = 'scrollTop',
+                  sh = 'scrollHeight';
+            const percent = (h[st]||b[st]) / ((h[sh]||b[sh]) - h.clientHeight) * 100;
+            document.getElementById('scrollProgress').style.width = percent + '%';
+        });
+
+        // Reveal Animations on Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.modern-card, .section-title, .events-section').forEach(el => {
+            observer.observe(el);
+        });
+
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
             overlay.classList.toggle('active');

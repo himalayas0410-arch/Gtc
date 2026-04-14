@@ -17,61 +17,53 @@
 </head>
 <body>
     <div class="header">
-        <!-- Top Tier: Branding & Logos -->
-        <div class="header-top">
-            <div class="container">
-                <div class="header-logo">
-                    <div class="logo-group">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <div class="header-logo">
                         <img src="images/logo.png" class="logo" />
                         <span class="logo-divider"></span>
-                        <img src="images/logogloba.jpeg" class="logo-secondary" />
-                    </div>
-                    <div class="branding-text">
-                        <h3 class="committee-name">Global Trade & Services Committee</h3>
-                        <p class="parent-body">THE INSTITUTE OF CHARTERED ACCOUNTANTS OF INDIA</p>
+                        <img src="images/logogloba.png" class="logo-secondary" />
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li>
+                                        <a href="about.html">
+                                            About the Directorate
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="partnerships.html">
+                                            Featured Global Initiatives
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="opportunities.html">
+                                            Member Opportunities
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="events.html">
+                                            Events & Programs
+                                        </a>
+                                    </li>
 
-        <!-- Bottom Tier: Navigation & Actions -->
-        <div class="header-nav">
-            <div class="container">
-                <div class="header-nav-inner">
-                    <!-- Desktop Menu -->
-                    <div class="desktop-menu">
-                        <div class="menu">
-                            <ul>
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About the Directorate</a></li>
-                                <li><a href="partnerships.html">Global Initiatives</a></li>
-                                <li><a href="opportunities.html">Opportunities</a></li>
-                                <li><a href="events.html">Events & Programs</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                                    <li><a href="contact.html">Contact & Engagement</a></li>
 
-                    <!-- Header Actions -->
-                    <div class="header-actions-group">
-                        <div class="header-actions">
-                            <!-- Desktop Search -->
-                            <div class="search-container" id="searchContainer">
-                                <input type="text" placeholder="Search..." class="search-input">
-                                <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                                </ul>
                             </div>
-
-                            <!-- Member Login -->
-                            <a class="gradient-btn" href="#">
-                                <span class="material-symbols-outlined">account_circle</span>Member Login
-                            </a>
                         </div>
-
-                        <!-- Mobile Toggle Buttons -->
-                        <div class="mobile-controls">
-                            <button class="menu-toggle" onclick="toggleMobileMenu()">
-                                <span class="material-symbols-outlined">menu</span>
-                            </button>
+                        <div class="col-sm-3 text-end">
+                            <a class="gradient-btn" href="#">
+                                <span class="material-symbols-outlined">
+                                    account_circle
+                                </span>Member Login
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -333,7 +325,7 @@
             <hr class="footer-divider">
             <div class="footer-bottom d-flex justify-content-between flex-wrap">
                 <div>
-                    © 2025 The Institute of Chartered Accountants of India. All Rights Reserved.
+                    © 2026 The Institute of Chartered Accountants of India
                 </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
@@ -343,47 +335,7 @@
             </div>
         </div>
     </footer>
-    <!-- Mobile Overlay Branding Update -->
-    <div class="mobile-overlay" id="mobileOverlay">
-        <div class="overlay-header">
-            <div class="mobile-logo-group">
-                <img src="images/logo.png" class="logo" />
-                <span class="logo-divider" style="background: rgba(255,255,255,0.2);"></span>
-                <img src="images/logogloba.jpeg" class="logo-secondary" />
-                <div class="mobile-branding-text" style="border-left: 1px solid rgba(255,255,255,0.2); padding-left: 10px; margin-left: 10px;">
-                    <div style="color: #fff; font-size: 12px; font-weight: 800; line-height: 1.2;">Global Trade & Committee</div>
-                </div>
-            </div>
-            <button class="close-overlay" onclick="toggleMobileMenu()">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
-                <li><a href="about.html" onclick="toggleMobileMenu()">About</a></li>
-                <li><a href="partnerships.html" onclick="toggleMobileMenu()">Global Initiatives</a></li>
-                <li><a href="opportunities.html" onclick="toggleMobileMenu()">Opportunities</a></li>
-                <li><a href="events.html" onclick="toggleMobileMenu()">Events</a></li>
-                <li><a href="contact.html" onclick="toggleMobileMenu()">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-        function toggleMobileMenu() {
-            const overlay = document.getElementById('mobileOverlay');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
-        }
 
-        function toggleMobileSearch() {
-            if (window.innerWidth < 768) {
-                const container = document.getElementById('searchContainer');
-                container.classList.toggle('mobile-expanded');
-            }
-        }
-    </script>
 </body>
 </html>
