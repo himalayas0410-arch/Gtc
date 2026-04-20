@@ -142,72 +142,32 @@
 }
 
 /* Background Gradient Animation Styles */
+/* Dynamic multi-color Branding Gradient - Perfectly matched to GTC Logo */
 .gradients-container {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
-    filter: url(#blurMe) blur(40px);
-}
-
-.g1, .g2, .g3, .g4, .g5 {
-    position: absolute;
-    width: var(--size);
-    height: var(--size);
-    top: calc(50% - var(--size) / 2);
-    left: calc(50% - var(--size) / 2);
+    background: linear-gradient(
+        135deg,
+        rgba(78, 165, 217, 0.45) 0%,   /* GTC Blue */
+        rgba(142, 68, 173, 0.35) 25%,  /* GTC Purple */
+        rgba(228, 87, 46, 0.4) 50%,   /* GTC Orange */
+        rgba(76, 175, 80, 0.35) 75%,   /* GTC Green */
+        rgba(244, 197, 66, 0.3) 100%   /* GTC Yellow */
+    );
+    background-size: 400% 400%;
+    animation: gradientFlow 20s ease infinite; /* Slower, more majestic flow */
+    pointer-events: none;
     opacity: 1;
-    mix-blend-mode: var(--blending-value);
-    transform-origin: center center;
 }
 
-.g1 {
-    background: radial-gradient(circle at center, rgba(var(--first-color), 0.8) 0, rgba(var(--first-color), 0) 50%) no-repeat;
-    animation: moveVertical 30s ease infinite;
-}
-
-.g2 {
-    background: radial-gradient(circle at center, rgba(var(--second-color), 0.8) 0, rgba(var(--second-color), 0) 50%) no-repeat;
-    animation: moveInCircle 20s reverse infinite;
-    transform-origin: calc(50% - 400px);
-}
-
-.g3 {
-    background: radial-gradient(circle at center, rgba(var(--third-color), 0.8) 0, rgba(var(--third-color), 0) 50%) no-repeat;
-    animation: moveInCircle 40s linear infinite;
-    transform-origin: calc(50% + 400px);
-}
-
-.g4 {
-    background: radial-gradient(circle at center, rgba(var(--fourth-color), 0.8) 0, rgba(var(--fourth-color), 0) 50%) no-repeat;
-    animation: moveHorizontal 40s ease infinite;
-    opacity: 0.7;
-}
-
-.g5 {
-    background: radial-gradient(circle at center, rgba(var(--fifth-color), 0.8) 0, rgba(var(--fifth-color), 0) 50%) no-repeat;
-    animation: moveInCircle 20s ease infinite;
-    transform-origin: calc(50% - 800px) calc(50% + 200px);
-}
-
-@keyframes moveInCircle {
-    0% { transform: rotate(0deg); }
-    50% { transform: rotate(180deg); }
-    100% { transform: rotate(360deg); }
-}
-
-@keyframes moveVertical {
-    0% { transform: translateY(-50%); }
-    50% { transform: translateY(50%); }
-    100% { transform: translateY(-50%); }
-}
-
-@keyframes moveHorizontal {
-    0% { transform: translateX(-50%) translateY(-10%); }
-    50% { transform: translateX(50%) translateY(10%); }
-    100% { transform: translateX(-50%) translateY(-10%); }
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
     content: "";
     position: absolute;
@@ -240,11 +200,11 @@ body {
 :root {
     --background-color-start: #FAFBFE;
     --background-color-end: #EDF4FF;
-    --first-color: 78, 165, 217;   /* Blue */
-    --second-color: 228, 87, 46;  /* Orange */
-    --third-color: 142, 68, 173;  /* Purple */
-    --fourth-color: 76, 175, 80;  /* Green */
-    --fifth-color: 244, 197, 66;  /* Yellow */
+    --first-color: 78, 165, 217;   /* Original Blue */
+    --second-color: 228, 87, 46;  /* Original Orange */
+    --third-color: 142, 68, 173;  /* Original Purple */
+    --fourth-color: 76, 175, 80;  /* Original Green */
+    --fifth-color: 244, 197, 66;  /* Original Yellow */
     --pointer-color: 140, 100, 255;
     --size: 80%;
     --blending-value: hard-light;
@@ -524,19 +484,19 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-left: 2px solid rgba(0, 0, 0, 0.1);
-    padding-left: 25px;
+    border-left: 2px solid rgba(0, 0, 0, 0.08); /* Lighter border */
+    padding-left: clamp(15px, 1.5vw, 25px);
     transition: all 0.3s ease;
 }
 
 .committee-name {
-    font-size: clamp(20px, 1.8vw, 26px);
+    font-size: clamp(14px, 1.4vw, 24px); /* Slightly smaller minimum to ensure one line */
     font-weight: 800;
     margin: 0;
     color: var(--navy-orbit);
-    line-height: 1;
-    letter-spacing: -0.025em;
-    white-space: nowrap !important;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    white-space: nowrap !important; /* Enforced one line */
 }
 
 .parent-body {
@@ -546,55 +506,48 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
 
 .header .logo,
 .header .logo-secondary {
-    width: 300px;
+    width: clamp(180px, 16vw, 280px); /* Fluid scaling for logos */
     height: auto;
     object-fit: contain;
     transition: all 0.3s ease;
 }
 
 .logo-divider {
-    width: 2px;
-    height: 93px;
-    /* Aligned with logos */
+    width: 1px;
+    height: clamp(50px, 6vw, 90px);
     background: rgba(0, 0, 0, 0.1);
-    margin: 0 20px;
+    margin: 0 clamp(8px, 1vw, 20px);
 }
 
 
 @media (max-width: 1250px) {
     .home-header .header-top .container {
         flex-direction: column;
-        gap: 15px;
+        gap: 20px;
         text-align: center;
-        padding-top: 10px;
+        padding-top: 15px;
     }
 
     .home-header .header-logo {
         justify-content: center;
         width: 100%;
+        flex-direction: column; /* Stack logos on tablet if needed */
     }
 
     .home-header .header-actions-group {
         width: 100%;
         justify-content: center;
-        padding-bottom: 10px;
-    }
-
-    .header .logo,
-    .header .logo-secondary {
-        width: 235px;
+        padding-bottom: 15px;
     }
 
     .logo-divider {
-        height: 73px;
+        display: none; /* Hide divider when stacked */
     }
 
-    .committee-name {
-        font-size: 16px !important;
-    }
-
-    .parent-body {
-        font-size: 10px !important;
+    .branding-text {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 10px;
     }
 }
 
@@ -694,8 +647,8 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
 }
 
 .gradient-btn {
-    padding: 12px 28px;
-    font-size: 14px;
+    padding: clamp(10px, 1vw, 12px) clamp(16px, 1.8vw, 28px);
+    font-size: clamp(12px, 0.9vw, 14px);
     font-weight: 600;
     color: #fff;
     border-radius: 10px;
@@ -1786,8 +1739,8 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
 }
 
 .footer-list a:hover {
-    color: var(--blue-primary);
-    transform: translateX(5px);
+    color: #fff;
+    text-decoration: underline;
 }
 
 .footer-contact-item {
@@ -1805,19 +1758,20 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
+    width: 32px;
+    height: 32px;
+    border-radius: 8px; /* Rounded corners precisely as per image */
+    background: rgba(255, 255, 255, 0.1);
     color: #fff;
     text-decoration: none;
-    margin-right: 12px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.1);
+    margin-right: 10px;
+    transition: all 0.2s ease;
+    font-size: 14px;
 }
 
 .social-icons a:hover {
-    background: var(--blue-primary);
+    background: rgba(255, 255, 255, 0.2);
+}
 .newsletter {
     display: flex;
     background: #fff;
