@@ -2381,3 +2381,53 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
 .maptext {
     margin-top: -30px !important;
 }
+
+/* Map Tooltip Theming */
+.jvm-tooltip {
+    background: rgba(15, 23, 42, 0.9) !important; /* var(--text-dark) with opacity */
+    backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    padding: 20px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+    color: #fff !important;
+    font-family: 'Inter', sans-serif !important;
+    min-width: 200px !important;
+}
+
+.jvm-tooltip h2 {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    margin: 0 0 4px 0 !important;
+    color: #fff !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+}
+
+.jvm-tooltip h5 {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: var(--blue-primary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1.5px !important;
+    margin-bottom: 15px !important;
+    opacity: 0.8;
+}
+
+.jvm-tooltip p {
+    font-size: 14px !important;
+    margin: 0 0 6px 0 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.jvm-tooltip .tooltip-action {
+    margin-top: 15px !important;
+    padding-top: 12px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    font-weight: 700 !important;
+    color: var(--orange-secondary) !important;
+    display: block !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}

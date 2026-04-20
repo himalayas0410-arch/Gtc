@@ -454,7 +454,7 @@
 
                                 let html = "";
                                 if (data.hq) {
-                                    html = `<h2>India</h2><h5>ICAI Headquarters</h5><p>12 Regional Offices</p><p>50+ Global Chapters</p><p style="margin-top:10px; font-weight:bold; color: #eec34b;">Click to view initiatives</p>`;
+                                    html = `<h2>India</h2><h5>ICAI Headquarters</h5><p>12 Regional Offices</p><p>50+ Global Chapters</p><span class="tooltip-action">Click to view initiatives</span>`;
                                 } else {
                                     html = `<h2>${data.name}</h2><h5>ICAI Presence</h5>`;
                                     if (data.chapters > 0) {
@@ -463,7 +463,7 @@
                                     if (data.offices > 0) {
                                         html += `<p>${data.offices} Representative Office${data.offices > 1 ? 's' : ''}</p>`;
                                     }
-                                    html += `<p style="margin-top:10px; font-weight:bold; color: #eec34b;">Click region to view initiatives</p>`;
+                                    html += `<span class="tooltip-action">Click region to view initiatives</span>`;
                                 }
                                 
                                 tooltip.text(html, true);
