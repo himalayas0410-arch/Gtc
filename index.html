@@ -87,6 +87,14 @@
 </head>
 
 <body class="tactile-depth">
+    <!-- Aceternity-style Animated Background -->
+    <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+    </div>
     <div id="scrollProgress"></div>
     <div class="header home-header">
         <div class="header-top">
@@ -563,29 +571,35 @@
 
     <footer class="footer-dark py-5">
         <div class="container">
-            <div class="row gy-4">
-                <!-- About -->
+            <div class="row pt-5 gy-5">
+                <!-- Brand & About -->
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">About ICAI</h5>
-                    <p class="footer-text">
-                        The Institute of Chartered Accountants of India (ICAI) is a statutory body
-                        established by an Act of Parliament, dedicated to developing, regulating,
-                        and supporting Chartered Accountants and students.
+                    <img src="images/logogloba.png" alt="ICAI GTC Logo" class="footer-logo mb-4">
+                    <p class="footer-text mb-4">
+                        The Global Trade & Services Committee (GTC) of ICAI is dedicated to 
+                        advancing the global reach of Indian Chartered Accountants.
                     </p>
-                    <a href="about.html" class="footer-link">Learn More →</a>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-envelope-fill"></i></a>
+                    </div>
                 </div>
+
                 <!-- Programs -->
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Programs</h5>
                     <ul class="footer-list">
                         <li><a href="https://gcc.icai.org/" target="_blank">Global Initiatives</a></li>
-                        <li><a href="opportunities.html">Training & Capacity Building</a></li>
+                        <li><a href="opportunities.html">Training & Capacity</a></li>
                         <li><a href="opportunities.html">Member Opportunities</a></li>
-                        <li><a href="events.html">Events & Programs</a></li>
+                        <li><a href="events.html">Events & News</a></li>
                     </ul>
                 </div>
+
                 <!-- Resources -->
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Resources</h5>
                     <ul class="footer-list">
                         <li><a href="#">Reports & Publications</a></li>
@@ -594,37 +608,21 @@
                         <li><a href="#">Downloads</a></li>
                     </ul>
                 </div>
+
                 <!-- Contact -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Contact Us</h5>
-                    <div class="footer-contact">
-                        <strong>Global Trade & Services Committee</strong><br>
-                        The Institute of Chartered Accountants of India,<br>
-                        (Set up by an Act of Parliament)<br>
-                        'ICAI BHAWAN', Indraprastha Marg,<br>
-                        New Delhi - 110002
+                    <div class="footer-contact-item">
+                        <i class="bi bi-geo-alt-fill me-2 text-blue"></i>
+                        <span>ICAI Bhawan, Indraprastha Marg,<br>New Delhi - 110002</span>
                     </div>
-                    <div class="footer-contact">
-                        ☎ 011-30110542
+                    <div class="footer-contact-item mt-3">
+                        <i class="bi bi-telephone-fill me-2 text-blue"></i>
+                        <span>011-30110542</span>
                     </div>
-                    <div class="footer-contact">
-                        ✉ global@icai.in
-                    </div>
-                    <div class="social-icons mt-3">
-                        <a href="#">in</a>
-                        <a href="#">X</a>
-                        <a href="#">▶</a>
-                        <a href="#">◎</a>
-                    </div>
-                </div>
-                <!-- Newsletter -->
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="footer-title">Stay Updated</h5>
-                    <p class="footer-text small">
-                        Subscribe to our newsletter for the latest updates and opportunities.
-                    </p>
-                    <div class="newsletter">
-                        <input type="email" placeholder="Enter your email">
+                    <div class="footer-contact-item mt-2">
+                        <i class="bi bi-envelope-at-fill me-2 text-blue"></i>
+                        <span>global@icai.in</span>
                     </div>
                 </div>
             </div>
@@ -730,6 +728,17 @@
             revealObserver.observe(el);
         });
     </script>
+
+    <!-- Gooey Filter Definiton -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <defs>
+            <filter id="blurMe">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+        </defs>
+    </svg>
 
 </body>
 
