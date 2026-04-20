@@ -2373,3 +2373,7 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
 .pt-5 {
     padding-top: 90px !important;
 }
+
+.mapcontainer {
+    padding: 5px 70px 15px 70px !important;
+}
