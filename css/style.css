@@ -1336,6 +1336,18 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
     display: inline-block;
 }
 
+.orange-btn {
+    border-color: var(--orange-secondary) !important;
+    color: var(--orange-secondary) !important;
+}
+
+.orange-btn:hover {
+    background: var(--grad-warm) !important;
+    border-color: transparent !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(228, 87, 46, 0.3) !important;
+}
+
 .blur-btn:hover, .blur-btn2:hover {
     background: var(--blue-primary);
     color: #fff;
