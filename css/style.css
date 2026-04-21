@@ -1501,6 +1501,134 @@ h1, h2, h3, h4, h5, h6, .section-title, .committee-name {
     letter-spacing: 0.01em;
 }
 
+/* Interactive Card Inner Navigation */
+.hover-main-view, .hover-sub-view {
+    position: absolute;
+    inset: 0;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20px);
+}
+
+.hover-main-view.active, .hover-sub-view.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.hover-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hover-list li {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: var(--transition);
+}
+
+.hover-list li:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(5px);
+    border-color: var(--blue-primary);
+}
+
+.hover-list li i {
+    font-size: 12px;
+    opacity: 0.5;
+    transition: var(--transition);
+}
+
+.hover-list li:hover i {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.sub-view-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sub-view-header h6 {
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.back-btn:hover {
+    background: #fff;
+    color: #111;
+}
+
+.sub-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.sub-mini-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 15px 10px;
+    text-align: center;
+    text-decoration: none !important;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sub-mini-card i {
+    font-size: 20px;
+    color: var(--blue-primary);
+}
+
+.sub-mini-card span {
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.sub-mini-card:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-3px);
+    border-color: var(--blue-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
 /* Original Dark Image Layout Restored */
 /* Logo-Color Card Accent System */
 .card1 {

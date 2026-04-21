@@ -255,9 +255,39 @@
                 <div class="modern-card card1">
                     <h4>Trade & Market Integration</h4>
                     <div class="number">1</div>
-                    <div class="card-hover">
-                        <p>Facilitating global trade, investment flows, and market access for Indian professionals.</p>
-                        <button class="card-btn">Read More</button>
+                    <div class="card-hover" id="hover-card-1">
+                        <div class="hover-main-view active">
+                            <ul class="hover-list">
+                                <li onclick="switchCardView(1, 'sub', event)">Deliverables of Existing MoU <i class="bi bi-chevron-right"></i></li>
+                                <li>Engaging with Indo Chambers of Commerce <i class="bi bi-chevron-right"></i></li>
+                                <li>Involving State Government in promoting trade <i class="bi bi-chevron-right"></i></li>
+                                <li>Liaisoning with Export Promotion Councils for trade <i class="bi bi-chevron-right"></i></li>
+                            </ul>
+                        </div>
+                        <div class="hover-sub-view">
+                            <div class="sub-view-header">
+                                <button class="back-btn" onclick="switchCardView(1, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button>
+                                <h6>MoU Deliverables</h6>
+                            </div>
+                            <div class="sub-card-grid">
+                                <a href="#" class="sub-mini-card">
+                                    <i class="bi bi-building"></i>
+                                    <span>Invest India</span>
+                                </a>
+                                <a href="#" class="sub-mini-card">
+                                    <i class="bi bi-globe"></i>
+                                    <span>EPC for EOUs & SEZs</span>
+                                </a>
+                                <a href="#" class="sub-mini-card">
+                                    <i class="bi bi-shield-check"></i>
+                                    <span>SEPC</span>
+                                </a>
+                                <a href="#" class="sub-mini-card">
+                                    <i class="bi bi-bank"></i>
+                                    <span>IFSCA</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <a href="#" class="knowmore">
                         Know More <span class="material-symbols-outlined">
@@ -677,6 +707,24 @@
             if (window.innerWidth < 768) {
                 const container = document.getElementById('searchContainer');
                 container.classList.toggle('mobile-expanded');
+            }
+        }
+
+        function switchCardView(cardId, view, event) {
+            if (event) {
+                event.stopPropagation();
+                event.preventDefault();
+            }
+            const cardHover = document.getElementById(`hover-card-${cardId}`);
+            const mainView = cardHover.querySelector('.hover-main-view');
+            const subView = cardHover.querySelector('.hover-sub-view');
+
+            if (view === 'sub') {
+                mainView.classList.remove('active');
+                subView.classList.add('active');
+            } else {
+                subView.classList.remove('active');
+                mainView.classList.add('active');
             }
         }
 
