@@ -2965,6 +2965,13 @@ img { max-width: 100%; height: auto; }
     background: transparent !important;
 }
 
+.mobile-quick-links .container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
 .mql-scroll-container {
     position: relative;
     display: flex;
@@ -2996,8 +3003,8 @@ img { max-width: 100%; height: auto; }
     pointer-events: none;
 }
 
-.mql-prev { left: 5px !important; }
-.mql-next { right: 5px !important; }
+.mql-prev { left: 10px !important; }
+.mql-next { right: 10px !important; }
 
 .mql-scroll-btn:active { transform: scale(0.9); }
 .mql-scroll-btn .material-symbols-outlined { font-size: 24px; font-weight: bold; }
@@ -3005,7 +3012,7 @@ img { max-width: 100%; height: auto; }
 .mql-wrapper {
     display: flex;
     overflow-x: auto;
-    padding: 15px 45px 30px 45px; /* Internal padding protects items but keeps visual flow full-width */
+    padding: 15px 60px 30px 60px; /* Increased internal padding to clear the floating arrows */
     gap: 15px;
     scrollbar-width: none;
     -ms-overflow-style: none;
