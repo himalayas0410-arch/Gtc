@@ -2955,13 +2955,13 @@ html, body {
 img { max-width: 100%; height: auto; }
 
 /* Horizontal Quick Links (Hidden on Desktop) */
-/* Mobile Quick Links - Icon Themed like Sidebar */
+/* Mobile Quick Links - Sequential Section */
 .mobile-quick-links {
     display: none;
-    padding: 20px 0 35px 0;
-    margin-top: -60px; /* Overlap with larger banner */
+    padding: 30px 0 20px 0;
+    margin-top: 20px; /* Clear separation from hero */
     position: relative;
-    z-index: 1002;
+    z-index: 10;
     background: transparent;
 }
 
@@ -3055,8 +3055,8 @@ img { max-width: 100%; height: auto; }
     
     .row > [class*="col-"] { margin-bottom: 25px; }
     
-    /* Clean & Minimal Mobile Header */
-    .header-top { padding: 10px 0 !important; }
+    /* Compact & Professional Mobile Header */
+    .header-top { padding: 6px 0 !important; }
     .header-top-container { 
         display: flex !important; 
         justify-content: space-between !important; 
@@ -3099,9 +3099,9 @@ img { max-width: 100%; height: auto; }
     .hero-container .carousel-inner { border-radius: 0 !important; aspect-ratio: auto !important; }
     
     .banner-video, .carousel-item img { 
-        height: 550px !important; 
-        object-fit: cover !important; 
-    }
+    height: 600px !important; 
+    object-fit: cover !important; 
+}
     
     .carousel-caption {
         bottom: 15% !important;
