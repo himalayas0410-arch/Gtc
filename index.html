@@ -260,15 +260,53 @@
     <!-- Mobile Quick Links (Visible on Tablet/Mobile) -->
     <div class="mobile-quick-links">
         <div class="container">
-            <div class="mql-wrapper">
-                <a href="https://apo.icai.org/" class="mql-item"><span>APO Programs</span><i class="bi bi-globe"></i></a>
-                <a href="https://gcc.icai.org/" class="mql-item"><span>GCC Initiatives</span><i class="bi bi-diagram-3"></i></a>
-                <a href="https://www.icai.org/post/cditswto-global-udaan" class="mql-item"><span>Global Udaan</span><i class="bi bi-rocket-takeoff"></i></a>
-                <a href="https://www.icai.org/post/cditswto-itec-training-program" class="mql-item"><span>ITEC Programs</span><i class="bi bi-journal-text"></i></a>
-                <a href="https://www.icai.org/post/ditswto-occoss-overseas" class="mql-item"><span>Certificate Courses</span><i class="bi bi-patch-check"></i></a>
+            <div class="mql-scroll-container">
+                <button class="mql-scroll-btn mql-prev" id="mqlPrev" onclick="scrollMQL(-1)">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <div class="mql-wrapper" id="mqlWrapper">
+                    <a href="https://apo.icai.org/" class="mql-item"><span>APO Programs</span><i class="bi bi-globe"></i></a>
+                    <a href="https://gcc.icai.org/" class="mql-item"><span>GCC Initiatives</span><i class="bi bi-diagram-3"></i></a>
+                    <a href="https://www.icai.org/post/cditswto-global-udaan" class="mql-item"><span>Global Udaan</span><i class="bi bi-rocket-takeoff"></i></a>
+                    <a href="https://www.icai.org/post/cditswto-itec-training-program" class="mql-item"><span>ITEC Programs</span><i class="bi bi-journal-text"></i></a>
+                    <a href="https://www.icai.org/post/ditswto-occoss-overseas" class="mql-item"><span>Certificate Courses</span><i class="bi bi-patch-check"></i></a>
+                </div>
+                <button class="mql-scroll-btn mql-next" id="mqlNext" onclick="scrollMQL(1)">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
             </div>
         </div>
     </div>
+
+    <script>
+        function scrollMQL(direction) {
+            const wrapper = document.getElementById('mqlWrapper');
+            const scrollAmount = 200;
+            wrapper.scrollBy({
+                left: direction * scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        const mqlWrapper = document.getElementById('mqlWrapper');
+        const mqlPrev = document.getElementById('mqlPrev');
+        const mqlNext = document.getElementById('mqlNext');
+
+        if (mqlWrapper) {
+            mqlWrapper.addEventListener('scroll', () => {
+                const scrollLeft = mqlWrapper.scrollLeft;
+                const maxScroll = mqlWrapper.scrollWidth - mqlWrapper.clientWidth;
+                
+                mqlPrev.style.opacity = scrollLeft > 10 ? '1' : '0';
+                mqlPrev.style.pointerEvents = scrollLeft > 10 ? 'auto' : 'none';
+                
+                mqlNext.style.opacity = scrollLeft < maxScroll - 10 ? '1' : '0';
+                mqlNext.style.pointerEvents = scrollLeft < maxScroll - 10 ? 'auto' : 'none';
+            });
+            // Initial check
+            window.addEventListener('load', () => mqlWrapper.dispatchEvent(new Event('scroll')));
+        }
+    </script>
 
     <!-- Floating decorative orbs (larger, more visible) -->
     <div class="ambient-orb"

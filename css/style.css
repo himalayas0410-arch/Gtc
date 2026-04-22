@@ -2962,17 +2962,76 @@ img { max-width: 100%; height: auto; }
     margin-top: 20px; /* Clear separation from hero */
     position: relative;
     z-index: 10;
-    background: transparent;
 }
+
+.mql-scroll-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+/* Linear Gradient Fade Visual Hint */
+.mql-scroll-container::before,
+.mql-scroll-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.mql-scroll-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0.9), transparent);
+}
+
+.mql-scroll-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+}
+
+.mql-scroll-btn {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    color: var(--navy-orbit);
+    transition: all 0.3s ease;
+    opacity: 0; /* Default hidden */
+    pointer-events: none;
+}
+
+.mql-prev { left: -10px; }
+.mql-next { right: -10px; }
+
+.mql-scroll-btn:active { transform: scale(0.9); }
+.mql-scroll-btn .material-symbols-outlined { font-size: 24px; font-weight: bold; }
 
 .mql-wrapper {
     display: flex;
     overflow-x: auto;
-    padding: 10px 10px 25px 10px;
+    padding: 15px 15px 30px 15px;
     gap: 15px;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100%;
 }
+
+.mql-item { scroll-snap-align: start; }
 
 .mql-wrapper::-webkit-scrollbar { display: none; }
 
