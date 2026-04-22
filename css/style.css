@@ -3265,8 +3265,5 @@ button, .mql-item, .blur-btn2, .submit-btn, a.knowmore {
         width: 100%;
     }
 
-    .banner-video, .carousel-item img {
-        object-fit: cover;
-        height: 350px !important;
-    }
+
 }
