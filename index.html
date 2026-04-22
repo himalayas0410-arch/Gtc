@@ -260,7 +260,7 @@
     <!-- Mobile Quick Links (Visible on Tablet/Mobile) -->
     <div class="mobile-quick-links">
         <div class="container">
-            <div class="mql-scroll-container">
+            <div class="mql-container-fix">
                 <button class="mql-scroll-btn mql-prev" id="mqlPrev" onclick="scrollMQL(-1)">
                     <span class="material-symbols-outlined">chevron_left</span>
                 </button>
@@ -281,7 +281,7 @@
     <script>
         function scrollMQL(direction) {
             const wrapper = document.getElementById('mqlWrapper');
-            const scrollAmount = 200;
+            const scrollAmount = wrapper.clientWidth * 0.8;
             wrapper.scrollBy({
                 left: direction * scrollAmount,
                 behavior: 'smooth'
@@ -297,13 +297,14 @@
                 const scrollLeft = mqlWrapper.scrollLeft;
                 const maxScroll = mqlWrapper.scrollWidth - mqlWrapper.clientWidth;
                 
-                mqlPrev.style.opacity = scrollLeft > 10 ? '1' : '0';
+                // Keep buttons visible but maybe dim them if at ends? 
+                // User wants clean navigation. I'll stick to simple visibility for now.
+                mqlPrev.style.opacity = scrollLeft > 10 ? '1' : '0.3';
                 mqlPrev.style.pointerEvents = scrollLeft > 10 ? 'auto' : 'none';
                 
-                mqlNext.style.opacity = scrollLeft < maxScroll - 10 ? '1' : '0';
+                mqlNext.style.opacity = scrollLeft < maxScroll - 10 ? '1' : '0.3';
                 mqlNext.style.pointerEvents = scrollLeft < maxScroll - 10 ? 'auto' : 'none';
             });
-            // Initial check
             window.addEventListener('load', () => mqlWrapper.dispatchEvent(new Event('scroll')));
         }
     </script>

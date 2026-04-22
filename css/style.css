@@ -2972,53 +2972,50 @@ img { max-width: 100%; height: auto; }
     margin: 0 !important;
 }
 
-.mql-scroll-container {
-    position: relative;
+.mql-container-fix {
     display: flex;
     align-items: center;
+    gap: 5px;
     width: 100%;
-}
-
-/* Linear Gradient Fade Visual Hint - Removed to prevent "white box" look */
-.mql-scroll-container::before,
-.mql-scroll-container::after {
-    display: none !important;
+    position: relative;
+    padding: 0 5px;
 }
 
 .mql-scroll-btn {
-    position: absolute;
-    width: 40px;
-    height: 40px;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     background: #fff;
-    border: 1px solid rgba(0,0,0,0.15);
-    box-shadow: none !important; /* Remove heavy shadow */
+    border: 1px solid rgba(0,0,0,0.1);
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10;
+    z-index: 5;
     color: var(--navy-orbit);
     transition: all 0.2s ease;
-    opacity: 0; /* Default hidden */
+    opacity: 0.3; /* Start dimmed */
     pointer-events: none;
 }
 
-.mql-prev { left: 10px !important; }
-.mql-next { right: 10px !important; }
+.mql-prev, .mql-next {
+    position: static !important; /* Force natural flow */
+    transform: none !important;
+}
 
 .mql-scroll-btn:active { transform: scale(0.9); }
 .mql-scroll-btn .material-symbols-outlined { font-size: 24px; font-weight: bold; }
 
 .mql-wrapper {
+    flex: 1; /* Take all available space between arrows */
     display: flex;
     overflow-x: auto;
-    padding: 15px 60px 30px 60px; /* Increased internal padding to clear the floating arrows */
-    gap: 15px;
+    padding: 15px 0 25px 0;
+    gap: 10px;
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    width: 100%;
 }
 
 .mql-item { scroll-snap-align: start; }
