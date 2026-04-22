@@ -2955,10 +2955,11 @@ html, body {
 img { max-width: 100%; height: auto; }
 
 /* Horizontal Quick Links (Hidden on Desktop) */
+/* Mobile Quick Links - Icon Themed like Sidebar */
 .mobile-quick-links {
     display: none;
-    padding: 15px 0 25px 0;
-    margin-top: -20px;
+    padding: 20px 0 35px 0;
+    margin-top: -60px; /* Overlap with larger banner */
     position: relative;
     z-index: 1002;
     background: transparent;
@@ -2967,8 +2968,8 @@ img { max-width: 100%; height: auto; }
 .mql-wrapper {
     display: flex;
     overflow-x: auto;
-    padding: 10px 5px 20px 5px;
-    gap: 12px;
+    padding: 10px 10px 25px 10px;
+    gap: 15px;
     scrollbar-width: none;
     -ms-overflow-style: none;
 }
@@ -2978,23 +2979,41 @@ img { max-width: 100%; height: auto; }
 .mql-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
+    gap: 12px;
+    padding: 12px 24px;
     background: #fff;
     color: var(--navy-orbit) !important;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 14px;
     text-decoration: none !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     border: 1px solid rgba(0,0,0,0.05);
     white-space: nowrap;
     transition: all 0.3s ease;
+    flex-shrink: 0;
 }
 
-.mql-item i { font-size: 16px; color: var(--blue-primary); }
-.mql-item:hover { transform: translateY(-3px); background: var(--blue-primary); color: #fff !important; }
-.mql-item:hover i { color: #fff; }
+.mql-item i { 
+    font-size: 16px; 
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fff !important; 
+    flex-shrink: 0;
+}
+
+/* Match Sidebar Icon Backgrounds (Orbit Sequence) */
+.mql-item:nth-child(1) i { background: var(--teal-glow); }
+.mql-item:nth-child(2) i { background: var(--navy-surface); }
+.mql-item:nth-child(3) i { background: var(--orange-flare); }
+.mql-item:nth-child(4) i { background: var(--rose-pulse); }
+.mql-item:nth-child(5) i { background: var(--teal-glow); }
+
+.mql-item:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.18); }
 
 /* Tablet & Mobile Overrides */
 @media (max-width: 1024px) {
@@ -3046,8 +3065,8 @@ img { max-width: 100%; height: auto; }
     }
     .header-top-container { padding-bottom: 20px !important; }
     
-    /* Hero Banner fix */
-    .banner-video, .carousel-item img { height: 320px !important; }
+    /* Hero Banner fix - Larger and more prominent on mobile */
+    .banner-video, .carousel-item img { height: 500px !important; }
     .carousel-caption {
         bottom: 10% !important;
         background: rgba(15, 23, 42, 0.6);
@@ -3057,6 +3076,13 @@ img { max-width: 100%; height: auto; }
 
     /* Pillar Cards full width */
     .modern-card { height: 380px !important; margin-bottom: 20px; }
+
+    /* Map Section Expanded */
+    .mapcontainer { padding: 25px !important; }
+    #world-map { height: 350px !important; padding-top: 20px !important; }
+    .maptext h3 { font-size: 1.8rem !important; }
+    .stat-grid { gap: 10px !important; }
+    .stat-card { padding: 15px !important; }
     
     /* Footer Centering */
     .footer-dark .col-md-6, .footer-dark .col-lg-3 { text-align: center; margin-bottom: 40px; }
