@@ -109,7 +109,7 @@
                 <!-- Utility Actions moved here -->
                                 <div class="header-actions-group">
                     <div class="header-actions">
-                        <div class="search-container top-tier">
+                        <div class="search-container top-tier" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
                             <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
                         </div>
@@ -165,7 +165,7 @@
                 <div class="logo-images-mb">
                     <img src="images/logo.png" class="logo" style="max-width: 60px;" />
                     <span class="logo-divider" style="background: rgba(255,255,255,0.3);"></span>
-                    <img src="images/logogloba.jpeg" class="logo-secondary" style="max-width: 60px;" />
+                    <img src="images/logogloba.png" class="logo-secondary" style="max-width: 60px;" />
                 </div>
                 <div class="mobile-branding-text">
                     <span class="mb-committee">Global Trade & Services Committee</span>
@@ -210,7 +210,7 @@
                         <source src="images/bg.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <div class="carousel-caption d-none d-md-block reveal-up" style="animation-delay: 0.8s">
+                    <div class="carousel-caption reveal-up">
                         <h1 class="display-2 fw-bold"><span class="gradient-text">Global Impact</span></h1>
                         <p class="lead">Empowering Professionals for a Borderless Future.</p>
                     </div>
@@ -257,6 +257,19 @@
         </div>
     </div>
 
+    <!-- Mobile Quick Links (Visible on Tablet/Mobile) -->
+    <div class="mobile-quick-links">
+        <div class="container">
+            <div class="mql-wrapper">
+                <a href="https://apo.icai.org/" class="mql-item"><span>APO Programs</span><i class="bi bi-globe"></i></a>
+                <a href="https://gcc.icai.org/" class="mql-item"><span>GCC Initiatives</span><i class="bi bi-diagram-3"></i></a>
+                <a href="https://www.icai.org/post/cditswto-global-udaan" class="mql-item"><span>Global Udaan</span><i class="bi bi-rocket-takeoff"></i></a>
+                <a href="https://www.icai.org/post/cditswto-itec-training-program" class="mql-item"><span>ITEC Programs</span><i class="bi bi-journal-text"></i></a>
+                <a href="https://www.icai.org/post/ditswto-occoss-overseas" class="mql-item"><span>Certificate Courses</span><i class="bi bi-patch-check"></i></a>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating decorative orbs (larger, more visible) -->
     <div class="ambient-orb"
         style="top:25%;left:2%;width:450px;height:450px;background:radial-gradient(circle,rgba(78,165,217,0.07),transparent 65%);animation:floatSlow 7s ease-in-out infinite;">
@@ -270,9 +283,9 @@
 
     <div class="section-warm" style="position:relative;">
         <div class="container py-5">
-            <div class="row">
+            <div class="row g-4">
 
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
 
                     <div class="modern-card card1">
                         <h4>Trade & Market Integration</h4>
@@ -324,7 +337,7 @@
                     </div>
 
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
 
                     <div class="modern-card card2">
                         <h4>Global Services & Professional Mobility</h4>
@@ -376,7 +389,7 @@
                     </div>
 
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
 
                     <div class="modern-card card3">
                         <h4>Policy, Multilateral & Government Affairs</h4>
@@ -428,7 +441,7 @@
                     </div>
 
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
 
                     <div class="modern-card card4">
                         <h4>GCC & Emerging Global Ecosystems</h4>
@@ -482,7 +495,7 @@
                     </div>
 
                 </div>
-                <div class="col">
+                <div class="col-lg-4 col-md-6">
 
                     <div class="modern-card card5">
                         <h4>Capacity Building Programs</h4>
@@ -875,7 +888,7 @@
         }
 
         function toggleMobileSearch() {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 1200) {
                 const container = document.getElementById('searchContainer');
                 container.classList.toggle('mobile-expanded');
             }
