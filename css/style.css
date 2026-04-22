@@ -3055,24 +3055,66 @@ img { max-width: 100%; height: auto; }
     
     .row > [class*="col-"] { margin-bottom: 25px; }
     
-    /* Header Scaling */
-    .header-logo { flex-direction: column; text-align: center; gap: 8px; }
-    .logo-group { justify-content: center; }
-    .search-container.top-tier { 
-        width: 100% !important; 
-        max-width: 100% !important; 
-        margin-top: 15px;
+    /* Clean & Minimal Mobile Header */
+    .header-top { padding: 10px 0 !important; }
+    .header-top-container { 
+        display: flex !important; 
+        justify-content: space-between !important; 
+        align-items: center !important; 
+        padding-bottom: 0 !important;
     }
-    .header-top-container { padding-bottom: 20px !important; }
     
-    /* Hero Banner fix - Larger and more prominent on mobile */
-    .banner-video, .carousel-item img { height: 500px !important; }
-    .carousel-caption {
-        bottom: 10% !important;
-        background: rgba(15, 23, 42, 0.6);
-        padding: 20px !important;
+    .header-logo { 
+        flex-direction: row !important; 
+        align-items: center !important; 
+        text-align: left !important;
+        gap: 10px !important;
     }
-    .carousel-caption h1 { font-size: 2rem !important; }
+    
+    .branding-text, .logo-divider { display: none !important; }
+    
+    .logo, .logo-secondary { height: 42px !important; width: auto !important; }
+    
+    .header-actions-group {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+    }
+
+    .search-container.top-tier { 
+        width: auto !important; 
+        margin-top: 0 !important; 
+    }
+    
+    .search-container .search-input { display: none !important; } /* Hide full bar */
+    .search-icon { font-size: 28px !important; color: var(--navy-orbit) !important; }
+    .menu-toggle .material-symbols-outlined { font-size: 32px !important; color: var(--navy-orbit) !important; }
+
+    /* Compact Hero / Banner Fixes */
+    .hero-container { 
+        width: 100% !important; 
+        margin-top: -5px !important; 
+        border-radius: 0 !important; 
+    }
+    .hero-container .carousel-inner { border-radius: 0 !important; aspect-ratio: auto !important; }
+    
+    .banner-video, .carousel-item img { 
+        height: 550px !important; 
+        object-fit: cover !important; 
+    }
+    
+    .carousel-caption {
+        bottom: 15% !important;
+        width: 90% !important;
+        left: 5% !important;
+        background: rgba(15, 23, 42, 0.7);
+        backdrop-filter: blur(8px);
+        padding: 25px !important;
+        border-radius: 15px;
+    }
+    
+    .carousel-caption h1 { font-size: 2.2rem !important; margin-bottom: 10px !important; }
+    .carousel-caption p { font-size: 1rem !important; opacity: 0.9; }
 
     /* Pillar Cards full width */
     .modern-card { height: 380px !important; margin-bottom: 20px; }
