@@ -2970,7 +2970,6 @@ img { max-width: 100%; height: auto; }
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 45px; /* Added side padding specifically for the buttons */
 }
 
 /* Linear Gradient Fade Visual Hint - Removed to prevent "white box" look */
@@ -2997,8 +2996,8 @@ img { max-width: 100%; height: auto; }
     pointer-events: none;
 }
 
-.mql-prev { left: 0px !important; }
-.mql-next { right: 0px !important; }
+.mql-prev { left: 5px !important; }
+.mql-next { right: 5px !important; }
 
 .mql-scroll-btn:active { transform: scale(0.9); }
 .mql-scroll-btn .material-symbols-outlined { font-size: 24px; font-weight: bold; }
@@ -3006,7 +3005,7 @@ img { max-width: 100%; height: auto; }
 .mql-wrapper {
     display: flex;
     overflow-x: auto;
-    padding: 15px 0 30px 0; /* Reset internal padding as container handles it */
+    padding: 15px 45px 30px 45px; /* Internal padding protects items but keeps visual flow full-width */
     gap: 15px;
     scrollbar-width: none;
     -ms-overflow-style: none;
