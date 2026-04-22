@@ -16,59 +16,106 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-3">
-                    <div class="header-logo">
+    <div class="header home-header">
+        <div class="header-top">
+            <div class="container header-top-container">
+                <div class="header-logo reveal-up">
+                    <div class="logo-group">
                         <img src="images/logo.png" class="logo" />
                         <span class="logo-divider"></span>
                         <img src="images/logogloba.png" class="logo-secondary" />
                     </div>
+                    <div class="branding-text">
+                        <h3 class="committee-name">Global Trade & Services Committee</h3>
+                    </div>
                 </div>
-                <div class="col-9">
-                    <div class="row">
-                        <div class="col-sm-9">
-                            <div class="menu">
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li>
-                                        <a href="about.html">
-                                            About the Directorate
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://gcc.icai.org/">
-                                            Featured Global Initiatives
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="opportunities.html">
-                                            Member Opportunities
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="events.html">
-                                            Events & Programs
-                                        </a>
-                                    </li>
 
-                                    <li><a href="contact.html">Contact & Engagement</a></li>
+                <!-- Utility Actions moved here -->
+                                <div class="header-actions-group">
+                    <div class="header-actions">
+                        <div class="search-container top-tier">
+                            <input type="text" placeholder="Search..." class="search-input">
+                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                        </div>
+                    </div>
 
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-3 text-end">
-                            <a class="gradient-btn" href="#">
-                                <span class="material-symbols-outlined">
-                                    account_circle
-                                </span>Member Login
-                            </a>
-                        </div>
+                    <!-- Mobile Toggle Buttons -->
+                    <div class="mobile-controls">
+                        <button class="menu-toggle" onclick="toggleMobileMenu()">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Bottom Tier: Navigation Only -->
+        <div class="header-nav">
+            <div class="container">
+                <div class="header-nav-inner" style="position: relative; width: 100%;">
+                    <!-- Desktop Menu -->
+                    <div class="desktop-menu">
+                        <div class="menu">
+                            <ul>
+                                <li style="animation-delay: 0.1s" class="reveal-up"><a href="index.html">Home</a></li>
+                                <li style="animation-delay: 0.2s" class="reveal-up has-dropdown">
+                                    <a href="about.html">About <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown">
+                                        <a href="about.html">About the Directorate</a>
+                                        <a href="members.html">Member of the Group</a>
+                                    </div>
+                                </li>
+                                <li style="animation-delay: 0.3s" class="reveal-up"><a
+                                        href="https://gcc.icai.org/">Global Initiatives</a></li>
+                                <li style="animation-delay: 0.4s" class="reveal-up"><a
+                                        href="opportunities.html">Opportunities</a></li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events &
+                                        Programs</a></li>
+                                <li style="animation-delay: 0.6s" class="reveal-up"><a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="overlay-header">
+            <div class="mobile-logo-group">
+                <div class="logo-images-mb">
+                    <img src="images/logo.png" class="logo" style="max-width: 60px;" />
+                    <span class="logo-divider" style="background: rgba(255,255,255,0.3);"></span>
+                    <img src="images/logogloba.jpeg" class="logo-secondary" style="max-width: 60px;" />
+                </div>
+                <div class="mobile-branding-text">
+                    <span class="mb-committee">Global Trade & Services Committee</span>
+                    <span class="mb-parent">The Institute of Chartered Accountants of India</span>
+                </div>
+            </div>
+            <button class="close-overlay" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
+                <li class="mobile-has-dropdown">
+                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">About <span class="material-symbols-outlined">expand_more</span></a>
+                    <ul class="mobile-sub-menu">
+                        <li><a href="about.html" onclick="toggleMobileMenu()">About the Directorate</a></li>
+                        <li><a href="members.html" onclick="toggleMobileMenu()">Member of the Group</a></li>
+                    </ul>
+                </li>
+                <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">Featured Global Initiatives</a></li>
+                <li><a href="opportunities.html" onclick="toggleMobileMenu()">Member Opportunities</a></li>
+                <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
+                <li><a href="contact.html" onclick="toggleMobileMenu()">Contact & Engagement</a></li>
+            </ul>
+        </nav>
     </div>
 
     <div class="container-fluid py-2">
@@ -222,17 +269,16 @@
 
     <footer class="footer-dark py-5" style="padding-bottom: 5px !important;">
         <div class="container">
-            <div class="row gy-4">
+            <div class="row gy-5" style="padding-top: 0px !important;">
+                <!-- About -->
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">About ICAI</h5>
-                    <p class="footer-text">
-                        The Institute of Chartered Accountants of India (ICAI) is a statutory body
-                        established by an Act of Parliament, dedicated to developing, regulating,
-                        and supporting Chartered Accountants and students.
-                    </p>
-                    <a href="about.html" class="footer-link">Learn More →</a>
+                    <h5 class="footer-title">About Global ICAI</h5>
+                    <p class="footer-text mb-4">The Global Trade & Services Committee of ICAI is committed to strengthening India’s presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy. The Committee works closely with government bodies, industry stakeholders, and international institutions to facilitate trade integration, policy engagement, and global professional mobility.</p>
+                    
                 </div>
-                <div class="col-lg-2 col-md-6">
+
+                <!-- Programs -->
+                <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Programs</h5>
                     <ul class="footer-list">
                         <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
@@ -241,7 +287,9 @@
                         <li><a href="events.html">Events & Programs</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-6">
+
+                <!-- Resources -->
+                <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Resources</h5>
                     <ul class="footer-list">
                         <li><a href="#">Reports & Publications</a></li>
@@ -250,23 +298,30 @@
                         <li><a href="#">Downloads</a></li>
                     </ul>
                 </div>
+
+                <!-- Contact -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Contact Us</h5>
-                    <div class="footer-contact">
-                        📍 ICAI Bhawan, Indraprastha Marg,<br>
-                        New Delhi – 110002, India
+                    <div class="footer-contact-item">
+                        <span>Global Trade & Services Committee</span>
                     </div>
-                    <div class="footer-contact">
-                        ☎ +91 11 3011 1000
+                    <div class="footer-contact-item">
+                        <span>The Institute of Chartered Accountants of India,<br>(Set up by an Act of
+                            Parliament)<br>'ICAI BHAWAN', Indraprastha Marg,<br>New Delhi - 110002</span>
                     </div>
-                    <div class="footer-contact">
-                        ✉ globaltrade@icai.in
+                    <div class="footer-contact-item">
+                        <i class="bi bi-telephone"></i>
+                        <span>011-30110542</span>
                     </div>
-                    <div class="social-icons mt-3">
-                        <a href="#">in</a>
-                        <a href="#">X</a>
-                        <a href="#">▶</a>
-                        <a href="#">◎</a>
+                    <div class="footer-contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <span>global@icai.in</span>
+                    </div>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.linkedin.com/company/gcc-icai/"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://x.com/globalicai/"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
                     </div>
                 </div>
             </div>
@@ -283,6 +338,126 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Scroll Progress Logic
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement,
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            document.getElementById('scrollProgress').style.width = percent + '%';
+        });
+
+        // Reveal Animations on Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-up');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.modern-card, .section-title, .events-section').forEach(el => {
+            observer.observe(el);
+        });
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function toggleMobileSearch() {
+            if (window.innerWidth < 768) {
+                const container = document.getElementById('searchContainer');
+                container.classList.toggle('mobile-expanded');
+            }
+        }
+
+        function switchCardView(cardId, view, event) {
+            if (event) {
+                event.stopPropagation();
+                event.preventDefault();
+            }
+            const cardHover = document.getElementById(`hover-card-${cardId}`);
+            const mainView = cardHover.querySelector('.hover-main-view');
+            const subView = cardHover.querySelector('.hover-sub-view');
+
+            if (view === 'sub') {
+                mainView.classList.remove('active');
+                subView.classList.add('active');
+            } else {
+                subView.classList.remove('active');
+                mainView.classList.add('active');
+            }
+        }
+
+        // MagicUI NumberTicker — Vanilla JS counter animation
+        const statObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'));
+                    const duration = 1800; // ms
+                    const startTime = performance.now();
+
+                    function animate(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        // Ease-out cubic
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        el.textContent = Math.floor(eased * target);
+                        if (progress < 1) {
+                            requestAnimationFrame(animate);
+                        } else {
+                            el.textContent = target;
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                    statObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat-number, .stat-banner-number').forEach(el => statObserver.observe(el));
+
+        // Enhanced scroll-reveal for cards & events
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    // Stagger each element
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, i * 100);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.event-card, .quick-card, .stat-card').forEach(el => {
+            el.classList.add('scroll-reveal');
+            revealObserver.observe(el);
+        });
+    </script>
+
+    <!-- Gooey Filter Definiton -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <defs>
+            <filter id="blurMe">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                    result="goo" />
+                <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+        </defs>
+    </svg>
+
 </body>
+
 </html>
