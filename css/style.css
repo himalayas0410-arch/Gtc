@@ -3205,9 +3205,15 @@ img { max-width: 100%; height: auto; }
     .hero-container .carousel-inner { border-radius: 0 !important; aspect-ratio: auto !important; }
     
     .banner-video, .carousel-item img { 
-    height: 600px !important; 
-    object-fit: cover !important; 
-}
+        height: auto !important; 
+        max-height: 70vh !important;
+        object-fit: contain !important; 
+        width: 100% !important;
+    }
+    
+    .carousel-item { height: auto !important; }
+    .hero-container .carousel-inner { height: auto !important; }
+    .hero-container { height: auto !important; min-height: unset !important; }
     
     .carousel-caption {
         bottom: 15% !important;
