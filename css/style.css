@@ -2972,27 +2972,10 @@ img { max-width: 100%; height: auto; }
     width: 100%;
 }
 
-/* Linear Gradient Fade Visual Hint */
+/* Linear Gradient Fade Visual Hint - Removed to prevent "white box" look */
 .mql-scroll-container::before,
 .mql-scroll-container::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 60px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-.mql-scroll-container::before {
-    left: 0;
-    background: linear-gradient(to right, rgba(255,255,255,0.9), transparent);
-}
-
-.mql-scroll-container::after {
-    right: 0;
-    background: linear-gradient(to left, rgba(255,255,255,0.9), transparent);
+    display: none !important;
 }
 
 .mql-scroll-btn {
