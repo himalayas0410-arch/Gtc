@@ -2996,8 +2996,8 @@ img { max-width: 100%; height: auto; }
     pointer-events: none;
 }
 
-.mql-prev { left: -15px !important; }
-.mql-next { right: -15px !important; }
+.mql-prev { left: 0px !important; }
+.mql-next { right: 0px !important; }
 
 .mql-scroll-btn:active { transform: scale(0.9); }
 .mql-scroll-btn .material-symbols-outlined { font-size: 24px; font-weight: bold; }
@@ -3005,7 +3005,7 @@ img { max-width: 100%; height: auto; }
 .mql-wrapper {
     display: flex;
     overflow-x: auto;
-    padding: 15px 15px 30px 15px;
+    padding: 15px 50px 30px 50px; /* Increased padding to protect items from arrows */
     gap: 15px;
     scrollbar-width: none;
     -ms-overflow-style: none;
