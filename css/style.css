@@ -3142,9 +3142,11 @@ img { max-width: 100%; height: auto; }
     .branding-text, .logo-divider { display: none !important; }
     
     .logo, .logo-secondary { 
-        height: 38px !important; 
+        height: 52px !important; 
         width: auto !important; 
         display: block !important;
+        max-width: 130px !important;
+        object-fit: contain !important;
     }
     
     .header-actions-group {
