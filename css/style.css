@@ -2996,25 +2996,24 @@ img { max-width: 100%; height: auto; }
 
 .mql-scroll-btn {
     position: absolute;
-    width: 44px;
-    height: 44px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: none !important; /* Remove heavy shadow */
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10;
     color: var(--navy-orbit);
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     opacity: 0; /* Default hidden */
     pointer-events: none;
 }
 
-.mql-prev { left: -10px; }
-.mql-next { right: -10px; }
+.mql-prev { left: -15px !important; }
+.mql-next { right: -15px !important; }
 
 .mql-scroll-btn:active { transform: scale(0.9); }
 .mql-scroll-btn .material-symbols-outlined { font-size: 24px; font-weight: bold; }
@@ -3206,14 +3205,16 @@ img { max-width: 100%; height: auto; }
     
     .banner-video, .carousel-item img { 
         height: auto !important; 
-        max-height: 70vh !important;
         object-fit: contain !important; 
         width: 100% !important;
+        background: transparent !important;
     }
     
-    .carousel-item { height: auto !important; }
-    .hero-container .carousel-inner { height: auto !important; }
-    .hero-container { height: auto !important; min-height: unset !important; }
+    .carousel-item, .carousel-inner, .hero-container, .carousel { 
+        height: auto !important; 
+        background: transparent !important;
+        min-height: unset !important;
+    }
     
     .carousel-caption {
         bottom: 15% !important;
