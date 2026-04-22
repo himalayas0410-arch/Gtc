@@ -3056,7 +3056,7 @@ img { max-width: 100%; height: auto; }
     .carousel-caption h1 { font-size: 2rem !important; }
 
     /* Pillar Cards full width */
-    .pillar-card { height: 380px !important; margin-bottom: 20px; }
+    .modern-card { height: 380px !important; margin-bottom: 20px; }
     
     /* Footer Centering */
     .footer-dark .col-md-6, .footer-dark .col-lg-3 { text-align: center; margin-bottom: 40px; }
