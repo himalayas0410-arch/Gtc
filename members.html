@@ -153,7 +153,43 @@
                                         <a href="members.html">Member of the Group</a>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.3s" class="reveal-up"><a href="https://gcc.icai.org/">Global Initiatives</a></li>
+                                                                <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
+                                    <a href="#">Global Initiatives <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown nav-panel">
+                                        <div class="nav-panel-grid">
+                                            <a href="https://apo.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-globe"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">APO Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://gcc.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-diagram-3"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">GCC Initiatives</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/cditswto-global-udaan" class="nav-panel-item">
+                                                <i class="bi bi-rocket-takeoff"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Global Udaan</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/cditswto-itec-training-program" class="nav-panel-item">
+                                                <i class="bi bi-journal-text"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">ITEC Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/ditswto-occoss-overseas" class="nav-panel-item">
+                                                <i class="bi bi-patch-check"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Certificate Courses</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
                                 <li style="animation-delay: 0.4s" class="reveal-up"><a href="opportunities.html">Opportunities</a></li>
                                 <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events & Programs</a></li>
                                 <li style="animation-delay: 0.6s" class="reveal-up"><a href="contact.html">Contact</a></li>
@@ -197,7 +233,16 @@
                         <li><a href="members.html" onclick="toggleMobileMenu()">Member of the Group</a></li>
                     </ul>
                 </li>
-                <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">Featured Global Initiatives</a></li>
+                                <li class="mobile-has-dropdown">
+                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global Initiatives <span class="material-symbols-outlined">expand_more</span></a>
+                    <ul class="mobile-sub-menu">
+                        <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
+                        <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-global-udaan" onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-itec-training-program" onclick="toggleMobileMenu()">ITEC Programs</a></li>
+                        <li><a href="https://www.icai.org/post/ditswto-occoss-overseas" onclick="toggleMobileMenu()">Certificate Courses</a></li>
+                    </ul>
+                </li>
                 <li><a href="opportunities.html" onclick="toggleMobileMenu()">Member Opportunities</a></li>
                 <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
                 <li><a href="contact.html" onclick="toggleMobileMenu()">Contact & Engagement</a></li>
@@ -216,7 +261,34 @@
             </div>
         </div>
 
-        <!-- Leadership Section -->
+        <!-- Principal Leadership (President & Vice President) -->
+        <div class="row justify-content-center g-4 mb-5">
+            <!-- President -->
+            <div class="col-md-5 d-flex">
+                <div class="leadership-card text-center p-5 scroll-reveal flex-fill">
+                    <div class="avatar-placeholder mx-auto mb-4" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.12); background: #f8fafc; position: relative;">
+                        <img src="images/pp.jpg" alt="CA. Prasanna Kumar D" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+                    </div>
+                    <span class="d-block mb-2" style="color: #f26622; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">President</span>
+                    <h4 style="color: #1e293b; font-weight: 800; font-size: 1.65rem; margin-bottom: 8px;">CA. Prasanna Kumar D</h4>
+                    <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0; line-height: 1.5;">President, ICAI<br><span style="font-weight: 600; color: #771385;">Council Term: 2026–27</span></p>
+                </div>
+            </div>
+            
+            <!-- Vice President -->
+            <div class="col-md-5 d-flex">
+                <div class="leadership-card text-center p-5 scroll-reveal flex-fill">
+                    <div class="avatar-placeholder mx-auto mb-4" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.12); background: #f8fafc; position: relative;">
+                        <img src="images/vp.jpg" alt="CA. Mangesh P. Kinare" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+                    </div>
+                    <span class="d-block mb-2" style="color: #f26622; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Vice President</span>
+                    <h4 style="color: #1e293b; font-weight: 800; font-size: 1.65rem; margin-bottom: 8px;">CA. Mangesh P. Kinare</h4>
+                    <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0; line-height: 1.5;">Vice-President, ICAI<br><span style="font-weight: 600; color: #771385;">Council Term: 2026–27</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leadership Section (Chairman & Vice-Chairman) -->
         <div class="row justify-content-center g-4 mb-5">
             <!-- Chairman -->
             <div class="col-md-5 d-flex">
@@ -304,7 +376,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Resources</h5>
                     <ul class="footer-list">
-                        <li><a href="#">Reports & Publications</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-e-newsletter">Reports & Publications</a></li>
                         <li><a href="#">Research & Insights</a></li>
                         <li><a href="#">Guidelines & Policies</a></li>
                         <li><a href="#">Downloads</a></li>

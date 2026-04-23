@@ -69,8 +69,43 @@
                                         <a href="members.html">Member of the Group</a>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.3s" class="reveal-up"><a
-                                        href="https://gcc.icai.org/">Global Initiatives</a></li>
+                                                                <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
+                                    <a href="#">Global Initiatives <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown nav-panel">
+                                        <div class="nav-panel-grid">
+                                            <a href="https://apo.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-globe"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">APO Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://gcc.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-diagram-3"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">GCC Initiatives</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/cditswto-global-udaan" class="nav-panel-item">
+                                                <i class="bi bi-rocket-takeoff"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Global Udaan</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/cditswto-itec-training-program" class="nav-panel-item">
+                                                <i class="bi bi-journal-text"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">ITEC Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/ditswto-occoss-overseas" class="nav-panel-item">
+                                                <i class="bi bi-patch-check"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Certificate Courses</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
                                 <li style="animation-delay: 0.4s" class="reveal-up"><a
                                         href="opportunities.html">Opportunities</a></li>
                                 <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events &
@@ -114,7 +149,16 @@
                         <li><a href="members.html" onclick="toggleMobileMenu()">Member of the Group</a></li>
                     </ul>
                 </li>
-                <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">Featured Global Initiatives</a></li>
+                                <li class="mobile-has-dropdown">
+                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global Initiatives <span class="material-symbols-outlined">expand_more</span></a>
+                    <ul class="mobile-sub-menu">
+                        <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
+                        <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-global-udaan" onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-itec-training-program" onclick="toggleMobileMenu()">ITEC Programs</a></li>
+                        <li><a href="https://www.icai.org/post/ditswto-occoss-overseas" onclick="toggleMobileMenu()">Certificate Courses</a></li>
+                    </ul>
+                </li>
                 <li><a href="opportunities.html" onclick="toggleMobileMenu()">Member Opportunities</a></li>
                 <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
                 <li><a href="contact.html" onclick="toggleMobileMenu()">Contact & Engagement</a></li>
@@ -362,7 +406,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Resources</h5>
                     <ul class="footer-list">
-                        <li><a href="#">Reports & Publications</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-e-newsletter">Reports & Publications</a></li>
                         <li><a href="#">Research & Insights</a></li>
                         <li><a href="#">Guidelines & Policies</a></li>
                         <li><a href="#">Downloads</a></li>
