@@ -3183,7 +3183,7 @@ img { max-width: 100%; height: auto; }
     .section-title { font-size: 1.8rem !important; }
     
     /* Map Section Centering */
-    .mapcontainer { padding: 30px 15px !important; }
+    .mapcontainer { padding: 30px 15px !important; overflow: hidden !important; }
     .maptext { text-align: center; margin-top: 0 !important; margin-bottom: 40px; }
     .stat-grid { justify-content: center; width: 100%; gap: 15px; }
     .stat-card { flex: 1; min-width: 100px; padding: 15px !important; }
@@ -3330,8 +3330,8 @@ img { max-width: 100%; height: auto; }
     .modern-card { height: 380px !important; margin-bottom: 20px; }
 
     /* Map Section Expanded */
-    .mapcontainer { padding: 25px !important; }
-    #world-map { height: 350px !important; padding-top: 20px !important; }
+    .mapcontainer { padding: 25px 15px !important; overflow: hidden !important; }
+    #world-map { height: 320px !important; padding-top: 10px !important; }
     .maptext h3 { font-size: 1.8rem !important; }
     .stat-grid { gap: 10px !important; }
     .stat-card { padding: 15px !important; }
