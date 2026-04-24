@@ -78,71 +78,36 @@
             font-size: 1rem;
         }
 
-        .contact-form-block {
+
+
+        .social-connect {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
             border-radius: 24px;
-            padding: 50px;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08);
-        }
-
-        .form-control {
-            border-radius: 12px;
-            padding: 15px 20px;
-            border: 1px solid rgba(0,0,0,0.1);
-            background: #f8fafc;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .form-control:focus {
-            background: #fff;
-            border-color: var(--blue-primary);
-            box-shadow: 0 0 0 4px rgba(78, 165, 217, 0.1);
-        }
-
-        .submit-btn {
-            background: var(--grad-main);
-            color: #fff;
-            border: none;
-            border-radius: 12px;
-            padding: 16px 35px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(78, 165, 217, 0.4);
-            color: #fff;
-        }
-
-        .social-connect {
-            background: #1e293b;
-            border-radius: 24px;
             padding: 40px;
-            color: #fff !important;
+            color: #1e293b !important;
             text-align: center;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
         }
 
         .social-connect h3 {
-            color: #fff !important;
+            color: #1e293b !important;
+        }
+
+        .social-connect p {
+            color: #64748b !important;
         }
 
         .social-link-large {
             display: inline-flex;
             width: 55px;
             height: 55px;
-            background: rgba(255,255,255,0.1);
+            background: #f1f5f9;
             border-radius: 15px;
             align-items: center;
             justify-content: center;
-            color: #fff;
+            color: #1e293b;
             margin: 0 10px;
             font-size: 22px;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -241,7 +206,7 @@
                                         </div>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.4s" class="reveal-up"><a href="opportunities.html">Opportunities</a></li>
+                                <li style="animation-delay: 0.4s" class="reveal-up"><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Opportunities</a></li>
                                 <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events & Programs</a></li>
                                 <li style="animation-delay: 0.6s" class="reveal-up"><a href="contact.html">Contact</a></li>
                             </ul>
@@ -283,7 +248,7 @@
                         <li><a href="https://www.icai.org/post/ditswto-occoss-overseas" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
                 </li>
-                <li><a href="opportunities.html" onclick="toggleMobileMenu()">Member Opportunities</a></li>
+                <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank" onclick="toggleMobileMenu()">Member Opportunities</a></li>
                 <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
                 <li><a href="contact.html" onclick="toggleMobileMenu()">Contact & Engagement</a></li>
             </ul>
@@ -337,38 +302,12 @@
             </div>
         </div>
 
-        <div class="row g-5 align-items-center mb-5">
-            <!-- Form Section -->
-            <div class="col-lg-7">
-                <div class="contact-form-block scroll-reveal">
-                    <h3 class="mb-4" style="font-weight: 800; color: #1e293b;">Get in Touch</h3>
-                    <form action="#">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label ms-1 small fw-bold text-muted">FULL NAME</label>
-                                <input type="text" class="form-control" placeholder="John Doe">
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label ms-1 small fw-bold text-muted">EMAIL ADDRESS</label>
-                                <input type="email" class="form-control" placeholder="john@example.com">
-                            </div>
-                            <div class="col-12 mt-4">
-                                <label class="form-label ms-1 small fw-bold text-muted">YOUR MESSAGE</label>
-                                <textarea class="form-control" rows="5" placeholder="How can we help you?"></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="submit-btn text-white">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
+        <div class="row g-5 justify-content-center mb-5">
             <!-- Social & Location -->
-            <div class="col-lg-5">
+            <div class="col-lg-8">
                 <div class="social-connect scroll-reveal" style="animation-delay: 0.2s;">
                     <h3 class="mb-3" style="font-weight: 800;">Connected with Us</h3>
-                    <p class="mb-4 text-white-50">Follow us on social media for the latest updates on global trade, events, and opportunities.</p>
+                    <p class="mb-4 text-muted">Follow us on social media for the latest updates on global trade, events, and opportunities.</p>
                     
                     <div class="mb-5">
                         <a href="https://www.linkedin.com/company/gcc-icai/" class="social-link-large"><i class="bi bi-linkedin"></i></a>
@@ -377,23 +316,29 @@
                         <a href="#" class="social-link-large"><i class="bi bi-instagram"></i></a>
                     </div>
 
-                    <div class="text-start mt-4 pt-4 border-top border-secondary">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="bg-primary rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                                <i class="bi bi-clock"></i>
+                    <div class="text-start mt-4 pt-4 border-top" style="border-color: rgba(0,0,0,0.08) !important;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="bg-primary rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #fff;">
+                                        <i class="bi bi-clock"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">TIMING</small>
+                                        <span class="fw-bold">10:00 AM - 06:00 PM</span>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <small class="text-white-50 d-block">TIMING</small>
-                                <span class="fw-bold">10:00 AM - 06:00 PM</span>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="bg-primary rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
-                                <i class="bi bi-geo-alt"></i>
-                            </div>
-                            <div>
-                                <small class="text-white-50 d-block">PARENT INSTITUTE</small>
-                                <span class="fw-bold">ICAI New Delhi HQ</span>
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="bg-primary rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #fff;">
+                                        <i class="bi bi-geo-alt"></i>
+                                    </div>
+                                    <div>
+                                        <small class="text-muted d-block">PARENT INSTITUTE</small>
+                                        <span class="fw-bold">ICAI New Delhi HQ</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
