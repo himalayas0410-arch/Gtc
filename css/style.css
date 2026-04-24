@@ -3290,12 +3290,16 @@ img { max-width: 100%; height: auto; }
         max-width: 100% !important; 
         margin: 0 !important; 
         border-radius: 0 !important; 
+        overflow: hidden !important;
     }
-    .hero-container .carousel-inner { border-radius: 0 !important; aspect-ratio: auto !important; }
+    .hero-container .carousel-item {
+        height: 250px !important;
+    }
     
     .banner-video, .carousel-item img { 
-        height: auto !important; 
-        object-fit: contain !important; 
+        height: 100% !important; 
+        object-fit: cover !important; 
+        object-position: center 35% !important;
         width: 100% !important;
         background: transparent !important;
     }
