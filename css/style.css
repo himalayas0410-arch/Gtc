@@ -3292,15 +3292,17 @@ img { max-width: 100%; height: auto; }
         border-radius: 0 !important; 
         overflow: hidden !important;
     }
-    .hero-container .carousel-item {
-        height: 250px !important;
+    .hero-container .carousel-inner {
+        border-radius: 0 !important;
+        aspect-ratio: 1600 / 666 !important;
+        height: auto !important;
     }
-    
+
     .banner-video, .carousel-item img { 
         height: 100% !important; 
-        object-fit: cover !important; 
-        object-position: center 35% !important;
         width: 100% !important;
+        object-fit: cover !important; 
+        object-position: center !important;
         background: transparent !important;
     }
     
