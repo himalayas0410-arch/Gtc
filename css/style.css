@@ -3305,6 +3305,10 @@ img { max-width: 100%; height: auto; }
         object-position: center !important;
         background: transparent !important;
     }
+
+    .carousel-indicators {
+        bottom: 15px !important;
+    }
     
     .carousel-item, .carousel-inner, .hero-container, .carousel { 
         height: auto !important; 
