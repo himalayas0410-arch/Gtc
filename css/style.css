@@ -3,11 +3,11 @@
 :root {
     /* Main SaaS Colors */
     --blue-primary: #4EA5D9;
-    --orange-secondary: #E4572E;
-    --green-success: #4CAF50;
-    --yellow-highlight: #F4C542;
-    --purple-accent: #8E44AD;
-    --red-error: #D64541;
+    --orange-secondary: #F97316;
+    --green-success: #22C55E;
+    --yellow-highlight: #FACC15;
+    --purple-accent: #8B5CF6;
+    --red-error: #EF4444;
 
     /* Neutrals */
     --bg-soft: #F8FAFC;
@@ -44,14 +44,14 @@
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.10);
     --shadow-glow-blue: 0 0 60px rgba(78, 165, 217, 0.15);
-    --shadow-glow-orange: 0 0 60px rgba(228, 87, 46, 0.12);
+    --shadow-glow-orange: 0 0 60px rgba(249, 115, 22, 0.12);
 
     /* Pastel Tints for Section Backgrounds */
     --tint-blue: #F0F7FF;
-    --tint-orange: #FFF8F5;
-    --tint-purple: #F8F0FF;
-    --tint-green: #F0FFF4;
-    --tint-warm: #FFFBF0;
+    --tint-orange: #FFF7ED;
+    --tint-purple: #F5F3FF;
+    --tint-green: #F0FDF4;
+    --tint-warm: #FEFCE8;
 }
 
 /* Global Animations System */
