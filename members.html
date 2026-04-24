@@ -16,10 +16,10 @@
     <style>
         /* Modern UI Styles for Members Page */
         .leadership-card {
-            background: linear-gradient(135deg, rgba(23,43,77,0.05) 0%, rgba(119,19,133,0.05) 100%);
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
             border-radius: 24px;
-            border: 1px solid rgba(119,19,133,0.2);
+            border: 1px solid rgba(0,0,0,0.05);
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
             position: relative;
@@ -220,20 +220,15 @@
     <!-- Full-Screen Mobile Overlay -->
     <div class="mobile-overlay" id="mobileOverlay">
         <div class="overlay-header">
-            <div class="mobile-logo-group">
-                <div class="logo-images-mb">
-                    <img src="images/logo.png" class="logo" style="max-width: 60px;" />
-                    <span class="logo-divider" style="background: rgba(255,255,255,0.3);"></span>
-                    <img src="images/logogloba.png" class="logo-secondary" style="max-width: 60px;" />
-                </div>
-                <div class="mobile-branding-text">
-                    <span class="mb-committee">Global Trade & Services Committee</span>
-                    <span class="mb-parent">The Institute of Chartered Accountants of India</span>
-                </div>
-            </div>
             <button class="close-overlay" onclick="toggleMobileMenu()">
                 <span class="material-symbols-outlined">close</span>
             </button>
+        </div>
+        <div class="mobile-menu-search">
+            <div class="mobile-search-box">
+                <span class="material-symbols-outlined mobile-search-icon">search</span>
+                <input type="text" placeholder="Search..." class="mobile-search-input">
+            </div>
         </div>
         <nav class="mobile-nav">
             <ul>
@@ -480,3 +475,4 @@
     </script>
 </body>
 </html>
+
