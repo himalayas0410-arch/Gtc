@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GTC - Members of the Council</title>
+    <meta name="description" content="Meet the leadership and members of the Global Trade & Services Committee, ICAI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -11,110 +12,511 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/jsvectormap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        /* Modern UI Styles for Members Page */
-        .leadership-card {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        /* ============================================
+           MEMBERS PAGE — PREMIUM REDESIGN
+           ============================================ */
+
+        /* --- Hero Section --- */
+        .members-hero {
             position: relative;
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #172554 100%);
             overflow: hidden;
+            text-align: center;
         }
-        
-        .leadership-card:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 35px 70px rgba(0,0,0,0.12) !important;
-            border-color: rgba(242, 102, 34, 0.4) !important;
+
+        .members-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(78, 165, 217, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatOrb 12s ease-in-out infinite;
         }
-        
-        .member-card {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 16px;
-            padding: 24px 20px;
-            display: flex;
+
+        .members-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: floatOrb 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes floatOrb {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.05); }
+            66% { transform: translate(-20px, 15px) scale(0.95); }
+        }
+
+        .hero-badge {
+            display: inline-flex;
             align-items: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            height: 100%;
-        }
-        
-        .member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            border-color: rgba(23, 43, 77, 0.15);
-            background: #ffffff;
-        }
-        
-        .member-card.secondary {
-            background: rgba(248, 250, 252, 0.8);
-            border-color: rgba(119, 19, 133, 0.1);
-        }
-        
-        .member-card.secondary:hover {
-            border-color: rgba(119, 19, 133, 0.3);
-            background: #ffffff;
+            gap: 8px;
+            padding: 8px 20px;
+            background: rgba(78, 165, 217, 0.15);
+            border: 1px solid rgba(78, 165, 217, 0.3);
+            border-radius: 50px;
+            color: #93c5fd;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
         }
 
-        .card-icon {
-            font-size: 2.2rem;
-            color: #172b4d;
-            margin-right: 18px;
-            opacity: 0.7;
-            transition: color 0.3s ease;
-            vertical-align: middle;
-        }
-        
-        .member-card:hover .card-icon {
-            color: #f26622;
-        }
-        
-        .member-card.secondary:hover .card-icon {
-            color: var(--blue-primary);
+        .hero-badge i {
+            font-size: 1rem;
         }
 
-        .member-name {
+        .members-hero h1 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        .members-hero h1 span {
+            background: linear-gradient(135deg, var(--blue-primary), var(--purple-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .members-hero p {
             font-size: 1.15rem;
-            font-weight: 700;
-            color: #334155;
-            line-height: 1.4;
-        }
-        
-        .avatar-placeholder {
+            color: rgba(255,255,255,0.6);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
             position: relative;
             z-index: 1;
         }
-        
-        .avatar-placeholder::after {
-            content: '';
-            position: absolute;
-            top: -10px; left: -10px; right: -10px; bottom: -10px;
-            border-radius: 50%;
-            background: inherit;
-            filter: blur(20px);
-            opacity: 0.3;
-            z-index: -1;
-            transition: opacity 0.3s ease;
-        }
-        
-        .leadership-card:hover .avatar-placeholder::after {
-            opacity: 0.6;
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 48px;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Hero styles override */
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 6px;
+            font-family: 'Manrope', sans-serif;
+        }
+
+        .hero-stat-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        .hero-divider {
+            width: 1px;
+            background: rgba(255,255,255,0.15);
+            align-self: stretch;
+        }
+
+        /* --- Section Titles --- */
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--blue-primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .section-label::before,
+        .section-label::after {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--blue-primary), transparent);
+            border-radius: 2px;
+        }
+
+        .section-label::after {
+            background: linear-gradient(90deg, transparent, var(--blue-primary));
+        }
+
+        .section-heading {
+            font-family: 'Manrope', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtext {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            max-width: 540px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+        }
+
+        /* --- Leadership Cards (Premium) --- */
+        .leadership-section {
+            padding: 80px 0 60px;
+            background: var(--bg-soft);
+            position: relative;
+        }
+
+        .leader-card {
+            position: relative;
+            background: #fff;
+            border-radius: 24px;
+            padding: 48px 32px 40px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            overflow: hidden;
+        }
+
+        .leader-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--blue-primary), var(--purple-accent));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .leader-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 24px 64px rgba(0,0,0,0.12);
+        }
+
+        .leader-card:hover::before {
+            opacity: 1;
+        }
+
+        .leader-card.chairman-card::before {
+            background: linear-gradient(90deg, var(--orange-secondary), var(--yellow-highlight));
+        }
+
+        .leader-photo-wrap {
+            position: relative;
+            width: 130px;
+            height: 130px;
+            margin: 0 auto 24px;
+        }
+
+        .leader-photo-ring {
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, var(--blue-primary), var(--purple-accent));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .leader-card:hover .leader-photo-ring {
+            opacity: 1;
+        }
+
+        .leader-card.chairman-card .leader-photo-ring {
+            background: linear-gradient(135deg, var(--orange-secondary), var(--yellow-highlight));
+        }
+
+        .leader-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: top;
+            border: 4px solid white;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .leader-role-badge {
+            display: inline-block;
+            padding: 5px 18px;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 14px;
+        }
+
+        .leader-role-badge.president {
+            background: linear-gradient(135deg, rgba(78,165,217,0.12), rgba(139,92,246,0.12));
+            color: var(--blue-primary);
+        }
+
+        .leader-role-badge.vice-president {
+            background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(78,165,217,0.12));
+            color: var(--purple-accent);
+        }
+
+        .leader-role-badge.chairman {
+            background: linear-gradient(135deg, rgba(249,115,22,0.12), rgba(250,204,21,0.12));
+            color: var(--orange-secondary);
+        }
+
+        .leader-role-badge.vice-chairman {
+            background: linear-gradient(135deg, rgba(34,197,94,0.12), rgba(78,165,217,0.12));
+            color: var(--green-success);
+        }
+
+        .leader-name {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+        }
+
+        .leader-title {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        .leader-title strong {
+            color: var(--blue-primary);
+            font-weight: 700;
+        }
+
+        /* --- Members Grid --- */
+        .members-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .member-tile {
+            position: relative;
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 16px;
+            padding: 24px 24px 24px 72px;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: default;
+            overflow: hidden;
+        }
+
+        .member-tile::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, var(--blue-primary), var(--purple-accent));
+            border-radius: 4px 0 0 4px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .member-tile:hover {
+            transform: translateY(-4px) translateX(4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            border-color: rgba(78,165,217,0.2);
+        }
+
+        .member-tile:hover::before {
+            opacity: 1;
+        }
+
+        .member-num {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--tint-blue);
+            color: var(--blue-primary);
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            font-size: 0.85rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .member-tile:hover .member-num {
+            background: linear-gradient(135deg, var(--blue-primary), var(--purple-accent));
+            color: #fff;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .member-tile-name {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .member-tile-role {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+
+        /* --- Co-opted Section --- */
+        .coopted-section {
+            padding: 80px 0;
+            background: linear-gradient(180deg, var(--tint-purple) 0%, var(--bg-soft) 100%);
+        }
+
+        .coopted-card {
+            position: relative;
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 24px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border: 1px solid rgba(139,92,246,0.08);
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .coopted-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(139,92,246,0.1);
+            border-color: rgba(139,92,246,0.2);
+        }
+
+        .coopted-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(139,92,246,0.08), rgba(78,165,217,0.08));
+            margin: 0 auto 16px;
+            transition: all 0.3s ease;
+        }
+
+        .coopted-icon i {
+            font-size: 1.3rem;
+            color: var(--purple-accent);
+            transition: all 0.3s ease;
+        }
+
+        .coopted-card:hover .coopted-icon {
+            background: linear-gradient(135deg, var(--purple-accent), var(--blue-primary));
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .coopted-card:hover .coopted-icon i {
+            color: #fff;
+        }
+
+        .coopted-name {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+
+        /* --- Scroll Reveal Animation Delays --- */
+        .stagger-1 { transition-delay: 0.05s; }
+        .stagger-2 { transition-delay: 0.1s; }
+        .stagger-3 { transition-delay: 0.15s; }
+        .stagger-4 { transition-delay: 0.2s; }
+        .stagger-5 { transition-delay: 0.25s; }
+        .stagger-6 { transition-delay: 0.3s; }
+        .stagger-7 { transition-delay: 0.35s; }
+        .stagger-8 { transition-delay: 0.4s; }
+        .stagger-9 { transition-delay: 0.45s; }
+        .stagger-10 { transition-delay: 0.5s; }
+
+        /* --- Z-index overrides --- */
         .header-top { z-index: 1100; }
         .header-nav { z-index: 1050; }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .members-hero {
+                padding: 120px 20px 60px;
+            }
+            .members-hero h1 {
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                gap: 24px;
+                flex-wrap: wrap;
+            }
+            .hero-stat-num {
+                font-size: 1.6rem;
+            }
+            .section-heading {
+                font-size: 1.8rem;
+            }
+            .leader-card {
+                padding: 36px 24px 32px;
+            }
+            .leader-photo-wrap {
+                width: 100px;
+                height: 100px;
+            }
+            .leader-photo {
+                width: 100px;
+                height: 100px;
+            }
+            .leader-name {
+                font-size: 1.2rem;
+            }
+            .member-tile {
+                padding: 20px 20px 20px 64px;
+            }
+            .member-num {
+                left: 16px;
+                width: 34px;
+                height: 34px;
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <!-- Aceternity-style Animated Background -->
+    <!-- Animated Background -->
     <div class="gradients-container"></div>
     <div id="scrollProgress"></div>
     <div class="header home-header">
@@ -131,8 +533,8 @@
                     </div>
                 </div>
 
-                <!-- Utility Actions moved here -->
-                                <div class="header-actions-group">
+                <!-- Utility Actions -->
+                <div class="header-actions-group">
                     <div class="header-actions">
                         <div class="search-container top-tier" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
@@ -140,7 +542,7 @@
                         </div>
                     </div>
 
-                    <!-- Mobile Toggle Buttons -->
+                    <!-- Mobile Toggle -->
                     <div class="mobile-controls">
                         <button class="menu-toggle" onclick="toggleMobileMenu()">
                             <span class="material-symbols-outlined">menu</span>
@@ -150,11 +552,10 @@
             </div>
         </div>
 
-        <!-- Bottom Tier: Navigation Only -->
+        <!-- Bottom Tier: Navigation -->
         <div class="header-nav">
             <div class="container">
                 <div class="header-nav-inner" style="position: relative; width: 100%;">
-                    <!-- Desktop Menu -->
                     <div class="desktop-menu">
                         <div class="menu">
                             <ul>
@@ -272,118 +673,246 @@
         </nav>
     </div>
 
-    <!-- MAIN CONTENT -->
-    <div class="container py-5 mt-5">
-        <div class="row justify-content-center mb-5">
-            <div class="col-lg-10 text-center">
-                <div class="content-block scroll-reveal" style="background: rgba(255,255,255,0.85); backdrop-filter: blur(10px); padding: 50px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.04);">
-                    <h2 class="section-title mb-3" style="font-size: 2.8rem;">Members of the Council</h2>
-                    <h5 class="fw-normal" style="color: var(--blue-primary); letter-spacing: 1px;">Global Trade & Services Committee</h5>
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="members-hero">
+        <div class="container">
+            <div class="hero-badge scroll-reveal">
+                <i class="bi bi-people-fill"></i>
+                Council Members 2026–27
+            </div>
+            <h1 class="scroll-reveal">Our <span>Leadership</span></h1>
+            <p class="scroll-reveal">Meet the distinguished professionals guiding ICAI's Global Trade & Services Committee towards international excellence.</p>
+            <div class="hero-stats scroll-reveal">
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-count="4">4</div>
+                    <div class="hero-stat-label">Leadership</div>
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-count="10">10</div>
+                    <div class="hero-stat-label">Members</div>
+                </div>
+                <div class="hero-divider"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-num" data-count="4">4</div>
+                    <div class="hero-stat-label">Co-opted</div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Principal Leadership (President & Vice President) -->
-        <div class="row justify-content-center g-4 mb-5">
-            <!-- President -->
-            <div class="col-md-5 d-flex">
-                <div class="leadership-card text-center p-5 scroll-reveal flex-fill">
-                    <div class="avatar-placeholder mx-auto mb-4" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.12); background: #f8fafc; position: relative;">
-                        <img src="images/pp.jpg" alt="CA. Prasanna Kumar D" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+    <!-- ============================================
+         PRINCIPAL LEADERSHIP
+         ============================================ -->
+    <section class="leadership-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-label scroll-reveal">Principal Leadership</div>
+                <h2 class="section-heading scroll-reveal">President & Vice President</h2>
+                <p class="section-subtext scroll-reveal">The highest office bearers of the Institute of Chartered Accountants of India, providing strategic vision for global trade affairs.</p>
+            </div>
+
+            <div class="row justify-content-center g-4 mb-5">
+                <!-- President -->
+                <div class="col-md-5 col-lg-4 d-flex">
+                    <div class="leader-card scroll-reveal stagger-1 flex-fill">
+                        <div class="leader-photo-wrap">
+                            <div class="leader-photo-ring"></div>
+                            <img src="images/pp.jpg" alt="CA. Prasanna Kumar D" class="leader-photo">
+                        </div>
+                        <div class="leader-role-badge president">President</div>
+                        <h4 class="leader-name">CA. Prasanna Kumar D</h4>
+                        <p class="leader-title">President, ICAI<br><strong>Council Term: 2026–27</strong></p>
                     </div>
-                    <span class="d-block mb-2" style="color: #f26622; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">President</span>
-                    <h4 style="color: #1e293b; font-weight: 800; font-size: 1.65rem; margin-bottom: 8px;">CA. Prasanna Kumar D</h4>
-                    <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0; line-height: 1.5;">President, ICAI<br><span style="font-weight: 600; color: var(--blue-primary);">Council Term: 2026–27</span></p>
                 </div>
-            </div>
-            
-            <!-- Vice President -->
-            <div class="col-md-5 d-flex">
-                <div class="leadership-card text-center p-5 scroll-reveal flex-fill">
-                    <div class="avatar-placeholder mx-auto mb-4" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.12); background: #f8fafc; position: relative;">
-                        <img src="images/vp.jpg" alt="CA. Mangesh P. Kinare" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+
+                <!-- Vice President -->
+                <div class="col-md-5 col-lg-4 d-flex">
+                    <div class="leader-card scroll-reveal stagger-2 flex-fill">
+                        <div class="leader-photo-wrap">
+                            <div class="leader-photo-ring"></div>
+                            <img src="images/vp.jpg" alt="CA. Mangesh P. Kinare" class="leader-photo">
+                        </div>
+                        <div class="leader-role-badge vice-president">Vice President</div>
+                        <h4 class="leader-name">CA. Mangesh P. Kinare</h4>
+                        <p class="leader-title">Vice-President, ICAI<br><strong>Council Term: 2026–27</strong></p>
                     </div>
-                    <span class="d-block mb-2" style="color: #f26622; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Vice President</span>
-                    <h4 style="color: #1e293b; font-weight: 800; font-size: 1.65rem; margin-bottom: 8px;">CA. Mangesh P. Kinare</h4>
-                    <p style="color: #475569; font-size: 0.95rem; margin-bottom: 0; line-height: 1.5;">Vice-President, ICAI<br><span style="font-weight: 600; color: var(--blue-primary);">Council Term: 2026–27</span></p>
                 </div>
             </div>
-        </div>
 
-        <!-- Leadership Section (Chairman & Vice-Chairman) -->
-        <div class="row justify-content-center g-4 mb-5">
-            <!-- Chairman -->
-            <div class="col-md-5 d-flex">
-                <div class="leadership-card text-center p-5 scroll-reveal flex-fill">
-                    <div class="avatar-placeholder mx-auto mb-4" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.12); background: #f8fafc; position: relative;">
-                        <img src="images/chairman.jpg" alt="CA. Sanjib Sanghi" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+            <!-- Chairman & Vice-Chairman -->
+            <div class="text-center mb-5 mt-5">
+                <div class="section-label scroll-reveal">Committee Leadership</div>
+                <h2 class="section-heading scroll-reveal">Chairman & Vice-Chairman</h2>
+                <p class="section-subtext scroll-reveal">Leading the Global Trade & Services Committee with expertise and dedication to international professional standards.</p>
+            </div>
+
+            <div class="row justify-content-center g-4">
+                <!-- Chairman -->
+                <div class="col-md-5 col-lg-4 d-flex">
+                    <div class="leader-card chairman-card scroll-reveal stagger-1 flex-fill">
+                        <div class="leader-photo-wrap">
+                            <div class="leader-photo-ring"></div>
+                            <img src="images/chairman.jpg" alt="CA. Sanjib Sanghi" class="leader-photo">
+                        </div>
+                        <div class="leader-role-badge chairman">Chairman</div>
+                        <h4 class="leader-name">CA. Sanjib Sanghi</h4>
+                        <p class="leader-title">Chairman, GTC<br><strong>Global Trade & Services</strong></p>
                     </div>
-                    <span class="d-block mb-2" style="color: #f26622; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Chairman</span>
-                    <h4 style="color: #1e293b; font-weight: 800; font-size: 1.6rem; margin-bottom: 0;">CA. Sanjib Sanghi</h4>
                 </div>
-            </div>
-            
-            <!-- Vice-Chairman -->
-            <div class="col-md-5 d-flex">
-                <div class="leadership-card text-center p-5 scroll-reveal flex-fill">
-                    <div class="avatar-placeholder mx-auto mb-4" style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.12); background: #f8fafc; position: relative;">
-                        <img src="images/vicechairman.jpg" alt="CA. (Dr.) Rohit Ruwatia Agarwal" style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
+
+                <!-- Vice-Chairman -->
+                <div class="col-md-5 col-lg-4 d-flex">
+                    <div class="leader-card chairman-card scroll-reveal stagger-2 flex-fill">
+                        <div class="leader-photo-wrap">
+                            <div class="leader-photo-ring"></div>
+                            <img src="images/vicechairman.jpg" alt="CA. (Dr.) Rohit Ruwatia Agarwal" class="leader-photo">
+                        </div>
+                        <div class="leader-role-badge vice-chairman">Vice-Chairman</div>
+                        <h4 class="leader-name">CA. (Dr.) Rohit Ruwatia Agarwal</h4>
+                        <p class="leader-title">Vice-Chairman, GTC<br><strong>Global Trade & Services</strong></p>
                     </div>
-                    <span class="d-block mb-2" style="color: #f26622; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem;">Vice-Chairman</span>
-                    <h4 style="color: #1e293b; font-weight: 800; font-size: 1.6rem; margin-bottom: 0;">CA. (Dr.) Rohit Ruwatia Agarwal</h4>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Members Section -->
-        <div class="row mb-5 mt-5">
-            <div class="col-12 text-center scroll-reveal">
-                <h3 style="color: #1e293b; font-weight: 700; font-size: 2.2rem; position: relative; display: inline-block; padding-bottom: 15px;">
-                    Members
-                    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: #f26622; border-radius: 2px;"></span>
-                </h3>
+    <!-- ============================================
+         COUNCIL MEMBERS
+         ============================================ -->
+    <section class="members-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-label scroll-reveal">Council Members</div>
+                <h2 class="section-heading scroll-reveal">Members of the Committee</h2>
+                <p class="section-subtext scroll-reveal">Distinguished professionals contributing their expertise to shape India's global trade and professional services landscape.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-1">
+                        <div class="member-num">01</div>
+                        <p class="member-tile-name">CA. Arpit Jagdish Kabra</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-2">
+                        <div class="member-num">02</div>
+                        <p class="member-tile-name">CA. Piyush Sohanrajj Chhajed</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-3">
+                        <div class="member-num">03</div>
+                        <p class="member-tile-name">CA. Madhukar Narayan Hiregange</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-4">
+                        <div class="member-num">04</div>
+                        <p class="member-tile-name">CA. Abhay Chhajed</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-5">
+                        <div class="member-num">05</div>
+                        <p class="member-tile-name">CA. Charanjot Singh Nanda</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-6">
+                        <div class="member-num">06</div>
+                        <p class="member-tile-name">CA. Pramod Jain</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-7">
+                        <div class="member-num">07</div>
+                        <p class="member-tile-name">CA. Sanjay Kumar Agarwal</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-8">
+                        <div class="member-num">08</div>
+                        <p class="member-tile-name">CA. (Dr.) Sanjeev Kumar Singhal</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-9">
+                        <div class="member-num">09</div>
+                        <p class="member-tile-name">Shri Mukhmeet Singh Bhatia</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="member-tile scroll-reveal stagger-10">
+                        <div class="member-num">10</div>
+                        <p class="member-tile-name">Justice (former) Shashi Kant Gupta</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. Arpit Jagdish Kabra</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. Piyush Sohanrajj Chhajed</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. Madhukar Narayan Hiregange</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. Abhay Chhajed</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. Charanjot Singh Nanda</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. Pramod Jain</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. Sanjay Kumar Agarwal</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">CA. (Dr.) Sanjeev Kumar Singhal</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">Shri Mukhmeet Singh Bhatia</div></div></div>
-            <div class="col"><div class="member-card scroll-reveal"><span class="material-symbols-outlined card-icon">person_outline</span><div class="member-name">Justice (former) Shashi Kant Gupta</div></div></div>
-        </div>
+    <!-- ============================================
+         CO-OPTED MEMBERS
+         ============================================ -->
+    <section class="coopted-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <div class="section-label scroll-reveal">Special Invitees</div>
+                <h2 class="section-heading scroll-reveal">Co-opted Members</h2>
+                <p class="section-subtext scroll-reveal">Expert professionals co-opted for their specialized knowledge in international trade and professional services.</p>
+            </div>
 
-        <!-- Co-opted Members Section -->
-        <div class="row mb-5 mt-5">
-            <div class="col-12 text-center scroll-reveal">
-                <h3 style="color: #1e293b; font-weight: 700; font-size: 2.2rem; position: relative; display: inline-block; padding-bottom: 15px;">
-                    Co-opted Members
-                    <span style="position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--blue-primary); border-radius: 2px;"></span>
-                </h3>
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="coopted-card scroll-reveal stagger-1">
+                        <div class="coopted-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p class="coopted-name">CA. Balineni Himachal</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="coopted-card scroll-reveal stagger-2">
+                        <div class="coopted-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p class="coopted-name">CA. Prahlada Rao Kuchimanchi</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="coopted-card scroll-reveal stagger-3">
+                        <div class="coopted-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p class="coopted-name">CA. Balanagu V Guptha</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="coopted-card scroll-reveal stagger-4">
+                        <div class="coopted-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <p class="coopted-name">CA. Sarita Agarwal</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mb-5">
-            <div class="col"><div class="member-card secondary scroll-reveal"><span class="material-symbols-outlined card-icon">badge</span><div class="member-name">CA. Balineni Himachal</div></div></div>
-            <div class="col"><div class="member-card secondary scroll-reveal"><span class="material-symbols-outlined card-icon">badge</span><div class="member-name">CA. Prahlada Rao Kuchimanchi</div></div></div>
-            <div class="col"><div class="member-card secondary scroll-reveal"><span class="material-symbols-outlined card-icon">badge</span><div class="member-name">CA. Balanagu V Guptha</div></div></div>
-            <div class="col"><div class="member-card secondary scroll-reveal"><span class="material-symbols-outlined card-icon">badge</span><div class="member-name">CA. Sarita Agarwal</div></div></div>
-        </div>
-    </div>
-
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
     <footer class="footer-dark py-5" style="padding-bottom: 5px !important;">
         <div class="container">
             <div class="row gy-5" style="padding-top: 0px !important;">
                 <!-- About -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">About Global ICAI</h5>
-                    <p class="footer-text mb-4">The Global Trade & Services Committee of ICAI is committed to strengthening India’s presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy. The Committee works closely with government bodies, industry stakeholders, and international institutions to facilitate trade integration, policy engagement, and global professional mobility.</p>
-                    
+                    <p class="footer-text mb-4">The Global Trade & Services Committee of ICAI is committed to strengthening India's presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy.</p>
                 </div>
 
                 <!-- Programs -->
@@ -447,6 +976,7 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
@@ -475,6 +1005,24 @@
             }
         }
 
+        // Animated Number Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('.hero-stat-num[data-count]');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                let current = 0;
+                const increment = Math.ceil(target / 30);
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = current;
+                }, 50);
+            });
+        }
+
         // Reveal Animations on Scroll
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
@@ -482,6 +1030,11 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('revealed');
                     entry.target.classList.add('reveal-up');
+
+                    // Trigger counter animation when hero stats come into view
+                    if (entry.target.closest('.hero-stats') || entry.target.classList.contains('hero-badge')) {
+                        animateCounters();
+                    }
                 }
             });
         }, observerOptions);
