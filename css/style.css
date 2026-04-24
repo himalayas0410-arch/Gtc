@@ -3372,7 +3372,7 @@ button, .mql-item, .blur-btn2, .submit-btn, a.knowmore {
         border-left: none !important;
         display: flex !important;
         flex-direction: column !important;
-        max-width: 80% !important;
+        max-width: 90% !important;
     }
 
     .mb-committee {
@@ -3382,6 +3382,7 @@ button, .mql-item, .blur-btn2, .submit-btn, a.knowmore {
         line-height: 1.4 !important;
         display: block !important;
         text-transform: uppercase !important;
+        white-space: nowrap !important;
     }
 
     .mb-parent {
