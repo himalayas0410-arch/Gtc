@@ -20,6 +20,9 @@
 </head>
 
 <body>
+    <!-- Aceternity-style Animated Background -->
+    <div class="gradients-container"></div>
+    <div id="scrollProgress"></div>
     <div class="header home-header">
         <div class="header-top">
             <div class="container header-top-container">
@@ -37,7 +40,7 @@
                 <!-- Utility Actions moved here -->
                                 <div class="header-actions-group">
                     <div class="header-actions">
-                        <div class="search-container top-tier">
+                        <div class="search-container top-tier" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
                             <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
                         </div>
@@ -69,7 +72,7 @@
                                         <a href="members.html">Member of the Group</a>
                                     </div>
                                 </li>
-                                                                <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
+                                <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
                                     <a href="#">Global Initiatives <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown nav-panel">
                                         <div class="nav-panel-grid">
@@ -128,7 +131,7 @@
                 <div class="logo-images-mb">
                     <img src="images/logo.png" class="logo" style="max-width: 60px;" />
                     <span class="logo-divider" style="background: rgba(255,255,255,0.3);"></span>
-                    <img src="images/logogloba.jpeg" class="logo-secondary" style="max-width: 60px;" />
+                    <img src="images/logogloba.png" class="logo-secondary" style="max-width: 60px;" />
                 </div>
                 <div class="mobile-branding-text">
                     <span class="mb-committee">Global Trade & Services Committee</span>
@@ -277,9 +280,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         // Scroll Progress Logic
@@ -289,8 +290,23 @@
                 st = 'scrollTop',
                 sh = 'scrollHeight';
             const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-            document.getElementById('scrollProgress').style.width = percent + '%';
+            if (document.getElementById('scrollProgress')) {
+                document.getElementById('scrollProgress').style.width = percent + '%';
+            }
         });
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function toggleMobileSearch() {
+            if (window.innerWidth < 1200) {
+                const container = document.getElementById('searchContainer');
+                if (container) container.classList.toggle('mobile-expanded');
+            }
+        }
 
         // Reveal Animations on Scroll
         const observerOptions = { threshold: 0.1 };
@@ -302,69 +318,9 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.modern-card, .section-title, .events-section').forEach(el => {
+        document.querySelectorAll('.modern-card, .section-title, .events-section, .scroll-reveal').forEach(el => {
             observer.observe(el);
         });
-
-        function toggleMobileMenu() {
-            const overlay = document.getElementById('mobileOverlay');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
-        }
-
-        function toggleMobileSearch() {
-            if (window.innerWidth < 768) {
-                const container = document.getElementById('searchContainer');
-                container.classList.toggle('mobile-expanded');
-            }
-        }
-
-        function switchCardView(cardId, view, event) {
-            if (event) {
-                event.stopPropagation();
-                event.preventDefault();
-            }
-            const cardHover = document.getElementById(`hover-card-${cardId}`);
-            const mainView = cardHover.querySelector('.hover-main-view');
-            const subView = cardHover.querySelector('.hover-sub-view');
-
-            if (view === 'sub') {
-                mainView.classList.remove('active');
-                subView.classList.add('active');
-            } else {
-                subView.classList.remove('active');
-                mainView.classList.add('active');
-            }
-        }
-
-        // MagicUI NumberTicker — Vanilla JS counter animation
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.getAttribute('data-target'));
-                    const duration = 1800; // ms
-                    const startTime = performance.now();
-
-                    function animate(currentTime) {
-                        const elapsed = currentTime - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        // Ease-out cubic
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        el.textContent = Math.floor(eased * target);
-                        if (progress < 1) {
-                            requestAnimationFrame(animate);
-                        } else {
-                            el.textContent = target;
-                        }
-                    }
-                    requestAnimationFrame(animate);
-                    statObserver.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.stat-number, .stat-banner-number').forEach(el => statObserver.observe(el));
 
         // Enhanced scroll-reveal for cards & events
         const revealObserver = new IntersectionObserver((entries) => {
