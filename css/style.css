@@ -1291,8 +1291,8 @@ h6,
 }
 
 .ql-sidebar-item:hover {
-    max-width: 210px;
-    min-width: 210px;
+    max-width: 310px;
+    min-width: 310px;
     box-shadow: 0 15px 35px rgba(26, 43, 86, 0.2);
 }
 
@@ -1319,9 +1319,10 @@ h6,
 
 .ql-label {
     position: absolute;
-    justify-content: center;
-    width: calc(100% - 48px);
+    left: 0;
     right: 48px;
+    justify-content: flex-start;
+    padding-left: 20px;
     top: 0;
     height: 100%;
     display: flex;
@@ -1331,7 +1332,7 @@ h6,
     letter-spacing: 0.3px;
     opacity: 0;
     visibility: hidden;
-    padding: 0 16px;
+    /* padding removed */
     white-space: nowrap;
     transform: translateX(10px);
     transition: all 0.3s ease;
