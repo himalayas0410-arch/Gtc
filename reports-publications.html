@@ -70,17 +70,21 @@
         /* PDF Thumbnail Styling */
         .pdf-thumb-container {
             flex-shrink: 0;
-            width: 90px;
+            width: 120px;
+            min-height: 160px;
             position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
         }
 
         .pdf-thumb {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
-            border: 1px solid #eef2f6;
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-            background: #f8fafc;
+            height: 100%;
+            object-fit: cover;
+            display: block;
             opacity: 0;
             transition: opacity 0.5s ease;
         }
@@ -90,9 +94,8 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 120px;
+            height: 100%;
             background: var(--tint-blue);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -561,12 +564,19 @@
                 const pdf = await loadingTask.promise;
                 const page = await pdf.getPage(1);
 
-                const scale = 0.5;
+                // Scale to fit the container width (120px on desktop)
+                const containerWidth = canvas.parentElement.clientWidth || 120;
+                const defaultViewport = page.getViewport({ scale: 1 });
+                const scale = (containerWidth * 2) / defaultViewport.width; // 2x for retina sharpness
                 const viewport = page.getViewport({ scale: scale });
                 const context = canvas.getContext('2d');
 
-                canvas.height = viewport.height;
                 canvas.width = viewport.width;
+                canvas.height = viewport.height;
+
+                // CSS sizing to fit container
+                canvas.style.width = containerWidth + 'px';
+                canvas.style.height = 'auto';
 
                 const renderContext = {
                     canvasContext: context,
