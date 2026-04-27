@@ -80,7 +80,7 @@
         .members-hero {
             position: relative;
             padding: 160px 0 100px;
-            background: #0a0e27;
+            background: linear-gradient(160deg, #eef2ff 0%, #e0e7ff 25%, #f0e7ff 50%, #e8f5ff 75%, #f0fdf4 100%);
             overflow: hidden;
             text-align: center;
             z-index: 1;
@@ -91,7 +91,7 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(100px);
-            opacity: 0.4;
+            opacity: 0.25;
             animation: blobFloat 20s ease-in-out infinite;
         }
 
@@ -135,8 +135,8 @@
             position: absolute;
             inset: 0;
             background-image:
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+                linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
             background-size: 60px 60px;
             z-index: 0;
         }
@@ -151,7 +151,7 @@
             background: rgba(78, 165, 217, 0.1);
             border: 1px solid rgba(78, 165, 217, 0.25);
             border-radius: 50px;
-            color: #93c5fd;
+            color: #2563eb;
             font-size: 0.82rem;
             font-weight: 700;
             letter-spacing: 2px;
@@ -162,8 +162,8 @@
         }
 
         @keyframes pillGlow {
-            0% { box-shadow: 0 0 20px rgba(78,165,217,0.1); }
-            100% { box-shadow: 0 0 40px rgba(78,165,217,0.2), 0 0 80px rgba(139,92,246,0.1); }
+            0% { box-shadow: 0 0 20px rgba(78,165,217,0.08); }
+            100% { box-shadow: 0 0 30px rgba(78,165,217,0.15), 0 0 60px rgba(139,92,246,0.08); }
         }
 
         .hero-pill .dot {
@@ -182,7 +182,7 @@
             font-family: 'Manrope', sans-serif;
             font-size: 4rem;
             font-weight: 800;
-            color: #ffffff;
+            color: var(--text-dark);
             margin-bottom: 20px;
             letter-spacing: -1.5px;
             line-height: 1.1;
@@ -190,7 +190,7 @@
 
         .members-hero p.hero-desc {
             font-size: 1.15rem;
-            color: rgba(255,255,255,0.5);
+            color: var(--text-light);
             max-width: 560px;
             margin: 0 auto;
             line-height: 1.8;
@@ -202,8 +202,8 @@
             justify-content: center;
             gap: 0;
             margin-top: 56px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(0,0,0,0.06);
             border-radius: 20px;
             backdrop-filter: blur(10px);
             max-width: 600px;
@@ -211,6 +211,7 @@
             margin-right: auto;
             overflow: hidden;
             position: relative;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
         }
 
         /* Shine border on stats bar */
@@ -244,7 +245,7 @@
             top: 20%;
             height: 60%;
             width: 1px;
-            background: linear-gradient(180deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(180deg, transparent, rgba(0,0,0,0.08), transparent);
         }
 
         .stat-num {
@@ -261,7 +262,7 @@
 
         .stat-label {
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.4);
+            color: var(--text-light);
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 600;
@@ -784,34 +785,35 @@
         /* --- Co-opted Section --- */
         .coopted-section {
             padding: 100px 0;
-            background: linear-gradient(180deg, #0f172a 0%, #1e1b4b 100%);
+            background: linear-gradient(160deg, #f0e7ff 0%, #e8f5ff 35%, #f0fdf4 65%, #fef3c7 100%);
             position: relative;
             z-index: 1;
             overflow: hidden;
         }
 
         .coopted-section .mesh-blob {
-            opacity: 0.25;
+            opacity: 0.2;
         }
 
         .coopted-section .section-heading {
-            color: #ffffff;
+            color: var(--text-dark);
         }
 
         .coopted-section .section-desc {
-            color: rgba(255,255,255,0.5);
+            color: var(--text-light);
         }
 
         .coopted-card {
             position: relative;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(0,0,0,0.06);
             border-radius: 20px;
             padding: 36px 24px;
             text-align: center;
             backdrop-filter: blur(10px);
             transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
             overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.04);
         }
 
         /* Shine border on coopted cards */
@@ -839,8 +841,8 @@
 
         .coopted-card:hover {
             transform: translateY(-8px);
-            background: rgba(255,255,255,0.07);
-            box-shadow: 0 20px 60px rgba(139,92,246,0.15);
+            background: rgba(255,255,255,0.95);
+            box-shadow: 0 20px 60px rgba(139,92,246,0.12);
         }
 
         .coopted-avatar {
@@ -904,13 +906,13 @@
             font-family: 'Manrope', sans-serif;
             font-size: 1.05rem;
             font-weight: 700;
-            color: #ffffff;
+            color: var(--text-dark);
             margin: 0 0 6px;
         }
 
         .coopted-role {
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
+            color: var(--text-light);
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
