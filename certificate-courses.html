@@ -187,13 +187,17 @@
                         <h3 class="committee-name">Global Trade & Services Committee</h3>
                     </div>
                 </div>
-                <div class="header-actions-group">
+
+                <!-- Utility Actions moved here -->
+                                <div class="header-actions-group">
                     <div class="header-actions">
                         <div class="search-container top-tier" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
                             <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
                         </div>
                     </div>
+
+                    <!-- Mobile Toggle Buttons -->
                     <div class="mobile-controls">
                         <button class="menu-toggle" onclick="toggleMobileMenu()">
                             <span class="material-symbols-outlined">menu</span>
@@ -202,9 +206,12 @@
                 </div>
             </div>
         </div>
+
+        <!-- Bottom Tier: Navigation Only -->
         <div class="header-nav">
             <div class="container">
                 <div class="header-nav-inner" style="position: relative; width: 100%;">
+                    <!-- Desktop Menu -->
                     <div class="desktop-menu">
                         <div class="menu">
                             <ul>
@@ -220,41 +227,77 @@
                                     <a href="#">Global Initiatives <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown nav-panel">
                                         <div class="nav-panel-grid">
-                                            <a href="https://apo.icai.org/" class="nav-panel-item"><i class="bi bi-globe"></i><div class="nav-panel-content"><span class="nav-panel-title">APO Programs</span></div></a>
-                                            <a href="https://gcc.icai.org/" class="nav-panel-item"><i class="bi bi-diagram-3"></i><div class="nav-panel-content"><span class="nav-panel-title">GCC Initiatives</span></div></a>
-                                            <a href="https://www.icai.org/post/cditswto-global-udaan" class="nav-panel-item"><i class="bi bi-rocket-takeoff"></i><div class="nav-panel-content"><span class="nav-panel-title">Global Udaan</span></div></a>
-                                            <a href="itec-programs.html" class="nav-panel-item"><i class="bi bi-journal-text"></i><div class="nav-panel-content"><span class="nav-panel-title">ITEC Programs</span></div></a>
-                                            <a href="certificate-courses.html" class="nav-panel-item"><i class="bi bi-patch-check"></i><div class="nav-panel-content"><span class="nav-panel-title">Certificate Courses</span></div></a>
+                                            <a href="https://apo.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-globe"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">APO Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://gcc.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-diagram-3"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">GCC Initiatives</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/cditswto-global-udaan" class="nav-panel-item">
+                                                <i class="bi bi-rocket-takeoff"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Global Udaan</span>
+                                                </div>
+                                            </a>
+                                            <a href="itec-programs.html" class="nav-panel-item">
+                                                <i class="bi bi-journal-text"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">ITEC Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="certificate-courses.html" class="nav-panel-item">
+                                                <i class="bi bi-patch-check"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Certificate Courses</span>
+                                                </div>
+                                            </a>
                                         </div>
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
                                     <a href="#">Opportunities <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
+                                        <a href="images/accountax.jpg" target="_blank">ICAI Members’ Delegation</a>
                                         <a href="images/accountax.jpg" target="_blank">Accountax</a>
                                         <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship Matrix</a>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events & Programs</a></li>
-                                <li style="animation-delay: 0.6s" class="reveal-up"><a href="contact.html">Contact</a></li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events &
+                                        Programs</a></li>
+                                <li style="animation-delay: 0.6s" class="reveal-up"><a href="contact.html">Contact</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Mobile Overlay -->
+    <!-- Full-Screen Mobile Overlay -->
     <div class="mobile-overlay" id="mobileOverlay">
         <div class="overlay-header">
             <div class="mobile-branding-text">
                 <span class="mb-committee">Global Trade & Services Committee</span>
                 <span class="mb-parent">The Institute of Chartered Accountants of India</span>
             </div>
-            <button class="close-overlay" onclick="toggleMobileMenu()"><span class="material-symbols-outlined">close</span></button>
+            <button class="close-overlay" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
         </div>
-        <div class="mobile-menu-search"><div class="mobile-search-box"><span class="material-symbols-outlined mobile-search-icon">search</span><input type="text" placeholder="Search..." class="mobile-search-input"></div></div>
+        <div class="mobile-menu-search">
+            <div class="mobile-search-box">
+                <span class="material-symbols-outlined mobile-search-icon">search</span>
+                <input type="text" placeholder="Search..." class="mobile-search-input">
+            </div>
+        </div>
         <nav class="mobile-nav">
             <ul>
                 <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
@@ -278,6 +321,7 @@
                 <li class="mobile-has-dropdown">
                     <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member Opportunities <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
+                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Members’ Delegation</a></li>
                         <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">Accountax</a></li>
                         <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank" onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
                     </ul>
@@ -562,37 +606,56 @@
         </div>
     </main>
 
-    <footer class="footer-dark py-5">
+    <footer class="footer-dark py-5" style="padding-bottom: 5px !important;">
         <div class="container">
-            <div class="row gy-5">
+            <div class="row gy-5" style="padding-top: 0px !important;">
+                <!-- About -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">About Global ICAI</h5>
-                    <p class="footer-text mb-4">The Global Trade & Services Committee of ICAI is committed to strengthening India's presence in global services trade by promoting international collaboration and positioning accounting as a key export service.</p>
+                    <p class="footer-text mb-4" style="text-align: justify;">The Global Trade & Services Committee of ICAI is committed to strengthening India’s presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy. The Committee works closely with government bodies, industry stakeholders, and international institutions to facilitate trade integration, policy engagement, and global professional mobility.</p>
+                    
                 </div>
+
+                <!-- Programs -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Programs</h5>
                     <ul class="footer-list">
                         <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
-                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Training & Capacity Building</a></li>
-                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Member Opportunities</a></li>
+                        <li><a href="#">Training & Capacity Building</a></li>
+                        <li><a href="#">Member Opportunities</a></li>
                         <li><a href="events.html">Events & Programs</a></li>
                     </ul>
                 </div>
+
+                <!-- Resources -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Resources</h5>
                     <ul class="footer-list">
                         <li><a href="reports-publications.html">Reports & Publications</a></li>
-                        <li><a href="itec-programs.html">ITEC Programs</a></li>
-                        <li><a href="certificate-courses.html">Certificate Courses</a></li>
+                        <li><a href="#">Research & Insights</a></li>
+                        <li><a href="#">Guidelines & Policies</a></li>
                         <li><a href="#">Downloads</a></li>
                     </ul>
                 </div>
+
+                <!-- Contact -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">Contact Us</h5>
-                    <div class="footer-contact-item"><span>Global Trade & Services Committee</span></div>
-                    <div class="footer-contact-item"><span>The Institute of Chartered Accountants of India,<br>(Set up by an Act of Parliament)<br>'ICAI BHAWAN', Indraprastha Marg,<br>New Delhi - 110002</span></div>
-                    <div class="footer-contact-item"><i class="bi bi-telephone"></i><span>011-30110542</span></div>
-                    <div class="footer-contact-item"><i class="bi bi-envelope"></i><span>global@icai.in</span></div>
+                    <div class="footer-contact-item">
+                        <span>Global Trade & Services Committee</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>The Institute of Chartered Accountants of India,<br>(Set up by an Act of
+                            Parliament)<br>'ICAI BHAWAN', Indraprastha Marg,<br>New Delhi - 110002</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="bi bi-telephone"></i>
+                        <span>011-30110542</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <span>global@icai.in</span>
+                    </div>
                     <div class="social-icons mt-4">
                         <a href="https://www.linkedin.com/company/gcc-icai/"><i class="bi bi-linkedin"></i></a>
                         <a href="https://x.com/globalicai/"><i class="bi bi-twitter-x"></i></a>
@@ -603,7 +666,9 @@
             </div>
             <hr class="footer-divider">
             <div class="footer-bottom d-flex justify-content-between flex-wrap">
-                <div>© 2026 The Institute of Chartered Accountants of India</div>
+                <div>
+                    © 2026 The Institute of Chartered Accountants of India
+                </div>
                 <div class="footer-links">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Use</a>

@@ -108,6 +108,7 @@
                                 <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
                                     <a href="#">Opportunities <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
+                                        <a href="images/accountax.jpg" target="_blank">ICAI Members’ Delegation</a>
                                         <a href="images/accountax.jpg" target="_blank">Accountax</a>
                                         <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship Matrix</a>
                                     </div>
@@ -119,6 +120,7 @@
                             </ul>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -161,7 +163,14 @@
                         <li><a href="certificate-courses.html" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
                 </li>
-                <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank" onclick="toggleMobileMenu()">Member Opportunities</a></li>
+                <li class="mobile-has-dropdown">
+                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member Opportunities <span class="material-symbols-outlined">expand_more</span></a>
+                    <ul class="mobile-sub-menu">
+                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Members’ Delegation</a></li>
+                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">Accountax</a></li>
+                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank" onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
+                    </ul>
+                </li>
                 <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
                 <li><a href="contact.html" onclick="toggleMobileMenu()">Contact & Engagement</a></li>
             </ul>
@@ -323,7 +332,7 @@
                 <!-- About -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">About Global ICAI</h5>
-                    <p class="footer-text mb-4">The Global Trade & Services Committee of ICAI is committed to strengthening India’s presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy. The Committee works closely with government bodies, industry stakeholders, and international institutions to facilitate trade integration, policy engagement, and global professional mobility.</p>
+                    <p class="footer-text mb-4" style="text-align: justify;">The Global Trade & Services Committee of ICAI is committed to strengthening India’s presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy. The Committee works closely with government bodies, industry stakeholders, and international institutions to facilitate trade integration, policy engagement, and global professional mobility.</p>
                     
                 </div>
 
@@ -332,8 +341,8 @@
                     <h5 class="footer-title">Programs</h5>
                     <ul class="footer-list">
                         <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
-                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Training & Capacity Building</a></li>
-                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Member Opportunities</a></li>
+                        <li><a href="#">Training & Capacity Building</a></li>
+                        <li><a href="#">Member Opportunities</a></li>
                         <li><a href="events.html">Events & Programs</a></li>
                     </ul>
                 </div>
