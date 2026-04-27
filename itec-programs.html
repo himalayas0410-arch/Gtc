@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GTC - ITEC Training Programs</title>
+    <meta name="description" content="ITEC Professional Training Program reports by the Global Trade & Services Committee, ICAI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- PDF.js Integration -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+    <style>
+        .reports-hero {
+            background: var(--bg-soft);
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-brand);
+            margin-bottom: 60px;
+        }
+
+        .reports-hero h1 {
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .reports-hero p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+
+        .report-grid {
+            margin-bottom: 100px;
+        }
+
+        .report-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            gap: 24px;
+            border: 1px solid var(--border-brand);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .report-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--blue-primary);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* PDF Thumbnail Styling */
+        .pdf-thumb-container {
+            flex-shrink: 0;
+            width: 90px;
+            position: relative;
+        }
+
+        .pdf-thumb {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+            background: #f8fafc;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .fallback-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: var(--tint-blue);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-primary);
+            font-size: 24px;
+            z-index: -1;
+        }
+
+        .report-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .report-type-badge {
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--blue-primary);
+            background: var(--tint-blue);
+            padding: 4px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 12px;
+        }
+
+        .report-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .report-meta {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .report-date {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .view-link {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--blue-primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+
+        .report-card:hover .view-link {
+            gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .report-card {
+                padding: 24px;
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .pdf-thumb-container {
+                width: 120px;
+                margin: 0 auto;
+            }
+
+            .report-type-badge {
+                margin: 0 auto 12px auto;
+            }
+
+            .reports-hero {
+                padding: 60px 0;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body class="tactile-depth">
+    <div class="gradients-container"></div>
+    <div id="scrollProgress"></div>
+
+    <div class="header home-header">
+        <div class="header-top">
+            <div class="container header-top-container">
+                <div class="header-logo reveal-up">
+                    <div class="logo-group">
+                        <img src="images/logo.png" class="logo" />
+                        <span class="logo-divider"></span>
+                        <img src="images/logogloba.png" class="logo-secondary" />
+                    </div>
+                    <div class="branding-text">
+                        <h3 class="committee-name">Global Trade & Services Committee</h3>
+                    </div>
+                </div>
+
+                <div class="header-actions-group">
+                    <div class="header-actions">
+                        <div class="search-container top-tier" id="searchContainer">
+                            <input type="text" placeholder="Search..." class="search-input">
+                            <span class="material-symbols-outlined search-icon"
+                                onclick="toggleMobileSearch()">search</span>
+                        </div>
+                    </div>
+                    <div class="mobile-controls">
+                        <button class="menu-toggle" onclick="toggleMobileMenu()">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-nav">
+            <div class="container">
+                <div class="header-nav-inner" style="position: relative; width: 100%;">
+                    <div class="desktop-menu">
+                        <div class="menu">
+                            <ul>
+                                <li style="animation-delay: 0.1s" class="reveal-up"><a href="index.html">Home</a></li>
+                                <li style="animation-delay: 0.2s" class="reveal-up has-dropdown">
+                                    <a href="about.html">About <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown">
+                                        <a href="about.html">About the Directorate</a>
+                                        <a href="members.html">Member of the Group</a>
+                                    </div>
+                                </li>
+                                <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
+                                    <a href="#">Global Initiatives <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown nav-panel">
+                                        <div class="nav-panel-grid">
+                                            <a href="https://apo.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-globe"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">APO Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://gcc.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-diagram-3"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">GCC Initiatives</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/cditswto-global-udaan"
+                                                class="nav-panel-item">
+                                                <i class="bi bi-rocket-takeoff"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Global Udaan</span>
+                                                </div>
+                                            </a>
+                                            <a href="itec-programs.html"
+                                                class="nav-panel-item">
+                                                <i class="bi bi-journal-text"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">ITEC Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://www.icai.org/post/ditswto-occoss-overseas"
+                                                class="nav-panel-item">
+                                                <i class="bi bi-patch-check"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Certificate Courses</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
+                                    <a href="#">Opportunities <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown">
+                                        <a href="images/accountax.jpg" target="_blank">Accountax</a>
+                                        <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship
+                                            Matrix</a>
+                                    </div>
+                                </li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events &
+                                        Programs</a></li>
+                                <li style="animation-delay: 0.6s" class="reveal-up"><a href="contact.html">Contact</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="overlay-header">
+            <div class="mobile-branding-text">
+                <span class="mb-committee">Global Trade & Services Committee</span>
+                <span class="mb-parent">The Institute of Chartered Accountants of India</span>
+            </div>
+            <button class="close-overlay" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="mobile-menu-search">
+            <div class="mobile-search-box">
+                <span class="material-symbols-outlined mobile-search-icon">search</span>
+                <input type="text" placeholder="Search..." class="mobile-search-input">
+            </div>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
+                <li class="mobile-has-dropdown">
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">About
+                        <span class="material-symbols-outlined">expand_more</span></a>
+                    <ul class="mobile-sub-menu">
+                        <li><a href="about.html" onclick="toggleMobileMenu()">About the Directorate</a></li>
+                        <li><a href="members.html" onclick="toggleMobileMenu()">Member of the Group</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-has-dropdown">
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global
+                        Initiatives <span class="material-symbols-outlined">expand_more</span></a>
+                    <ul class="mobile-sub-menu">
+                        <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
+                        <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-global-udaan"
+                                onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="itec-programs.html"
+                                onclick="toggleMobileMenu()">ITEC Programs</a></li>
+                        <li><a href="https://www.icai.org/post/ditswto-occoss-overseas"
+                                onclick="toggleMobileMenu()">Certificate Courses</a></li>
+                    </ul>
+                </li>
+                <li class="mobile-has-dropdown">
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member Opportunities
+                        <span class="material-symbols-outlined">expand_more</span></a>
+                    <ul class="mobile-sub-menu">
+                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">Accountax</a>
+                        </li>
+                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank"
+                                onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
+                    </ul>
+                </li>
+                <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
+                <li><a href="contact.html" onclick="toggleMobileMenu()">Contact & Engagement</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="reports-hero">
+        <div class="container">
+            <h1 class="reveal-up">ITEC Training Programs</h1>
+            <p class="reveal-up" style="animation-delay: 0.1s">ITEC Professional Training Program Reports — Indian Technical and Economic Cooperation Programme by Global Trade & Services Committee</p>
+        </div>
+    </header>
+
+    <!-- Content Grid -->
+    <main class="report-grid">
+        <div class="container">
+            <div class="row gy-4">
+                <!-- Card 1 -->
+                <div class="col-lg-6 reveal-up" style="animation-delay: 0.1s">
+                    <a href="reportspdf/4th ITEC - Professional Training Program.pdf" target="_blank" class="report-card">
+                        <div class="pdf-thumb-container">
+                            <canvas class="pdf-thumb" data-pdf="reportspdf/4th ITEC - Professional Training Program.pdf"></canvas>
+                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-type-badge">ITEC Report</span>
+                            <h4 class="report-title">4th ITEC - Professional Training Program</h4>
+                            <div class="report-meta">
+                                <span class="report-date"><i class="bi bi-journal-text"></i> 4th Edition</span>
+                                <span class="view-link">View PDF <i class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-lg-6 reveal-up" style="animation-delay: 0.2s">
+                    <a href="reportspdf/3rd ITEC Program Report.pdf" target="_blank" class="report-card">
+                        <div class="pdf-thumb-container">
+                            <canvas class="pdf-thumb" data-pdf="reportspdf/3rd ITEC Program Report.pdf"></canvas>
+                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-type-badge">ITEC Report</span>
+                            <h4 class="report-title">3rd ITEC Program Report</h4>
+                            <div class="report-meta">
+                                <span class="report-date"><i class="bi bi-journal-text"></i> 3rd Edition — Report</span>
+                                <span class="view-link">View PDF <i class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-lg-6 reveal-up" style="animation-delay: 0.3s">
+                    <a href="reportspdf/3rd ITEC Program.pdf" target="_blank" class="report-card">
+                        <div class="pdf-thumb-container">
+                            <canvas class="pdf-thumb" data-pdf="reportspdf/3rd ITEC Program.pdf"></canvas>
+                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-type-badge">ITEC Report</span>
+                            <h4 class="report-title">3rd ITEC Program</h4>
+                            <div class="report-meta">
+                                <span class="report-date"><i class="bi bi-journal-text"></i> 3rd Edition</span>
+                                <span class="view-link">View PDF <i class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="col-lg-6 reveal-up" style="animation-delay: 0.4s">
+                    <a href="reportspdf/2nd ITEC Program.pdf" target="_blank" class="report-card">
+                        <div class="pdf-thumb-container">
+                            <canvas class="pdf-thumb" data-pdf="reportspdf/2nd ITEC Program.pdf"></canvas>
+                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-type-badge">ITEC Report</span>
+                            <h4 class="report-title">2nd ITEC Program</h4>
+                            <div class="report-meta">
+                                <span class="report-date"><i class="bi bi-journal-text"></i> 2nd Edition</span>
+                                <span class="view-link">View PDF <i class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="col-lg-6 reveal-up" style="animation-delay: 0.5s">
+                    <a href="reportspdf/1st ITEC Report 2.pdf" target="_blank" class="report-card">
+                        <div class="pdf-thumb-container">
+                            <canvas class="pdf-thumb" data-pdf="reportspdf/1st ITEC Report 2.pdf"></canvas>
+                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                        </div>
+                        <div class="report-info">
+                            <span class="report-type-badge">ITEC Report</span>
+                            <h4 class="report-title">1st ITEC Program</h4>
+                            <div class="report-meta">
+                                <span class="report-date"><i class="bi bi-journal-text"></i> 1st Edition</span>
+                                <span class="view-link">View PDF <i class="bi bi-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-dark py-5">
+        <div class="container">
+            <div class="row gy-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">About Global ICAI</h5>
+                    <p class="footer-text mb-4">The Global Trade & Services Committee of ICAI is committed to
+                        strengthening India's presence in global services trade by promoting international collaboration
+                        and positioning accounting as a key export service.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Programs</h5>
+                    <ul class="footer-list">
+                        <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
+                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Training & Capacity
+                                Building</a></li>
+                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Member Opportunities</a>
+                        </li>
+                        <li><a href="events.html">Events & Programs</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-list">
+                        <li><a href="reports-publications.html">Reports & Publications</a></li>
+                        <li><a href="itec-programs.html">ITEC Programs</a></li>
+                        <li><a href="#">Guidelines & Policies</a></li>
+                        <li><a href="#">Downloads</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <div class="footer-contact-item"><span>Global Trade & Services Committee</span></div>
+                    <div class="footer-contact-item"><span>The Institute of Chartered Accountants of India,<br>(Set up by an Act of Parliament)<br>'ICAI BHAWAN', Indraprastha Marg,<br>New Delhi - 110002</span></div>
+                    <div class="footer-contact-item"><i class="bi bi-telephone"></i><span>011-30110542</span></div>
+                    <div class="footer-contact-item"><i class="bi bi-envelope"></i><span>global@icai.in</span></div>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.linkedin.com/company/gcc-icai/"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://x.com/globalicai/"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom d-flex justify-content-between flex-wrap">
+                <div>© 2026 The Institute of Chartered Accountants of India</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // PDF.js Setup
+        const pdfjsLib = window['pdfjs-dist/build/pdf'];
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        async function renderThumbnails() {
+            const thumbs = document.querySelectorAll('.pdf-thumb');
+
+            // Intersection Observer for lazy loading
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const canvas = entry.target;
+                        const url = canvas.getAttribute('data-pdf');
+                        loadPdfPage(canvas, url);
+                        observer.unobserve(canvas);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            thumbs.forEach(thumb => observer.observe(thumb));
+        }
+
+        async function loadPdfPage(canvas, url) {
+            try {
+                const loadingTask = pdfjsLib.getDocument(url);
+                const pdf = await loadingTask.promise;
+                const page = await pdf.getPage(1);
+
+                const scale = 0.5;
+                const viewport = page.getViewport({ scale: scale });
+                const context = canvas.getContext('2d');
+
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                await page.render(renderContext).promise;
+                canvas.style.opacity = 1;
+            } catch (error) {
+                console.error("PDF Preview Error:", url, error);
+            }
+        }
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function toggleMobileSearch() {
+            if (window.innerWidth < 1200) {
+                const container = document.getElementById('searchContainer');
+                if (container) container.classList.toggle('mobile-expanded');
+            }
+        }
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-up');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+
+        // Start thumbnail generation
+        renderThumbnails();
+    </script>
+</body>
+
+</html>
