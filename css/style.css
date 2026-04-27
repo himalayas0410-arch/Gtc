@@ -1319,6 +1319,8 @@ h6,
 
 .ql-label {
     position: absolute;
+    justify-content: center;
+    width: calc(100% - 48px);
     right: 48px;
     top: 0;
     height: 100%;
