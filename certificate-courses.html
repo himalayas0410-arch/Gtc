@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GTC - Certificate Courses on Overseas Outsourcing Services</title>
-    <meta name="description" content="Online Certificate Courses on Overseas Outsourcing Services — US, UK & Australia by Global Trade & Services Committee, ICAI.">
+    <meta name="description"
+        content="Online Certificate Courses on Overseas Outsourcing Services — US, UK & Australia by Global Trade & Services Committee, ICAI.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
@@ -26,146 +27,439 @@
             border-bottom: 1px solid var(--border-brand);
             margin-bottom: 60px;
         }
-        .reports-hero h1 { font-weight: 800; color: var(--text-dark); margin-bottom: 10px; }
-        .reports-hero p { color: var(--text-light); font-size: 1.1rem; max-width: 800px; }
+
+        .reports-hero h1 {
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .reports-hero p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
 
         /* Market Tabs */
         .course-tabs {
-            display: flex; gap: 12px; margin-bottom: 50px;
-            flex-wrap: wrap; justify-content: center;
+            display: flex;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .course-tab {
-            padding: 12px 28px; border-radius: 50px; font-weight: 700; font-size: 0.95rem;
-            letter-spacing: 0.5px; cursor: pointer; border: 2px solid var(--border-brand);
-            background: #fff; color: var(--text-light); transition: all 0.3s ease;
-            display: flex; align-items: center; gap: 10px;
-        }
-        .course-tab:hover { border-color: var(--blue-primary); color: var(--blue-primary); transform: translateY(-2px); }
-        .course-tab.active { background: var(--blue-primary); border-color: var(--blue-primary); color: #fff; box-shadow: 0 8px 24px rgba(78,165,217,0.25); }
-        .course-tab .tab-count {
-            background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 20px;
-            font-size: 0.75rem; font-weight: 800;
-        }
-        .course-tab.active .tab-count { background: rgba(255,255,255,0.3); }
 
-        .course-section { display: none; margin-bottom: 80px; }
-        .course-section.active { display: block; }
+        .course-tab {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            border: 2px solid var(--border-brand);
+            background: #fff;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-tab:hover {
+            border-color: var(--blue-primary);
+            color: var(--blue-primary);
+            transform: translateY(-2px);
+        }
+
+        .course-tab.active {
+            background: var(--blue-primary);
+            border-color: var(--blue-primary);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(78, 165, 217, 0.25);
+        }
+
+        .course-tab .tab-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        .course-tab.active .tab-count {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .course-section {
+            display: none;
+            margin-bottom: 80px;
+        }
+
+        .course-section.active {
+            display: block;
+        }
 
         /* Accordion subcategories */
-        .sub-accordion { margin-bottom: 20px; border-radius: 16px; overflow: hidden; border: 1px solid var(--border-brand); background: #fff; transition: box-shadow 0.3s ease; }
-        .sub-accordion:hover { box-shadow: 0 8px 30px rgba(15,23,42,0.06); }
-        .sub-accordion-header {
-            padding: 20px 28px; display: flex; align-items: center; gap: 16px;
-            cursor: pointer; user-select: none; transition: background 0.3s ease;
-            background: #fff; position: relative;
+        .sub-accordion {
+            margin-bottom: 20px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-brand);
+            background: #fff;
+            transition: box-shadow 0.3s ease;
         }
-        .sub-accordion-header:hover { background: #f8fafc; }
-        .sub-accordion-header.open { background: var(--tint-blue); border-bottom: 1px solid var(--border-brand); }
+
+        .sub-accordion:hover {
+            box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+        }
+
+        .sub-accordion-header {
+            padding: 20px 28px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.3s ease;
+            background: #fff;
+            position: relative;
+        }
+
+        .sub-accordion-header:hover {
+            background: #f8fafc;
+        }
+
+        .sub-accordion-header.open {
+            background: var(--tint-blue);
+            border-bottom: 1px solid var(--border-brand);
+        }
 
         .sub-acc-icon {
-            width: 44px; height: 44px; border-radius: 12px; display: flex;
-            align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
         }
-        .sub-acc-icon.blue { background: var(--tint-blue); color: var(--blue-primary); }
-        .sub-acc-icon.purple { background: #f5f3ff; color: #7c3aed; }
-        .sub-acc-icon.orange { background: #fff7ed; color: #ea580c; }
-        .sub-acc-icon.green { background: #f0fdf4; color: #16a34a; }
 
-        .sub-acc-text { flex-grow: 1; }
-        .sub-acc-text h3 { font-weight: 700; font-size: 1.05rem; color: var(--text-dark); margin: 0 0 4px 0; }
-        .sub-acc-text p { font-size: 0.85rem; color: var(--text-light); margin: 0; }
+        .sub-acc-icon.blue {
+            background: var(--tint-blue);
+            color: var(--blue-primary);
+        }
+
+        .sub-acc-icon.purple {
+            background: #f5f3ff;
+            color: #7c3aed;
+        }
+
+        .sub-acc-icon.orange {
+            background: #fff7ed;
+            color: #ea580c;
+        }
+
+        .sub-acc-icon.green {
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .sub-acc-text {
+            flex-grow: 1;
+        }
+
+        .sub-acc-text h3 {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin: 0 0 4px 0;
+        }
+
+        .sub-acc-text p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin: 0;
+        }
 
         .sub-acc-badge {
-            font-size: 0.75rem; font-weight: 700; padding: 4px 10px;
-            border-radius: 20px; white-space: nowrap;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 20px;
+            white-space: nowrap;
         }
-        .sub-acc-badge.blue { background: var(--tint-blue); color: var(--blue-primary); }
-        .sub-acc-badge.purple { background: #f5f3ff; color: #7c3aed; }
-        .sub-acc-badge.orange { background: #fff7ed; color: #ea580c; }
+
+        .sub-acc-badge.blue {
+            background: var(--tint-blue);
+            color: var(--blue-primary);
+        }
+
+        .sub-acc-badge.purple {
+            background: #f5f3ff;
+            color: #7c3aed;
+        }
+
+        .sub-acc-badge.orange {
+            background: #fff7ed;
+            color: #ea580c;
+        }
 
         .sub-acc-arrow {
-            font-size: 20px; color: var(--text-light); transition: transform 0.3s ease; flex-shrink: 0;
+            font-size: 20px;
+            color: var(--text-light);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
         }
-        .sub-accordion-header.open .sub-acc-arrow { transform: rotate(180deg); color: var(--blue-primary); }
 
-        .sub-accordion-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
-        .sub-accordion-body.open { max-height: 5000px; }
-        .sub-accordion-body-inner { padding: 24px 28px; }
+        .sub-accordion-header.open .sub-acc-arrow {
+            transform: rotate(180deg);
+            color: var(--blue-primary);
+        }
+
+        .sub-accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .sub-accordion-body.open {
+            max-height: 5000px;
+        }
+
+        .sub-accordion-body-inner {
+            padding: 24px 28px;
+        }
 
         /* PDF Cards inside accordion */
         .report-card {
-            background: #fff; border-radius: 16px; padding: 20px; display: flex; gap: 20px;
-            border: 1px solid #f1f5f9; transition: all 0.3s ease; height: 100%;
-            position: relative; overflow: hidden; text-decoration: none; color: inherit;
+            background: #fff;
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            gap: 20px;
+            border: 1px solid #f1f5f9;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
         }
+
         .report-card:hover {
-            transform: translateY(-4px); border-color: var(--blue-primary);
-            box-shadow: 0 8px 24px rgba(15,23,42,0.08); text-decoration: none; color: inherit;
+            transform: translateY(-4px);
+            border-color: var(--blue-primary);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+            text-decoration: none;
+            color: inherit;
         }
 
         .pdf-thumb-container {
-            flex-shrink: 0; width: 100px; min-height: 130px; position: relative;
-            border-radius: 8px; overflow: hidden; background: #f8fafc;
-            border: 1px solid #eef2f6; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
-        }
-        .pdf-thumb { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0; transition: opacity 0.5s ease; }
-        .fallback-icon {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--tint-blue); display: flex; align-items: center; justify-content: center;
-            color: var(--blue-primary); font-size: 22px; z-index: -1;
+            flex-shrink: 0;
+            width: 100px;
+            min-height: 130px;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f8fafc;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
         }
 
-        .report-info { flex-grow: 1; display: flex; flex-direction: column; }
-        .report-type-badge {
-            font-size: 9px; text-transform: uppercase; font-weight: 700; letter-spacing: 1px;
-            padding: 3px 8px; border-radius: 4px; display: inline-block; width: fit-content; margin-bottom: 10px;
+        .pdf-thumb {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0;
+            transition: opacity 0.5s ease;
         }
-        .badge-blue { color: var(--blue-primary); background: var(--tint-blue); }
-        .badge-purple { color: #7c3aed; background: #f5f3ff; }
-        .badge-orange { color: #ea580c; background: #fff7ed; }
-        .badge-green { color: #16a34a; background: #f0fdf4; }
+
+        .fallback-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--tint-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-primary);
+            font-size: 22px;
+            z-index: -1;
+        }
+
+        .report-info {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .report-type-badge {
+            font-size: 9px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            display: inline-block;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        .badge-blue {
+            color: var(--blue-primary);
+            background: var(--tint-blue);
+        }
+
+        .badge-purple {
+            color: #7c3aed;
+            background: #f5f3ff;
+        }
+
+        .badge-orange {
+            color: #ea580c;
+            background: #fff7ed;
+        }
+
+        .badge-green {
+            color: #16a34a;
+            background: #f0fdf4;
+        }
 
         .report-title {
-            font-weight: 700; font-size: 0.95rem; color: var(--text-dark); line-height: 1.5;
-            margin-bottom: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin-bottom: 12px;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
         }
+
         .report-meta {
-            margin-top: auto; display: flex; align-items: center; justify-content: space-between;
-            padding-top: 12px; border-top: 1px solid #f1f5f9;
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px solid #f1f5f9;
         }
-        .report-date { font-size: 0.8rem; color: var(--text-light); display: flex; align-items: center; gap: 6px; }
-        .view-link { font-weight: 600; font-size: 0.85rem; color: var(--blue-primary); display: flex; align-items: center; gap: 4px; transition: var(--transition); }
-        .report-card:hover .view-link { gap: 8px; }
+
+        .report-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .view-link {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--blue-primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: var(--transition);
+        }
+
+        .report-card:hover .view-link {
+            gap: 8px;
+        }
 
         /* Consent / Info Box */
         .consent-box {
             background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
-            border: 1px solid var(--border-brand); border-radius: 16px;
-            padding: 32px; margin-bottom: 24px;
+            border: 1px solid var(--border-brand);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
         }
-        .consent-box h4 { font-weight: 700; color: var(--text-dark); margin-bottom: 16px; font-size: 1.1rem; }
-        .consent-box p { color: var(--text-light); font-size: 0.92rem; line-height: 1.7; margin-bottom: 12px; }
+
+        .consent-box h4 {
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+            font-size: 1.1rem;
+        }
+
+        .consent-box p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
         .consent-box .consent-cta {
-            display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px;
-            background: var(--blue-primary); color: #fff; border-radius: 50px;
-            font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            background: var(--blue-primary);
+            color: #fff;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
             margin-top: 8px;
         }
-        .consent-box .consent-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(78,165,217,0.3); }
-        .consent-box .consent-footer {
-            margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(0,0,0,0.06);
-            font-size: 0.8rem; color: var(--text-light);
+
+        .consent-box .consent-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(78, 165, 217, 0.3);
         }
-        .consent-box .consent-footer strong { color: var(--text-dark); }
+
+        .consent-box .consent-footer {
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+
+        .consent-box .consent-footer strong {
+            color: var(--text-dark);
+        }
 
         @media (max-width: 768px) {
-            .report-card { padding: 20px; flex-direction: column; gap: 16px; text-align: center; }
-            .pdf-thumb-container { width: 100px; margin: 0 auto; }
-            .report-type-badge { margin: 0 auto 10px auto; }
-            .reports-hero { padding: 60px 0; text-align: center; }
-            .sub-accordion-header { padding: 16px 20px; }
-            .sub-accordion-body-inner { padding: 20px; }
-            .consent-box { padding: 24px; }
+            .report-card {
+                padding: 20px;
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .pdf-thumb-container {
+                width: 100px;
+                margin: 0 auto;
+            }
+
+            .report-type-badge {
+                margin: 0 auto 10px auto;
+            }
+
+            .reports-hero {
+                padding: 60px 0;
+                text-align: center;
+            }
+
+            .sub-accordion-header {
+                padding: 16px 20px;
+            }
+
+            .sub-accordion-body-inner {
+                padding: 20px;
+            }
+
+            .consent-box {
+                padding: 24px;
+            }
         }
     </style>
 </head>
@@ -189,11 +483,12 @@
                 </div>
 
                 <!-- Utility Actions moved here -->
-                                <div class="header-actions-group">
+                <div class="header-actions-group">
                     <div class="header-actions">
                         <div class="search-container top-tier" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                            <span class="material-symbols-outlined search-icon"
+                                onclick="toggleMobileSearch()">search</span>
                         </div>
                     </div>
 
@@ -217,14 +512,16 @@
                             <ul>
                                 <li style="animation-delay: 0.1s" class="reveal-up"><a href="index.html">Home</a></li>
                                 <li style="animation-delay: 0.2s" class="reveal-up has-dropdown">
-                                    <a href="about.html">About <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <a href="about.html">About <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
                                         <a href="about.html">About the Directorate</a>
                                         <a href="members.html">Member of the Group</a>
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
-                                    <a href="#">Global Initiatives <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <a href="#">Global Initiatives <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown nav-panel">
                                         <div class="nav-panel-grid">
                                             <a href="https://apo.icai.org/" class="nav-panel-item">
@@ -239,7 +536,8 @@
                                                     <span class="nav-panel-title">GCC Initiatives</span>
                                                 </div>
                                             </a>
-                                            <a href="https://www.icai.org/post/cditswto-global-udaan" class="nav-panel-item">
+                                            <a href="https://www.icai.org/post/cditswto-global-udaan"
+                                                class="nav-panel-item">
                                                 <i class="bi bi-rocket-takeoff"></i>
                                                 <div class="nav-panel-content">
                                                     <span class="nav-panel-title">Global Udaan</span>
@@ -261,11 +559,15 @@
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
-                                    <a href="#">Opportunities <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <a href="#">Opportunities <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
-                                        <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift City - IFSCA</a>
-                                        <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at Accountex London</a>
-                                        <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship Matrix</a>
+                                        <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift
+                                            City - IFSCA</a>
+                                        <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at
+                                            Accountex London</a>
+                                        <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship
+                                            Matrix</a>
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events &
@@ -275,7 +577,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -302,28 +604,38 @@
             <ul>
                 <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
                 <li class="mobile-has-dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">About <span class="material-symbols-outlined">expand_more</span></a>
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">About
+                        <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
                         <li><a href="about.html" onclick="toggleMobileMenu()">About the Directorate</a></li>
                         <li><a href="members.html" onclick="toggleMobileMenu()">Member of the Group</a></li>
                     </ul>
                 </li>
                 <li class="mobile-has-dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global Initiatives <span class="material-symbols-outlined">expand_more</span></a>
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global
+                        Initiatives <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
                         <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
                         <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
-                        <li><a href="https://www.icai.org/post/cditswto-global-udaan" onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-global-udaan"
+                                onclick="toggleMobileMenu()">Global Udaan</a></li>
                         <li><a href="itec-programs.html" onclick="toggleMobileMenu()">ITEC Programs</a></li>
                         <li><a href="certificate-courses.html" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
                 </li>
                 <li class="mobile-has-dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member Opportunities <span class="material-symbols-outlined">expand_more</span></a>
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member
+                        Opportunities <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
-                        <li><a href="images/delegates.pdf" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation visit to Gift City - IFSCA</a></li>
-                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation & Exhibit at Accountex London</a></li>
-                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank" onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
+                        <li><a href="images/delegates.pdf" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
+                                visit to Gift City - IFSCA</a></li>
+                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
+                                & Exhibit at Accountex London</a></li>
+                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank"
+                                onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
                     </ul>
                 </li>
                 <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
@@ -336,7 +648,8 @@
     <header class="reports-hero">
         <div class="container">
             <h1 class="reveal-up">Certificate Courses</h1>
-            <p class="reveal-up" style="animation-delay: 0.1s">Online Certificate Course on Overseas Outsourcing Services — Empowering Chartered Accountants for US, UK & Australia Markets</p>
+            <p class="reveal-up" style="animation-delay: 0.1s">Online Certificate Course on Overseas Outsourcing
+                Services — Empowering Chartered Accountants for US, UK & Australia Markets</p>
         </div>
     </header>
 
@@ -377,10 +690,16 @@
                     <div class="sub-accordion-body">
                         <div class="sub-accordion-body-inner">
                             <div class="consent-box">
-                                <h4><i class="bi bi-pen me-2" style="color: var(--blue-primary);"></i> Consent for Pursuing Online Certificate Course on Overseas Outsourcing Services (US)</h4>
-                                <p>As in today's globalized economy, understanding the dynamics of overseas outsourcing, particularly within the US, is paramount for professional growth and organizational success. The Global Trade & Services Committee has successfully conducted multiple batches of the Online Certificate Course on Overseas Outsourcing Services (US).</p>
-                                <p>This comprehensive course is designed to equip participants with the knowledge, skills, and strategies needed to excel in this competitive arena.</p>
-                                <p>The Committee proposes to launch its next batch soon. To express your interest and secure your spot in the upcoming batch, we kindly request to give your consent.</p>
+                                <h4><i class="bi bi-pen me-2" style="color: var(--blue-primary);"></i> Consent for
+                                    Pursuing Online Certificate Course on Overseas Outsourcing Services (US)</h4>
+                                <p>As in today's globalized economy, understanding the dynamics of overseas outsourcing,
+                                    particularly within the US, is paramount for professional growth and organizational
+                                    success. The Global Trade & Services Committee has successfully conducted multiple
+                                    batches of the Online Certificate Course on Overseas Outsourcing Services (US).</p>
+                                <p>This comprehensive course is designed to equip participants with the knowledge,
+                                    skills, and strategies needed to excel in this competitive arena.</p>
+                                <p>The Committee proposes to launch its next batch soon. To express your interest and
+                                    secure your spot in the upcoming batch, we kindly request to give your consent.</p>
                                 <a href="https://forms.gle/DiS9UyLQnoQN2KXt6" target="_blank" class="consent-cta">
                                     <i class="bi bi-box-arrow-up-right"></i> Register / Give Consent for Next Batch
                                 </a>
@@ -410,68 +729,181 @@
                             <div class="row gy-3">
                                 <div class="col-lg-6">
                                     <a href="reportspdf/Batch 11.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/Batch 11.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 11</span><h4 class="report-title">11th Batch — Overseas Outsourcing Services (US)</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> Latest</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/Batch 11.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                11</span>
+                                            <h4 class="report-title">11th Batch — Overseas Outsourcing Services (US)
+                                            </h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> Latest</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/10th Batch Certificate Course (4 pages) 10-09-2025 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/10th Batch Certificate Course (4 pages) 10-09-2025 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 10</span><h4 class="report-title">10th Batch — Certificate Course (Sep 2025)</h4><div class="report-meta"><span class="report-date"><i class="bi bi-calendar3"></i> Sep 2025</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                    <a href="reportspdf/10th Batch Certificate Course (4 pages) 10-09-2025 1.pdf"
+                                        target="_blank" class="report-card">
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/10th Batch Certificate Course (4 pages) 10-09-2025 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                10</span>
+                                            <h4 class="report-title">10th Batch — Certificate Course (Sep 2025)</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-calendar3"></i> Sep 2025</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/9th Batch Brochure 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/9th Batch Brochure 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 9</span><h4 class="report-title">9th Batch — Course Brochure</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 9th Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/9th Batch Brochure 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                9</span>
+                                            <h4 class="report-title">9th Batch — Course Brochure</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 9th Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/8th Batch Certificate Course-13may-20june-Last date-6june 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/8th Batch Certificate Course-13may-20june-Last date-6june 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 8</span><h4 class="report-title">8th Batch — 13 May to 20 June</h4><div class="report-meta"><span class="report-date"><i class="bi bi-calendar3"></i> May–Jun</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                    <a href="reportspdf/8th Batch Certificate Course-13may-20june-Last date-6june 1.pdf"
+                                        target="_blank" class="report-card">
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/8th Batch Certificate Course-13may-20june-Last date-6june 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                8</span>
+                                            <h4 class="report-title">8th Batch — 13 May to 20 June</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-calendar3"></i> May–Jun</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/7th Batch 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/7th Batch 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 7</span><h4 class="report-title">7th Batch — Overseas Outsourcing Services</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 7th Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/7th Batch 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                7</span>
+                                            <h4 class="report-title">7th Batch — Overseas Outsourcing Services</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 7th Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/FLyer 6th Batch 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/FLyer 6th Batch 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 6</span><h4 class="report-title">6th Batch — Course Flyer</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 6th Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/FLyer 6th Batch 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                6</span>
+                                            <h4 class="report-title">6th Batch — Course Flyer</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 6th Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/5th Batch OOS 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/5th Batch OOS 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 5</span><h4 class="report-title">5th Batch — Overseas Outsourcing Services</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 5th Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/5th Batch OOS 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                5</span>
+                                            <h4 class="report-title">5th Batch — Overseas Outsourcing Services</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 5th Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/4 Batch brochure 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/4 Batch brochure 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 4</span><h4 class="report-title">4th Batch — Course Brochure</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 4th Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/4 Batch brochure 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                4</span>
+                                            <h4 class="report-title">4th Batch — Course Brochure</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 4th Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/Flyer 3rd Batch 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/Flyer 3rd Batch 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 3</span><h4 class="report-title">3rd Batch — Course Flyer</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 3rd Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/Flyer 3rd Batch 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                3</span>
+                                            <h4 class="report-title">3rd Batch — Course Flyer</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 3rd Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/Batch-2 Full flyer 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/Batch-2 Full flyer 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 2</span><h4 class="report-title">2nd Batch — Full Flyer</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 2nd Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/Batch-2 Full flyer 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                2</span>
+                                            <h4 class="report-title">2nd Batch — Full Flyer</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 2nd Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
                                     <a href="reportspdf/Batch1 1.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/Batch1 1.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch 1</span><h4 class="report-title">1st Batch — Inaugural Course</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> 1st Batch</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/Batch1 1.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-blue">Batch
+                                                1</span>
+                                            <h4 class="report-title">1st Batch — Inaugural Course</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> 1st Batch</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -494,9 +926,19 @@
                         <div class="sub-accordion-body-inner">
                             <div class="row gy-3">
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/List of passed candidates.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/List of passed candidates.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-green">Results</span><h4 class="report-title">Passed Candidates — Five Batches (US)</h4><div class="report-meta"><span class="report-date"><i class="bi bi-trophy"></i> US</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                    <a href="reportspdf/List of passed candidates.pdf" target="_blank"
+                                        class="report-card">
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/List of passed candidates.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span
+                                                class="report-type-badge badge-green">Results</span>
+                                            <h4 class="report-title">Passed Candidates — Five Batches (US)</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-trophy"></i> US</span><span class="view-link">View
+                                                    <i class="bi bi-arrow-right"></i></span></div>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -524,11 +966,19 @@
                     <div class="sub-accordion-body">
                         <div class="sub-accordion-body-inner">
                             <div class="consent-box">
-                                <h4><i class="bi bi-pen me-2" style="color: #7c3aed;"></i> Consent for Pursuing Online Certificate Course on Overseas Outsourcing Services (UK)</h4>
-                                <p>As in today's globalized economy, understanding the dynamics of overseas outsourcing, particularly within the UK, is paramount for professional growth and organizational success. The Global Trade & Services Committee has launched its First batch of Online Certificate Course on Overseas Outsourcing Services (UK) in the month of September-October enrolling 119 members.</p>
-                                <p>This comprehensive course is designed to equip participants with the knowledge, skills, and strategies needed to excel in this competitive arena.</p>
-                                <p>The Directorate proposes to launch its next batch soon. To express your interest and secure your spot in the upcoming batch, we kindly request to give your consent.</p>
-                                <a href="https://forms.gle/DiS9UyLQnoQN2KXt6" target="_blank" class="consent-cta" style="background: #7c3aed;">
+                                <h4><i class="bi bi-pen me-2" style="color: #7c3aed;"></i> Consent for Pursuing Online
+                                    Certificate Course on Overseas Outsourcing Services (UK)</h4>
+                                <p>As in today's globalized economy, understanding the dynamics of overseas outsourcing,
+                                    particularly within the UK, is paramount for professional growth and organizational
+                                    success. The Global Trade & Services Committee has launched its First batch of
+                                    Online Certificate Course on Overseas Outsourcing Services (UK) in the month of
+                                    September-October enrolling 119 members.</p>
+                                <p>This comprehensive course is designed to equip participants with the knowledge,
+                                    skills, and strategies needed to excel in this competitive arena.</p>
+                                <p>The Directorate proposes to launch its next batch soon. To express your interest and
+                                    secure your spot in the upcoming batch, we kindly request to give your consent.</p>
+                                <a href="https://forms.gle/DiS9UyLQnoQN2KXt6" target="_blank" class="consent-cta"
+                                    style="background: #7c3aed;">
                                     <i class="bi bi-box-arrow-up-right"></i> Register / Give Consent for Next Batch
                                 </a>
                                 <div class="consent-footer">
@@ -556,15 +1006,37 @@
                         <div class="sub-accordion-body-inner">
                             <div class="row gy-3">
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/Registration for 2nd Batch of Online Certificate Course on Overseas Outsourcing Services  UK 25 Nov 2025 - 9 Jan 2026 Last Date 18 Nov 2025.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/Registration for 2nd Batch of Online Certificate Course on Overseas Outsourcing Services  UK 25 Nov 2025 - 9 Jan 2026 Last Date 18 Nov 2025.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-purple">Batch 2</span><h4 class="report-title">2nd Batch — UK (25 Nov 2025 to 9 Jan 2026)</h4><div class="report-meta"><span class="report-date"><i class="bi bi-calendar3"></i> Nov 2025 – Jan 2026</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                    <a href="reportspdf/Registration for 2nd Batch of Online Certificate Course on Overseas Outsourcing Services  UK 25 Nov 2025 - 9 Jan 2026 Last Date 18 Nov 2025.pdf"
+                                        target="_blank" class="report-card">
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/Registration for 2nd Batch of Online Certificate Course on Overseas Outsourcing Services  UK 25 Nov 2025 - 9 Jan 2026 Last Date 18 Nov 2025.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-purple">Batch
+                                                2</span>
+                                            <h4 class="report-title">2nd Batch — UK (25 Nov 2025 to 9 Jan 2026)</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-calendar3"></i> Nov 2025 – Jan 2026</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/Registration for 1st Batch of Online Certificate Course of Overseas Outsourcing Services - UK from 8th September 2025 to 17th October 2025. Last Date to Apply - 31st August 2025..pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/Registration for 1st Batch of Online Certificate Course of Overseas Outsourcing Services - UK from 8th September 2025 to 17th October 2025. Last Date to Apply - 31st August 2025..pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-purple">Batch 1</span><h4 class="report-title">1st Batch — UK (8 Sep to 17 Oct 2025)</h4><div class="report-meta"><span class="report-date"><i class="bi bi-calendar3"></i> Sep – Oct 2025</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                    <a href="reportspdf/Registration for 1st Batch of Online Certificate Course of Overseas Outsourcing Services - UK from 8th September 2025 to 17th October 2025. Last Date to Apply - 31st August 2025..pdf"
+                                        target="_blank" class="report-card">
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/Registration for 1st Batch of Online Certificate Course of Overseas Outsourcing Services - UK from 8th September 2025 to 17th October 2025. Last Date to Apply - 31st August 2025..pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span class="report-type-badge badge-purple">Batch
+                                                1</span>
+                                            <h4 class="report-title">1st Batch — UK (8 Sep to 17 Oct 2025)</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-calendar3"></i> Sep – Oct 2025</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -592,9 +1064,21 @@
                         <div class="sub-accordion-body-inner">
                             <div class="row gy-3">
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/Certificate Course on Overseas Outsourcing Services - Australia.pdf" target="_blank" class="report-card">
-                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb" data-pdf="reportspdf/Certificate Course on Overseas Outsourcing Services - Australia.pdf"></canvas><div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div></div>
-                                        <div class="report-info"><span class="report-type-badge badge-orange">Australia</span><h4 class="report-title">Certificate Course on Overseas Outsourcing Services — Australia</h4><div class="report-meta"><span class="report-date"><i class="bi bi-mortarboard"></i> Australia</span><span class="view-link">View <i class="bi bi-arrow-right"></i></span></div></div>
+                                    <a href="reportspdf/Certificate Course on Overseas Outsourcing Services - Australia.pdf"
+                                        target="_blank" class="report-card">
+                                        <div class="pdf-thumb-container"><canvas class="pdf-thumb"
+                                                data-pdf="reportspdf/Certificate Course on Overseas Outsourcing Services - Australia.pdf"></canvas>
+                                            <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
+                                        </div>
+                                        <div class="report-info"><span
+                                                class="report-type-badge badge-orange">Australia</span>
+                                            <h4 class="report-title">Certificate Course on Overseas Outsourcing Services
+                                                — Australia</h4>
+                                            <div class="report-meta"><span class="report-date"><i
+                                                        class="bi bi-mortarboard"></i> Australia</span><span
+                                                    class="view-link">View <i class="bi bi-arrow-right"></i></span>
+                                            </div>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -612,8 +1096,13 @@
                 <!-- About -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">About Global ICAI</h5>
-                    <p class="footer-text mb-4" style="text-align: justify;">The Global Trade & Services Committee of ICAI is committed to strengthening India’s presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy. The Committee works closely with government bodies, industry stakeholders, and international institutions to facilitate trade integration, policy engagement, and global professional mobility.</p>
-                    
+                    <p class="footer-text mb-4" style="text-align: justify;">The Global Trade & Services Committee of
+                        ICAI is committed to strengthening India’s presence in global services trade by promoting
+                        international collaboration, enhancing professional opportunities, and positioning accounting
+                        and finance as key export services in the evolving global economy. The Committee works closely
+                        with government bodies, industry stakeholders, and international institutions to facilitate
+                        trade integration, policy engagement, and global professional mobility.</p>
+
                 </div>
 
                 <!-- Programs -->
@@ -670,8 +1159,8 @@
                     © 2026 The Institute of Chartered Accountants of India
                 </div>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-use.html">Terms of Use</a>
                     <a href="#">Sitemap</a>
                 </div>
             </div>

@@ -7,8 +7,10 @@
     <title>Contact Us - Global Trade & Services Committee</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Inter:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Inter:wght@300..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
@@ -20,8 +22,8 @@
             padding: 35px;
             height: 100%;
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            border: 1px solid rgba(0,0,0,0.06);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -30,7 +32,7 @@
 
         .contact-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             border-color: var(--blue-primary);
         }
 
@@ -54,16 +56,31 @@
         }
 
         /* Card 1: Address (Blue -> Purple) */
-        .col-lg-4:nth-child(1) .contact-icon-wrapper { background: var(--blue-primary); }
-        .col-lg-4:nth-child(1) .contact-card:hover .contact-icon-wrapper { background: var(--purple-accent); }
+        .col-lg-4:nth-child(1) .contact-icon-wrapper {
+            background: var(--blue-primary);
+        }
+
+        .col-lg-4:nth-child(1) .contact-card:hover .contact-icon-wrapper {
+            background: var(--purple-accent);
+        }
 
         /* Card 2: Phone (Purple -> Orange) */
-        .col-lg-4:nth-child(2) .contact-icon-wrapper { background: var(--purple-accent); }
-        .col-lg-4:nth-child(2) .contact-card:hover .contact-icon-wrapper { background: var(--orange-secondary); }
+        .col-lg-4:nth-child(2) .contact-icon-wrapper {
+            background: var(--purple-accent);
+        }
+
+        .col-lg-4:nth-child(2) .contact-card:hover .contact-icon-wrapper {
+            background: var(--orange-secondary);
+        }
 
         /* Card 3: Email (Orange -> Blue) */
-        .col-lg-4:nth-child(3) .contact-icon-wrapper { background: var(--orange-secondary); }
-        .col-lg-4:nth-child(3) .contact-card:hover .contact-icon-wrapper { background: var(--blue-primary); }
+        .col-lg-4:nth-child(3) .contact-icon-wrapper {
+            background: var(--orange-secondary);
+        }
+
+        .col-lg-4:nth-child(3) .contact-card:hover .contact-icon-wrapper {
+            background: var(--blue-primary);
+        }
 
         .contact-card h4 {
             color: #1e293b;
@@ -72,7 +89,8 @@
             font-size: 1.25rem;
         }
 
-        .contact-card p, .contact-card a {
+        .contact-card p,
+        .contact-card a {
             color: #64748b;
             line-height: 1.6;
             text-decoration: none;
@@ -88,8 +106,8 @@
             padding: 40px;
             color: #1e293b !important;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
         }
 
         .social-connect h3 {
@@ -119,7 +137,7 @@
             background: var(--blue-primary);
             color: #fff;
             transform: scale(1.15) translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -143,11 +161,12 @@
                 </div>
 
                 <!-- Utility Actions moved here -->
-                                <div class="header-actions-group">
+                <div class="header-actions-group">
                     <div class="header-actions">
                         <div class="search-container top-tier" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                            <span class="material-symbols-outlined search-icon"
+                                onclick="toggleMobileSearch()">search</span>
                         </div>
                     </div>
 
@@ -171,14 +190,16 @@
                             <ul>
                                 <li style="animation-delay: 0.1s" class="reveal-up"><a href="index.html">Home</a></li>
                                 <li style="animation-delay: 0.2s" class="reveal-up has-dropdown">
-                                    <a href="about.html">About <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <a href="about.html">About <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
                                         <a href="about.html">About the Directorate</a>
                                         <a href="members.html">Member of the Group</a>
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
-                                    <a href="#">Global Initiatives <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <a href="#">Global Initiatives <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown nav-panel">
                                         <div class="nav-panel-grid">
                                             <a href="https://apo.icai.org/" class="nav-panel-item">
@@ -193,7 +214,8 @@
                                                     <span class="nav-panel-title">GCC Initiatives</span>
                                                 </div>
                                             </a>
-                                            <a href="https://www.icai.org/post/cditswto-global-udaan" class="nav-panel-item">
+                                            <a href="https://www.icai.org/post/cditswto-global-udaan"
+                                                class="nav-panel-item">
                                                 <i class="bi bi-rocket-takeoff"></i>
                                                 <div class="nav-panel-content">
                                                     <span class="nav-panel-title">Global Udaan</span>
@@ -215,11 +237,15 @@
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
-                                    <a href="#">Opportunities <span class="material-symbols-outlined" style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <a href="#">Opportunities <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
-                                        <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift City - IFSCA</a>
-                                        <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at Accountex London</a>
-                                        <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship Matrix</a>
+                                        <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift
+                                            City - IFSCA</a>
+                                        <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at
+                                            Accountex London</a>
+                                        <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship
+                                            Matrix</a>
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events &
@@ -229,7 +255,7 @@
                             </ul>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -256,28 +282,38 @@
             <ul>
                 <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
                 <li class="mobile-has-dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">About <span class="material-symbols-outlined">expand_more</span></a>
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">About
+                        <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
                         <li><a href="about.html" onclick="toggleMobileMenu()">About the Directorate</a></li>
                         <li><a href="members.html" onclick="toggleMobileMenu()">Member of the Group</a></li>
                     </ul>
                 </li>
                 <li class="mobile-has-dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global Initiatives <span class="material-symbols-outlined">expand_more</span></a>
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global
+                        Initiatives <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
                         <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
                         <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
-                        <li><a href="https://www.icai.org/post/cditswto-global-udaan" onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="https://www.icai.org/post/cditswto-global-udaan"
+                                onclick="toggleMobileMenu()">Global Udaan</a></li>
                         <li><a href="itec-programs.html" onclick="toggleMobileMenu()">ITEC Programs</a></li>
                         <li><a href="certificate-courses.html" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
                 </li>
                 <li class="mobile-has-dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member Opportunities <span class="material-symbols-outlined">expand_more</span></a>
+                    <a href="#"
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member
+                        Opportunities <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
-                        <li><a href="images/delegates.pdf" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation visit to Gift City - IFSCA</a></li>
-                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation & Exhibit at Accountex London</a></li>
-                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank" onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
+                        <li><a href="images/delegates.pdf" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
+                                visit to Gift City - IFSCA</a></li>
+                        <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
+                                & Exhibit at Accountex London</a></li>
+                        <li><a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank"
+                                onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
                     </ul>
                 </li>
                 <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
@@ -290,9 +326,11 @@
     <div class="container py-5 mt-5">
         <div class="row justify-content-center mb-5">
             <div class="col-lg-10 text-center">
-                <div class="scroll-reveal" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 50px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.04);">
+                <div class="scroll-reveal"
+                    style="background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); padding: 50px; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid rgba(0,0,0,0.04);">
                     <h2 class="section-title mb-3" style="font-size: 2.8rem;">Contact Us</h2>
-                    <h5 class="fw-normal" style="color: var(--blue-primary); letter-spacing: 1px;">Global Trade & Services Committee</h5>
+                    <h5 class="fw-normal" style="color: var(--blue-primary); letter-spacing: 1px;">Global Trade &
+                        Services Committee</h5>
                 </div>
             </div>
         </div>
@@ -306,9 +344,9 @@
                     </div>
                     <h4>Our Address</h4>
                     <p>Global Trade & Services Committee<br>
-                    The Institute of Chartered Accountants of India,<br>
-                    'ICAI BHAWAN', Indraprastha Marg,<br>
-                    New Delhi - 110002</p>
+                        The Institute of Chartered Accountants of India,<br>
+                        'ICAI BHAWAN', Indraprastha Marg,<br>
+                        New Delhi - 110002</p>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -318,7 +356,8 @@
                     </div>
                     <h4>Phone Number</h4>
                     <p>Direct Board Line:</p>
-                    <a href="tel:01130110542" style="font-weight: 700; color: #1e293b; font-size: 1.2rem;">011-30110542</a>
+                    <a href="tel:01130110542"
+                        style="font-weight: 700; color: #1e293b; font-size: 1.2rem;">011-30110542</a>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -328,7 +367,8 @@
                     </div>
                     <h4>Email Address</h4>
                     <p>Send us your inquiries:</p>
-                    <a href="mailto:global@icai.in" style="font-weight: 700; color: #1e293b; font-size: 1.2rem;">global@icai.in</a>
+                    <a href="mailto:global@icai.in"
+                        style="font-weight: 700; color: #1e293b; font-size: 1.2rem;">global@icai.in</a>
                 </div>
             </div>
         </div>
@@ -338,11 +378,14 @@
             <div class="col-lg-8">
                 <div class="social-connect scroll-reveal" style="animation-delay: 0.2s;">
                     <h3 class="mb-3" style="font-weight: 800;">Connected with Us</h3>
-                    <p class="mb-4 text-muted">Follow us on social media for the latest updates on global trade, events, and opportunities.</p>
-                    
+                    <p class="mb-4 text-muted">Follow us on social media for the latest updates on global trade, events,
+                        and opportunities.</p>
+
                     <div class="mb-5">
-                        <a href="https://www.linkedin.com/company/gcc-icai/" class="social-link-large"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://x.com/globalicai/" class="social-link-large"><i class="bi bi-twitter-x"></i></a>
+                        <a href="https://www.linkedin.com/company/gcc-icai/" class="social-link-large"><i
+                                class="bi bi-linkedin"></i></a>
+                        <a href="https://x.com/globalicai/" class="social-link-large"><i
+                                class="bi bi-twitter-x"></i></a>
                         <a href="#" class="social-link-large"><i class="bi bi-youtube"></i></a>
                         <a href="#" class="social-link-large"><i class="bi bi-instagram"></i></a>
                     </div>
@@ -351,7 +394,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center mb-3">
-                                    <div class="bg-primary rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #fff;">
+                                    <div class="bg-primary rounded-circle p-2 me-3"
+                                        style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #fff;">
                                         <i class="bi bi-clock"></i>
                                     </div>
                                     <div>
@@ -362,7 +406,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="d-flex align-items-center">
-                                    <div class="bg-primary rounded-circle p-2 me-3" style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #fff;">
+                                    <div class="bg-primary rounded-circle p-2 me-3"
+                                        style="width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: #fff;">
                                         <i class="bi bi-geo-alt"></i>
                                     </div>
                                     <div>
@@ -384,8 +429,13 @@
                 <!-- About -->
                 <div class="col-lg-3 col-md-6">
                     <h5 class="footer-title">About Global ICAI</h5>
-                    <p class="footer-text mb-4" style="text-align: justify;">The Global Trade & Services Committee of ICAI is committed to strengthening India’s presence in global services trade by promoting international collaboration, enhancing professional opportunities, and positioning accounting and finance as key export services in the evolving global economy. The Committee works closely with government bodies, industry stakeholders, and international institutions to facilitate trade integration, policy engagement, and global professional mobility.</p>
-                    
+                    <p class="footer-text mb-4" style="text-align: justify;">The Global Trade & Services Committee of
+                        ICAI is committed to strengthening India’s presence in global services trade by promoting
+                        international collaboration, enhancing professional opportunities, and positioning accounting
+                        and finance as key export services in the evolving global economy. The Committee works closely
+                        with government bodies, industry stakeholders, and international institutions to facilitate
+                        trade integration, policy engagement, and global professional mobility.</p>
+
                 </div>
 
                 <!-- Programs -->
@@ -442,8 +492,8 @@
                     © 2026 The Institute of Chartered Accountants of India
                 </div>
                 <div class="footer-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-use.html">Terms of Use</a>
                     <a href="#">Sitemap</a>
                 </div>
             </div>
@@ -499,5 +549,3 @@
 </body>
 
 </html>
-
-
