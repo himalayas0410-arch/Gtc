@@ -3460,4 +3460,82 @@ button, .mql-item, .blur-btn2, .submit-btn, a.knowmore {
         font-weight: 700 !important;
         display: inline-block !important;
     }
+
+    /* ===================================================
+       PART 1: Mobile Navigation Dropdown Spacing Fix
+       =================================================== */
+
+    /* Submenu container — compact vertical layout */
+    .mobile-sub-menu {
+        display: none;
+        flex-direction: column !important;
+        gap: 2px !important;
+        padding: 8px 0 0 0 !important;
+        margin: 8px 0 0 0 !important;
+        padding-left: 0 !important;
+        text-align: center !important;
+    }
+    .mobile-sub-menu.active {
+        display: flex !important;
+    }
+
+    /* Submenu items — reset excessive spacing */
+    .mobile-sub-menu li {
+        margin: 0 !important;
+        padding: 4px 0 !important;
+        margin-bottom: 0 !important;
+        text-align: center !important;
+    }
+
+    /* Submenu links — smaller than main menu for hierarchy */
+    .mobile-sub-menu a {
+        font-size: 1rem !important;
+        font-weight: 500 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        text-align: center !important;
+    }
+
+    /* Prevent parent dropdown from stretching when submenu opens */
+    .mobile-has-dropdown {
+        margin-bottom: 20px !important;
+    }
+
+    /* ===================================================
+       PART 2: Card Layout Fix (Reports, ITEC, Certificates)
+       Force single column on mobile
+       =================================================== */
+
+    /* Force single column for report/ITEC/certificate card grids */
+    .report-grid .row,
+    .report-grid .row.gy-4,
+    .sub-accordion-body-inner .row,
+    .sub-accordion-body-inner .row.gy-3 {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+    }
+
+    .report-grid .row > [class*="col-"],
+    .sub-accordion-body-inner .row > [class*="col-"] {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: 0 0 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Ensure report cards fill full width with proper spacing */
+    .report-card {
+        width: 100% !important;
+        margin-bottom: 0 !important;
+    }
+
+    /* Image scaling within cards */
+    .report-card .pdf-thumb-container img,
+    .report-card .pdf-thumb-container canvas,
+    .pdf-thumb {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
 }
