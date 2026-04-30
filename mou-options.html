@@ -70,6 +70,7 @@
             align-items: center;
             text-align: center;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            height: 100%;
         }
 
         .option-card-full:hover {
@@ -88,6 +89,7 @@
             justify-content: center;
             margin-bottom: 25px;
             transition: 0.3s;
+            flex-shrink: 0;
         }
 
         .option-card-full:hover .option-icon-wrap {
@@ -118,6 +120,7 @@
             color: var(--text-muted);
             line-height: 1.6;
             margin-bottom: 25px;
+            flex-grow: 1;
         }
 
         .option-link-text {
@@ -129,6 +132,7 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            margin-top: auto;
         }
 
         .option-card-full:hover .option-link-text {
