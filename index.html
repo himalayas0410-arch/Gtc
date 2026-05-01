@@ -396,13 +396,13 @@
 
     <div class="section-warm" style="position:relative;">
         <div class="container py-5">
-            <div class="row g-4">
+            <div class="accordion-wrapper">
 
-                <div class="col">
-
-                    <div class="modern-card card1">
-                        <h4>Trade & Market Integration</h4>
-                        <div class="number">1</div>
+                <!-- Card 1 -->
+                <div class="accordion-card card1" onclick="toggleAccordion(this)">
+                    <div class="card-title">Trade & Market Integration</div>
+                    <div class="number">1</div>
+                    <div class="full-content">
                         <div class="card-hover" id="hover-card-1">
                             <div class="hover-main-view active">
                                 <ul class="hover-list">
@@ -434,19 +434,14 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="knowmore">
-                            Know More <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
                     </div>
-
                 </div>
-                <div class="col">
 
-                    <div class="modern-card card2">
-                        <h4>Global Services & Professional Mobility</h4>
-                        <div class="number">2</div>
+                <!-- Card 2 -->
+                <div class="accordion-card card2" onclick="toggleAccordion(this)">
+                    <div class="card-title">Global Services & Professional Mobility</div>
+                    <div class="number">2</div>
+                    <div class="full-content">
                         <div class="card-hover" id="hover-card-2">
                             <div class="hover-main-view active">
                                 <ul class="hover-list">
@@ -487,19 +482,14 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="knowmore">
-                            Know More <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
                     </div>
-
                 </div>
-                <div class="col">
 
-                    <div class="modern-card card3">
-                        <h4>Policy, Multilateral & Government Affairs</h4>
-                        <div class="number">3</div>
+                <!-- Card 3 -->
+                <div class="accordion-card card3" onclick="toggleAccordion(this)">
+                    <div class="card-title">Policy, Multilateral & Government Affairs</div>
+                    <div class="number">3</div>
+                    <div class="full-content">
                         <div class="card-hover" id="hover-card-3">
                             <div class="hover-main-view active">
                                 <ul class="hover-list">
@@ -540,19 +530,14 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="knowmore">
-                            Know More <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
                     </div>
-
                 </div>
-                <div class="col">
 
-                    <div class="modern-card card4">
-                        <h4>GCC & Emerging Global Ecosystems</h4>
-                        <div class="number">4</div>
+                <!-- Card 4 -->
+                <div class="accordion-card card4" onclick="toggleAccordion(this)">
+                    <div class="card-title">GCC & Emerging Global Ecosystems</div>
+                    <div class="number">4</div>
+                    <div class="full-content">
                         <div class="card-hover" id="hover-card-4">
                             <div class="hover-main-view active">
                                 <ul class="hover-list">
@@ -594,19 +579,14 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="knowmore">
-                            Know More <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
                     </div>
-
                 </div>
-                <div class="col">
 
-                    <div class="modern-card card5">
-                        <h4>Capacity Building Programs</h4>
-                        <div class="number">5</div>
+                <!-- Card 5 -->
+                <div class="accordion-card card5" onclick="toggleAccordion(this)">
+                    <div class="card-title">Capacity Building Programs</div>
+                    <div class="number">5</div>
+                    <div class="full-content">
                         <div class="card-hover" id="hover-card-5">
                             <div class="hover-main-view active">
                                 <ul class="hover-list">
@@ -647,14 +627,9 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="knowmore">
-                            Know More <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
                     </div>
-
                 </div>
+
             </div>
         </div>
     </div> <!-- close section-warm -->
@@ -905,6 +880,22 @@
         document.querySelectorAll('.modern-card, .section-title, .events-section').forEach(el => {
             observer.observe(el);
         });
+
+        function toggleAccordion(element) {
+            const wrapper = element.parentElement;
+            const cards = wrapper.querySelectorAll('.accordion-card');
+            
+            if (element.classList.contains('active')) {
+                element.classList.remove('active');
+            } else {
+                cards.forEach(card => card.classList.remove('active'));
+                element.classList.add('active');
+                
+                // Trigger reveal animations for new content
+                const revealElements = element.querySelectorAll('.scroll-reveal');
+                revealElements.forEach(el => el.classList.add('revealed'));
+            }
+        }
 
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
