@@ -1,28 +1,175 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GTC - Member Opportunities</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/jsvectormap.min.css" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>GTC - Global Udaan</title>
+    <meta content="ICAI Global Udaan - Run@75 Webinar series." name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* --- Animated Gradient Text --- */
+        @keyframes animGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #4EA5D9, #8B5CF6, #F97316, #22C55E, #4EA5D9);
+            background-size: 300% 100%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: animGradient 6s ease infinite;
+        }
+
+        .webinar-hero-vibrant {
+            padding: 30px 0 15px; /* Extremely compact */
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+        }
+
+        .webinar-hero-vibrant h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 5px;
+            letter-spacing: -0.04em;
+        }
+
+        .webinar-grid-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            height: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .webinar-grid-card:hover {
+            transform: translateY(-5px);
+            background: #fff;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06);
+            border-color: var(--blue-primary);
+        }
+
+        .card-poster-area {
+            width: 220px; /* Vertical orientation */
+            flex-shrink: 0;
+            position: relative;
+            background: #f1f5f9;
+        }
+
+        .card-poster-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content-area {
+            padding: 15px 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .detail-row {
+            margin-bottom: 6px;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .detail-label {
+            font-weight: 800;
+            color: #1e293b;
+            min-width: 100px;
+            display: inline-block;
+        }
+
+        .detail-value { color: #475569; }
+
+        .topic-title-row {
+            font-size: 17px;
+            font-weight: 800;
+            color: var(--blue-primary);
+            margin-bottom: 10px;
+        }
+
+        .material-link-v2 {
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 700;
+        }
+
+        .pdf-icon-box {
+            width: 32px;
+            height: 40px;
+            background: #fff;
+            border: 1px solid #ef4444;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2px;
+        }
+
+        .pdf-icon-box i { color: #ef4444; font-size: 18px; }
+        .pdf-label { font-size: 8px; color: #ef4444; font-weight: 800; margin-top: -2px; }
+
+        .vibrant-heading {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #0f172a;
+            position: relative;
+            padding-left: 15px;
+            border-left: 4px solid var(--blue-primary);
+        }
+
+        .intro-section-clean {
+            padding: 30px 0; /* Compact */
+            background: #fff;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .intro-text-clean {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #475569;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 767px) {
+            .webinar-grid-card { flex-direction: column; }
+            .card-poster-area { width: 100%; height: 280px; }
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Aceternity-style Animated Background -->
+<body class="tactile-depth">
     <div class="gradients-container"></div>
     <div id="scrollProgress"></div>
+
+    <!-- EXACT HEADER FROM INDEX.HTML -->
     <div class="header home-header">
         <div class="header-top">
             <div class="container header-top-container">
@@ -199,176 +346,113 @@
         </nav>
     </div>
 
-    <div class="container-fluid py-2">
-        <div class="mapcontainer">
+    <section class="webinar-hero-vibrant">
+        <div class="container">
+            <h1 class="gradient-text">Run 75 Webinar</h1>
+        </div>
+    </section>
+
+    <section class="intro-section-clean">
+        <div class="container">
+            <div class="intro-text-clean scroll-reveal">
+                <p>Dear Professional Colleagues, as we celebrate 75 years of our ICAI, it is a momentous occasion for all of us to come together and participate in soaring newer heights of success and upkeep the highest standards of our profession. That is why, Team EIRC has come up with an unique initiative <strong>"Run@75"</strong> where we are hosting 75 Webinars (Monday to Saturday) daily from 6:30 p.m. to 7:45 p.m. for the overall development of our members.</p>
+                <div class="d-flex justify-content-center gap-3 mt-4">
+                    <a href="https://icai-org.zoom.us/j/86046690238" target="_blank" class="btn btn-primary px-4 py-2" style="border-radius:12px; background:var(--blue-primary); border:none;">Join Zoom Daily</a>
+                    <a href="https://eirc-icai.org/members/Run@75" target="_blank" class="btn btn-outline-primary px-4 py-2" style="border-radius:12px; color:var(--blue-primary); border-color:var(--blue-primary);">More Details</a>
+                </div>
+                <p class="mt-4" style="font-size: 14px; opacity: 0.8;">Warm regards,<br><strong>CA Sanjib Sanghi</strong><br>Chairman, EIRC of ICAI</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-4" style="background: #f8fafc;">
+        <div class="container">
+            <h2 class="vibrant-heading scroll-reveal">Upcoming Webinars</h2>
             <div class="row">
-                <div class="col-sm-8">
-                    <div class="maptext">
-                        <small>OPPORTUNITIES</small>
-                        <h3>Member Opportunities</h3>
-                        <p>Explore global career, consulting, and business opportunities.</p>
-                        <a href="#" class="blur-btn2">
-                            Apply for Opportunities <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
+                <div class="col-12">
+                    <div class="webinar-grid-card scroll-reveal">
+                        <div class="card-poster-area">
+                            <img src="images/webinar_public_speaking.png" alt="Public Speaking">
+                        </div>
+                        <div class="card-content-area">
+                            <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">2024-08-17</span></div>
+                            <div class="topic-title-row">Topic : From Nervous to Natural - Mastering Public Speaking Skills</div>
+                            <div class="detail-row"><span class="detail-label">Speaker :</span> <span class="detail-value">CA. Kalpana Thakur, Josh Talk Speaker</span></div>
+                            <div class="detail-row"><span class="detail-label">Co Ordinator :</span> <span class="detail-value">Team EIRC</span></div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-sm-4"></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="quick-links mt-5 pt-5 pb-5">
-        <div class="container-fluid">
-            <h3 class="section-title mb-4">Categories</h3>
-            <div class="row quick-row">
-                <div class="col quick-col">
-                    <a href="#" class="quick-card">
-                        <div class="quick-icon"><i class="bi bi-briefcase"></i></div>
-                        <h6>Jobs Abroad</h6>
-                    </a>
-                </div>
-                <div class="col quick-col">
-                    <a href="#" class="quick-card">
-                        <div class="quick-icon"><i class="bi bi-award"></i></div>
-                        <h6>Certifications</h6>
-                    </a>
-                </div>
-                <div class="col quick-col">
-                    <a href="events.html" class="quick-card">
-                        <div class="quick-icon"><i class="bi bi-journal-text"></i></div>
-                        <h6>Training Programs</h6>
-                    </a>
-                </div>
-                <div class="col quick-col">
-                    <a href="https://gcc.icai.org/" class="quick-card">
-                        <div class="quick-icon"><i class="bi bi-diagram-3"></i></div>
-                        <h6>Consulting Opportunities</h6>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="events-section pb-5">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-end mb-4">
-                <div>
-                    <span class="section-tag"></span>
-                    <h2 class="section-title">Featured</h2>
-                </div>
-                <a href="#" class="view-all-btn">View All →</a>
             </div>
 
+            <h2 class="vibrant-heading scroll-reveal mt-4">Webinars Held</h2>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>08</span>
-                            <small>MAY</small>
+                <!-- Card 1 -->
+                <div class="col-lg-6">
+                    <div class="webinar-grid-card scroll-reveal">
+                        <div class="card-poster-area">
+                            <img src="images/webinar_general.png" alt="Google Workspace">
                         </div>
-                        <div class="event-content">
-                            <h5>IFRS Advisory Panel – International Project</h5>
-                            <p>Short-term advisory engagement supporting cross-border reporting and compliance.</p>
-                            <div class="event-meta">
-                                <span>🌐 Hybrid</span>
-                                <span>🕒 Rolling</span>
-                            </div>
-                            <a href="#" class="event-btn">Apply →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>15</span>
-                            <small>MAY</small>
-                        </div>
-                        <div class="event-content">
-                            <h5>Taxation & Transfer Pricing – Global Track</h5>
-                            <p>Specialized opportunity for members with cross-border taxation experience.</p>
-                            <div class="event-meta">
-                                <span>🌐 Online</span>
-                                <span>🕒 6 Weeks</span>
-                            </div>
-                            <a href="#" class="event-btn">Apply →</a>
+                        <div class="card-content-area">
+                            <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">2024-06-01</span></div>
+                            <div class="topic-title-row">Topic : Use of Google Workspace: Enhancing Daily Practice</div>
+                            <div class="detail-row"><span class="detail-label">Speaker :</span> <span class="detail-value">CA. Sumit Bihani</span></div>
+                            <div class="detail-row"><span class="detail-label">Co Ordinator :</span> <span class="detail-value">CA. SAKSHI JHAJHARIA</span></div>
+                            <div class="detail-row"><span class="detail-label">Study Material</span></div>
+                            <a href="#" class="material-link-v2">
+                                <div class="pdf-icon-box">
+                                    <i class="bi bi-file-earmark-pdf-fill"></i>
+                                    <span class="pdf-label">PDF</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>22</span>
-                            <small>MAY</small>
+                <!-- Card 2 -->
+                <div class="col-lg-6">
+                    <div class="webinar-grid-card scroll-reveal">
+                        <div class="card-poster-area">
+                            <img src="images/webinar_general.png" alt="Digital Transformation">
                         </div>
-                        <div class="event-content">
-                            <h5>SME Advisory Support – GCC Markets</h5>
-                            <p>Consulting support for SMEs expanding trade and investments across the GCC region.</p>
-                            <div class="event-meta">
-                                <span>📍 GCC</span>
-                                <span>🕒 Ongoing</span>
-                            </div>
-                            <a href="#" class="event-btn">Apply →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>29</span>
-                            <small>MAY</small>
-                        </div>
-                        <div class="event-content">
-                            <h5>Global Mobility Readiness – Certification Cohort</h5>
-                            <p>Guided cohort program covering ethics, compliance, and international practice readiness.
-                            </p>
-                            <div class="event-meta">
-                                <span>🌐 Online</span>
-                                <span>🕒 4 Weeks</span>
-                            </div>
-                            <a href="#" class="event-btn">Apply →</a>
+                        <div class="card-content-area">
+                            <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">2024-05-31</span></div>
+                            <div class="topic-title-row">Topic : Navigating the Digital Transformation: DCMM</div>
+                            <div class="detail-row"><span class="detail-label">Speaker :</span> <span class="detail-value">CA. Sanjay Jain, FCA</span></div>
+                            <div class="detail-row"><span class="detail-label">Co Ordinator :</span> <span class="detail-value">Team EIRC</span></div>
+                            <div class="detail-row"><span class="detail-label">Study Material</span></div>
+                            <a href="#" class="material-link-v2">
+                                <div class="pdf-icon-box">
+                                    <i class="bi bi-file-earmark-ppt-fill"></i>
+                                    <span class="pdf-label">PPT</span>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="events-section pb-5">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-end mb-4">
-                <div>
-                    <span class="section-tag"></span>
-                    <h2 class="section-title">Benefits</h2>
-                </div>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-content">
-                            <h5>Global exposure</h5>
-                            <p>Access to international projects, collaborations, and cross-border engagement.</p>
+                <!-- Card 3 -->
+                <div class="col-lg-6">
+                    <div class="webinar-grid-card scroll-reveal">
+                        <div class="card-poster-area">
+                            <img src="images/webinar_general.png" alt="AI">
+                        </div>
+                        <div class="card-content-area">
+                            <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">2024-05-30</span></div>
+                            <div class="topic-title-row">Topic : Automate Accounting with AI based Software</div>
+                            <div class="detail-row"><span class="detail-label">Speaker :</span> <span class="detail-value">CA. Abhishek Sonthalia</span></div>
+                            <div class="detail-row"><span class="detail-label">Co Ordinator :</span> <span class="detail-value">Team EIRC</span></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-content">
-                            <h5>Career growth</h5>
-                            <p>Pathways across advisory, compliance, consulting, and specialist tracks.</p>
+                <!-- Card 4 -->
+                <div class="col-lg-6">
+                    <div class="webinar-grid-card scroll-reveal">
+                        <div class="card-poster-area">
+                            <img src="images/webinar_general.png" alt="LinkedIn">
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-content">
-                            <h5>Networking</h5>
-                            <p>Engage with global chapters, institutions, and professional communities.</p>
+                        <div class="card-content-area">
+                            <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">2024-05-29</span></div>
+                            <div class="topic-title-row">Topic : How to make a Great LinkedIn Profile</div>
+                            <div class="detail-row"><span class="detail-label">Speaker :</span> <span class="detail-value">CA Rahul Rungta</span></div>
+                            <div class="detail-row"><span class="detail-label">Co Ordinator :</span> <span class="detail-value">Team EIRC</span></div>
                         </div>
                     </div>
                 </div>
@@ -376,6 +460,7 @@
         </div>
     </section>
 
+    <!-- EXACT FOOTER FROM INDEX.HTML -->
     <footer class="footer-dark py-5" style="padding-bottom: 5px !important;">
         <div class="container">
             <div class="row gy-5" style="padding-top: 0px !important;">
@@ -452,60 +537,20 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Scroll Progress Logic
-        window.addEventListener('scroll', () => {
-            const h = document.documentElement,
-                b = document.body,
-                st = 'scrollTop',
-                sh = 'scrollHeight';
-            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-            if (document.getElementById('scrollProgress')) {
-                document.getElementById('scrollProgress').style.width = percent + '%';
-            }
-        });
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal-up'); });
+        }, observerOptions);
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
 
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
             overlay.classList.toggle('active');
             document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
         }
-
-        function toggleMobileSearch() {
-            if (window.innerWidth < 1200) {
-                const container = document.getElementById('searchContainer');
-                if (container) container.classList.toggle('mobile-expanded');
-            }
-        }
-
-        // Reveal Animations on Scroll
-        const observerOptions = { threshold: 0.1 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    entry.target.classList.add('reveal-up');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.scroll-reveal, .modern-card, .section-title, .quick-card, .event-card').forEach(el => observer.observe(el));
     </script>
-
-    <!-- Gooey Filter Definiton -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <defs>
-            <filter id="blurMe">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-                    result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-        </defs>
-    </svg>
-
 </body>
-
 </html>

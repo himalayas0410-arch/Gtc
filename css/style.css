@@ -358,7 +358,7 @@ body>* {
 /* ===== STAT BANNER — Full-Width Impact Numbers ===== */
 .stat-banner {
     background: linear-gradient(135deg, #0B1120 0%, #152040 50%, #0B1120 100%);
-    padding: 50px 0;
+    padding: 35px 0;
     position: relative;
     overflow: hidden;
 }
@@ -499,7 +499,7 @@ h6,
 
 
 .header-top {
-    padding: 15px 0;
+    padding: 10px 0;
     background: #ffffff !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
@@ -512,12 +512,12 @@ h6,
 }
 
 .header-nav {
-    padding: 10px 0;
+    padding: 8px 0;
     background: #ffffff !important;
     border-bottom: 1px solid var(--border-brand);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 2000;
     box-shadow: 0 10px 30px rgba(26, 43, 86, 0.05);
 }
 
@@ -1729,8 +1729,15 @@ h6,
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .back-btn {
@@ -1962,8 +1969,8 @@ h6,
     font-weight: 600;
     letter-spacing: 4px;
     font-size: 13px;
-    margin-bottom: 18px;
-    margin-top: 80px;
+    margin-bottom: 12px;
+    margin-top: 40px;
     text-transform: uppercase;
 }
 
@@ -2026,7 +2033,7 @@ h6,
     color: #fff;
     font-weight: 700;
     font-size: 16px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
     position: relative;
@@ -2067,7 +2074,7 @@ h6,
 }
 
 .footer-list li {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .footer-list a {
@@ -2195,7 +2202,7 @@ h6,
     color: var(--text-dark);
     font-size: 38px;
     font-weight: 800;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     position: relative;
     display: inline-block;
     letter-spacing: -0.03em;
@@ -2529,8 +2536,8 @@ h6,
 }
 
 .map-section {
-    margin-top: 100px;
-    margin-bottom: 60px;
+    margin-top: 60px;
+    margin-bottom: 40px;
 }
 
 /* Section divider now defined at top of file with multi-color gradient */
@@ -2745,20 +2752,20 @@ h6,
    SaaS Deep Spacing Overrides
    =================================================== */
 .py-5 {
-    padding-top: 90px !important;
-    padding-bottom: 90px !important;
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
 }
 
 .pb-5 {
-    padding-bottom: 90px !important;
+    padding-bottom: 60px !important;
 }
 
 .pt-5 {
-    padding-top: 90px !important;
+    padding-top: 60px !important;
 }
 
 .mapcontainer {
-    padding: 5px 70px 15px 70px !important;
+    padding: 20px 50px 40px 50px !important;
 }
 
 .maptext {
@@ -3898,7 +3905,7 @@ a.knowmore {
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 20px;
-    padding: 48px 56px;
+    padding: 30px 35px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
     backdrop-filter: blur(8px);
 }
