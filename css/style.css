@@ -1836,7 +1836,7 @@ h6,
 .accordion-wrapper {
     display: flex;
     width: 100%;
-    height: 480px;
+    height: 420px;
     gap: 15px;
     margin-top: 20px;
 }
@@ -1872,7 +1872,7 @@ h6,
 }
 
 .accordion-card.active {
-    flex: 7;
+    flex: 4;
 }
 
 /* Horizontal Title Handling */
@@ -1896,23 +1896,23 @@ h6,
 }
 
 .accordion-card.active .card-title {
-    bottom: calc(100% - 100px); /* Move to top of expanded card */
-    left: 40px;
+    bottom: calc(100% - 80px); /* Move to top of expanded card */
+    left: 30px;
     right: auto;
     text-align: left;
-    font-size: 34px;
+    font-size: 28px;
     padding: 0;
     text-transform: none;
     letter-spacing: -0.02em;
-    max-width: 80%;
+    max-width: 90%;
 }
 
 /* Full Content in Expanded State */
 .accordion-card .full-content {
     position: relative;
     z-index: 10;
-    padding: 40px;
-    padding-top: 120px; /* Space for the title that moved up */
+    padding: 30px;
+    padding-top: 100px; /* Space for the title that moved up */
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
