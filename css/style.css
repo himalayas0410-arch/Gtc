@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap');
 
 :root {
     /* Main SaaS Colors */
@@ -1832,108 +1832,231 @@ h6,
     /* Yellow — Capacity */
 }
 
-/* ===== HORIZONTAL ACCORDION PILLAR CARDS ===== */
-.accordion-wrapper {
-    display: flex;
-    width: 100%;
-    height: 420px;
-    gap: 15px;
-    margin-top: 20px;
+/* ===== PILLAR SHOWCASE — FEATURED CARD + STACKED SIDEBAR ===== */
+.pillar-showcase {
+    position: relative;
+    min-height: 420px;
 }
 
-.accordion-card {
+/* === DEFAULT ROW STATE === */
+.pillar-row {
+    display: flex;
+    gap: 15px;
+    height: 420px;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.pillar-showcase.is-active .pillar-row {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transform: translateY(-20px);
+}
+
+.pillar-thumb {
     flex: 1;
-    height: 100%;
     position: relative;
-    border-radius: 28px;
+    border-radius: 24px;
     overflow: hidden;
     cursor: pointer;
-    transition: all 0.7s cubic-bezier(0.23, 1, 0.32, 1);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0; /* Removing padding to allow full-bleed background */
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-/* Gradient Overlay for Text Readability */
-.accordion-card::after {
-    content: '';
+.pillar-thumb:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.pillar-thumb-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
     z-index: 2;
-    transition: opacity 0.5s ease;
 }
 
-.accordion-card:hover::after,
-.accordion-card.active::after {
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 100%);
-}
-
-.accordion-card:hover,
-.accordion-card.active {
-    flex: 4;
-}
-
-/* Horizontal Title Handling */
-.accordion-card .card-title {
+.pillar-thumb-number {
     position: absolute;
-    bottom: 40px;
-    left: 0;
-    right: 0;
-    padding: 0 15px;
+    top: 20px;
+    right: 20px;
+    font-size: 100px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.08);
+    line-height: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.pillar-thumb-title {
+    position: relative;
+    z-index: 3;
+    padding: 25px 20px;
     font-size: 14px;
-    font-weight: 850;
+    font-weight: 800;
     color: #fff;
     text-align: center;
-    z-index: 15;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    line-height: 1.3;
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
-    pointer-events: none;
 }
 
-.accordion-card:hover .card-title,
-.accordion-card.active .card-title {
-    bottom: calc(100% - 80px); /* Move to top of expanded card */
-    left: 30px;
-    right: auto;
-    text-align: left;
-    font-size: 28px;
-    padding: 0;
-    text-transform: none;
-    letter-spacing: -0.02em;
-    max-width: 90%;
+/* === EXPANDED LAYOUT STATE === */
+.pillar-expanded {
+    display: none;
+    grid-template-columns: 260px 1fr;
+    gap: 25px;
+    min-height: 480px;
+    animation: fadeSlideIn 0.5s ease forwards;
 }
 
-/* Full Content in Expanded State */
-.accordion-card .full-content {
+.pillar-showcase.is-active .pillar-expanded {
+    display: grid;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === LEFT SIDEBAR: STACKED CARDS === */
+.pillar-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pillar-stack-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.35s ease;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    z-index: 10;
-    padding: 30px;
-    padding-top: 110px; /* Increased space for smoother title transition */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    pointer-events: none;
-    height: 100%; /* Use full height but hide content */
     overflow: hidden;
 }
 
-.accordion-card:hover .full-content,
-.accordion-card.active .full-content {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: all;
-    transition-delay: 0.3s; /* Delay text until card is wide enough */
+.pillar-stack-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 0;
+    transition: background 0.35s ease;
 }
 
-/* Sub-view Overrides for Accordion */
-.accordion-card .card-hover {
+.pillar-stack-card:hover::before {
+    background: rgba(0,0,0,0.5);
+}
+
+.pillar-stack-card.psc-active::before {
+    background: rgba(0,0,0,0.4);
+}
+
+.pillar-stack-card.psc-active {
+    border-color: rgba(255,255,255,0.3);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transform: scale(1.03);
+}
+
+.psc-num, .psc-label {
+    position: relative;
+    z-index: 1;
+}
+
+.psc-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.pillar-stack-card.psc-active .psc-num {
+    background: var(--grad-glow);
+}
+
+.psc-label {
+    line-height: 1.3;
+}
+
+.pillar-close-btn {
+    margin-top: 8px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.6);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+}
+
+.pillar-close-btn:hover {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+}
+
+/* === RIGHT PANEL: CONTENT === */
+.pillar-panel {
+    position: relative;
+    background: rgba(10, 15, 30, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 35px 40px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+}
+
+.panel-content {
+    display: none;
+}
+
+.panel-content.pc-active {
+    display: block;
+    animation: panelFadeIn 0.4s ease forwards;
+}
+
+@keyframes panelFadeIn {
+    from { opacity: 0; transform: translateX(15px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.panel-header h3 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(255,255,255,0.1);
+}
+
+/* Panel content reuses existing hover-list, sub-card-grid, etc. */
+.pillar-panel .card-hover {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -1942,12 +2065,10 @@ h6,
     backdrop-filter: none !important;
     border: none !important;
     padding: 0 !important;
-    bottom: 0 !important;
-    transition: opacity 0.4s ease;
 }
 
-.accordion-card .hover-main-view,
-.accordion-card .hover-sub-view {
+.pillar-panel .hover-main-view,
+.pillar-panel .hover-sub-view {
     position: relative !important;
     inset: auto !important;
     opacity: 1 !important;
@@ -1955,104 +2076,100 @@ h6,
     transform: none !important;
     padding: 0 !important;
     display: none;
-    transition: none !important;
 }
 
-.accordion-card .hover-main-view.active,
-.accordion-card .hover-sub-view.active {
+.pillar-panel .hover-main-view.active,
+.pillar-panel .hover-sub-view.active {
     display: flex !important;
 }
 
-.accordion-card .hover-list li {
+.pillar-panel .hover-list li {
     font-size: 14px;
     padding: 14px 20px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.15);
-    margin-bottom: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 8px;
+    border-radius: 12px;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Reusing number styles but adjusting position */
-.accordion-card .number {
-    font-size: 120px;
-    right: 20px;
-    top: 20px;
-    opacity: 0.1;
-    transition: all 0.8s ease;
-    z-index: 1;
-    line-height: 1;
+.pillar-panel .hover-list li:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateX(5px);
 }
 
-.accordion-card.active .number {
-    font-size: 180px;
-    opacity: 0.2;
-    top: -20px;
-    right: -20px;
-}
+.pillar-panel .hover-list li span { color: #fff; }
+.pillar-panel .hover-list li i { color: rgba(255,255,255,0.4); }
 
-/* Mobile Responsive Accordion */
+/* === MOBILE RESPONSIVE === */
 @media (max-width: 991px) {
-    .accordion-wrapper {
+    .pillar-row {
         flex-direction: column;
         height: auto;
-        gap: 12px;
+        gap: 10px;
     }
 
-    .accordion-card {
-        flex: none;
-        width: 100%;
+    .pillar-thumb {
         height: 90px;
-        min-height: 90px;
-        max-height: 90px;
-        transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        border-radius: 16px;
     }
 
-    .accordion-card.active {
-        max-height: 1500px;
-        height: auto;
-        min-height: 500px;
+    .pillar-thumb-title {
+        font-size: 14px;
+        padding: 15px;
     }
 
-    .accordion-card .card-title {
-        position: absolute;
-        bottom: auto;
-        top: 45px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 16px;
-        text-align: center;
-        width: 100%;
-        padding: 0 10px;
-        letter-spacing: 0.02em;
+    .pillar-thumb-number {
+        font-size: 50px;
+        top: 10px;
+        right: 15px;
     }
 
-    .accordion-card.active .card-title {
-        top: 30px;
-        left: 20px;
-        transform: none;
-        text-align: left;
-        font-size: 24px;
-        max-width: 90%;
+    .pillar-expanded {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 
-    .accordion-card .full-content {
-        padding: 70px 20px 30px 20px; /* Space for the title at top */
+    .pillar-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 8px;
+        padding-bottom: 5px;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .accordion-card .full-content h4 {
-        display: none; /* Already handled by .card-title */
+    .pillar-stack-card {
+        min-width: 140px;
+        padding: 10px 14px;
+        font-size: 12px;
+        border-radius: 12px;
+    }
+
+    .psc-num {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+    }
+
+    .pillar-panel {
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+
+    .panel-header h3 {
+        font-size: 20px;
+    }
+
+    .pillar-close-btn {
+        min-width: 80px;
     }
 }
 
-.number {
-    font-size: 160px;
-    font-weight: 800;
-    position: absolute;
-    right: 20px;
-    top: 50px;
-    color: rgba(255, 255, 255, 0.4);
-    pointer-events: none;
-    z-index: 1;
-}
 
 /* ===== MAP SECTION — DOMINANT FEATURE ===== */
 .mapcontainer {
