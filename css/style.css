@@ -3209,10 +3209,10 @@ h6,
 
 /* Premium Panel Dropdown (Grid Layout) */
 .nav-panel {
-    min-width: 240px !important;
+    min-width: 220px !important; /* Reduced from 240px */
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(20px) !important;
-    padding: 8px !important;
+    padding: 6px !important; /* Reduced from 8px */
     border-radius: 16px !important;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
@@ -3238,7 +3238,7 @@ h6,
     align-items: center !important;
     justify-content: flex-start !important;
     text-align: left !important;
-    padding: 6px 12px !important;
+    padding: 6px 8px !important; /* Reduced horizontal padding from 12px to 8px */
     gap: 10px !important;
     width: 100% !important;
     background: transparent !important;
