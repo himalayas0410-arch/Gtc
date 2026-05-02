@@ -4464,31 +4464,37 @@ a.knowmore {
 
 .ql-bar-item {
     display: flex !important;
+    flex-direction: column !important; /* Radical change to vertical */
     align-items: center;
-    background: rgba(255, 255, 255, 0.95) !important; /* High opacity for vibrancy */
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 18px; /* Slightly more rounded */
-    overflow: hidden;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 24px; /* More rounded for premium feel */
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 35px 25px !important;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     height: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     position: relative;
-    padding: 10px !important; /* Added internal padding */
+    overflow: hidden;
 }
 
 .ql-icon-box {
-    width: 55px;
-    height: 55px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     flex-shrink: 0;
-    font-size: 22px;
-    position: relative;
-    border-radius: 14px; /* Rounded icon box */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    font-size: 32px; /* Larger icons */
+    margin-bottom: 20px;
+    border-radius: 50%; /* Circular icon box */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
 }
 
 /* Vibrant Icon Box Colors */
@@ -4517,34 +4523,28 @@ a.knowmore {
 }
 
 .ql-arrow-box {
-    padding-right: 20px;
-    color: rgba(0, 0, 0, 0.3); /* Dark arrow for visibility */
-    transition: all 0.3s ease;
+    display: none !important; /* Hide arrow for vertical design */
 }
 
 .ql-bar-item:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-15px);
     background: #ffffff !important;
-    border-color: var(--blue-primary);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-}
-
-.ql-blue:hover { border-color: #0077b6; }
-.ql-purple:hover { border-color: #8e44ad; }
-.ql-orange:hover { border-color: #f39c12; }
-
-.ql-blue { border-left: 5px solid #0077b6 !important; }
-.ql-purple { border-left: 5px solid #8e44ad !important; }
-.ql-orange { border-left: 5px solid #f39c12 !important; }
-
-.ql-bar-item:hover .ql-arrow-box {
-    color: #000;
-    transform: translateX(5px);
+    border-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
 }
 
 .ql-bar-item:hover .ql-icon-box {
+    transform: scale(1.1) rotate(5deg);
     filter: brightness(1.1);
 }
+
+/* Color-coded glow on hover */
+.ql-blue:hover { box-shadow: 0 25px 50px rgba(0, 119, 182, 0.2); }
+.ql-purple:hover { box-shadow: 0 25px 50px rgba(142, 68, 173, 0.2); }
+.ql-orange:hover { box-shadow: 0 25px 50px rgba(243, 156, 18, 0.2); }
+
+/* Removed the side-bar border as it doesn't fit vertical cards */
+.ql-blue, .ql-purple, .ql-orange { border-left: 1px solid rgba(255, 255, 255, 0.4) !important; }
 
 /* Specific Hover Glows - Subtler for light mode */
 .ql-blue:hover { box-shadow: 0 12px 25px rgba(0, 119, 182, 0.15); }
