@@ -1960,6 +1960,20 @@ h6,
     pointer-events: none;
 }
 
+/* Full Content in Expanded State - BASE HIDDEN STATE */
+.accordion-card .full-content {
+    position: relative;
+    z-index: 10;
+    padding: 30px;
+    padding-top: 110px; /* Increased space for smoother title transition */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    pointer-events: none;
+    height: 100%; /* Use full height but hide content */
+    overflow: hidden;
+}
+
 @media (min-width: 992px) {
     .accordion-card:hover .card-title {
         bottom: calc(100% - 80px); /* Move to top of expanded card */
