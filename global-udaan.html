@@ -183,7 +183,12 @@
             }
             .card-poster-area { 
                 width: 100% !important; 
-                height: 240px !important; 
+                height: auto !important; 
+                background: #fff;
+            }
+            .card-poster-area img {
+                height: auto !important;
+                object-fit: contain !important;
             }
             .detail-row {
                 font-size: 13px; /* Slightly smaller on mobile to fit */
@@ -194,6 +199,12 @@
             }
             .topic-title-row {
                 font-size: 15px;
+            }
+            /* Force 1 column on mobile regardless of Bootstrap quirks */
+            .webinar-col {
+                width: 100% !important;
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
             }
         }
     </style>
@@ -388,7 +399,7 @@
             <h2 class="vibrant-heading scroll-reveal">Webinars Held (Series 1 - 35)</h2>
             <div class="row g-4">
                 <!-- Series 35 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/35.jpg" alt="Global Udaan">
@@ -402,7 +413,7 @@
                     </div>
                 </div>
                 <!-- Series 34 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/34.jpg" alt="Global Udaan">
@@ -416,7 +427,7 @@
                     </div>
                 </div>
                 <!-- Series 33 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/33.jpg" alt="Global Udaan">
@@ -430,7 +441,7 @@
                     </div>
                 </div>
                 <!-- Series 32 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/32.jpg" alt="Global Udaan">
@@ -444,7 +455,7 @@
                     </div>
                 </div>
                 <!-- Series 31 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/31.jpg" alt="Global Udaan">
@@ -458,7 +469,7 @@
                     </div>
                 </div>
                 <!-- Series 30 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/30.jpg" alt="Global Udaan">
@@ -472,7 +483,7 @@
                     </div>
                 </div>
                 <!-- Series 29 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/29.jpg" alt="Global Udaan">
@@ -486,7 +497,7 @@
                     </div>
                 </div>
                 <!-- Series 28 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/28.jpg" alt="Global Udaan">
@@ -500,7 +511,7 @@
                     </div>
                 </div>
                 <!-- Series 27 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/27.jpg" alt="Global Udaan">
@@ -514,7 +525,7 @@
                     </div>
                 </div>
                 <!-- Series 26 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/26.jpg" alt="Global Udaan">
@@ -528,7 +539,7 @@
                     </div>
                 </div>
                 <!-- Series 25 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/25.jpg" alt="Global Udaan">
@@ -542,7 +553,7 @@
                     </div>
                 </div>
                 <!-- Series 24 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/24.jpg" alt="Global Udaan">
@@ -556,7 +567,7 @@
                     </div>
                 </div>
                 <!-- Series 23 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/23.jpg" alt="Global Udaan">
@@ -570,7 +581,7 @@
                     </div>
                 </div>
                 <!-- Series 22 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/22.jpg" alt="Global Udaan">
@@ -584,7 +595,7 @@
                     </div>
                 </div>
                 <!-- Series 21 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/21.jpg" alt="Global Udaan">
@@ -598,7 +609,7 @@
                     </div>
                 </div>
                 <!-- Series 20 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/20.jpg" alt="Global Udaan">
@@ -612,7 +623,7 @@
                     </div>
                 </div>
                 <!-- Series 19 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/19.jpg" alt="Global Udaan">
@@ -626,7 +637,7 @@
                     </div>
                 </div>
                 <!-- Series 18 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/18.jpg" alt="Global Udaan">
@@ -640,7 +651,7 @@
                     </div>
                 </div>
                 <!-- Series 17 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/17.jpg" alt="Global Udaan">
@@ -654,7 +665,7 @@
                     </div>
                 </div>
                 <!-- Series 16 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/16.jpg" alt="Global Udaan">
@@ -668,7 +679,7 @@
                     </div>
                 </div>
                 <!-- Series 15 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/15.jpg" alt="Global Udaan">
@@ -682,7 +693,7 @@
                     </div>
                 </div>
                 <!-- Series 14 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/14.jpg" alt="Global Udaan">
@@ -696,7 +707,7 @@
                     </div>
                 </div>
                 <!-- Series 13 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/13.jpg" alt="Global Udaan">
@@ -710,7 +721,7 @@
                     </div>
                 </div>
                 <!-- Series 12 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/12.jpg" alt="Global Udaan">
@@ -724,7 +735,7 @@
                     </div>
                 </div>
                 <!-- Series 11 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/11.jpg" alt="Global Udaan">
@@ -738,7 +749,7 @@
                     </div>
                 </div>
                 <!-- Series 10 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 10.jpg" alt="Global Udaan">
@@ -752,7 +763,7 @@
                     </div>
                 </div>
                 <!-- Series 9 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 9.jpg" alt="Global Udaan">
@@ -766,7 +777,7 @@
                     </div>
                 </div>
                 <!-- Series 8 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 8.jpg" alt="Global Udaan">
@@ -780,7 +791,7 @@
                     </div>
                 </div>
                 <!-- Series 7 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 7.jpg" alt="Global Udaan">
@@ -794,7 +805,7 @@
                     </div>
                 </div>
                 <!-- Series 6 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 6.jpg" alt="Global Udaan">
@@ -808,7 +819,7 @@
                     </div>
                 </div>
                 <!-- Series 5 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 5.jpg" alt="Global Udaan">
@@ -822,7 +833,7 @@
                     </div>
                 </div>
                 <!-- Series 4 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 4.jpg" alt="Global Udaan">
@@ -836,7 +847,7 @@
                     </div>
                 </div>
                 <!-- Series 3 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 3.jpg" alt="Global Udaan">
@@ -850,7 +861,7 @@
                     </div>
                 </div>
                 <!-- Series 2 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 2.jpg" alt="Global Udaan">
@@ -864,7 +875,7 @@
                     </div>
                 </div>
                 <!-- Series 1 -->
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 webinar-col">
                     <div class="webinar-grid-card scroll-reveal">
                         <div class="card-poster-area">
                             <img src="images/globaludaan/series 1.jpg" alt="Global Udaan">
