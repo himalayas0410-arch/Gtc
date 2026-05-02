@@ -92,6 +92,18 @@
             width: 65px;
             opacity: 1;
         }
+
+        /* Force remove any dark backgrounds, borders, or shadows from the banner */
+        .hero-container, #carouselExample, .carousel-inner, .carousel-item {
+            background-color: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
+        }
+        .hero-container.container {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
     </style>
 </head>
 
