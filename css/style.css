@@ -4241,17 +4241,17 @@ a.knowmore {
 /* ===== ECOSYSTEM PARTNERS CAROUSEL (Glass Theme) ===== */
 /* ===== ECOSYSTEM PARTNERS SECTION (Tightened) ===== */
 .partners-section {
-    background: transparent;
-    padding: 30px 0 20px; /* Reduced bottom padding */
+    background: #ffffff; /* Solid white strip */
+    padding: 40px 0;
     position: relative;
     z-index: 10;
     margin-top: 10px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
 }
 
 .logo-carousel-wrapper {
     overflow: hidden;
-    padding: 20px 0;
+    padding: 10px 0;
     position: relative;
     width: 100%;
 }
@@ -4262,7 +4262,7 @@ a.knowmore {
     content: "";
     height: 100%;
     position: absolute;
-    width: 250px;
+    width: 150px;
     z-index: 5;
     pointer-events: none;
 }
@@ -4270,25 +4270,25 @@ a.knowmore {
 .logo-carousel-wrapper::before {
     left: 0;
     top: 0;
-    background: linear-gradient(to right, transparent 0%, transparent 100%);
+    background: linear-gradient(to right, #ffffff 0%, transparent 100%);
 }
 
 .logo-carousel-wrapper::after {
     right: 0;
     top: 0;
-    background: linear-gradient(to left, transparent 0%, transparent 100%);
+    background: linear-gradient(to left, #ffffff 0%, transparent 100%);
 }
 
 .logo-track {
     display: flex;
-    width: calc(350px * 14 + 50px * 14);
-    animation: scrollLogos 45s linear infinite;
+    width: calc(200px * 14 + 50px * 14);
+    animation: scrollLogos 40s linear infinite;
     gap: 50px;
 }
 
 .logo-item {
-    width: 350px;
-    height: 180px;
+    width: 200px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4296,43 +4296,38 @@ a.knowmore {
 }
 
 .partner-card {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
 }
 
 .partner-card:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-5px) scale(1.05);
 }
 
 .partner-card img {
-    max-width: 95%;
-    max-height: 95%;
+    max-width: 85%;
+    max-height: 85%;
     object-fit: contain;
-    transition: all 0.5s ease;
-    mix-blend-mode: multiply;
-    filter: contrast(1.2) brightness(1.1);
+    transition: all 0.4s ease;
+    mix-blend-mode: normal; /* Removed multiply since background is white now */
+    filter: none; /* Let natural logos show */
 }
 
 /* Specific Fix for IFSCA */
 .partner-card img[src*="ewNuuGnL"] {
     border-radius: 50%; 
     object-fit: cover;
-    width: 120px;
-    height: 120px;
+    width: 80px; /* Reduced from 120px */
+    height: 80px;
     mix-blend-mode: normal;
     filter: none;
 }
