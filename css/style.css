@@ -2112,12 +2112,15 @@ h6,
         padding: 70px 20px 30px 20px; /* Space for the title at top */
         opacity: 0;
         transform: translateY(20px);
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s; /* Delayed smooth entry */
+        transition: all 0.3s ease; /* Fast fade-out when closing, no delay */
+        pointer-events: none; /* Disable interaction when hidden */
     }
 
     .accordion-card.active .full-content {
         opacity: 1;
         transform: translateY(0);
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s; /* Keep delay for opening only */
+        pointer-events: all;
     }
 
     .accordion-card .number {
