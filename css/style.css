@@ -323,7 +323,7 @@ body>* {
     position: relative;
     overflow: hidden;
     margin-top: 0;
-    padding: 10px 0;
+    padding: 20px 0; /* Increased from 10px to 20px */
     z-index: 5;
 }
 
@@ -4349,10 +4349,14 @@ a.knowmore {
 /* ===== ECOSYSTEM PARTNERS SECTION (Tightened) ===== */
 .partners-section {
     background: transparent;
-    padding: 10px 0;
+    padding: 20px 0;
     position: relative;
     z-index: 10;
     margin-top: 0;
+}
+
+.partners-section .vibrant-heading {
+    margin-bottom: 15px !important;
 }
 
 .logo-carousel-wrapper {
@@ -4459,7 +4463,7 @@ a.knowmore {
 .quick-access-section {
     position: relative;
     z-index: 10;
-    padding: 0 0 10px !important; /* Absolute minimal spacing */
+    padding: 0 0 20px !important; /* Increased from 10px to 20px */
 }
 
 .ql-bar-item {
