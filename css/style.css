@@ -3209,20 +3209,20 @@ h6,
 
 /* Premium Panel Dropdown (Grid Layout) */
 .nav-panel {
-    min-width: 220px !important; /* Reduced from 240px */
+    min-width: 200px !important;
     background: rgba(255, 255, 255, 0.98) !important;
     backdrop-filter: blur(20px) !important;
-    padding: 6px !important; /* Reduced from 8px */
+    padding: 4px !important;
     border-radius: 16px !important;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     top: 100% !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(15px);
+    left: 0 !important; /* Changed from 50% to 0 for left alignment */
+    transform: translateY(15px); /* Removed translateX(-50%) */
 }
 
 .has-dropdown:hover .nav-panel {
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .nav-panel-grid {
@@ -3238,8 +3238,8 @@ h6,
     align-items: center !important;
     justify-content: flex-start !important;
     text-align: left !important;
-    padding: 6px 8px !important; /* Reduced horizontal padding from 12px to 8px */
-    gap: 10px !important;
+    padding: 4px 6px !important; /* Reduced further from 6px 8px to 4px 6px */
+    gap: 6px !important; /* Reduced further to 6px */
     width: 100% !important;
     background: transparent !important;
     border-radius: 10px !important;
