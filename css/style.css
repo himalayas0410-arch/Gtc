@@ -4464,58 +4464,45 @@ a.knowmore {
 
 .ql-bar-item {
     display: flex !important;
-    flex-direction: column !important; /* Radical change to vertical */
     align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.8) !important;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    border-radius: 24px; /* More rounded for premium feel */
-    text-decoration: none;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    padding: 35px 25px !important;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    height: 100%;
-    position: relative;
+    border: none;
+    border-radius: 20px;
     overflow: hidden;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    position: relative;
+    padding: 10px !important;
 }
 
 .ql-icon-box {
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     flex-shrink: 0;
-    font-size: 32px; /* Larger icons */
-    margin-bottom: 20px;
-    border-radius: 50%; /* Circular icon box */
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    transition: all 0.4s ease;
+    font-size: 22px;
+    position: relative;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent icon box for depth */
 }
 
-/* Vibrant Icon Box Colors */
-.ql-blue .ql-icon-box { background: linear-gradient(135deg, #0077b6, #00b4d8); }
-.ql-purple .ql-icon-box { background: linear-gradient(135deg, #8e44ad, #a29bfe); }
-.ql-orange .ql-icon-box { background: linear-gradient(135deg, #f39c12, #f1c40f); }
+/* Vibrant Tab Backgrounds */
+.ql-blue { background: linear-gradient(135deg, #4EA5D9 0%, #322873 100%) !important; }
+.ql-purple { background: linear-gradient(135deg, #8e44ad 0%, #5d2a71 100%) !important; }
+.ql-orange { background: linear-gradient(135deg, #F97316 0%, #C2410C 100%) !important; }
 
-/* Shine Effect for Icon Box */
-.ql-icon-box::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(rgba(255,255,255,0.2), transparent);
-    pointer-events: none;
-}
+/* Remove old specific icon box colors since the whole tab is colored */
+.ql-blue .ql-icon-box, .ql-purple .ql-icon-box, .ql-orange .ql-icon-box { background: rgba(255, 255, 255, 0.2) !important; }
 
 .ql-text-content {
     flex-grow: 1;
     font-size: 15px !important;
-    font-weight: 700 !important;
-    color: #1a202c !important; /* High-contrast dark text for visibility */
+    font-weight: 800 !important;
+    color: #ffffff !important; /* White text for contrast */
     line-height: 1.3 !important;
     padding: 0 20px !important;
     display: block !important;
@@ -4523,28 +4510,21 @@ a.knowmore {
 }
 
 .ql-arrow-box {
-    display: none !important; /* Hide arrow for vertical design */
+    padding-right: 20px;
+    color: rgba(255, 255, 255, 0.6); /* White arrow */
+    transition: all 0.3s ease;
 }
 
 .ql-bar-item:hover {
-    transform: translateY(-15px);
-    background: #ffffff !important;
-    border-color: rgba(255, 255, 255, 1);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
-}
-
-.ql-bar-item:hover .ql-icon-box {
-    transform: scale(1.1) rotate(5deg);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
     filter: brightness(1.1);
 }
 
-/* Color-coded glow on hover */
-.ql-blue:hover { box-shadow: 0 25px 50px rgba(0, 119, 182, 0.2); }
-.ql-purple:hover { box-shadow: 0 25px 50px rgba(142, 68, 173, 0.2); }
-.ql-orange:hover { box-shadow: 0 25px 50px rgba(243, 156, 18, 0.2); }
-
-/* Removed the side-bar border as it doesn't fit vertical cards */
-.ql-blue, .ql-purple, .ql-orange { border-left: 1px solid rgba(255, 255, 255, 0.4) !important; }
+.ql-bar-item:hover .ql-arrow-box {
+    color: #fff;
+    transform: translateX(5px);
+}
 
 /* Specific Hover Glows - Subtler for light mode */
 .ql-blue:hover { box-shadow: 0 12px 25px rgba(0, 119, 182, 0.15); }
