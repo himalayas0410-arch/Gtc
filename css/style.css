@@ -3217,8 +3217,8 @@ h6,
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     top: 100% !important;
-    left: 0 !important; /* Changed from 50% to 0 for left alignment */
-    transform: translateY(15px); /* Removed translateX(-50%) */
+    left: -15px !important; /* Shifted left to reduce visual gap */
+    transform: translateY(15px);
 }
 
 .has-dropdown:hover .nav-panel {
