@@ -4465,28 +4465,30 @@ a.knowmore {
 .ql-bar-item {
     display: flex !important;
     align-items: center;
-    background: rgba(255, 255, 255, 0.06) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.95) !important; /* High opacity for vibrancy */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 18px; /* Slightly more rounded */
     overflow: hidden;
     text-decoration: none;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 100%;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    padding: 10px !important; /* Added internal padding */
 }
 
 .ql-icon-box {
-    width: 65px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: #fff;
     flex-shrink: 0;
-    font-size: 24px;
+    font-size: 22px;
     position: relative;
+    border-radius: 14px; /* Rounded icon box */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Vibrant Icon Box Colors */
@@ -4521,11 +4523,19 @@ a.knowmore {
 }
 
 .ql-bar-item:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15) !important;
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.02);
+    background: #ffffff !important;
+    border-color: var(--blue-primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
+
+.ql-blue:hover { border-color: #0077b6; }
+.ql-purple:hover { border-color: #8e44ad; }
+.ql-orange:hover { border-color: #f39c12; }
+
+.ql-blue { border-left: 5px solid #0077b6 !important; }
+.ql-purple { border-left: 5px solid #8e44ad !important; }
+.ql-orange { border-left: 5px solid #f39c12 !important; }
 
 .ql-bar-item:hover .ql-arrow-box {
     color: #000;
