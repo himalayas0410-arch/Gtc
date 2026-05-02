@@ -323,7 +323,7 @@ body>* {
     position: relative;
     overflow: hidden;
     margin-top: 0;
-    padding-top: 50px;
+    padding: 10px 0;
     z-index: 5;
 }
 
@@ -1168,8 +1168,8 @@ h6,
 .hero-container {
     position: relative;
     width: 85%;
-    margin: 0 auto !important;
-    /* Force zero margin */
+    margin: 0 auto 10px !important;
+    /* Force absolute minimal bottom margin */
     padding: 0;
     z-index: 10;
     box-shadow: none !important;
@@ -2854,8 +2854,8 @@ h6,
 }
 
 .map-section {
-    margin-top: 60px;
-    margin-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* Section divider now defined at top of file with multi-color gradient */
@@ -3083,7 +3083,7 @@ h6,
 }
 
 .mapcontainer {
-    padding: 20px 50px 40px 50px !important;
+    padding: 15px 50px !important;
 }
 
 .maptext {
@@ -4349,10 +4349,10 @@ a.knowmore {
 /* ===== ECOSYSTEM PARTNERS SECTION (Tightened) ===== */
 .partners-section {
     background: transparent;
-    padding: 20px 0 10px;
+    padding: 10px 0;
     position: relative;
     z-index: 10;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .logo-carousel-wrapper {
@@ -4459,7 +4459,7 @@ a.knowmore {
 .quick-access-section {
     position: relative;
     z-index: 10;
-    padding: 0 0 40px !important; /* Tight spacing */
+    padding: 0 0 10px !important; /* Absolute minimal spacing */
 }
 
 .ql-bar-item {
