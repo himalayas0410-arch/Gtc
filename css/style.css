@@ -2112,6 +2112,13 @@ h6,
         padding: 70px 20px 30px 20px; /* Space for the title at top */
     }
 
+    .accordion-card .number {
+        font-size: 80px !important; /* Smaller numbers on mobile */
+        opacity: 0.1 !important;
+        top: 10px !important;
+        right: 15px !important;
+    }
+
     .accordion-card .full-content h4 {
         display: none; /* Already handled by .card-title */
     }
