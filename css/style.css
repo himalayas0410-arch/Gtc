@@ -4242,19 +4242,21 @@ a.knowmore {
 /* ===== ECOSYSTEM PARTNERS CAROUSEL (Glass Theme) ===== */
 /* ===== ECOSYSTEM PARTNERS SECTION (Tightened) ===== */
 .partners-section {
-    background: #ffffff; /* Solid white strip */
+    background: transparent;
     padding: 20px 0 10px;
     position: relative;
     z-index: 10;
     margin-top: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
 }
 
 .logo-carousel-wrapper {
+    background: #ffffff; /* Moved white strip here */
     overflow: hidden;
-    padding: 0;
+    padding: 10px 0;
     position: relative;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%); /* Make it full width even if container is smaller */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Gradient mask for smooth edges */
