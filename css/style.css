@@ -2110,6 +2110,14 @@ h6,
 
     .accordion-card .full-content {
         padding: 70px 20px 30px 20px; /* Space for the title at top */
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s; /* Delayed smooth entry */
+    }
+
+    .accordion-card.active .full-content {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     .accordion-card .number {
