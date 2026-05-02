@@ -1895,15 +1895,49 @@ h6,
     transition: all 0.5s ease;
 }
 
-.card1:hover::after, .card1.active::after { background: linear-gradient(to top, rgba(59, 130, 246, 0.3) 0%, transparent 80%); }
-.card2:hover::after, .card2.active::after { background: linear-gradient(to top, rgba(249, 115, 22, 0.3) 0%, transparent 80%); }
-.card3:hover::after, .card3.active::after { background: linear-gradient(to top, rgba(34, 197, 94, 0.3) 0%, transparent 80%); }
-.card4:hover::after, .card4.active::after { background: linear-gradient(to top, rgba(168, 85, 247, 0.3) 0%, transparent 80%); }
-.card5:hover::after, .card5.active::after { background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%); }
+@media (hover: hover) {
+    .accordion-card:hover {
+        flex: 4;
+    }
+    
+    .card1:hover::after { background: linear-gradient(to top, rgba(78, 165, 217, 0.4) 0%, transparent 80%); }
+    .card2:hover::after { background: linear-gradient(to top, rgba(249, 115, 22, 0.3) 0%, transparent 80%); }
+    .card3:hover::after { background: linear-gradient(to top, rgba(34, 197, 94, 0.3) 0%, transparent 80%); }
+    .card4:hover::after { background: linear-gradient(to top, rgba(168, 85, 247, 0.3) 0%, transparent 80%); }
+    .card5:hover::after { background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%); }
 
-.accordion-card:hover,
+    .accordion-card:hover .card-title {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    .accordion-card:hover .full-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+    }
+}
+
+/* Expansion based on active class (always works, crucial for mobile click) */
 .accordion-card.active {
     flex: 4;
+}
+
+.card1.active::after { background: linear-gradient(to top, rgba(78, 165, 217, 0.4) 0%, transparent 80%); }
+.card2.active::after { background: linear-gradient(to top, rgba(249, 115, 22, 0.3) 0%, transparent 80%); }
+.card3.active::after { background: linear-gradient(to top, rgba(34, 197, 94, 0.3) 0%, transparent 80%); }
+.card4.active::after { background: linear-gradient(to top, rgba(168, 85, 247, 0.3) 0%, transparent 80%); }
+.card5.active::after { background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%); }
+
+.accordion-card.active .card-title {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.accordion-card.active .full-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
 }
 
 /* Horizontal Title Handling */
