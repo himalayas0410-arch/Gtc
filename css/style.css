@@ -1907,8 +1907,8 @@ h6,
     .card5:hover::after { background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%); }
 
     .accordion-card:hover .card-title {
-        opacity: 0;
-        transform: translateY(20px);
+        opacity: 1;
+        transform: none;
     }
 
     .accordion-card:hover .full-content {
@@ -1930,8 +1930,8 @@ h6,
 .card5.active::after { background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%); }
 
 .accordion-card.active .card-title {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 1;
+    transform: none;
 }
 
 .accordion-card.active .full-content {
