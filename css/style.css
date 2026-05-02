@@ -1895,7 +1895,7 @@ h6,
     transition: all 0.5s ease;
 }
 
-@media (hover: hover) {
+@media (min-width: 992px) {
     .accordion-card:hover {
         flex: 4;
     }
@@ -1960,7 +1960,27 @@ h6,
     pointer-events: none;
 }
 
-.accordion-card:hover .card-title,
+@media (min-width: 992px) {
+    .accordion-card:hover .card-title {
+        bottom: calc(100% - 80px); /* Move to top of expanded card */
+        left: 30px;
+        right: auto;
+        text-align: left;
+        font-size: 28px;
+        padding: 0;
+        text-transform: none;
+        letter-spacing: -0.02em;
+        max-width: 90%;
+    }
+
+    .accordion-card:hover .full-content {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all;
+        transition-delay: 0.3s; /* Delay text until card is wide enough */
+    }
+}
+
 .accordion-card.active .card-title {
     bottom: calc(100% - 80px); /* Move to top of expanded card */
     left: 30px;
@@ -1973,21 +1993,6 @@ h6,
     max-width: 90%;
 }
 
-/* Full Content in Expanded State */
-.accordion-card .full-content {
-    position: relative;
-    z-index: 10;
-    padding: 30px;
-    padding-top: 110px; /* Increased space for smoother title transition */
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    pointer-events: none;
-    height: 100%; /* Use full height but hide content */
-    overflow: hidden;
-}
-
-.accordion-card:hover .full-content,
 .accordion-card.active .full-content {
     opacity: 1;
     transform: translateY(0);
