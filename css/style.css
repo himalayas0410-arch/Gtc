@@ -1832,231 +1832,175 @@ h6,
     /* Yellow — Capacity */
 }
 
-/* ===== PILLAR SHOWCASE — FEATURED CARD + STACKED SIDEBAR ===== */
-.pillar-showcase {
-    position: relative;
-    min-height: 420px;
-}
-
-/* === DEFAULT ROW STATE === */
-.pillar-row {
+/* ===== PILLAR DECK — HOVER EXPAND + STACK ===== */
+.deck-wrapper {
     display: flex;
-    gap: 15px;
-    height: 420px;
-    transition: opacity 0.4s ease, transform 0.4s ease;
+    height: 450px;
+    gap: 12px;
+    position: relative;
 }
 
-.pillar-showcase.is-active .pillar-row {
-    opacity: 0;
-    pointer-events: none;
-    position: absolute;
-    transform: translateY(-20px);
-}
-
-.pillar-thumb {
+.deck-card {
     flex: 1;
+    height: 100%;
     position: relative;
     border-radius: 24px;
     overflow: hidden;
     cursor: pointer;
+    transition: all 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+/* --- Card Face (always visible) --- */
+.deck-face {
+    position: absolute;
+    inset: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    border: 1px solid rgba(255,255,255,0.1);
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    z-index: 2;
+    transition: opacity 0.4s ease;
 }
 
-.pillar-thumb:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-}
-
-.pillar-thumb-overlay {
+.deck-face-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 50%, transparent 100%);
-    z-index: 2;
-}
-
-.pillar-thumb-number {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 100px;
-    font-weight: 800;
-    color: rgba(255,255,255,0.08);
-    line-height: 1;
     z-index: 1;
-    pointer-events: none;
 }
 
-.pillar-thumb-title {
+.deck-face-num {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 90px;
+    font-weight: 800;
+    color: rgba(255,255,255,0.07);
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.deck-face-title {
     position: relative;
-    z-index: 3;
-    padding: 25px 20px;
-    font-size: 14px;
+    z-index: 2;
+    padding: 22px 18px;
+    font-size: 13px;
     font-weight: 800;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.06em;
     line-height: 1.3;
     text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    transition: all 0.5s ease;
 }
 
-/* === EXPANDED LAYOUT STATE === */
-.pillar-expanded {
-    display: none;
-    grid-template-columns: 260px 1fr;
-    gap: 25px;
-    min-height: 480px;
-    animation: fadeSlideIn 0.5s ease forwards;
-}
-
-.pillar-showcase.is-active .pillar-expanded {
-    display: grid;
-}
-
-@keyframes fadeSlideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* === LEFT SIDEBAR: STACKED CARDS === */
-.pillar-sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.pillar-stack-card {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 16px;
-    border-radius: 16px;
-    cursor: pointer;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 600;
-    border: 1px solid rgba(255,255,255,0.08);
-    transition: all 0.35s ease;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.pillar-stack-card::before {
-    content: '';
+/* --- Expanded Content (hidden by default) --- */
+.deck-content {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.7);
-    z-index: 0;
-    transition: background 0.35s ease;
+    z-index: 5;
+    padding: 30px 35px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease 0.15s;
+    overflow-y: auto;
+    background: linear-gradient(135deg, rgba(10,15,30,0.85), rgba(10,15,30,0.7));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
-.pillar-stack-card:hover::before {
-    background: rgba(0,0,0,0.5);
+.deck-content-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid rgba(255,255,255,0.12);
 }
 
-.pillar-stack-card.psc-active::before {
-    background: rgba(0,0,0,0.4);
-}
+/* ========================================
+   HOVER BEHAVIOR: Deck Stack + Expand
+   ======================================== */
 
-.pillar-stack-card.psc-active {
-    border-color: rgba(255,255,255,0.3);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    transform: scale(1.03);
-}
-
-.psc-num, .psc-label {
-    position: relative;
+/* When hovering the wrapper, all cards shrink to stack width */
+.deck-wrapper:hover .deck-card {
+    flex: 0 0 65px;
+    margin-right: -18px; /* overlap = deck stack */
+    border-radius: 20px;
     z-index: 1;
 }
 
-.psc-num {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.15);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 13px;
-    flex-shrink: 0;
+/* Stagger z-index so cards layer like a real deck */
+.deck-wrapper:hover .deck-card:nth-child(1) { z-index: 5; }
+.deck-wrapper:hover .deck-card:nth-child(2) { z-index: 4; }
+.deck-wrapper:hover .deck-card:nth-child(3) { z-index: 3; }
+.deck-wrapper:hover .deck-card:nth-child(4) { z-index: 2; }
+.deck-wrapper:hover .deck-card:nth-child(5) { z-index: 1; }
+
+/* Slight scale reduction for deck effect */
+.deck-wrapper:hover .deck-card:nth-child(2) { transform: scale(0.97); }
+.deck-wrapper:hover .deck-card:nth-child(3) { transform: scale(0.94); }
+.deck-wrapper:hover .deck-card:nth-child(4) { transform: scale(0.91); }
+.deck-wrapper:hover .deck-card:nth-child(5) { transform: scale(0.88); }
+
+/* Hide title text on stacked cards */
+.deck-wrapper:hover .deck-card .deck-face-title {
+    opacity: 0;
+    font-size: 0;
+    padding: 0;
 }
 
-.pillar-stack-card.psc-active .psc-num {
-    background: var(--grad-glow);
+.deck-wrapper:hover .deck-card .deck-face-num {
+    font-size: 40px;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    color: rgba(255,255,255,0.25);
 }
 
-.psc-label {
-    line-height: 1.3;
-}
-
-.pillar-close-btn {
-    margin-top: 8px;
-    padding: 10px 16px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.15);
-    background: rgba(255,255,255,0.05);
-    color: rgba(255,255,255,0.6);
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    justify-content: center;
-}
-
-.pillar-close-btn:hover {
-    background: rgba(255,255,255,0.1);
-    color: #fff;
-}
-
-/* === RIGHT PANEL: CONTENT === */
-.pillar-panel {
-    position: relative;
-    background: rgba(10, 15, 30, 0.7);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+/* --- THE HOVERED CARD: Expands to fill remaining space --- */
+.deck-wrapper:hover .deck-card:hover {
+    flex: 1 1 auto; /* Take all remaining space */
+    margin-right: 0;
+    z-index: 10 !important;
+    transform: scale(1) !important;
     border-radius: 24px;
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 35px 40px;
-    overflow: hidden;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
-.panel-content {
-    display: none;
+/* Show expanded content */
+.deck-wrapper:hover .deck-card:hover .deck-content {
+    opacity: 1;
+    pointer-events: all;
 }
 
-.panel-content.pc-active {
-    display: block;
-    animation: panelFadeIn 0.4s ease forwards;
+/* Move title up on hovered card */
+.deck-wrapper:hover .deck-card:hover .deck-face-title {
+    opacity: 0; /* Hide face title, content title takes over */
 }
 
-@keyframes panelFadeIn {
-    from { opacity: 0; transform: translateX(15px); }
-    to { opacity: 1; transform: translateX(0); }
+.deck-wrapper:hover .deck-card:hover .deck-face-num {
+    font-size: 120px;
+    top: 10px;
+    right: 10px;
+    transform: none;
+    color: rgba(255,255,255,0.06);
 }
 
-.panel-header h3 {
-    font-size: 26px;
-    font-weight: 800;
-    color: #fff;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
+/* Darken overlay on expanded card */
+.deck-wrapper:hover .deck-card:hover .deck-face-overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.3) 100%);
 }
 
-/* Panel content reuses existing hover-list, sub-card-grid, etc. */
-.pillar-panel .card-hover {
+/* ========================================
+   Panel Content Styles (reused from before)
+   ======================================== */
+.deck-content .card-hover {
     position: relative !important;
     inset: auto !important;
     width: 100% !important;
@@ -2067,8 +2011,8 @@ h6,
     padding: 0 !important;
 }
 
-.pillar-panel .hover-main-view,
-.pillar-panel .hover-sub-view {
+.deck-content .hover-main-view,
+.deck-content .hover-sub-view {
     position: relative !important;
     inset: auto !important;
     opacity: 1 !important;
@@ -2078,14 +2022,20 @@ h6,
     display: none;
 }
 
-.pillar-panel .hover-main-view.active,
-.pillar-panel .hover-sub-view.active {
+.deck-content .hover-main-view.active,
+.deck-content .hover-sub-view.active {
     display: flex !important;
 }
 
-.pillar-panel .hover-list li {
+.deck-content .hover-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.deck-content .hover-list li {
     font-size: 14px;
-    padding: 14px 20px;
+    padding: 13px 18px;
     background: rgba(255,255,255,0.06);
     border: 1px solid rgba(255,255,255,0.1);
     margin-bottom: 8px;
@@ -2098,75 +2048,83 @@ h6,
     align-items: center;
 }
 
-.pillar-panel .hover-list li:hover {
+.deck-content .hover-list li:hover {
     background: rgba(255,255,255,0.12);
-    transform: translateX(5px);
+    transform: translateX(4px);
 }
 
-.pillar-panel .hover-list li span { color: #fff; }
-.pillar-panel .hover-list li i { color: rgba(255,255,255,0.4); }
+.deck-content .hover-list li span { color: #fff; }
+.deck-content .hover-list li i { color: rgba(255,255,255,0.4); }
 
-/* === MOBILE RESPONSIVE === */
+/* ========================================
+   Mobile: Vertical accordion (no deck)
+   ======================================== */
 @media (max-width: 991px) {
-    .pillar-row {
+    .deck-wrapper {
         flex-direction: column;
         height: auto;
         gap: 10px;
     }
 
-    .pillar-thumb {
-        height: 90px;
-        border-radius: 16px;
+    .deck-card {
+        flex: none !important;
+        height: 80px;
+        margin-right: 0 !important;
+        transform: none !important;
     }
 
-    .pillar-thumb-title {
-        font-size: 14px;
-        padding: 15px;
+    .deck-face-title {
+        opacity: 1 !important;
+        font-size: 14px !important;
+        padding: 15px !important;
     }
 
-    .pillar-thumb-number {
-        font-size: 50px;
-        top: 10px;
-        right: 15px;
+    .deck-face-num {
+        font-size: 40px !important;
+        top: 10px !important;
+        right: 15px !important;
+        transform: none !important;
     }
 
-    .pillar-expanded {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    /* On mobile: tap to expand vertically */
+    .deck-wrapper:hover .deck-card {
+        flex: none !important;
+        margin-right: 0 !important;
+        transform: none !important;
     }
 
-    .pillar-sidebar {
-        flex-direction: row;
-        overflow-x: auto;
-        gap: 8px;
-        padding-bottom: 5px;
-        -webkit-overflow-scrolling: touch;
+    .deck-wrapper:hover .deck-card .deck-face-title {
+        opacity: 1 !important;
+        font-size: 14px !important;
+        padding: 15px !important;
     }
 
-    .pillar-stack-card {
-        min-width: 140px;
-        padding: 10px 14px;
-        font-size: 12px;
-        border-radius: 12px;
+    .deck-wrapper:hover .deck-card .deck-face-num {
+        font-size: 40px !important;
+        top: 10px !important;
+        right: 15px !important;
+        transform: none !important;
     }
 
-    .psc-num {
-        width: 24px;
-        height: 24px;
-        font-size: 11px;
+    .deck-card.mobile-active {
+        height: auto !important;
+        min-height: 400px;
     }
 
-    .pillar-panel {
-        padding: 25px 20px;
-        border-radius: 16px;
+    .deck-card.mobile-active .deck-content {
+        opacity: 1;
+        pointer-events: all;
+        position: relative;
+        padding: 20px;
     }
 
-    .panel-header h3 {
-        font-size: 20px;
+    .deck-card.mobile-active .deck-face {
+        position: relative;
+        height: 70px;
     }
 
-    .pillar-close-btn {
-        min-width: 80px;
+    .deck-content {
+        transition: none;
     }
 }
 
