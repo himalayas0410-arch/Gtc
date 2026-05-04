@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>GTC - Video Player</title>
+    <meta content="Global Trade & Services Committee Video Player." name="description" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        rel="stylesheet" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .player-container {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            position: relative;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 2;
+        }
+
+        .video-aspect-ratio {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 16px;
+            background: #000;
+        }
+
+        .video-aspect-ratio iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            margin-top: 25px;
+            padding: 0 10px;
+        }
+
+        .video-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            color: #475569;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+
+        .back-btn:hover {
+            background: #f8fafc;
+            transform: translateX(-5px);
+            color: var(--blue-primary);
+            border-color: var(--blue-primary);
+        }
+
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            z-index: 5;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid var(--blue-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .not-found-msg {
+            text-align: center;
+            padding: 100px 20px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="tactile-depth">
+    <div class="gradients-container"></div>
+
+    <!-- Header -->
+    <div class="header home-header">
+        <div class="header-top">
+            <div class="container header-top-container">
+                <a href="index.html" class="header-logo">
+                    <div class="logo-group">
+                        <img src="images/logo.png" class="logo" />
+                        <span class="logo-divider"></span>
+                        <img src="images/logogloba.png" class="logo-secondary" />
+                    </div>
+                    <div class="branding-text">
+                        <h3 class="committee-name">Global Trade & Services Committee</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="player-container">
+        <div class="container">
+            <a href="javascript:history.back()" class="back-btn">
+                <span class="material-symbols-outlined">arrow_back</span> Back to Previous Page
+            </a>
+
+            <div id="videoContainer" class="video-wrapper reveal-up">
+                <div class="video-aspect-ratio">
+                    <div id="loadingOverlay" class="loading-overlay">
+                        <div class="spinner"></div>
+                    </div>
+                    <iframe id="videoIframe" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h1 id="videoTitle" class="video-title">Loading Video...</h1>
+                    <p id="videoDesc" style="color: #64748b; font-size: 16px;">Global Trade & Services Committee Webinar Series</p>
+                </div>
+            </div>
+
+            <div id="notFound" class="not-found-msg reveal-up">
+                <h1 style="font-weight: 800; color: #1e293b;">Video Not Found</h1>
+                <p style="color: #64748b;">The requested video could not be loaded. Please try again later.</p>
+                <a href="index.html" class="back-btn" style="margin-top: 20px;">Return to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-dark py-5">
+        <div class="container">
+            <div class="footer-bottom d-flex justify-content-between flex-wrap">
+                <div>© 2026 The Institute of Chartered Accountants of India</div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const videoId = urlParams.get('v');
+            const title = urlParams.get('title');
+
+            const iframe = document.getElementById('videoIframe');
+            const titleEl = document.getElementById('videoTitle');
+            const loading = document.getElementById('loadingOverlay');
+            const container = document.getElementById('videoContainer');
+            const notFound = document.getElementById('notFound');
+
+            if (videoId) {
+                // Handle different URL formats (YouTube ID or full embed URL)
+                let embedUrl = videoId;
+                if (!videoId.includes('http')) {
+                    embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                } else if (videoId.includes('youtube.com/watch?v=')) {
+                    const id = videoId.split('v=')[1].split('&')[0];
+                    embedUrl = `https://www.youtube.com/embed/${id}?autoplay=1`;
+                }
+
+                iframe.src = embedUrl;
+                if (title) titleEl.innerText = title;
+                else titleEl.innerText = "Global Udaan Webinar";
+
+                iframe.onload = () => {
+                    loading.style.opacity = '0';
+                    setTimeout(() => loading.style.display = 'none', 500);
+                };
+            } else {
+                container.style.display = 'none';
+                notFound.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
