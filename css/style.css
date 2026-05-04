@@ -190,16 +190,40 @@
 }
 
 @keyframes gradientFlow {
-    0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
-    50% { background-position: 100% 50%; filter: hue-rotate(180deg); }
-    100% { background-position: 0% 50%; filter: hue-rotate(360deg); }
+    0% {
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        filter: hue-rotate(180deg);
+    }
+
+    100% {
+        background-position: 0% 50%;
+        filter: hue-rotate(360deg);
+    }
 }
 
 @keyframes blobFloat {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(40px, -30px) scale(1.1); }
-    50% { transform: translate(-20px, 20px) scale(0.9); }
-    75% { transform: translate(30px, 10px) scale(1.05); }
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    25% {
+        transform: translate(40px, -30px) scale(1.1);
+    }
+
+    50% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    75% {
+        transform: translate(30px, 10px) scale(1.05);
+    }
 }
 
 .mesh-blob {
@@ -323,7 +347,8 @@ body>* {
     position: relative;
     overflow: hidden;
     margin-top: 0;
-    padding: 20px 0; /* Increased from 10px to 20px */
+    padding: 20px 0;
+    /* Increased from 10px to 20px */
     z-index: 5;
 }
 
@@ -1880,9 +1905,12 @@ h6,
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0; /* Removing padding to allow full-bleed background */
-    border: 1px solid rgba(255, 255, 255, 0.4); /* Brighter border */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Much lighter shadow */
+    padding: 0;
+    /* Removing padding to allow full-bleed background */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Brighter border */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Much lighter shadow */
 }
 
 /* Gradient Overlay for Text Readability - Dynamic Tints */
@@ -1899,12 +1927,26 @@ h6,
     .accordion-card:hover {
         flex: 4;
     }
-    
-    .card1:hover::after { background: linear-gradient(to top, rgba(78, 165, 217, 0.4) 0%, transparent 80%); }
-    .card2:hover::after { background: linear-gradient(to top, rgba(249, 115, 22, 0.3) 0%, transparent 80%); }
-    .card3:hover::after { background: linear-gradient(to top, rgba(34, 197, 94, 0.3) 0%, transparent 80%); }
-    .card4:hover::after { background: linear-gradient(to top, rgba(168, 85, 247, 0.3) 0%, transparent 80%); }
-    .card5:hover::after { background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%); }
+
+    .card1:hover::after {
+        background: linear-gradient(to top, rgba(78, 165, 217, 0.4) 0%, transparent 80%);
+    }
+
+    .card2:hover::after {
+        background: linear-gradient(to top, rgba(249, 115, 22, 0.3) 0%, transparent 80%);
+    }
+
+    .card3:hover::after {
+        background: linear-gradient(to top, rgba(34, 197, 94, 0.3) 0%, transparent 80%);
+    }
+
+    .card4:hover::after {
+        background: linear-gradient(to top, rgba(168, 85, 247, 0.3) 0%, transparent 80%);
+    }
+
+    .card5:hover::after {
+        background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%);
+    }
 
     .accordion-card:hover .card-title {
         opacity: 1;
@@ -1923,11 +1965,25 @@ h6,
     flex: 4;
 }
 
-.card1.active::after { background: linear-gradient(to top, rgba(78, 165, 217, 0.4) 0%, transparent 80%); }
-.card2.active::after { background: linear-gradient(to top, rgba(249, 115, 22, 0.3) 0%, transparent 80%); }
-.card3.active::after { background: linear-gradient(to top, rgba(34, 197, 94, 0.3) 0%, transparent 80%); }
-.card4.active::after { background: linear-gradient(to top, rgba(168, 85, 247, 0.3) 0%, transparent 80%); }
-.card5.active::after { background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%); }
+.card1.active::after {
+    background: linear-gradient(to top, rgba(78, 165, 217, 0.4) 0%, transparent 80%);
+}
+
+.card2.active::after {
+    background: linear-gradient(to top, rgba(249, 115, 22, 0.3) 0%, transparent 80%);
+}
+
+.card3.active::after {
+    background: linear-gradient(to top, rgba(34, 197, 94, 0.3) 0%, transparent 80%);
+}
+
+.card4.active::after {
+    background: linear-gradient(to top, rgba(168, 85, 247, 0.3) 0%, transparent 80%);
+}
+
+.card5.active::after {
+    background: linear-gradient(to top, rgba(234, 179, 8, 0.3) 0%, transparent 80%);
+}
 
 .accordion-card.active .card-title {
     opacity: 1;
@@ -1956,7 +2012,7 @@ h6,
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
     pointer-events: none;
 }
 
@@ -1965,18 +2021,21 @@ h6,
     position: relative;
     z-index: 10;
     padding: 30px;
-    padding-top: 110px; /* Increased space for smoother title transition */
+    padding-top: 110px;
+    /* Increased space for smoother title transition */
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     pointer-events: none;
-    height: 100%; /* Use full height but hide content */
+    height: 100%;
+    /* Use full height but hide content */
     overflow: hidden;
 }
 
 @media (min-width: 992px) {
     .accordion-card:hover .card-title {
-        bottom: calc(100% - 80px); /* Move to top of expanded card */
+        bottom: calc(100% - 80px);
+        /* Move to top of expanded card */
         left: 30px;
         right: auto;
         text-align: left;
@@ -1991,12 +2050,14 @@ h6,
         opacity: 1;
         transform: translateY(0);
         pointer-events: all;
-        transition-delay: 0.3s; /* Delay text until card is wide enough */
+        transition-delay: 0.3s;
+        /* Delay text until card is wide enough */
     }
 }
 
 .accordion-card.active .card-title {
-    bottom: calc(100% - 80px); /* Move to top of expanded card */
+    bottom: calc(100% - 80px);
+    /* Move to top of expanded card */
     left: 30px;
     right: auto;
     text-align: left;
@@ -2011,7 +2072,8 @@ h6,
     opacity: 1;
     transform: translateY(0);
     pointer-events: all;
-    transition-delay: 0.3s; /* Delay text until card is wide enough */
+    transition-delay: 0.3s;
+    /* Delay text until card is wide enough */
 }
 
 /* Sub-view Overrides for Accordion */
@@ -2054,14 +2116,14 @@ h6,
     text-decoration: none;
     margin-top: 25px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     width: fit-content;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sub-view-cta:hover {
     transform: scale(1.05) translateX(5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     background: #f8fafc;
 }
 
@@ -2093,8 +2155,8 @@ h6,
 .accordion-card .hover-list li {
     font-size: 14px;
     padding: 14px 20px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     margin-bottom: 10px;
 }
 
@@ -2162,29 +2224,35 @@ h6,
     }
 
     .accordion-card .full-content {
-        padding: 70px 20px 30px 20px; /* Space for the title at top */
+        padding: 70px 20px 30px 20px;
+        /* Space for the title at top */
         opacity: 0;
         transform: translateY(20px);
-        transition: all 0.3s ease; /* Fast fade-out when closing, no delay */
-        pointer-events: none; /* Disable interaction when hidden */
+        transition: all 0.3s ease;
+        /* Fast fade-out when closing, no delay */
+        pointer-events: none;
+        /* Disable interaction when hidden */
     }
 
     .accordion-card.active .full-content {
         opacity: 1;
         transform: translateY(0);
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s; /* Keep delay for opening only */
+        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0.2s;
+        /* Keep delay for opening only */
         pointer-events: all;
     }
 
     .accordion-card .number {
-        font-size: 80px !important; /* Smaller numbers on mobile */
+        font-size: 80px !important;
+        /* Smaller numbers on mobile */
         opacity: 0.1 !important;
         top: 10px !important;
         right: 15px !important;
     }
 
     .accordion-card .full-content h4 {
-        display: none; /* Already handled by .card-title */
+        display: none;
+        /* Already handled by .card-title */
     }
 }
 
@@ -2342,7 +2410,8 @@ h6,
 .blur-btn2 {
     padding: 14px 32px;
     font-size: 16px;
-    border-radius: 50px; /* More modern rounded pill */
+    border-radius: 50px;
+    /* More modern rounded pill */
     border: none;
     background: linear-gradient(135deg, #4EA5D9 0%, #322873 100%);
     color: #fff;
@@ -2361,9 +2430,11 @@ h6,
 .blur-btn2::before {
     content: '';
     position: absolute;
-    top: 0; left: -100%;
-    width: 100%; height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
     transition: 0.5s;
 }
 
@@ -2386,7 +2457,8 @@ h6,
 .orange-btn {
     background: linear-gradient(135deg, #F97316 0%, #C2410C 100%);
     box-shadow: 0 10px 25px rgba(194, 65, 12, 0.3);
-    color: #fff !important; /* Ensure white text for high contrast */
+    color: #fff !important;
+    /* Ensure white text for high contrast */
 }
 
 .orange-btn:hover {
@@ -3289,7 +3361,8 @@ h6,
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important;
     border: 1px solid rgba(0, 0, 0, 0.05) !important;
     top: 100% !important;
-    left: -15px !important; /* Shifted left to reduce visual gap */
+    left: -15px !important;
+    /* Shifted left to reduce visual gap */
     transform: translateY(15px);
 }
 
@@ -3310,8 +3383,10 @@ h6,
     align-items: center !important;
     justify-content: flex-start !important;
     text-align: left !important;
-    padding: 4px 6px !important; /* Reduced further from 6px 8px to 4px 6px */
-    gap: 6px !important; /* Reduced further to 6px */
+    padding: 4px 6px !important;
+    /* Reduced further from 6px 8px to 4px 6px */
+    gap: 6px !important;
+    /* Reduced further to 6px */
     width: 100% !important;
     background: transparent !important;
     border-radius: 10px !important;
@@ -4439,12 +4514,14 @@ a.knowmore {
 }
 
 .logo-carousel-wrapper {
-    background: #ffffff; /* Moved white strip here */
+    background: #ffffff;
+    /* Moved white strip here */
     overflow: hidden;
     padding: 10px 0;
     position: relative;
     width: 100vw;
-    margin-left: calc(-50vw + 50%); /* Make it full width even if container is smaller */
+    margin-left: calc(-50vw + 50%);
+    /* Make it full width even if container is smaller */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
@@ -4510,15 +4587,18 @@ a.knowmore {
     max-height: 85%;
     object-fit: contain;
     transition: all 0.4s ease;
-    mix-blend-mode: normal; /* Removed multiply since background is white now */
-    filter: none; /* Let natural logos show */
+    mix-blend-mode: normal;
+    /* Removed multiply since background is white now */
+    filter: none;
+    /* Let natural logos show */
 }
 
 /* Specific Fix for IFSCA */
 .partner-card img[src*="ewNuuGnL"] {
-    border-radius: 50%; 
+    border-radius: 50%;
     object-fit: cover;
-    width: 80px; /* Reduced from 120px */
+    width: 80px;
+    /* Reduced from 120px */
     height: 80px;
     mix-blend-mode: normal;
     filter: none;
@@ -4534,15 +4614,21 @@ a.knowmore {
 }
 
 @keyframes scrollLogos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-350px * 7 - 50px * 7)); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-350px * 7 - 50px * 7));
+    }
 }
 
 /* ===== QUICK ACCESS SECTION (Sidebar Bar Style) ===== */
 .quick-access-section {
     position: relative;
     z-index: 10;
-    padding: 0 0 20px !important; /* Increased from 10px to 20px */
+    padding: 0 0 20px !important;
+    /* Increased from 10px to 20px */
 }
 
 .ql-bar-item {
@@ -4570,22 +4656,36 @@ a.knowmore {
     font-size: 22px;
     position: relative;
     border-radius: 14px;
-    background: rgba(255, 255, 255, 0.2) !important; /* Semi-transparent icon box for depth */
+    background: rgba(255, 255, 255, 0.2) !important;
+    /* Semi-transparent icon box for depth */
 }
 
 /* Vibrant Tab Backgrounds */
-.ql-blue { background: linear-gradient(135deg, #4EA5D9 0%, #322873 100%) !important; }
-.ql-purple { background: linear-gradient(135deg, #8e44ad 0%, #5d2a71 100%) !important; }
-.ql-orange { background: linear-gradient(135deg, #F97316 0%, #C2410C 100%) !important; }
+.ql-blue {
+    background: linear-gradient(135deg, #4EA5D9 0%, #322873 100%) !important;
+}
+
+.ql-purple {
+    background: linear-gradient(135deg, #8e44ad 0%, #5d2a71 100%) !important;
+}
+
+.ql-orange {
+    background: linear-gradient(135deg, #F97316 0%, #C2410C 100%) !important;
+}
 
 /* Remove old specific icon box colors since the whole tab is colored */
-.ql-blue .ql-icon-box, .ql-purple .ql-icon-box, .ql-orange .ql-icon-box { background: rgba(255, 255, 255, 0.2) !important; }
+.ql-blue .ql-icon-box,
+.ql-purple .ql-icon-box,
+.ql-orange .ql-icon-box {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
 
 .ql-text-content {
     flex-grow: 1;
     font-size: 15px !important;
     font-weight: 800 !important;
-    color: #ffffff !important; /* White text for contrast */
+    color: #ffffff !important;
+    /* White text for contrast */
     line-height: 1.3 !important;
     padding: 0 20px !important;
     display: block !important;
@@ -4594,7 +4694,8 @@ a.knowmore {
 
 .ql-arrow-box {
     padding-right: 20px;
-    color: rgba(255, 255, 255, 0.6); /* White arrow */
+    color: rgba(255, 255, 255, 0.6);
+    /* White arrow */
     transition: all 0.3s ease;
 }
 
@@ -4610,9 +4711,17 @@ a.knowmore {
 }
 
 /* Specific Hover Glows - Subtler for light mode */
-.ql-blue:hover { box-shadow: 0 12px 25px rgba(0, 119, 182, 0.15); }
-.ql-purple:hover { box-shadow: 0 12px 25px rgba(142, 68, 173, 0.15); }
-.ql-orange:hover { box-shadow: 0 12px 25px rgba(243, 156, 18, 0.15); }
+.ql-blue:hover {
+    box-shadow: 0 12px 25px rgba(0, 119, 182, 0.15);
+}
+
+.ql-purple:hover {
+    box-shadow: 0 12px 25px rgba(142, 68, 173, 0.15);
+}
+
+.ql-orange:hover {
+    box-shadow: 0 12px 25px rgba(243, 156, 18, 0.15);
+}
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
@@ -4620,29 +4729,41 @@ a.knowmore {
         padding: 60px 0 20px;
         margin-top: 20px;
     }
+
     .quick-access-section {
         padding-bottom: 30px !important;
     }
+
     .ql-bar-item {
         padding: 12px 18px;
     }
+
     .ql-label {
         font-size: 13px;
     }
+
     .logo-item {
         width: 160px;
         height: 80px;
     }
+
     .logo-track {
         width: calc(160px * 14 + 20px * 14);
         gap: 20px;
     }
+
     .partner-card {
         padding: 15px;
         border-radius: 16px;
     }
+
     @keyframes scrollLogos {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-160px * 7 - 20px * 7)); }
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-160px * 7 - 20px * 7));
+        }
     }
 }
