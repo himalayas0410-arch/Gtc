@@ -240,12 +240,21 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const videoId = urlParams.get('v');
-            const title = urlParams.get('title');
-            const date = urlParams.get('date');
-            const time = urlParams.get('time');
-            const series = urlParams.get('series');
+            const getParam = (name) => {
+                const urlParams = new URLSearchParams(window.location.search);
+                let val = urlParams.get(name);
+                if (!val && window.location.hash) {
+                    const hashParams = new URLSearchParams(window.location.hash.substring(1));
+                    val = hashParams.get(name);
+                }
+                return val;
+            };
+
+            const videoId = getParam('v');
+            const title = getParam('title');
+            const date = getParam('date');
+            const time = getParam('time');
+            const series = getParam('series');
 
             const iframe = document.getElementById('videoIframe');
             const videoEl = document.getElementById('videoElement');
@@ -257,21 +266,24 @@
             const container = document.getElementById('videoContainer');
             const notFound = document.getElementById('notFound');
 
+            const hideLoading = () => {
+                loading.style.opacity = '0';
+                setTimeout(() => loading.style.display = 'none', 500);
+            };
+
+            // Safety timeout for loading
+            setTimeout(hideLoading, 5000);
+
             if (videoId) {
                 const decodedUrl = decodeURIComponent(videoId);
                 
                 if (decodedUrl.toLowerCase().includes('.mp4') || decodedUrl.toLowerCase().includes('dropbox')) {
-                    // Handle direct video file
                     videoEl.src = decodedUrl;
                     videoEl.style.display = 'block';
                     iframe.style.display = 'none';
-                    
-                    videoEl.onloadeddata = () => {
-                        loading.style.opacity = '0';
-                        setTimeout(() => loading.style.display = 'none', 500);
-                    };
+                    videoEl.onloadeddata = hideLoading;
+                    videoEl.onerror = hideLoading;
                 } else {
-                    // Handle YouTube / Embed
                     let embedUrl = decodedUrl;
                     if (!decodedUrl.includes('http')) {
                         embedUrl = `https://www.youtube.com/embed/${decodedUrl}?autoplay=1`;
@@ -283,11 +295,8 @@
                     iframe.src = embedUrl;
                     iframe.style.display = 'block';
                     videoEl.style.display = 'none';
-
-                    iframe.onload = () => {
-                        loading.style.opacity = '0';
-                        setTimeout(() => loading.style.display = 'none', 500);
-                    };
+                    iframe.onload = hideLoading;
+                    iframe.onerror = hideLoading;
                 }
 
                 if (title) titleEl.innerText = title;
@@ -297,6 +306,7 @@
             } else {
                 container.style.display = 'none';
                 notFound.style.display = 'block';
+                hideLoading();
             }
         });
     </script>
