@@ -59,20 +59,41 @@
         .video-meta {
             display: flex;
             align-items: center;
+            flex-wrap: wrap;
             gap: 15px;
-            color: #64748b;
-            font-size: 15px;
-            font-weight: 500;
+            margin-top: 15px;
         }
 
         .series-tag {
             background: rgba(var(--blue-primary-rgb), 0.1);
             color: var(--blue-primary);
-            padding: 4px 12px;
-            border-radius: 6px;
+            padding: 6px 14px;
+            border-radius: 8px;
             font-weight: 700;
-            font-size: 13px;
+            font-size: 14px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta-details {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #64748b;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .meta-item .material-symbols-outlined {
+            font-size: 18px;
+            color: var(--blue-primary);
+            opacity: 0.8;
         }
 
         .back-nav {
@@ -181,8 +202,17 @@
                 <div class="video-info">
                     <h1 id="videoTitle" class="video-title">Loading Video...</h1>
                     <div class="video-meta">
-                        <span class="series-tag">Webinar Series</span>
-                        <span id="videoDesc">Global Trade & Services Committee</span>
+                        <span class="series-tag" id="seriesTag">Webinar Series</span>
+                        <div class="meta-details">
+                            <div class="meta-item">
+                                <span class="material-symbols-outlined">calendar_today</span>
+                                <span id="videoDate">...</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="material-symbols-outlined">schedule</span>
+                                <span id="videoTime">...</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -213,10 +243,16 @@
             const urlParams = new URLSearchParams(window.location.search);
             const videoId = urlParams.get('v');
             const title = urlParams.get('title');
+            const date = urlParams.get('date');
+            const time = urlParams.get('time');
+            const series = urlParams.get('series');
 
             const iframe = document.getElementById('videoIframe');
             const videoEl = document.getElementById('videoElement');
             const titleEl = document.getElementById('videoTitle');
+            const dateEl = document.getElementById('videoDate');
+            const timeEl = document.getElementById('videoTime');
+            const seriesEl = document.getElementById('seriesTag');
             const loading = document.getElementById('loadingOverlay');
             const container = document.getElementById('videoContainer');
             const notFound = document.getElementById('notFound');
@@ -255,7 +291,9 @@
                 }
 
                 if (title) titleEl.innerText = title;
-                else titleEl.innerText = "Global Udaan Webinar";
+                if (date) dateEl.innerText = date;
+                if (time) timeEl.innerText = time;
+                if (series) seriesEl.innerText = series;
             } else {
                 container.style.display = 'none';
                 notFound.style.display = 'block';
