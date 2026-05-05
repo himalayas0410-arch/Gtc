@@ -341,15 +341,31 @@
             .webinar-grid-card { 
                 flex-direction: column; 
                 margin-bottom: 20px;
+                height: auto !important;
             }
             .card-poster-area { 
                 width: 100% !important; 
-                height: 250px !important; 
+                height: auto !important; 
+                background: #fff;
+            }
+            .card-poster-area img, .card-poster-area canvas {
+                height: auto !important;
+                object-fit: contain !important;
             }
             .webinar-col {
                 width: 100% !important;
                 flex: 0 0 100% !important;
                 max-width: 100% !important;
+            }
+            .detail-row {
+                font-size: 13px;
+                gap: 8px;
+            }
+            .detail-label {
+                width: 75px;
+            }
+            .topic-title-row {
+                font-size: 15px;
             }
         }
 
