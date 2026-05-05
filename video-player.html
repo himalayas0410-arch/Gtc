@@ -42,6 +42,15 @@
             background: #000;
         }
 
+        .video-aspect-ratio iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         .video-info {
             margin-top: 20px;
             padding: 0 5px;
@@ -506,7 +515,50 @@
 
             if (videoId) {
                 const decodedUrl = decodeURIComponent(videoId);
-                if (decodedUrl.toLowerCase().includes('.mp4') || decodedUrl.toLowerCase().includes('dropbox')) {
+
+                // --- DYNAMIC FETCHING FOR ICAITV ---
+                if (decodedUrl.includes('icaitv.com')) {
+                    (async () => {
+                        try {
+                            // Use AllOrigins 'raw' proxy for direct HTML access
+                            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(decodedUrl)}`;
+                            const response = await fetch(proxyUrl);
+                            const html = await response.text();
+                            
+                            // More robust regex for Dropbox links (covers various formats)
+                            const dropboxRegex = /https?:\/\/(?:www\.)?dropbox\.com\/(?:scl\/fi\/|s\/)[^\s"'>]+/g;
+                            const matches = html.match(dropboxRegex);
+                            
+                            if (matches && matches.length > 0) {
+                                let directLink = matches[0];
+                                // Clean up trailing characters like quotes, brackets, etc.
+                                directLink = directLink.split('"')[0].split("'")[0].split(">")[0].split("&quot;")[0];
+                                
+                                // Ensure it's a direct download link
+                                if (!directLink.includes('raw=1')) {
+                                    directLink += directLink.includes('?') ? '&raw=1' : '?raw=1';
+                                }
+                                
+                                console.log("GTC Player: Found direct stream ->", directLink);
+                                videoEl.src = directLink;
+                                videoEl.style.display = 'block';
+                                iframe.style.display = 'none';
+                                videoEl.onloadeddata = hideLoading;
+                                videoEl.onerror = hideLoading;
+                                return;
+                            }
+                            console.warn("GTC Player: No direct video link found in source. Falling back to website view.");
+                        } catch (err) {
+                            console.error("GTC Player: Dynamic fetch error:", err);
+                        }
+                        // Fallback to iframe
+                        iframe.src = decodedUrl;
+                        iframe.style.display = 'block';
+                        videoEl.style.display = 'none';
+                        iframe.onload = hideLoading;
+                        iframe.onerror = hideLoading;
+                    })();
+                } else if (decodedUrl.toLowerCase().includes('.mp4') || decodedUrl.toLowerCase().includes('dropbox')) {
                     videoEl.src = decodedUrl;
                     videoEl.style.display = 'block';
                     iframe.style.display = 'none';
