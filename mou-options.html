@@ -85,31 +85,44 @@
         }
 
         .option-icon-wrap {
-            width: 80px;
-            height: 80px;
-            background: var(--tint-blue);
-            border-radius: 20px;
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border: 2px solid #f1f5f9;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
-            transition: 0.3s;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .option-icon-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+            transition: transform 0.4s ease;
+        }
+
+        /* Target the IFSCA logo specifically to hide its black borders */
+        .option-icon-wrap img[src*="ewNuuGnL"] {
+            object-fit: cover;
+            padding: 0;
+            border-radius: 50%;
         }
 
         .option-card-full:hover .option-icon-wrap {
-            background: var(--blue-primary);
-            transform: rotate(5deg);
+            border-color: var(--blue-primary);
+            transform: translateY(-5px) rotate(3deg);
+            box-shadow: 0 12px 24px rgba(78, 165, 217, 0.15);
         }
 
-        .option-icon-wrap i {
-            font-size: 36px;
-            color: var(--blue-primary);
-            transition: 0.3s;
-        }
-
-        .option-card-full:hover .option-icon-wrap i {
-            color: #fff;
+        .option-card-full:hover .option-icon-wrap img {
+            transform: scale(1.1);
         }
 
         .option-card-full h3 {
@@ -347,7 +360,9 @@
                 <div class="options-grid-full">
                     <!-- Invest India -->
                     <a href="#" class="option-card-full scroll-reveal">
-                        <div class="option-icon-wrap"><i class="bi bi-building"></i></div>
+                        <div class="option-icon-wrap">
+                            <img src="images/eco_partners/logo-investindia.png" alt="Invest India Logo" />
+                        </div>
                         <h3>Invest India</h3>
                         <p>Collaborating with India's national investment promotion and facilitation agency to drive
                             global professional opportunities.</p>
@@ -365,7 +380,9 @@
 
                     <!-- SEPC -->
                     <a href="sepc.html" class="option-card-full scroll-reveal">
-                        <div class="option-icon-wrap"><i class="bi bi-shield-check"></i></div>
+                        <div class="option-icon-wrap">
+                            <img src="images/eco_partners/images.png" alt="SEPC Logo" />
+                        </div>
                         <h3>SEPC</h3>
                         <p>Active collaboration with the Services Export Promotion Council to strengthen India's
                             services trade footprint globally.</p>
@@ -374,7 +391,9 @@
 
                     <!-- IFSCA -->
                     <a href="#" class="option-card-full scroll-reveal">
-                        <div class="option-icon-wrap"><i class="bi bi-bank"></i></div>
+                        <div class="option-icon-wrap">
+                            <img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="IFSCA Logo" />
+                        </div>
                         <h3>IFSCA</h3>
                         <p>Strategic alignment with the International Financial Services Centres Authority to promote
                             GIFT City and global finance hub initiatives.</p>
