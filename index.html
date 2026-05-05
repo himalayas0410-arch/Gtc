@@ -349,240 +349,84 @@
 
     <div class="section-warm" style="position:relative;">
         <div class="container py-5">
-            <div class="accordion-wrapper">
+            <div class="board" id="pillar-board">
+                <div class="deck-card card1" data-index="1"><div class="deck-overlay"></div><div class="card-title">Trade &amp; Market Integration</div><div class="number">1</div></div>
+                <div class="deck-card card2" data-index="2"><div class="deck-overlay"></div><div class="card-title">Global Services &amp; Professional Mobility</div><div class="number">2</div></div>
+                <div class="deck-card card3" data-index="3"><div class="deck-overlay"></div><div class="card-title">Policy, Multilateral &amp; Government Affairs</div><div class="number">3</div></div>
+                <div class="deck-card card4" data-index="4"><div class="deck-overlay"></div><div class="card-title">GCC &amp; Emerging Global Ecosystems</div><div class="number">4</div></div>
+                <div class="deck-card card5" data-index="5"><div class="deck-overlay"></div><div class="card-title">Capacity Building Programs</div><div class="number">5</div></div>
 
-                <!-- Card 1 -->
-                <div class="accordion-card card1">
-                    <div class="card-title">Trade & Market Integration</div>
-                    <div class="number">1</div>
-                    <div class="full-content">
+                <div class="details-panel" id="pillar-details">
+                    <div class="panel-content" data-for="1">
+                        <h3 class="panel-heading">Trade &amp; Market Integration</h3>
                         <div class="card-hover" id="hover-card-1">
-                            <div class="hover-main-view active">
-                                <ul class="hover-list">
-                                    <li onclick="switchCardView(1, 'sub', event)"><span>Deliverables of Existing
-                                            MoU</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li><span>Engaging with Indo Chambers of Commerce</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li><span>Involving State Government in promoting trade</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li><span>Liaisoning with Export Promotion Councils for trade</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                </ul>
-                            </div>
-                            <div class="hover-sub-view">
-                                <div class="sub-view-header">
-                                    <button class="back-btn" onclick="switchCardView(1, 'main', event)"><i
-                                            class="bi bi-arrow-left"></i> Back</button>
-                                    <h6>MoU Deliverables</h6>
-                                </div>
-                                <div class="sub-view-content">
-                                    <p class="sub-view-description">
-                                        Strengthening global trade through strategic collaborations with key
-                                        institutions to enhance export potential, policy engagement, and international
-                                        partnerships.
-                                    </p>
-                                    <a href="mou-options.html" class="sub-view-cta">
-                                        Know More <i class="bi bi-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
+                            <div class="hover-main-view active"><ul class="hover-list">
+                                <li onclick="switchCardView(1, 'sub', event)"><span>Deliverables of Existing MoU</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Engaging with Indo Chambers of Commerce</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Involving State Government in promoting trade</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Liaisoning with Export Promotion Councils for trade</span> <i class="bi bi-chevron-right"></i></li>
+                            </ul></div>
+                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(1, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>MoU Deliverables</h6></div>
+                            <div class="sub-view-content"><p class="sub-view-description">Strengthening global trade through strategic collaborations with key institutions to enhance export potential, policy engagement, and international partnerships.</p><a href="mou-options.html" class="sub-view-cta">Know More <i class="bi bi-arrow-right"></i></a></div></div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="accordion-card card2">
-                    <div class="card-title">Global Services & Professional Mobility</div>
-                    <div class="number">2</div>
-                    <div class="full-content">
+                    <div class="panel-content" data-for="2">
+                        <h3 class="panel-heading">Global Services &amp; Professional Mobility</h3>
                         <div class="card-hover" id="hover-card-2">
-                            <div class="hover-main-view active">
-                                <ul class="hover-list">
-                                    <li><span>APO portal</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li><span>Co-ordination with various Embassies in India and Indian High Commissions
-                                            abroad for professional opportunities abroad</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li><span>Participation and Exhibition at domestic and international events</span>
-                                        <i class="bi bi-chevron-right"></i>
-                                    </li>
-                                    <li onclick="switchCardView(2, 'sub', event)"><span>Support to International
-                                            professional organization</span> <i class="bi bi-chevron-right"></i></li>
-                                </ul>
-                            </div>
-                            <div class="hover-sub-view">
-                                <div class="sub-view-header">
-                                    <button class="back-btn" onclick="switchCardView(2, 'main', event)"><i
-                                            class="bi bi-arrow-left"></i> Back</button>
-                                    <h6>Professional Bodies</h6>
-                                </div>
-                                <div class="sub-card-grid">
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-globe-americas"></i>
-                                        <span>IFAC</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-map"></i>
-                                        <span>CAPA</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-compass"></i>
-                                        <span>SAFA</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-people"></i>
-                                        <span>International Organizations</span>
-                                    </a>
-                                </div>
-                            </div>
+                            <div class="hover-main-view active"><ul class="hover-list">
+                                <li><span>APO portal</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Co-ordination with various Embassies in India and Indian High Commissions abroad for professional opportunities abroad</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Participation and Exhibition at domestic and international events</span> <i class="bi bi-chevron-right"></i></li>
+                                <li onclick="switchCardView(2, 'sub', event)"><span>Support to International professional organization</span> <i class="bi bi-chevron-right"></i></li>
+                            </ul></div>
+                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(2, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>Professional Bodies</h6></div>
+                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-globe-americas"></i><span>IFAC</span></a><a href="#" class="sub-mini-card"><i class="bi bi-map"></i><span>CAPA</span></a><a href="#" class="sub-mini-card"><i class="bi bi-compass"></i><span>SAFA</span></a><a href="#" class="sub-mini-card"><i class="bi bi-people"></i><span>International Organizations</span></a></div></div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="accordion-card card3">
-                    <div class="card-title">Policy, Multilateral & Government Affairs</div>
-                    <div class="number">3</div>
-                    <div class="full-content">
+                    <div class="panel-content" data-for="3">
+                        <h3 class="panel-heading">Policy, Multilateral &amp; Government Affairs</h3>
                         <div class="card-hover" id="hover-card-3">
-                            <div class="hover-main-view active">
-                                <ul class="hover-list">
-                                    <li><span>Representing ICAI views on various barriers to trade in services under WTO
-                                            regime</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li><span>Inbound and outbound delegations</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li><span>Ambassador program</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li><span>ITEC program</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li onclick="switchCardView(3, 'sub', event)"><span>Ministerial consultations</span>
-                                        <i class="bi bi-chevron-right"></i>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="hover-sub-view">
-                                <div class="sub-view-header">
-                                    <button class="back-btn" onclick="switchCardView(3, 'main', event)"><i
-                                            class="bi bi-arrow-left"></i> Back</button>
-                                    <h6>Ministerial Consultations</h6>
-                                </div>
-                                <div class="sub-card-grid">
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-building-gear"></i>
-                                        <span>Ministry of Corporate Affairs</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-cash-stack"></i>
-                                        <span>Ministry of Finance</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-cart-check"></i>
-                                        <span>Ministry of Commerce</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-passport"></i>
-                                        <span>Ministry of External Affairs</span>
-                                    </a>
-                                </div>
-                            </div>
+                            <div class="hover-main-view active"><ul class="hover-list">
+                                <li><span>Representing ICAI views on various barriers to trade in services under WTO regime</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Inbound and outbound delegations</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Ambassador program</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>ITEC program</span> <i class="bi bi-chevron-right"></i></li>
+                                <li onclick="switchCardView(3, 'sub', event)"><span>Ministerial consultations</span> <i class="bi bi-chevron-right"></i></li>
+                            </ul></div>
+                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(3, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>Ministerial Consultations</h6></div>
+                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-building-gear"></i><span>Ministry of Corporate Affairs</span></a><a href="#" class="sub-mini-card"><i class="bi bi-cash-stack"></i><span>Ministry of Finance</span></a><a href="#" class="sub-mini-card"><i class="bi bi-cart-check"></i><span>Ministry of Commerce</span></a><a href="#" class="sub-mini-card"><i class="bi bi-passport"></i><span>Ministry of External Affairs</span></a></div></div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="accordion-card card4">
-                    <div class="card-title">GCC & Emerging Global Ecosystems</div>
-                    <div class="number">4</div>
-                    <div class="full-content">
+                    <div class="panel-content" data-for="4">
+                        <h3 class="panel-heading">GCC &amp; Emerging Global Ecosystems</h3>
                         <div class="card-hover" id="hover-card-4">
-                            <div class="hover-main-view active">
-                                <ul class="hover-list">
-                                    <li><span>State Government Policy advocacy and awareness</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li><span>Formulation of GCC Maturity & Governance Model</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li onclick="switchCardView(4, 'sub', event)"><span>GCC Summits across the
-                                            globe</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li><span>Facilitate engagement between State Governments & GCC investors</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li><span>Recognition of globally professional services providers</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                </ul>
-                            </div>
-                            <div class="hover-sub-view">
-                                <div class="sub-view-header">
-                                    <button class="back-btn" onclick="switchCardView(4, 'main', event)"><i
-                                            class="bi bi-arrow-left"></i> Back</button>
-                                    <h6>GCC Summits</h6>
-                                </div>
-                                <div class="sub-card-grid">
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-geo-alt"></i>
-                                        <span>Middle East</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-geo-alt"></i>
-                                        <span>South East Asia</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-geo-alt"></i>
-                                        <span>Europe</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-geo-alt"></i>
-                                        <span>Americas</span>
-                                    </a>
-                                </div>
-                            </div>
+                            <div class="hover-main-view active"><ul class="hover-list">
+                                <li><span>State Government Policy advocacy and awareness</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Formulation of GCC Maturity &amp; Governance Model</span> <i class="bi bi-chevron-right"></i></li>
+                                <li onclick="switchCardView(4, 'sub', event)"><span>GCC Summits across the globe</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Facilitate engagement between State Governments &amp; GCC investors</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Recognition of globally professional services providers</span> <i class="bi bi-chevron-right"></i></li>
+                            </ul></div>
+                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(4, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>GCC Summits</h6></div>
+                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>Middle East</span></a><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>South East Asia</span></a><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>Europe</span></a><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>Americas</span></a></div></div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="accordion-card card5">
-                    <div class="card-title">Capacity Building Programs</div>
-                    <div class="number">5</div>
-                    <div class="full-content">
+                    <div class="panel-content" data-for="5">
+                        <h3 class="panel-heading">Capacity Building Programs</h3>
                         <div class="card-hover" id="hover-card-5">
-                            <div class="hover-main-view active">
-                                <ul class="hover-list">
-                                    <li><span>Foreign Language courses</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li><span>Organize Webinars/Seminars/Workshops for members</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li><span>Publications including Quarterly E-newsletters</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                    <li onclick="switchCardView(5, 'sub', event)"><span>Certificate Courses and
-                                            Residential Programs</span> <i class="bi bi-chevron-right"></i></li>
-                                    <li><span>Roundtable with various stakeholders</span> <i
-                                            class="bi bi-chevron-right"></i></li>
-                                </ul>
-                            </div>
-                            <div class="hover-sub-view">
-                                <div class="sub-view-header">
-                                    <button class="back-btn" onclick="switchCardView(5, 'main', event)"><i
-                                            class="bi bi-arrow-left"></i> Back</button>
-                                    <h6>Certificate Courses</h6>
-                                </div>
-                                <div class="sub-card-grid">
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-calculator"></i>
-                                        <span>Finance & Accounts</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-journal-check"></i>
-                                        <span>Audit & Assurance</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-file-earmark-bar-graph"></i>
-                                        <span>Taxation Laws</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-person-workspace"></i>
-                                        <span>Leadership Skills</span>
-                                    </a>
-                                </div>
-                            </div>
+                            <div class="hover-main-view active"><ul class="hover-list">
+                                <li><span>Foreign Language courses</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Organize Webinars/Seminars/Workshops for members</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Publications including Quarterly E-newsletters</span> <i class="bi bi-chevron-right"></i></li>
+                                <li onclick="switchCardView(5, 'sub', event)"><span>Certificate Courses and Residential Programs</span> <i class="bi bi-chevron-right"></i></li>
+                                <li><span>Roundtable with various stakeholders</span> <i class="bi bi-chevron-right"></i></li>
+                            </ul></div>
+                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(5, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>Certificate Courses</h6></div>
+                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-calculator"></i><span>Finance &amp; Accounts</span></a><a href="#" class="sub-mini-card"><i class="bi bi-journal-check"></i><span>Audit &amp; Assurance</span></a><a href="#" class="sub-mini-card"><i class="bi bi-file-earmark-bar-graph"></i><span>Taxation Laws</span></a><a href="#" class="sub-mini-card"><i class="bi bi-person-workspace"></i><span>Leadership Skills</span></a></div></div>
                         </div>
                     </div>
+                    <button class="deck-reset-btn" id="deck-reset-btn"><i class="bi bi-arrow-left"></i> Back to All</button>
                 </div>
-
             </div>
         </div>
     </div> <!-- close section-warm -->
@@ -906,25 +750,61 @@
             }
         }
 
-        // Mobile Accordion Logic for Pillar Cards
-        document.querySelectorAll('.accordion-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                // Don't toggle if clicking interactive elements inside the expanded content
-                if (e.target.closest('.hover-list li') || e.target.closest('.back-btn') || e.target.closest('.sub-mini-card')) {
-                    return;
-                }
-                
-                const isActive = this.classList.contains('active');
-                
-                // On mobile, we toggle the active class
-                if (window.innerWidth < 1200) {
-                    // Close other cards for a cleaner accordion effect
-                    document.querySelectorAll('.accordion-card').forEach(c => {
-                        if (c !== this) c.classList.remove('active');
-                    });
-                    this.classList.toggle('active');
+        // ===== MERGE & CYCLE DECK LOGIC =====
+        const board = document.getElementById('pillar-board');
+        const deckCards = document.querySelectorAll('.deck-card');
+        const detailsPanel = document.getElementById('pillar-details');
+        const deckResetBtn = document.getElementById('deck-reset-btn');
+
+        function activateDeckCard(index) {
+            // Reset all sub-views to main view
+            document.querySelectorAll('.panel-content .hover-main-view').forEach(v => { v.classList.add('active'); });
+            document.querySelectorAll('.panel-content .hover-sub-view').forEach(v => { v.classList.remove('active'); });
+            // Remove active from all cards
+            deckCards.forEach(c => c.classList.remove('active'));
+            // Set active card
+            const target = document.querySelector(`.deck-card[data-index="${index}"]`);
+            if (target) target.classList.add('active');
+            board.classList.add('is-stacked');
+            // Show the correct panel content
+            document.querySelectorAll('.panel-content').forEach(p => { p.style.display = 'none'; });
+            const panel = document.querySelector(`.panel-content[data-for="${index}"]`);
+            if (panel) panel.style.display = 'block';
+        }
+
+        function closeDeck() {
+            board.classList.remove('is-stacked');
+            deckCards.forEach(c => c.classList.remove('active'));
+        }
+
+        deckCards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (board.classList.contains('is-stacked')) {
+                    // Cycle to next card
+                    const activeCard = document.querySelector('.deck-card.active');
+                    let currentIndex = parseInt(activeCard.getAttribute('data-index'));
+                    let nextIndex = (currentIndex % 5) + 1;
+                    activateDeckCard(nextIndex);
+                } else {
+                    activateDeckCard(parseInt(card.getAttribute('data-index')));
                 }
             });
+        });
+
+        deckResetBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeDeck();
+        });
+
+        detailsPanel.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+
+        document.addEventListener('click', () => {
+            if (board.classList.contains('is-stacked')) {
+                closeDeck();
+            }
         });
 
         function switchCardView(cardId, view, event) {
@@ -944,6 +824,7 @@
                 mainView.classList.add('active');
             }
         }
+
 
         // MagicUI NumberTicker — Vanilla JS counter animation
         const statObserver = new IntersectionObserver((entries) => {
