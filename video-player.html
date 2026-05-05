@@ -520,22 +520,26 @@
                 if (decodedUrl.includes('icaitv.com')) {
                     (async () => {
                         const proxies = [
-                            (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-                            (u) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`
+                            `https://api.allorigins.win/raw?url=${encodeURIComponent(decodedUrl)}`,
+                            `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(decodedUrl)}`
                         ];
 
+                        console.log("GTC Player: Starting parallel fetch for speed...");
+                        
+                        // Race the proxies! Whichever returns a valid result first wins.
+                        const fetchPromises = proxies.map(async (proxyUrl) => {
+                            const resp = await fetch(proxyUrl);
+                            if (!resp.ok) throw new Error("Proxy error");
+                            const text = await resp.text();
+                            if (!text.includes('dropbox.com')) throw new Error("No stream found");
+                            return text;
+                        });
+
                         let html = null;
-                        for (const getProxyUrl of proxies) {
-                            try {
-                                console.log("GTC Player: Attempting fetch via proxy...");
-                                const response = await fetch(getProxyUrl(decodedUrl));
-                                if (response.ok) {
-                                    html = await response.text();
-                                    if (html && html.includes('dropbox.com')) break;
-                                }
-                            } catch (err) {
-                                console.warn("GTC Player: Proxy attempt failed, trying next...");
-                            }
+                        try {
+                            html = await Promise.any(fetchPromises);
+                        } catch (err) {
+                            console.warn("GTC Player: All speed-fetch attempts failed.");
                         }
 
                         if (html) {
@@ -549,7 +553,7 @@
                                     directLink += directLink.includes('?') ? '&raw=1' : '?raw=1';
                                 }
                                 
-                                console.log("GTC Player: Found direct stream ->", directLink);
+                                console.log("GTC Player: Stream found! Opening native player.");
                                 videoEl.src = directLink;
                                 videoEl.style.display = 'block';
                                 iframe.style.display = 'none';
@@ -559,7 +563,7 @@
                             }
                         }
                         
-                        console.warn("GTC Player: No direct video link found after all attempts. Falling back to website view.");
+                        console.warn("GTC Player: Falling back to website view.");
                         iframe.src = decodedUrl;
                         iframe.style.display = 'block';
                         videoEl.style.display = 'none';
