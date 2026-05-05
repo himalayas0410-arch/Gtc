@@ -1887,9 +1887,9 @@ h6,
 
 /* ===== MERGE & CYCLE DECK — PILLAR CARDS ===== */
 .board {
-    --dw: 200px;
+    --dw: 18.8%; /* Adjust to fill width evenly */
     --dh: 420px;
-    --dg: 18px;
+    --dg: 1.5%;
     position: relative;
     width: 100%;
     height: var(--dh);
@@ -1914,6 +1914,13 @@ h6,
     border: 1px solid rgba(255, 255, 255, 0.15);
     background-size: cover;
     background-position: center;
+    z-index: 10; /* Keep cards on top in spread state to prevent click blocking */
+    pointer-events: auto !important;
+}
+
+/* Make every child non-intercepting so the card itself takes the click */
+.deck-card > * {
+    pointer-events: none !important;
 }
 
 .deck-overlay {
@@ -1922,6 +1929,7 @@ h6,
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 70%);
     z-index: 2;
     transition: all 0.5s ease;
+    pointer-events: none; /* Let clicks pass to the card */
 }
 
 .deck-card:hover .deck-overlay {
@@ -1930,10 +1938,10 @@ h6,
 
 /* Deck Card Positions — Spread State */
 .deck-card[data-index="1"] { left: 0; }
-.deck-card[data-index="2"] { left: calc((var(--dw) + var(--dg)) * 1); }
-.deck-card[data-index="3"] { left: calc((var(--dw) + var(--dg)) * 2); }
-.deck-card[data-index="4"] { left: calc((var(--dw) + var(--dg)) * 3); }
-.deck-card[data-index="5"] { left: calc((var(--dw) + var(--dg)) * 4); }
+.deck-card[data-index="2"] { left: calc(1 * (var(--dw) + var(--dg))); }
+.deck-card[data-index="3"] { left: calc(2 * (var(--dw) + var(--dg))); }
+.deck-card[data-index="4"] { left: calc(3 * (var(--dw) + var(--dg))); }
+.deck-card[data-index="5"] { left: calc(4 * (var(--dw) + var(--dg))); }
 
 /* Card Title */
 .deck-card .card-title {
@@ -1968,6 +1976,7 @@ h6,
 /* === STACKED STATE === */
 .board.is-stacked .deck-card {
     left: 0 !important;
+    width: var(--dw) !important; /* Keep original size from spread state */
     box-shadow: -3px 0px 15px rgba(0, 0, 0, 0.15);
 }
 
@@ -1994,8 +2003,8 @@ h6,
 .details-panel {
     position: absolute;
     top: 0;
-    left: calc(var(--dw) + var(--dg));
-    width: calc(100% - var(--dw) - var(--dg));
+    left: calc(var(--dw) + 20px); /* Space out relative to card size */
+    width: calc(100% - var(--dw) - 20px);
     height: var(--dh);
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     border-radius: 20px;
@@ -2004,11 +2013,12 @@ h6,
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(78, 165, 217, 0.15);
     opacity: 0;
+    visibility: hidden; /* Fully hide to prevent click blocking */
     pointer-events: none;
     transform: translateX(30px);
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     transition-delay: 0s;
-    display: flex;
+    display: flex; /* Restore flex for animation support */
     flex-direction: column;
     overflow: hidden;
     z-index: 6;
@@ -2016,8 +2026,11 @@ h6,
 
 /* Reset global card-hover conflict */
 .details-panel .card-hover {
-    position: static !important;
+    position: relative !important;
     height: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: auto !important;
     padding: 0 !important;
     background: none !important;
     backdrop-filter: none !important;
@@ -2026,12 +2039,16 @@ h6,
     transform: none !important;
     transition: none !important;
     display: block !important;
+    z-index: 1 !important;
+    pointer-events: auto !important;
 }
 
 .board.is-stacked .details-panel {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
     transform: translateX(0);
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     transition-delay: 0.3s;
 }
 
@@ -2045,7 +2062,8 @@ h6,
 }
 
 /* Ensure JS block becomes flex */
-.panel-content[style*="display: block"] {
+.panel-content[style*="display: block"],
+.panel-content[style*="display:block"] {
     display: flex !important;
 }
 
@@ -2100,6 +2118,11 @@ h6,
 .details-panel .hover-main-view,
 .details-panel .hover-sub-view {
     display: none;
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .details-panel .hover-main-view.active,
@@ -2215,6 +2238,9 @@ h6,
     display: flex;
     align-items: center;
     gap: 8px;
+    position: relative !important;
+    z-index: 100 !important;
+    pointer-events: auto !important;
 }
 
 .deck-reset-btn:hover {
