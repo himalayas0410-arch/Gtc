@@ -1,28 +1,318 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
-    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>GTC - Events & Programs</title>
+    <title>GTC - IFSCA Strategic Collaboration</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/jsvectormap.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        :root {
+            --ifsca-blue: #0056b3;
+            --ifsca-gold: #c5a059;
+            --ifsca-green: #28a745;
+            --glass-light: rgba(255, 255, 255, 0.95);
+            --glass-border: rgba(15, 23, 42, 0.08);
+            --text-main: #1E293B;
+            --text-muted: #64748B;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: #F8FAFC;
+        }
+
+        /* Enhanced Hero - Light Version */
+        .ifsca-hero {
+            position: relative;
+            padding: 140px 0 60px;
+            text-align: center;
+        }
+
+        .ifsca-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .ifsca-hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Layout Grid */
+        .ifsca-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            padding: 20px 0 80px;
+        }
+
+        /* Modern White Glass Card */
+        .feature-card {
+            background: var(--glass-light);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            height: 100%;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(0, 86, 179, 0.3);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent-color, var(--ifsca-blue));
+        }
+
+        .card-header {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(0, 86, 179, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color, var(--ifsca-blue));
+            border: 1px solid rgba(0, 86, 179, 0.1);
+        }
+
+        .card-icon-box i {
+            font-size: 24px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 18px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 15.5px;
+            line-height: 1.7;
+        }
+
+        /* Image Display */
+        .img-reveal-container {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .img-reveal-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .feature-card:hover .img-reveal-container img {
+            transform: scale(1.05);
+        }
+
+        /* Quote Section - Light */
+        .quote-section {
+            grid-column: span 12;
+            padding: 50px;
+            text-align: center;
+            background: #fff;
+            border-radius: 32px;
+            margin: 30px 0;
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .quote-section i {
+            font-size: 40px;
+            color: var(--ifsca-blue);
+            opacity: 0.2;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .quote-section blockquote {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--text-main);
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quote-section cite {
+            display: block;
+            margin-top: 15px;
+            font-style: normal;
+            font-size: 13px;
+            color: var(--ifsca-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 800;
+        }
+
+        /* Focus Areas Grid */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+
+        .focus-item {
+            background: #fff;
+            border: 1px solid var(--glass-border);
+            padding: 16px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.3s;
+        }
+
+        .focus-item:hover {
+            border-color: var(--ifsca-blue);
+            background: var(--tint-blue);
+            transform: translateY(-2px);
+        }
+
+        .focus-item i {
+            color: var(--ifsca-blue);
+            font-size: 18px;
+        }
+
+        .focus-item span {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Status Badge */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 5px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: var(--tint-green);
+            color: var(--green-success);
+            border: 1px solid rgba(34, 197, 94, 0.1);
+        }
+
+        /* Stats in Card */
+        .stat-group {
+            display: flex;
+            gap: 25px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .stat-item h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--ifsca-blue);
+            margin-bottom: 2px;
+        }
+
+        .stat-item span {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Grid Assignments */
+        .col-partnership {
+            grid-column: span 7;
+        }
+
+        .col-highlight {
+            grid-column: span 5;
+        }
+
+        .col-impact {
+            grid-column: span 12;
+        }
+
+        .col-focus {
+            grid-column: span 12;
+        }
+
+        @media (max-width: 1100px) {
+
+            .col-partnership,
+            .col-highlight {
+                grid-column: span 12;
+            }
+        }
+
+        .back-nav {
+            margin-bottom: 20px;
+        }
+
+        /* Glow Card Effect */
+        .glow-card {
+            position: relative;
+        }
+
+        .glow-card:hover {
+            box-shadow: 0 0 30px rgba(0, 86, 179, 0.15);
+        }
+    </style>
 </head>
 
-<body>
-    <!-- Aceternity-style Animated Background -->
-    <div class="gradients-container"></div>
+<body class="tactile-depth">
+    <div class="gradients-container" style="opacity: 0.3;"></div>
     <div id="scrollProgress"></div>
+
     <div class="header home-header">
         <div class="header-top">
             <div class="container header-top-container">
@@ -37,7 +327,7 @@
                     </div>
                 </a>
 
-                <!-- Utility Actions moved here -->
+                <!-- Utility Actions -->
                 <div class="header-actions-group">
                     <div class="header-actions">
                         <div class="search-container top-tier" id="searchContainer">
@@ -91,8 +381,7 @@
                                                     <span class="nav-panel-title">GCC Initiatives</span>
                                                 </div>
                                             </a>
-                                            <a href="global-udaan.html"
-                                                class="nav-panel-item">
+                                            <a href="global-udaan.html" class="nav-panel-item">
                                                 <i class="bi bi-rocket-takeoff"></i>
                                                 <div class="nav-panel-content">
                                                     <span class="nav-panel-title">Global Udaan</span>
@@ -146,12 +435,6 @@
                 <span class="material-symbols-outlined">close</span>
             </button>
         </div>
-        <div class="mobile-menu-search">
-            <div class="mobile-search-box">
-                <span class="material-symbols-outlined mobile-search-icon">search</span>
-                <input type="text" placeholder="Search..." class="mobile-search-input">
-            </div>
-        </div>
         <nav class="mobile-nav">
             <ul>
                 <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
@@ -171,8 +454,7 @@
                     <ul class="mobile-sub-menu">
                         <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
                         <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
-                        <li><a href="global-udaan.html"
-                                onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="global-udaan.html" onclick="toggleMobileMenu()">Global Udaan</a></li>
                         <li><a href="itec-programs.html" onclick="toggleMobileMenu()">ITEC Programs</a></li>
                         <li><a href="certificate-courses.html" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
@@ -194,172 +476,135 @@
         </nav>
     </div>
 
-    <div class="container-fluid py-2">
-        <div class="mapcontainer">
-            <div class="row">
-                <div class="col-sm-8">
-                    <div class="maptext">
-                        <small>PROGRAMS</small>
-                        <h3>Previous events</h3>
-                        <p>Conferences, workshops, webinars, and capacity building programs for members.</p>
-                        <a href="#" class="blur-btn2">
-                            Register for Events <span class="material-symbols-outlined">
-                                arrow_right_alt
-                            </span>
-                        </a>
+    <main class="container">
+        <section class="ifsca-hero">
+            <h1 class="scroll-reveal">ICAI–IFSCA Strategic Collaboration</h1>
+            <p class="scroll-reveal">Strengthening India's position as a global financial hub through institutional
+                synergy and international financial services excellence at GIFT City.</p>
+        </section>
+
+        <section class="ifsca-grid">
+            <!-- Strategic Partnership Card -->
+            <div class="col-partnership">
+                <div class="feature-card scroll-reveal glow-card" style="--accent-color: var(--ifsca-blue);">
+                    <div class="card-header">
+                        <div class="card-icon-box"><i class="bi bi-shield-check"></i></div>
+                        <div class="status-badge"><i class="bi bi-check2-circle"></i> MoU Active (2023-2026)</div>
                     </div>
-                </div>
-                <div class="col-sm-4"></div>
-            </div>
-        </div>
-    </div>
-
-    <section class="events-section py-5">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-end mb-4">
-                <div>
-                    <span class="section-tag"></span>
-                    <h2 class="section-title">Upcoming Events</h2>
-                </div>
-                <a href="#" class="view-all-btn">View All →</a>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>12</span>
-                            <small>APR</small>
+                    <h3>Strategic Partnership Overview</h3>
+                    <p>The Institute of Chartered Accountants of India (ICAI), through its Global Trade & Services Committee, established a landmark partnership with the International Financial Services Centres Authority (IFSCA) on 24 November 2023.</p>
+                    <p>This collaboration focuses on promoting opportunities in international financial services, particularly at GIFT City, Gandhinagar, and building professional capacity to serve global markets.</p>
+                    <div class="stat-group">
+                        <div class="stat-item">
+                            <h4>2023</h4>
+                            <span>MoU Signed</span>
                         </div>
-
-                        <div class="event-content">
-                            <h5>New MoU with UK Institute Signed</h5>
-                            <p>Exploring cross-border taxation frameworks and global compliance trends.</p>
-
-                            <div class="event-meta">
-                                <span>📍 New Delhi</span>
-                                <span>🕒 10:00 AM</span>
-                            </div>
-
-                            <a href="#" class="event-btn">Register Now →</a>
+                        <div class="stat-item">
+                            <h4>3 Years</h4>
+                            <span>Initial Term</span>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>18</span>
-                            <small>APR</small>
-                        </div>
-
-                        <div class="event-content">
-                            <h5>Capacity Building for Professionals</h5>
-                            <p>Enhancing global mobility and professional certification opportunities.</p>
-
-                            <div class="event-meta">
-                                <span>🌐 Online</span>
-                                <span>🕒 4:00 PM</span>
-                            </div>
-
-                            <a href="#" class="event-btn">Register Now →</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>25</span>
-                            <small>APR</small>
-                        </div>
-
-                        <div class="event-content">
-                            <h5>India Global Business Forum</h5>
-                            <p>Strengthening partnerships between Indian professionals and global markets.</p>
-
-                            <div class="event-meta">
-                                <span>📍 Mumbai</span>
-                                <span>🕒 11:30 AM</span>
-                            </div>
-
-                            <a href="#" class="event-btn">Register Now →</a>
+                        <div class="stat-item">
+                            <h4>2026</h4>
+                            <span>MoU Valid Till</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="events-section pb-5">
-        <div class="container-fluid">
-            <div class="d-flex justify-content-between align-items-end mb-4">
-                <div>
-                    <span class="section-tag"></span>
-                    <h2 class="section-title">Past Events</h2>
+            <!-- Highlights Card -->
+            <div class="col-highlight">
+                <div class="feature-card scroll-reveal" style="--accent-color: var(--ifsca-gold);">
+                    <div class="img-reveal-container">
+                        <img src="images/ifsca/img1.png" alt="IFSCA Highlights">
+                    </div>
+                    <h3>MoU Exchange Ceremony</h3>
+                    <p>MoU signed during the GloPac Event in Ahmedabad, witnessing the formalization of cooperation between ICAI and IFSCA to foster growth in India's IFSC ecosystem.</p>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>05</span>
-                            <small>MAR</small>
-                        </div>
-                        <div class="event-content">
-                            <h5>International Financial Reporting Dialogue</h5>
-                            <p>Expert session on evolving global reporting practices and implementation considerations.
-                            </p>
-                            <div class="event-meta">
-                                <span>🌐 Online</span>
-                                <span>🕒 2:00 PM</span>
-                            </div>
-                            <a href="#" class="event-btn">View Summary →</a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Quote Section -->
+            <div class="quote-section scroll-reveal">
+                <i class="bi bi-quote"></i>
+                <blockquote>
+                    "The ICAI–IFSCA collaboration continues to create awareness on GIFT City opportunities, build professional capacity, and enable global opportunities for Chartered Accountants."
+                </blockquote>
+                <cite>Strategic Mission Statement</cite>
+            </div>
 
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>19</span>
-                            <small>FEB</small>
-                        </div>
-                        <div class="event-content">
-                            <h5>Cross-border Taxation Workshop</h5>
-                            <p>Workshop covering case studies in treaty interpretation and international compliance.</p>
-                            <div class="event-meta">
-                                <span>📍 New Delhi</span>
-                                <span>🕒 11:00 AM</span>
-                            </div>
-                            <a href="#" class="event-btn">View Summary →</a>
-                        </div>
+            <!-- Delegation & Events Card -->
+            <div class="col-impact">
+                <div class="feature-card scroll-reveal" style="--accent-color: var(--ifsca-green);">
+                    <div class="card-header">
+                        <div class="card-icon-box"><i class="bi bi-people"></i></div>
+                        <div class="status-badge" style="background: rgba(0, 86, 179, 0.1); color: var(--ifsca-blue); border-color: rgba(0, 86, 179, 0.2);">
+                            Key Highlights 2025</div>
                     </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6">
-                    <div class="event-card">
-                        <div class="event-date">
-                            <span>28</span>
-                            <small>JAN</small>
-                        </div>
-                        <div class="event-content">
-                            <h5>Global Mobility Readiness Webinar</h5>
-                            <p>Orientation webinar on international practice, ethics, and market entry readiness.</p>
-                            <div class="event-meta">
-                                <span>🌐 Online</span>
-                                <span>🕒 5:30 PM</span>
+                    <h3>Landmark Initiatives & Engagements</h3>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase fw-800 mb-3" style="font-size: 13px; color: var(--ifsca-blue);">ICAI Delegation to GIFT City</h6>
+                            <p>On 28 August 2025, a high-level delegation of 63 members visited GIFT City. The visit included tours of NSE IX, Bank of Baroda (IBU), and DevX, providing deep insights into the IFSC ecosystem.</p>
+                            <div class="img-reveal-container mt-3">
+                                <img src="images/ifsca/img2.png" alt="GIFT City Delegation">
                             </div>
-                            <a href="#" class="event-btn">View Summary →</a>
+                        </div>
+                        <div class="col-md-6">
+                            <h6 class="text-uppercase fw-800 mb-3" style="font-size: 13px; color: var(--ifsca-blue);">IFSCA Chintan Shivir</h6>
+                            <p>ICAI participated in the IFSCA Chintan Shivir roundtable on 11 September 2025. This engagement with industry stakeholders focused on shaping policies for professional services exports.</p>
+                            <div class="img-reveal-container mt-3">
+                                <img src="images/ifsca/img3.jpeg" alt="Chintan Shivir Roundtable">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-
+            <!-- Services & Policy Card -->
+            <div class="col-focus">
+                <div class="feature-card scroll-reveal" style="--accent-color: var(--ifsca-blue);">
+                    <div class="card-header">
+                        <div class="card-icon-box"><i class="bi bi-bullseye"></i></div>
+                        <h3>Policy Impact & Recognized Services</h3>
+                    </div>
+                    <p>ICAI's proposal for the recognition of accounting and bookkeeping services under the IFSCA Act was accepted by the Government of India, resulting in formal notification on 18 January 2024.</p>
+                    <div class="focus-grid">
+                        <div class="focus-item">
+                            <i class="bi bi-book"></i>
+                            <span>Book-keeping</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="bi bi-calculator"></i>
+                            <span>Accounting</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="bi bi-percent"></i>
+                            <span>Taxation</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="bi bi-shield-slash"></i>
+                            <span>Financial Crime Compliance</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="bi bi-journal-text"></i>
+                            <span>Knowledge Publications</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="bi bi-broadcast"></i>
+                            <span>Global Webinars</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="bi bi-buildings"></i>
+                            <span>GIFT City Awareness</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="bi bi-patch-check"></i>
+                            <span>Policy Advocacy</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer-dark py-5" style="padding-bottom: 5px !important;">
         <div class="container">
@@ -437,21 +682,9 @@
             </div>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-
     <script>
-        // Scroll Progress Logic
-        window.addEventListener('scroll', () => {
-            const h = document.documentElement,
-                b = document.body,
-                st = 'scrollTop',
-                sh = 'scrollHeight';
-            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-            if (document.getElementById('scrollProgress')) {
-                document.getElementById('scrollProgress').style.width = percent + '%';
-            }
-        });
-
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
             overlay.classList.toggle('active');
@@ -465,7 +698,6 @@
             }
         }
 
-        // Reveal Animations on Scroll
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -476,68 +708,8 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.scroll-reveal, .modern-card, .section-title, .events-section').forEach(el => observer.observe(el));
-
-        // MagicUI NumberTicker — Vanilla JS counter animation
-        const statObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.getAttribute('data-target'));
-                    const duration = 1800; // ms
-                    const startTime = performance.now();
-
-                    function animate(currentTime) {
-                        const elapsed = currentTime - startTime;
-                        const progress = Math.min(elapsed / duration, 1);
-                        // Ease-out cubic
-                        const eased = 1 - Math.pow(1 - progress, 3);
-                        el.textContent = Math.floor(eased * target);
-                        if (progress < 1) {
-                            requestAnimationFrame(animate);
-                        } else {
-                            el.textContent = target;
-                        }
-                    }
-                    requestAnimationFrame(animate);
-                    statObserver.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.stat-number, .stat-banner-number').forEach(el => statObserver.observe(el));
-
-        // Enhanced scroll-reveal for cards & events
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    // Stagger each element
-                    setTimeout(() => {
-                        entry.target.classList.add('revealed');
-                    }, i * 100);
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.event-card, .quick-card, .stat-card').forEach(el => {
-            el.classList.add('scroll-reveal');
-            revealObserver.observe(el);
-        });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
     </script>
-
-    <!-- Gooey Filter Definiton -->
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-        <defs>
-            <filter id="blurMe">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-                    result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-            </filter>
-        </defs>
-    </svg>
-
 </body>
 
 </html>

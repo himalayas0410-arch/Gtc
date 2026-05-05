@@ -205,10 +205,10 @@
                                     </div>
                                 </li>
                                 <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
-                                    <a href="#">Opportunities <span class="material-symbols-outlined"
+                                    <a href="#">Upcoming events <span class="material-symbols-outlined"
                                             style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
-                                        <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift
+                                        <a href="ifsca.html">ICAI Delegation visit to Gift
                                             City - IFSCA</a>
                                         <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at
                                             Accountex London</a>
@@ -216,8 +216,7 @@
                                             Matrix</a>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Events &
-                                        Programs</a></li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous events</a></li>
                             </ul>
                         </div>
                     </div>
@@ -271,10 +270,9 @@
                 </li>
                 <li class="mobile-has-dropdown">
                     <a href="#"
-                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Member
-                        Opportunities <span class="material-symbols-outlined">expand_more</span></a>
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming events <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
-                        <li><a href="images/delegates.pdf" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
+                        <li><a href="ifsca.html" onclick="toggleMobileMenu()">ICAI Delegation
                                 visit to Gift City - IFSCA</a></li>
                         <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
                                 & Exhibit at Accountex London</a></li>
@@ -282,7 +280,7 @@
                                 onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
                     </ul>
                 </li>
-                <li><a href="events.html" onclick="toggleMobileMenu()">Events & Programs</a></li>
+                <li><a href="events.html" onclick="toggleMobileMenu()">Previous events</a></li>
             </ul>
         </nav>
     </div>
@@ -367,7 +365,28 @@
                                 <li><span>Liaisoning with Export Promotion Councils for trade</span> <i class="bi bi-chevron-right"></i></li>
                             </ul></div>
                             <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(1, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>MoU Deliverables</h6></div>
-                            <div class="sub-view-content"><p class="sub-view-description">Strengthening global trade through strategic collaborations with key institutions to enhance export potential, policy engagement, and international partnerships.</p><a href="mou-options.html" class="sub-view-cta">Know More <i class="bi bi-arrow-right"></i></a></div></div>
+                            <div class="sub-view-content">
+                                <p class="sub-view-description">Strengthening global trade through strategic collaborations with key institutions to enhance export potential, policy engagement, and international partnerships.</p>
+                                <div class="sub-card-grid">
+                                    <a href="#" class="sub-mini-card">
+                                        <img src="images/eco_partners/logo-investindia.png" alt="Invest India">
+                                        <span>Invest India</span>
+                                    </a>
+                                    <a href="#" class="sub-mini-card">
+                                        <i class="bi bi-globe"></i>
+                                        <span>EPC for EOUs & SEZs</span>
+                                    </a>
+                                    <a href="sepc.html" class="sub-mini-card">
+                                        <img src="images/eco_partners/images.png" alt="SEPC">
+                                        <span>SEPC</span>
+                                    </a>
+                                    <a href="ifsca.html" class="sub-mini-card">
+                                        <img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="IFSCA" style="border-radius: 50%; object-fit: cover;">
+                                        <span>IFSCA</span>
+                                    </a>
+                                </div>
+                            </div>
+</div>
                         </div>
                     </div>
                     <div class="panel-content" data-for="2">
@@ -466,7 +485,7 @@
         <div class="container">
             <div class="row g-4 justify-content-center">
                 <div class="col-lg-4 col-md-6">
-                    <a href="images/delegates.pdf" target="_blank" class="ql-bar-item ql-blue">
+                    <a href="ifsca.html" class="ql-bar-item ql-blue">
                         <div class="ql-icon-box"><i class="bi bi-people-fill"></i></div>
                         <span class="ql-text-content">ICAI Delegation visit to Gift City - IFSCA</span>
                         <div class="ql-arrow-box"><span class="material-symbols-outlined">arrow_forward</span></div>
@@ -654,7 +673,7 @@
                         <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
                         <li><a href="#">Training & Capacity Building</a></li>
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member Opportunities</a></li>
-                        <li><a href="events.html">Events & Programs</a></li>
+                        <li><a href="events.html">Previous events</a></li>
                     </ul>
                 </div>
 
@@ -766,6 +785,8 @@
             const target = document.querySelector(`.deck-card[data-index="${index}"]`);
             if (target) target.classList.add('active');
             board.classList.add('is-stacked');
+            // Set theme on details panel
+            detailsPanel.setAttribute('data-theme', index);
             // Show the correct panel content
             document.querySelectorAll('.panel-content').forEach(p => { p.style.display = 'none'; });
             const panel = document.querySelector(`.panel-content[data-for="${index}"]`);
