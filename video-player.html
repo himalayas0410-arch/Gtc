@@ -519,22 +519,32 @@
                 // --- DYNAMIC FETCHING FOR ICAITV ---
                 if (decodedUrl.includes('icaitv.com')) {
                     (async () => {
-                        try {
-                            // Use AllOrigins 'raw' proxy for direct HTML access
-                            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(decodedUrl)}`;
-                            const response = await fetch(proxyUrl);
-                            const html = await response.text();
-                            
-                            // More robust regex for Dropbox links (covers various formats)
+                        const proxies = [
+                            (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+                            (u) => `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(u)}`
+                        ];
+
+                        let html = null;
+                        for (const getProxyUrl of proxies) {
+                            try {
+                                console.log("GTC Player: Attempting fetch via proxy...");
+                                const response = await fetch(getProxyUrl(decodedUrl));
+                                if (response.ok) {
+                                    html = await response.text();
+                                    if (html && html.includes('dropbox.com')) break;
+                                }
+                            } catch (err) {
+                                console.warn("GTC Player: Proxy attempt failed, trying next...");
+                            }
+                        }
+
+                        if (html) {
                             const dropboxRegex = /https?:\/\/(?:www\.)?dropbox\.com\/(?:scl\/fi\/|s\/)[^\s"'>]+/g;
                             const matches = html.match(dropboxRegex);
                             
                             if (matches && matches.length > 0) {
                                 let directLink = matches[0];
-                                // Clean up trailing characters like quotes, brackets, etc.
                                 directLink = directLink.split('"')[0].split("'")[0].split(">")[0].split("&quot;")[0];
-                                
-                                // Ensure it's a direct download link
                                 if (!directLink.includes('raw=1')) {
                                     directLink += directLink.includes('?') ? '&raw=1' : '?raw=1';
                                 }
@@ -547,11 +557,9 @@
                                 videoEl.onerror = hideLoading;
                                 return;
                             }
-                            console.warn("GTC Player: No direct video link found in source. Falling back to website view.");
-                        } catch (err) {
-                            console.error("GTC Player: Dynamic fetch error:", err);
                         }
-                        // Fallback to iframe
+                        
+                        console.warn("GTC Player: No direct video link found after all attempts. Falling back to website view.");
                         iframe.src = decodedUrl;
                         iframe.style.display = 'block';
                         videoEl.style.display = 'none';
