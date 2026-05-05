@@ -1888,7 +1888,7 @@ h6,
 /* ===== MERGE & CYCLE DECK — PILLAR CARDS ===== */
 .board {
     --dw: 200px;
-    --dh: 400px;
+    --dh: 420px;
     --dg: 18px;
     position: relative;
     width: 100%;
@@ -1983,6 +1983,13 @@ h6,
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
+.board.is-stacked .deck-card .card-title,
+.board.is-stacked .deck-card .number {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
 /* === DETAILS PANEL === */
 .details-panel {
     position: absolute;
@@ -1992,7 +1999,7 @@ h6,
     height: var(--dh);
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     border-radius: 20px;
-    padding: 35px 40px;
+    padding: 15px 20px;
     box-sizing: border-box;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(78, 165, 217, 0.15);
@@ -2001,8 +2008,24 @@ h6,
     transform: translateX(30px);
     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     transition-delay: 0s;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     z-index: 6;
+}
+
+/* Reset global card-hover conflict */
+.details-panel .card-hover {
+    position: static !important;
+    height: auto !important;
+    padding: 0 !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    transform: none !important;
+    transition: none !important;
+    display: block !important;
 }
 
 .board.is-stacked .details-panel {
@@ -2012,32 +2035,45 @@ h6,
     transition-delay: 0.3s;
 }
 
-.panel-content { display: none; }
+.panel-content { 
+    display: none; 
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+    margin-bottom: 10px;
+}
+
+/* Ensure JS block becomes flex */
+.panel-content[style*="display: block"] {
+    display: flex !important;
+}
 
 .panel-heading {
     font-family: 'Manrope', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 800;
     color: #fff;
-    margin: 0 0 20px 0;
-    padding-bottom: 15px;
+    margin: 0 0 15px 0;
+    padding-bottom: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
 }
 
 /* Hover list inside panel */
 .details-panel .hover-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 5px 0 0 0;
 }
 
 .details-panel .hover-list li {
-    font-size: 14px;
-    padding: 14px 20px;
+    font-size: 13px;
+    padding: 5px 10px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    margin-bottom: 10px;
+    border-radius: 8px;
+    margin-bottom: 4px;
     color: #fff;
     cursor: pointer;
     display: flex;
@@ -2074,8 +2110,8 @@ h6,
 .details-panel .sub-view-header {
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .details-panel .sub-view-header h6 {
@@ -2107,21 +2143,21 @@ h6,
 
 .details-panel .sub-view-description {
     color: #cbd5e1;
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 .details-panel .sub-view-cta {
     display: inline-flex !important;
     align-items: center;
     gap: 10px;
-    padding: 12px 24px;
+    padding: 8px 16px;
     background: #fff;
     color: #1a202c !important;
-    border-radius: 12px;
+    border-radius: 10px;
     font-weight: 800;
     text-decoration: none;
-    margin-top: 20px;
+    margin-top: 12px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
@@ -2140,8 +2176,8 @@ h6,
 .details-panel .sub-mini-card {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 16px;
+    gap: 10px;
+    padding: 10px;
     background: rgba(255, 255, 255, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -2165,8 +2201,9 @@ h6,
 
 /* Reset Button */
 .deck-reset-btn {
-    margin-top: 25px;
-    padding: 12px 24px;
+    margin-top: auto;
+    padding: 8px 16px;
+    align-self: flex-start;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 10px;
