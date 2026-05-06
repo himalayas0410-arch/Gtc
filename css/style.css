@@ -2112,35 +2112,35 @@ h6,
     z-index: 6;
 }
 
-/* Theme Mappings */
-.details-panel[data-theme="1"] {
+/* Theme Mappings matched to Pillar Card Gradients */
+.details-panel[data-theme="1"] { /* Blue - Trade & Market Integration */
     --theme-color: #0284c7;
-    --theme-bg: linear-gradient(135deg, #e0f2fe 0%, #eef2ff 100%);
-    --theme-border: rgba(2, 132, 199, 0.12);
+    --theme-bg: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    --theme-border: rgba(2, 132, 199, 0.15);
 }
 
-.details-panel[data-theme="2"] {
-    --theme-color: #ea580c;
-    --theme-bg: linear-gradient(135deg, #ffedd5 0%, #fff1f2 100%);
-    --theme-border: rgba(234, 88, 12, 0.12);
+.details-panel[data-theme="2"] { /* Green - Global Services & Professional Mobility */
+    --theme-color: #059669;
+    --theme-bg: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    --theme-border: rgba(5, 150, 105, 0.15);
 }
 
-.details-panel[data-theme="3"] {
-    --theme-color: #16a34a;
-    --theme-bg: linear-gradient(135deg, #dcfce7 0%, #ecfdf5 100%);
-    --theme-border: rgba(22, 163, 74, 0.12);
-}
-
-.details-panel[data-theme="4"] {
-    --theme-color: #7c3aed;
-    --theme-bg: linear-gradient(135deg, #f3e8ff 0%, #f5f3ff 100%);
-    --theme-border: rgba(124, 58, 237, 0.12);
-}
-
-.details-panel[data-theme="5"] {
+.details-panel[data-theme="3"] { /* Amber - Policy, Multilateral & Government Affairs */
     --theme-color: #d97706;
-    --theme-bg: linear-gradient(135deg, #fef9c3 0%, #fffbeb 100%);
-    --theme-border: rgba(217, 119, 6, 0.12);
+    --theme-bg: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+    --theme-border: rgba(217, 119, 6, 0.15);
+}
+
+.details-panel[data-theme="4"] { /* Orange - GCC & Emerging Global Ecosystems */
+    --theme-color: #ea580c;
+    --theme-bg: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    --theme-border: rgba(234, 88, 12, 0.15);
+}
+
+.details-panel[data-theme="5"] { /* Red - Capacity Building Programs */
+    --theme-color: #dc2626;
+    --theme-bg: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+    --theme-border: rgba(220, 38, 38, 0.15);
 }
 
 /* Reset global card-hover conflict */
@@ -2191,8 +2191,7 @@ h6,
     font-family: 'Manrope', sans-serif;
     font-size: 1.3rem;
     font-weight: 800;
-    color: #1e293b;
-    /* Dark text */
+    color: var(--theme-color);
     margin: 0 0 5px 0;
     padding-bottom: 4px;
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
@@ -2272,9 +2271,9 @@ h6,
 }
 
 .details-panel .back-btn {
-    background: #f1f5f9 !important;
-    border: 1px solid rgba(15, 23, 42, 0.1) !important;
-    color: #475569 !important;
+    background: rgba(255, 255, 255, 0.5) !important;
+    border: 1px solid var(--theme-border) !important;
+    color: var(--theme-color) !important;
     padding: 8px 16px !important;
     border-radius: 8px !important;
     font-size: 13px !important;
@@ -2385,12 +2384,12 @@ h6,
     margin-top: auto;
     padding: 10px 20px;
     align-self: flex-start;
-    background: #f1f5f9;
-    border: 1px solid rgba(15, 23, 42, 0.1);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid var(--theme-border);
     border-radius: 10px;
     font-size: 14px;
     font-weight: 800;
-    color: #475569;
+    color: var(--theme-color);
     cursor: pointer;
     transition: all 0.3s ease;
     display: flex;
