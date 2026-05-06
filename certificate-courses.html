@@ -238,6 +238,7 @@
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.5);
+            border-top: 5px solid var(--blue-primary); /* Thick accent border */
             display: flex;
             height: 100%;
             transition: all 0.3s ease;
@@ -336,6 +337,22 @@
             gap: 10px;
             text-decoration: none;
         }
+
+        /* Accent Themes */
+        .webinar-grid-card.accent-blue { border-top-color: #3B82F6; }
+        .webinar-grid-card.accent-blue .view-link { color: #3B82F6; }
+
+        .webinar-grid-card.accent-green { border-top-color: #10B981; }
+        .webinar-grid-card.accent-green .view-link { color: #10B981; }
+
+        .webinar-grid-card.accent-amber { border-top-color: #F59E0B; }
+        .webinar-grid-card.accent-amber .view-link { color: #F59E0B; }
+
+        .webinar-grid-card.accent-teal { border-top-color: #14B8A6; }
+        .webinar-grid-card.accent-teal .view-link { color: #14B8A6; }
+
+        .webinar-grid-card.accent-red { border-top-color: #EF4444; }
+        .webinar-grid-card.accent-red .view-link { color: #EF4444; }
 
         @media (max-width: 767px) {
             .webinar-grid-card { 
@@ -715,7 +732,7 @@
                             <div class="row gy-4">
                                 <!-- 11th Batch -->
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/Batch 11.pdf" target="_blank" class="webinar-grid-card">
+                                    <a href="reportspdf/Batch 11.pdf" target="_blank" class="webinar-grid-card accent-blue">
                                         <div class="card-poster-area">
                                             <canvas class="pdf-thumb" data-pdf="reportspdf/Batch 11.pdf"></canvas>
                                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
@@ -731,7 +748,7 @@
                                 </div>
                                 <!-- 10th Batch -->
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/10th Batch Certificate Course (4 pages) 10-09-2025 1.pdf" target="_blank" class="webinar-grid-card">
+                                    <a href="reportspdf/10th Batch Certificate Course (4 pages) 10-09-2025 1.pdf" target="_blank" class="webinar-grid-card accent-green">
                                         <div class="card-poster-area">
                                             <canvas class="pdf-thumb" data-pdf="reportspdf/10th Batch Certificate Course (4 pages) 10-09-2025 1.pdf"></canvas>
                                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
@@ -747,7 +764,7 @@
                                 </div>
                                 <!-- 9th Batch -->
                                 <div class="col-lg-6">
-                                    <a href="reportspdf/9th Batch Brochure 1.pdf" target="_blank" class="webinar-grid-card">
+                                    <a href="reportspdf/9th Batch Brochure 1.pdf" target="_blank" class="webinar-grid-card accent-amber">
                                         <div class="card-poster-area">
                                             <canvas class="pdf-thumb" data-pdf="reportspdf/9th Batch Brochure 1.pdf"></canvas>
                                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>

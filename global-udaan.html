@@ -52,6 +52,7 @@
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.5);
+            border-top: 5px solid var(--blue-primary); /* Default */
             display: flex;
             height: 100%;
             transition: all 0.3s ease;
@@ -157,6 +158,22 @@
             margin-top: 10px;
             line-height: 1.4;
         }
+
+        /* Color Cycling for Grid */
+        .webinar-col:nth-child(5n+1) .webinar-grid-card { border-top-color: #3B82F6; }
+        .webinar-col:nth-child(5n+1) .topic-title-row { color: #3B82F6; }
+
+        .webinar-col:nth-child(5n+2) .webinar-grid-card { border-top-color: #10B981; }
+        .webinar-col:nth-child(5n+2) .topic-title-row { color: #10B981; }
+
+        .webinar-col:nth-child(5n+3) .webinar-grid-card { border-top-color: #F59E0B; }
+        .webinar-col:nth-child(5n+3) .topic-title-row { color: #F59E0B; }
+
+        .webinar-col:nth-child(5n+4) .webinar-grid-card { border-top-color: #14B8A6; }
+        .webinar-col:nth-child(5n+4) .topic-title-row { color: #14B8A6; }
+
+        .webinar-col:nth-child(5n+5) .webinar-grid-card { border-top-color: #EF4444; }
+        .webinar-col:nth-child(5n+5) .topic-title-row { color: #EF4444; }
 
         .material-link-v2 {
             margin-top: 10px;
