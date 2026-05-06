@@ -1156,17 +1156,17 @@
     <div id="scrollProgress"></div>
     <div class="header home-header">
         <div class="header-top">
-            <div class="container">
-                <div class="header-top-left">
-                    <a href="index.html" class="reveal-up">
-                        <img src="images/logo.png" class="header-logo-img" />
+            <div class="container header-top-container">
+                <div class="header-top-left reveal-up">
+                    <a href="index.html">
+                        <img src="images/logo.png" class="logo" />
                     </a>
                 </div>
                 <div class="header-top-center reveal-up">
-                    <h1 class="committee-title">Global Trade & Services Committee</h1>
+                    <h3 class="committee-name">Global Trade & Services Committee</h3>
                 </div>
                 <div class="header-top-right reveal-up">
-                    <img src="images/logogloba.png" class="logo-right" />
+                    <img src="images/logogloba.png" class="logo-secondary" />
                 </div>
             </div>
         </div>
@@ -1244,10 +1244,10 @@
                         </div>
                     </div>
 
-                    <div class="nav-search">
-                        <div class="search-container">
+                    <div class="nav-search reveal-up" style="animation-delay: 0.6s">
+                        <div class="search-container" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon">search</span>
+                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
                         </div>
                     </div>
 

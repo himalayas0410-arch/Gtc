@@ -533,6 +533,38 @@ h6,
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
+}
+
+.header-top-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header-top-center {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-top-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-top-left a {
+    display: block;
+}
+
+.header-top-center .committee-name {
+    margin: 0;
+    white-space: normal; /* Allow wrap on smaller screens if needed */
+    text-align: center;
 }
 
 .home-header .header-logo {
@@ -595,6 +627,18 @@ h6,
 }
 
 
+
+.header .logo {
+    width: clamp(140px, 12vw, 220px);
+    height: auto;
+    object-fit: contain;
+}
+
+.header .logo-secondary {
+    width: clamp(140px, 12vw, 220px);
+    height: auto;
+    object-fit: contain;
+}
 
 .header-logo {
     display: flex;
@@ -661,34 +705,20 @@ h6,
 
 @media (max-width: 1250px) {
     .home-header .header-top .container {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-        padding-top: 15px;
-    }
-
-    .home-header .header-logo {
+        flex-direction: row; /* Keep horizontal but maybe wrap if too tight */
+        flex-wrap: wrap;
         justify-content: center;
+        gap: 15px;
+    }
+
+    .header-top-left, .header-top-center, .header-top-right {
+        flex: none;
+        width: auto;
+    }
+
+    .header-top-center {
+        order: -1; /* Move title to top if wrapped */
         width: 100%;
-        flex-direction: column;
-        /* Stack logos on tablet if needed */
-    }
-
-    .home-header .header-actions-group {
-        width: 100%;
-        justify-content: center;
-        padding-bottom: 15px;
-    }
-
-    .logo-divider {
-        display: none;
-        /* Hide divider when stacked */
-    }
-
-    .branding-text {
-        border-left: none;
-        padding-left: 0;
-        margin-top: 10px;
     }
 }
 
@@ -843,13 +873,20 @@ h6,
     display: flex;
     align-items: center;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
+    position: relative;
 }
 
 .desktop-menu {
-    flex-grow: 1;
     display: flex;
     justify-content: center;
+}
+
+.nav-search {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .header-actions-group {
@@ -896,35 +933,26 @@ h6,
 }
 
 .search-input {
-    width: 0;
-    padding: 0;
-    border: none;
+    width: 180px;
+    padding: 8px 35px 8px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50px;
-    background: transparent;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #f8f9fa;
     font-size: 14px;
-    opacity: 0;
-    pointer-events: none;
+    transition: all 0.3s ease;
+    opacity: 1;
+    pointer-events: all;
+}
+
+.search-input:focus {
+    width: 220px;
+    background: #fff;
+    border-color: var(--blue-primary);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 /* On Desktop: Search is always visible */
-@media (min-width: 1201px) {
-    .search-input {
-        width: 180px;
-        padding: 10px 40px 10px 20px;
-        border: 1px solid rgba(0, 0, 0, 0.08);
-        background: #f8f9fa;
-        opacity: 1;
-        pointer-events: all;
-    }
-
-    .search-input:focus {
-        width: 240px;
-        border-color: var(--teal);
-        background: #fff;
-        box-shadow: 0 4px 15px rgba(211, 41, 101, 0.1);
-    }
-}
+/* Desktop Specific Overrides removed to use unified search styling above */
 
 /* On Mobile/Tablet: Search is icon-based toggle */
 @media (max-width: 1200px) {
