@@ -51,6 +51,7 @@
             display: flex;
             gap: 24px;
             border: 1px solid var(--border-brand);
+            border-top: 5px solid var(--blue-primary); /* Thick accent border */
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             height: 100%;
             position: relative;
@@ -167,6 +168,27 @@
         .report-card:hover .view-link {
             gap: 8px;
         }
+
+        /* Accent Themes */
+        .report-card.accent-blue { border-top-color: #3B82F6; }
+        .report-card.accent-blue .report-type-badge { background: #eff6ff; color: #3B82F6; }
+        .report-card.accent-blue .view-link { color: #3B82F6; }
+
+        .report-card.accent-green { border-top-color: #10B981; }
+        .report-card.accent-green .report-type-badge { background: #f0fdf4; color: #10B981; }
+        .report-card.accent-green .view-link { color: #10B981; }
+
+        .report-card.accent-amber { border-top-color: #F59E0B; }
+        .report-card.accent-amber .report-type-badge { background: #fffbeb; color: #F59E0B; }
+        .report-card.accent-amber .view-link { color: #F59E0B; }
+
+        .report-card.accent-teal { border-top-color: #14B8A6; }
+        .report-card.accent-teal .report-type-badge { background: #f0fdfa; color: #14B8A6; }
+        .report-card.accent-teal .view-link { color: #14B8A6; }
+
+        .report-card.accent-red { border-top-color: #EF4444; }
+        .report-card.accent-red .report-type-badge { background: #fef2f2; color: #EF4444; }
+        .report-card.accent-red .view-link { color: #EF4444; }
 
         @media (max-width: 768px) {
             .report-card {
@@ -377,7 +399,7 @@
             <div class="row gy-4">
                 <!-- Card 1 -->
                 <div class="col-lg-6 reveal-up" style="animation-delay: 0.1s">
-                    <a href="reportspdf/1.pdf" target="_blank" class="report-card">
+                    <a href="reportspdf/1.pdf" target="_blank" class="report-card accent-blue">
                         <div class="pdf-thumb-container">
                             <canvas class="pdf-thumb" data-pdf="reportspdf/1.pdf"></canvas>
                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
@@ -395,7 +417,7 @@
 
                 <!-- Card 2 -->
                 <div class="col-lg-6 reveal-up" style="animation-delay: 0.2s">
-                    <a href="reportspdf/2.pdf" target="_blank" class="report-card">
+                    <a href="reportspdf/2.pdf" target="_blank" class="report-card accent-green">
                         <div class="pdf-thumb-container">
                             <canvas class="pdf-thumb" data-pdf="reportspdf/2.pdf"></canvas>
                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
@@ -413,7 +435,7 @@
 
                 <!-- Card 3 -->
                 <div class="col-lg-6 reveal-up" style="animation-delay: 0.3s">
-                    <a href="reportspdf/3.pdf" target="_blank" class="report-card">
+                    <a href="reportspdf/3.pdf" target="_blank" class="report-card accent-amber">
                         <div class="pdf-thumb-container">
                             <canvas class="pdf-thumb" data-pdf="reportspdf/3.pdf"></canvas>
                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
@@ -431,7 +453,7 @@
 
                 <!-- Card 4 -->
                 <div class="col-lg-6 reveal-up" style="animation-delay: 0.4s">
-                    <a href="reportspdf/4.pdf" target="_blank" class="report-card">
+                    <a href="reportspdf/4.pdf" target="_blank" class="report-card accent-teal">
                         <div class="pdf-thumb-container">
                             <canvas class="pdf-thumb" data-pdf="reportspdf/4.pdf"></canvas>
                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
@@ -449,7 +471,7 @@
 
                 <!-- Card 5 -->
                 <div class="col-lg-6 reveal-up" style="animation-delay: 0.5s">
-                    <a href="reportspdf/5.pdf" target="_blank" class="report-card">
+                    <a href="reportspdf/5.pdf" target="_blank" class="report-card accent-red">
                         <div class="pdf-thumb-container">
                             <canvas class="pdf-thumb" data-pdf="reportspdf/5.pdf"></canvas>
                             <div class="fallback-icon"><i class="bi bi-file-earmark-pdf"></i></div>
