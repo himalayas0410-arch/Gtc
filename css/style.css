@@ -1919,12 +1919,12 @@ h6,
     pointer-events: auto !important;
 }
 
-/* Theme Backgrounds & Gradients - Hybrid Original/New set */
-.deck-card.card1 { background-image: linear-gradient(to bottom, rgba(56, 189, 248, 0.4), rgba(30, 64, 175, 0.95)), url('../images/1.jpg'); }
-.deck-card.card2 { background-image: linear-gradient(to bottom, rgba(52, 211, 153, 0.4), rgba(6, 95, 70, 0.95)), url('../images/2.jpg'); }
-.deck-card.card3 { background-image: linear-gradient(to bottom, rgba(251, 191, 36, 0.4), rgba(180, 83, 9, 0.95)), url('../images/3.jpg'); }
-.deck-card.card4 { background-image: linear-gradient(to bottom, rgba(251, 146, 60, 0.4), rgba(154, 52, 18, 0.95)), url('../images/4.jpg'); }
-.deck-card.card5 { background-image: linear-gradient(to bottom, rgba(248, 113, 113, 0.4), rgba(153, 27, 27, 0.95)), url('../images/pillar_cards/pillar5.png'); }
+/* Theme Backgrounds & Gradients - Brighter & More Vibrant set */
+.deck-card.card1 { background-image: linear-gradient(to bottom, rgba(14, 165, 233, 0.6), rgba(3, 105, 161, 0.8)), url('../images/1.jpg'); }
+.deck-card.card2 { background-image: linear-gradient(to bottom, rgba(16, 185, 129, 0.6), rgba(5, 150, 105, 0.8)), url('../images/2.jpg'); }
+.deck-card.card3 { background-image: linear-gradient(to bottom, rgba(245, 158, 11, 0.6), rgba(217, 119, 6, 0.8)), url('../images/3.jpg'); }
+.deck-card.card4 { background-image: linear-gradient(to bottom, rgba(249, 115, 22, 0.6), rgba(234, 88, 12, 0.8)), url('../images/4.jpg'); }
+.deck-card.card5 { background-image: linear-gradient(to bottom, rgba(239, 68, 68, 0.6), rgba(185, 28, 28, 0.8)), url('../images/pillar_cards/pillar5.png'); }
 
 /* Make every child non-intercepting so the card itself takes the click */
 .deck-card > * {
@@ -1972,17 +1972,18 @@ h6,
 
 /* Card Number */
 .deck-card .number {
-    font-size: 200px;
-    font-weight: 850;
+    font-size: 240px; /* Even larger for dramatic effect */
+    font-weight: 900;
     position: absolute;
-    right: -35px;
-    top: -25px;
-    color: rgba(255, 255, 255, 0.18);
+    right: -45px; /* Deeper move-out effect */
+    top: -35px;
+    color: rgba(255, 255, 255, 0.22);
     pointer-events: none;
     z-index: 1;
-    line-height: 1;
+    line-height: 0.8;
     transition: all 0.8s ease;
-    letter-spacing: -0.1em;
+    letter-spacing: -0.15em;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
 }
 
 /* === STACKED STATE === */
