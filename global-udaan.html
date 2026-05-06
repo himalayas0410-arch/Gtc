@@ -18,9 +18,17 @@
     <style>
         /* --- Animated Gradient Text --- */
         @keyframes animGradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .gradient-text {
@@ -33,26 +41,38 @@
         }
 
         .webinar-hero-vibrant {
-            padding: 30px 0 15px; /* Extremely compact */
-            text-align: center;
-            position: relative;
-            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+            background: #f8fafc;
+            padding: 40px 0 25px 0;
+            border-bottom: 1px solid #e5e7eb;
+            margin-bottom: 30px;
+            text-align: left;
         }
 
         .webinar-hero-vibrant h1 {
-            font-size: 52px;
             font-weight: 800;
-            margin-bottom: 5px;
-            letter-spacing: -0.04em;
+            color: #0f172a;
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+            border-left: 5px solid var(--blue-primary);
+            padding-left: 20px;
+        }
+
+        .webinar-hero-vibrant p {
+            color: #475569;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0;
         }
 
         .webinar-grid-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: #ffffff;
             backdrop-filter: blur(10px);
             border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.5);
-            border-top: 5px solid var(--blue-primary); /* Default */
+            border-top: 5px solid var(--blue-primary);
+            /* Default */
             display: flex;
             height: 100%;
             transition: all 0.3s ease;
@@ -79,7 +99,8 @@
         }
 
         .card-poster-area {
-            width: 220px; /* Vertical orientation */
+            width: 220px;
+            /* Vertical orientation */
             flex-shrink: 0;
             position: relative;
             background: #f1f5f9;
@@ -146,8 +167,8 @@
             right: -5px;
         }
 
-        .detail-value { 
-            color: #475569; 
+        .detail-value {
+            color: #475569;
             flex-grow: 1;
         }
 
@@ -160,20 +181,45 @@
         }
 
         /* Color Cycling for Grid */
-        .webinar-col:nth-child(5n+1) .webinar-grid-card { border-top-color: #3B82F6; }
-        .webinar-col:nth-child(5n+1) .topic-title-row { color: #3B82F6; }
+        .webinar-col:nth-child(5n+1) .webinar-grid-card {
+            border-top-color: #3B82F6;
+        }
 
-        .webinar-col:nth-child(5n+2) .webinar-grid-card { border-top-color: #10B981; }
-        .webinar-col:nth-child(5n+2) .topic-title-row { color: #10B981; }
+        .webinar-col:nth-child(5n+1) .topic-title-row {
+            color: #3B82F6;
+        }
 
-        .webinar-col:nth-child(5n+3) .webinar-grid-card { border-top-color: #F59E0B; }
-        .webinar-col:nth-child(5n+3) .topic-title-row { color: #F59E0B; }
+        .webinar-col:nth-child(5n+2) .webinar-grid-card {
+            border-top-color: #10B981;
+        }
 
-        .webinar-col:nth-child(5n+4) .webinar-grid-card { border-top-color: #14B8A6; }
-        .webinar-col:nth-child(5n+4) .topic-title-row { color: #14B8A6; }
+        .webinar-col:nth-child(5n+2) .topic-title-row {
+            color: #10B981;
+        }
 
-        .webinar-col:nth-child(5n+5) .webinar-grid-card { border-top-color: #EF4444; }
-        .webinar-col:nth-child(5n+5) .topic-title-row { color: #EF4444; }
+        .webinar-col:nth-child(5n+3) .webinar-grid-card {
+            border-top-color: #F59E0B;
+        }
+
+        .webinar-col:nth-child(5n+3) .topic-title-row {
+            color: #F59E0B;
+        }
+
+        .webinar-col:nth-child(5n+4) .webinar-grid-card {
+            border-top-color: #14B8A6;
+        }
+
+        .webinar-col:nth-child(5n+4) .topic-title-row {
+            color: #14B8A6;
+        }
+
+        .webinar-col:nth-child(5n+5) .webinar-grid-card {
+            border-top-color: #EF4444;
+        }
+
+        .webinar-col:nth-child(5n+5) .topic-title-row {
+            color: #EF4444;
+        }
 
         .material-link-v2 {
             margin-top: 10px;
@@ -198,8 +244,17 @@
             padding: 2px;
         }
 
-        .pdf-icon-box i { color: #ef4444; font-size: 18px; }
-        .pdf-label { font-size: 8px; color: #ef4444; font-weight: 800; margin-top: -2px; }
+        .pdf-icon-box i {
+            color: #ef4444;
+            font-size: 18px;
+        }
+
+        .pdf-label {
+            font-size: 8px;
+            color: #ef4444;
+            font-weight: 800;
+            margin-top: -2px;
+        }
 
         .vibrant-heading {
             font-size: 24px;
@@ -212,7 +267,8 @@
         }
 
         .intro-section-clean {
-            padding: 30px 0; /* Compact */
+            padding: 30px 0;
+            /* Compact */
             background: #fff;
             border-bottom: 1px solid #f1f5f9;
         }
@@ -227,31 +283,41 @@
 
         @media (max-width: 767px) {
             .webinar-hero-vibrant h1 {
-                font-size: 32px; /* Much smaller for mobile */
+                font-size: 32px;
+                /* Much smaller for mobile */
             }
-            .webinar-grid-card { 
-                flex-direction: column; 
+
+            .webinar-grid-card {
+                flex-direction: column;
                 margin-bottom: 20px;
             }
-            .card-poster-area { 
-                width: 100% !important; 
-                height: auto !important; 
+
+            .card-poster-area {
+                width: 100% !important;
+                height: auto !important;
                 background: #fff;
             }
+
             .card-poster-area img {
                 height: auto !important;
                 object-fit: contain !important;
             }
+
             .detail-row {
-                font-size: 13px; /* Slightly smaller on mobile to fit */
+                font-size: 13px;
+                /* Slightly smaller on mobile to fit */
                 gap: 8px;
             }
+
             .detail-label {
-                width: 60px; /* Narrower label for mobile */
+                width: 60px;
+                /* Narrower label for mobile */
             }
+
             .topic-title-row {
                 font-size: 15px;
             }
+
             /* Force 1 column on mobile regardless of Bootstrap quirks */
             .webinar-col {
                 width: 100% !important;
@@ -318,8 +384,7 @@
                                                     <span class="nav-panel-title">GCC Initiatives</span>
                                                 </div>
                                             </a>
-                                            <a href="global-udaan.html"
-                                                class="nav-panel-item">
+                                            <a href="global-udaan.html" class="nav-panel-item">
                                                 <i class="bi bi-rocket-takeoff"></i>
                                                 <div class="nav-panel-content">
                                                     <span class="nav-panel-title">Global Udaan</span>
@@ -352,7 +417,8 @@
                                             Matrix</a>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous events</a></li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous
+                                        events</a></li>
                             </ul>
                         </div>
                     </div>
@@ -360,7 +426,8 @@
                     <div class="nav-search reveal-up" style="animation-delay: 0.6s">
                         <div class="search-container" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                            <span class="material-symbols-outlined search-icon"
+                                onclick="toggleMobileSearch()">search</span>
                         </div>
                     </div>
 
@@ -405,15 +472,15 @@
                     <ul class="mobile-sub-menu">
                         <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
                         <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
-                        <li><a href="global-udaan.html"
-                                onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="global-udaan.html" onclick="toggleMobileMenu()">Global Udaan</a></li>
                         <li><a href="itec-programs.html" onclick="toggleMobileMenu()">ITEC Programs</a></li>
                         <li><a href="certificate-courses.html" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
                 </li>
                 <li class="mobile-has-dropdown">
                     <a href="#"
-                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming events <span class="material-symbols-outlined">expand_more</span></a>
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming
+                        events <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
                         <li><a href="ifsca.html" onclick="toggleMobileMenu()">ICAI Delegation
                                 visit to Gift City - IFSCA</a></li>
@@ -432,11 +499,12 @@
 
 
 
-    <section class="webinar-hero-vibrant">
+    <header class="webinar-hero-vibrant">
         <div class="container">
-            <h1 class="gradient-text">Global Udaan Webinar</h1>
+            <h1 class="reveal-up">Global Udaan</h1>
+            <p class="reveal-up" style="animation-delay: 0.1s">Knowledge Sharing Series on "Empowering Indian Accounting Professionals to Tap Global Market"</p>
         </div>
-    </section>
+    </header>
 
     <section class="py-4" style="background: #f8fafc;">
         <div class="container">
@@ -444,31 +512,40 @@
             <div class="row g-4">
                 <!-- Series 39 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=GCC – Evolving landscape and potential disruptions&series=Series - 39&date=April 30, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4688&st=438ybv0x&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=GCC – Evolving landscape and potential disruptions&series=Series - 39&date=April 30, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4688&st=438ybv0x&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/39.jpeg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 39</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">April 30, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "GCC – Evolving Landscape and Potential Disruptions"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 39</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">April 30, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "GCC – Evolving Landscape and Potential
+                                    Disruptions"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 38 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=How to get your first Global Client&series=Series - 38&date=April 10, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4615&st=7w4m8wxg&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=How to get your first Global Client&series=Series - 38&date=April 10, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4615&st=7w4m8wxg&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/38.jpeg" alt="Series 38 Poster">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 38</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">April 10, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 38</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">April 10, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
                                 <div class="topic-title-row">Topic : "How to Get Your First Global Client"</div>
                             </div>
                         </div>
@@ -476,79 +553,103 @@
                 </div>
                 <!-- Series 37 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Preparation of an effective Accounting Outsourcing Contract&series=Series - 37&date=March 27, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4577&st=gvhbo7ve&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Preparation of an effective Accounting Outsourcing Contract&series=Series - 37&date=March 27, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4577&st=gvhbo7ve&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area placeholder-poster">
                                 <div class="coming-soon-label">Coming Soon</div>
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 37</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">March 27, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Preparation of an Effective Accounting Outsourcing Contract"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 37</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">March 27, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Preparation of an Effective Accounting Outsourcing
+                                    Contract"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 36 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Exporting Capital Structuring & Project Finance Services to the UK, USA & Australia: A Delivery Blueprint for Indian CAs&series=Series - 36&date=February 27, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4487&st=ik8osptd&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Exporting Capital Structuring & Project Finance Services to the UK, USA & Australia: A Delivery Blueprint for Indian CAs&series=Series - 36&date=February 27, 2026&time=11:00 am to 1:00 pm (IST)&v=https://icaitv.com/video.php?vid=4487&st=ik8osptd&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/36.png" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 36</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">February 27, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Exporting Capital Structuring & Project Finance Services to UK, USA & Australia: A Delivery Blueprint for Indian CAs"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 36</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">February 27, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11:00 am to 1:00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Exporting Capital Structuring & Project Finance
+                                    Services to UK, USA & Australia: A Delivery Blueprint for Indian CAs"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 35 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Virtual CFO Services: A New-Age Career Path for Finance Professionals&series=Series - 35&date=6th February, 2026&time=11.00 am to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4417&st=blb2njkd&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Virtual CFO Services: A New-Age Career Path for Finance Professionals&series=Series - 35&date=6th February, 2026&time=11.00 am to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4417&st=blb2njkd&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/35.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 35</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">6th February, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11.00 am to 03.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Virtual CFO Services: A New-Age Career Path for Finance Professionals"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 35</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">6th February, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11.00 am to 03.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Virtual CFO Services: A New-Age Career Path for
+                                    Finance Professionals"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 34 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Regulatory & Compliance framework for Global Clients&series=Series - 34&date=23rd January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4360&st=1isgtm3v&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Regulatory & Compliance framework for Global Clients&series=Series - 34&date=23rd January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4360&st=1isgtm3v&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/34.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 34</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">23rd January, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Regulatory & Compliance Framework for Global Clients"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 34</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">23rd January, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Regulatory & Compliance Framework for Global
+                                    Clients"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 33 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Global Finance : From Deals to Decisions&series=Series - 33&date=16th January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4326&st=wl5sypgf&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Global Finance : From Deals to Decisions&series=Series - 33&date=16th January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4326&st=wl5sypgf&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/33.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 33</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">16th January, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 33</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">16th January, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
                                 <div class="topic-title-row">Topic : "Global Finance: From Deals to Decisions"</div>
                             </div>
                         </div>
@@ -556,159 +657,208 @@
                 </div>
                 <!-- Series 32 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=FS Preparation and Business Activity Statement - Australia Jurisdiction&series=Series - 32&date=9th January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4292&st=36sklrfg&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=FS Preparation and Business Activity Statement - Australia Jurisdiction&series=Series - 32&date=9th January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4292&st=36sklrfg&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/32.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 32</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">9th January, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "FS Preparation and Business Activity Statement – Australia Jurisdiction"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 32</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">9th January, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "FS Preparation and Business Activity Statement –
+                                    Australia Jurisdiction"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 31 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=The Outsourcing Professional's Guide: Accounting Software Comparison for Global Operations&series=Series - 31&date=2nd January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4246&st=bc4ucz3c&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=The Outsourcing Professional's Guide: Accounting Software Comparison for Global Operations&series=Series - 31&date=2nd January, 2026&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4246&st=bc4ucz3c&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/31.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 31</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">2nd January, 2026</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "The Outsourcing Professional's Guide: Accounting Software Comparison for Global Operations"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 31</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">2nd January, 2026</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01.00 pm to 03.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "The Outsourcing Professional's Guide: Accounting
+                                    Software Comparison for Global Operations"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 30 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Decoding US Financial Statements - Requirement of Global outsourcing firms&series=Series - 30&date=19th December, 2025&time=12.00 noon - 02.00 pm (IST)&v=https://icaitv.com/video.php?vid=4163&st=xqgi54hd&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Decoding US Financial Statements - Requirement of Global outsourcing firms&series=Series - 30&date=19th December, 2025&time=12.00 noon - 02.00 pm (IST)&v=https://icaitv.com/video.php?vid=4163&st=xqgi54hd&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/30.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 30</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">19th December, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12.00 noon - 02.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Decoding US Financial Statements – Requirement of Global Outsourcing Firms"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 30</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">19th December, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12.00 noon - 02.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Decoding US Financial Statements – Requirement of
+                                    Global Outsourcing Firms"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 29 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Strengthening Internal Controls in Offshore Outsourcing Models&series=Series - 29&date=12th December, 2025&time=12.00 noon - 02.00 pm (IST)&v=https://icaitv.com/video.php?vid=4120&st=8ewp8o0n&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Strengthening Internal Controls in Offshore Outsourcing Models&series=Series - 29&date=12th December, 2025&time=12.00 noon - 02.00 pm (IST)&v=https://icaitv.com/video.php?vid=4120&st=8ewp8o0n&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/29.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 29</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">12th December, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12.00 noon - 02.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Strengthening Internal Controls in Offshore Outsourcing Models"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 29</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">12th December, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12.00 noon - 02.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Strengthening Internal Controls in Offshore
+                                    Outsourcing Models"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 28 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Scaling Indian Accounting Firms for International Outsourcing Demand&series=Series - 28&date=5th December, 2025&time=12.00 noon - 02.00 pm (IST)&v=https://icaitv.com/video.php?vid=4080&st=77ozmi4j&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Scaling Indian Accounting Firms for International Outsourcing Demand&series=Series - 28&date=5th December, 2025&time=12.00 noon - 02.00 pm (IST)&v=https://icaitv.com/video.php?vid=4080&st=77ozmi4j&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/28.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 28</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">4th December, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12.00 noon - 02.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Scaling Indian Accounting Firms for International Outsourcing Demand"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 28</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">4th December, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12.00 noon - 02.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Scaling Indian Accounting Firms for International
+                                    Outsourcing Demand"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 27 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=The Global Outsourcing Landscape: Opportunities for Indian Professionals in UK and Beyond&series=Series - 27&date=21st November, 2025&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4043&st=z6d6721j&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=The Global Outsourcing Landscape: Opportunities for Indian Professionals in UK and Beyond&series=Series - 27&date=21st November, 2025&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=4043&st=z6d6721j&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/27.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 27</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">28th November, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11.00 AM - 01.00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "The Global Outsourcing Landscape: Opportunities for Indian Professionals in UK and Beyond"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 27</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">28th November, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11.00 AM - 01.00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "The Global Outsourcing Landscape: Opportunities
+                                    for Indian Professionals in UK and Beyond"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 26 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Strategic Business Management in UK Outsourcing&series=Series - 26&date=14th November, 2025&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=3997&st=1cxz56bs&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Strategic Business Management in UK Outsourcing&series=Series - 26&date=14th November, 2025&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=3997&st=1cxz56bs&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/26.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 26</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">21st November, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11.00 AM - 01.00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Strategic Business Management in UK Outsourcing"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 26</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">21st November, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11.00 AM - 01.00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Strategic Business Management in UK Outsourcing"
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 25 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=From Australia to India: Understanding Legal and Tax Implications in Cross-Border Service Delivery&series=Series - 25&date=04 Apr 2025&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=2957&st=l3c75q6s&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=From Australia to India: Understanding Legal and Tax Implications in Cross-Border Service Delivery&series=Series - 25&date=04 Apr 2025&time=01.00 pm to 03.00 pm (IST)&v=https://icaitv.com/video.php?vid=2957&st=l3c75q6s&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/25.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 25</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">04 Apr 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11.00 AM - 01.00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "GCCs in India: Navigating the Accounting Profession"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 25</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">04 Apr 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11.00 AM - 01.00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "GCCs in India: Navigating the Accounting
+                                    Profession"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 24 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Building a Global Practice: Tapping the UK Financial Outsourcing Space&series=Series - 24&date=31st October, 2025&time=03:00 PM to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3921&st=qcsbr77k&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Building a Global Practice: Tapping the UK Financial Outsourcing Space&series=Series - 24&date=31st October, 2025&time=03:00 PM to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3921&st=qcsbr77k&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/24.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 24</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">07th November, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01.00 pm - 03.00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Building a Global Practice: Tapping the UK Financial Outsourcing Space"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 24</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">07th November, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01.00 pm - 03.00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Building a Global Practice: Tapping the UK
+                                    Financial Outsourcing Space"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 23 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=DIY- Incorporation of company in USA&series=Series - 23&date=24th September, 2025&time=12:00 noon to 02:00 pm (IST)&v=https://icaitv.com/video.php?vid=3684&st=aygnn0nd&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=DIY- Incorporation of company in USA&series=Series - 23&date=24th September, 2025&time=12:00 noon to 02:00 pm (IST)&v=https://icaitv.com/video.php?vid=3684&st=aygnn0nd&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/23.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 23</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">24th September, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12:00 noon to 02:00 pm (IST)</span></div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 23</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">24th September, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12:00 noon to 02:00 pm (IST)</span></div>
                                 <div class="topic-title-row">Topic : "DIY – Incorporation of Company in USA"</div>
                             </div>
                         </div>
@@ -716,191 +866,250 @@
                 </div>
                 <!-- Series 22 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Become an AI powered CFO - Tapping Global Market&series=Series - 22&date=12th September, 2025&time=12:00 noon to 02:00 pm (IST)&v=https://icaitv.com/video.php?vid=3622&st=qkqhaeit&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Become an AI powered CFO - Tapping Global Market&series=Series - 22&date=12th September, 2025&time=12:00 noon to 02:00 pm (IST)&v=https://icaitv.com/video.php?vid=3622&st=qkqhaeit&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/22.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 22</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">12th September, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12:00 noon to 02:00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Become an AI-Powered CFO – Tapping Global Market"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 22</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">12th September, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12:00 noon to 02:00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Become an AI-Powered CFO – Tapping Global Market"
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 21 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Bridging Cultures in Business : Working with Australian Clients and Employers&series=Series - 21&date=4th September, 2025&time=2:00 pm to 04:00 pm (IST)&v=https://icaitv.com/video.php?vid=3574&st=wxlmtvat&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Bridging Cultures in Business : Working with Australian Clients and Employers&series=Series - 21&date=4th September, 2025&time=2:00 pm to 04:00 pm (IST)&v=https://icaitv.com/video.php?vid=3574&st=wxlmtvat&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/21.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 21</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">4th September, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">2:00 pm to 04:00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Bridging Cultures in Business: Working with Australian Clients and Employers"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 21</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">4th September, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">2:00 pm to 04:00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Bridging Cultures in Business: Working with
+                                    Australian Clients and Employers"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 20 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Legacy Beyond Borders: Navigating Cross-border Succession&series=Series - 20&date=28th August, 2025&time=01:00 pm to 03:00 pm (IST)&v=https://icaitv.com/video.php?vid=3545&st=5pfdjt06&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Legacy Beyond Borders: Navigating Cross-border Succession&series=Series - 20&date=28th August, 2025&time=01:00 pm to 03:00 pm (IST)&v=https://icaitv.com/video.php?vid=3545&st=5pfdjt06&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/20.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 20</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">28th August, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01:00 pm to 03:00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Legacy Beyond Borders: Navigating Cross-Border Succession"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 20</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">28th August, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01:00 pm to 03:00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Legacy Beyond Borders: Navigating Cross-Border
+                                    Succession"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 19 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Global Audit Practices: Navigating US Standards&series=Series - 19&date=22nd August, 2025&time=12:00 noon to 02:00 PM (IST)&v=https://icaitv.com/video.php?vid=3512&st=37dqaowp&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Global Audit Practices: Navigating US Standards&series=Series - 19&date=22nd August, 2025&time=12:00 noon to 02:00 PM (IST)&v=https://icaitv.com/video.php?vid=3512&st=37dqaowp&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/19.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 19</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">22nd August, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12:00 noon to 02:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Global Audit Practices: Navigating US Standards"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 19</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">22nd August, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12:00 noon to 02:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Global Audit Practices: Navigating US Standards"
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 18 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Setting Up Indian Subsidiaries : Compliance and Reporting Requirement&series=Series - 18&date=11 Apr 2025&time=11.00 AM - 01.00 PM.(IST)&v=https://icaitv.com/video.php?vid=2973&st=1v2h0t0u&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Setting Up Indian Subsidiaries : Compliance and Reporting Requirement&series=Series - 18&date=11 Apr 2025&time=11.00 AM - 01.00 PM.(IST)&v=https://icaitv.com/video.php?vid=2973&st=1v2h0t0u&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/18.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 18</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">11 Apr 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11.00 AM - 01.00 PM.(IST)</span></div>
-                                <div class="topic-title-row">Topic : "The Global Trade Revolution and India's Trade Policies – Role of Chartered Accountants"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 18</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">11 Apr 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11.00 AM - 01.00 PM.(IST)</span></div>
+                                <div class="topic-title-row">Topic : "The Global Trade Revolution and India's Trade
+                                    Policies – Role of Chartered Accountants"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 17 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=India- India Entry Guide for Foreign Businesses&series=Series - 17&date=25 Apr 2025&time=03:00 noon to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3014&st=92xxg4cl&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=India- India Entry Guide for Foreign Businesses&series=Series - 17&date=25 Apr 2025&time=03:00 noon to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3014&st=92xxg4cl&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/17.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 17</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">25 Apr 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">03:00 noon to 05:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Gateway to Global Finance: Opportunities in IFSC's Gift City"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 17</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">25 Apr 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">03:00 noon to 05:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Gateway to Global Finance: Opportunities in IFSC's
+                                    Gift City"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 16 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=India-UK FTA: Takeaways for Indian Professionals&series=Series - 16&date=01st August, 2025&time=12:00 noon to 02:00 PM (IST)&v=https://icaitv.com/video.php?vid=3415&st=0h90szs5&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=India-UK FTA: Takeaways for Indian Professionals&series=Series - 16&date=01st August, 2025&time=12:00 noon to 02:00 PM (IST)&v=https://icaitv.com/video.php?vid=3415&st=0h90szs5&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/16.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 16</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">01st August, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12:00 noon to 02:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "India-UK FTA: Takeaways for Indian Professionals"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 16</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">01st August, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12:00 noon to 02:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "India-UK FTA: Takeaways for Indian Professionals"
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 15 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Navigating Global Markets Through Cross Cultural Communication&series=Series - 15&date=25th July, 2025&time=12:00 noon to 03:00 pm (IST)&v=https://icaitv.com/video.php?vid=3374&st=9jwrz08s&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Navigating Global Markets Through Cross Cultural Communication&series=Series - 15&date=25th July, 2025&time=12:00 noon to 03:00 pm (IST)&v=https://icaitv.com/video.php?vid=3374&st=9jwrz08s&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/15.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 15</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">25th July, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12:00 noon to 03:00 pm (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Navigating Global Markets Through Cross Cultural Communication"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 15</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">25th July, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12:00 noon to 03:00 pm (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Navigating Global Markets Through Cross Cultural
+                                    Communication"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 14 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Outsourcing Accounting Services : What US Clients Expect&series=Series - 14&date=18th July, 2025&time=03:00 PM to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3339&st=ridxd5t7&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Outsourcing Accounting Services : What US Clients Expect&series=Series - 14&date=18th July, 2025&time=03:00 PM to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3339&st=ridxd5t7&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/14.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 14</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">18th July, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">03:00 PM to 05:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Outsourcing Accounting Services: What US Clients Expect"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 14</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">18th July, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">03:00 PM to 05:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Outsourcing Accounting Services: What US Clients
+                                    Expect"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 13 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Strategic Positioning for Indian Professionals in Singapore&series=Series - 13&date=11th July, 2025&time=03:00 PM to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3295&st=tfmhqyu7&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Strategic Positioning for Indian Professionals in Singapore&series=Series - 13&date=11th July, 2025&time=03:00 PM to 05:00 PM (IST)&v=https://icaitv.com/video.php?vid=3295&st=tfmhqyu7&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/13.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 13</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">11th July, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">03:00 PM to 05:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Strategic Positioning for Indian Professionals in Singapore"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 13</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">11th July, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">03:00 PM to 05:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Strategic Positioning for Indian Professionals in
+                                    Singapore"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 12 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Propel Your Professional Career in Gulf Region - Qatar Perspective&series=Series - 12&date=4th July, 2025&time=01:00 PM to 03:00 PM (IST)&v=https://icaitv.com/video.php?vid=3258&st=ffr4qwod&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Propel Your Professional Career in Gulf Region - Qatar Perspective&series=Series - 12&date=4th July, 2025&time=01:00 PM to 03:00 PM (IST)&v=https://icaitv.com/video.php?vid=3258&st=ffr4qwod&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/12.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 12</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">4th July, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01:00 PM to 03:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Propel Your Professional Career in Gulf Region – Qatar Perspective"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 12</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">4th July, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01:00 PM to 03:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Propel Your Professional Career in Gulf Region –
+                                    Qatar Perspective"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 11 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=US- Business Setup and Recent Tax Updates&series=Series - 11&date=26th June, 2025&time=11:00 AM to 1:00 PM&v=https://icaitv.com/video.php?vid=3231&st=fj5qugon&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=US- Business Setup and Recent Tax Updates&series=Series - 11&date=26th June, 2025&time=11:00 AM to 1:00 PM&v=https://icaitv.com/video.php?vid=3231&st=fj5qugon&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/11.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 11</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">26th June, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11:00 AM to 1:00 PM</span></div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 11</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">26th June, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11:00 AM to 1:00 PM</span></div>
                                 <div class="topic-title-row">Topic : "US – Business Setup and Recent Tax Updates"</div>
                             </div>
                         </div>
@@ -908,160 +1117,210 @@
                 </div>
                 <!-- Series 10 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Unlocking US GAAP : Insights into Financial Statement Preparation&series=Series - 10&date=20th June, 2025&time=3:00 pm to 5:00 pm&v=https://icaitv.com/video.php?vid=3213&st=rme24owj&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Unlocking US GAAP : Insights into Financial Statement Preparation&series=Series - 10&date=20th June, 2025&time=3:00 pm to 5:00 pm&v=https://icaitv.com/video.php?vid=3213&st=rme24owj&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 10.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 10</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">20th June, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">3:00 pm to 5:00 pm</span></div>
-                                <div class="topic-title-row">Topic : "Unlocking US GAAP: Insights into Financial Statement Preparation"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 10</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">20th June, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">3:00 pm to 5:00 pm</span></div>
+                                <div class="topic-title-row">Topic : "Unlocking US GAAP: Insights into Financial
+                                    Statement Preparation"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 9 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Positioning yourself in leadership role in Gulf : The Kuwait Perspective&series=Series - 9&date=13th June, 2025&time=12.00 noon to 2.00 pm&v=https://icaitv.com/video.php?vid=3181&st=dge2m6mz&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Positioning yourself in leadership role in Gulf : The Kuwait Perspective&series=Series - 9&date=13th June, 2025&time=12.00 noon to 2.00 pm&v=https://icaitv.com/video.php?vid=3181&st=dge2m6mz&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 9.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 9</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">13th June, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12.00 noon to 2.00 pm</span></div>
-                                <div class="topic-title-row">Topic : "Positioning Yourself in Leadership Role in Gulf: The Kuwait Perspective"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 9</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">13th June, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12.00 noon to 2.00 pm</span></div>
+                                <div class="topic-title-row">Topic : "Positioning Yourself in Leadership Role in Gulf:
+                                    The Kuwait Perspective"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 8 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=US- Indirect Tax Landscape&series=Series - 8&date=01 May 2025&time=11.00 am to 1.00 pm&v=https://icaitv.com/video.php?vid=3035&st=8n6w04p9&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=US- Indirect Tax Landscape&series=Series - 8&date=01 May 2025&time=11.00 am to 1.00 pm&v=https://icaitv.com/video.php?vid=3035&st=8n6w04p9&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 8.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 8</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">01 May 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11.00 am to 1.00 pm</span></div>
-                                <div class="topic-title-row">Topic : "Accounting Outsourcing Opportunities in US – An Overview"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 8</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">01 May 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11.00 am to 1.00 pm</span></div>
+                                <div class="topic-title-row">Topic : "Accounting Outsourcing Opportunities in US – An
+                                    Overview"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 7 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=The UAE Corporate Tax: Overview & Insights&series=Series - 7&date=08 May 2025&time=01:00 PM to 03:00 PM (IST)&v=https://icaitv.com/video.php?vid=3058&st=4fkreorq&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=The UAE Corporate Tax: Overview & Insights&series=Series - 7&date=08 May 2025&time=01:00 PM to 03:00 PM (IST)&v=https://icaitv.com/video.php?vid=3058&st=4fkreorq&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 7.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 7</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">08 May 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">01:00 PM to 03:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "The Global Opportunities: Insights from the UK Market"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 7</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">08 May 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">01:00 PM to 03:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "The Global Opportunities: Insights from the UK
+                                    Market"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 6 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Navigating US Taxation - Individual Perspective&series=Series - 6&date=23 May 2025&time=11:00 AM to 01:00 PM (IST)&v=https://icaitv.com/video.php?vid=3108&st=23p1xokb&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Navigating US Taxation - Individual Perspective&series=Series - 6&date=23 May 2025&time=11:00 AM to 01:00 PM (IST)&v=https://icaitv.com/video.php?vid=3108&st=23p1xokb&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 6.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 6</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">23 May 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11:00 AM to 01:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "FTAs: Unlocking Global Markets for Indian Accounting and Advisory Services"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 6</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">23 May 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11:00 AM to 01:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "FTAs: Unlocking Global Markets for Indian
+                                    Accounting and Advisory Services"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 5 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=India-USA Cross Border Transactions- Key Takeaways&series=Series - 5&date=29 May 2025&time=11:00 AM to 01:00 PM (IST)&v=https://icaitv.com/video.php?vid=3127&st=k6i4fvxz&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=India-USA Cross Border Transactions- Key Takeaways&series=Series - 5&date=29 May 2025&time=11:00 AM to 01:00 PM (IST)&v=https://icaitv.com/video.php?vid=3127&st=k6i4fvxz&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 5.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 5</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">29 May 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">11:00 AM to 01:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Unlocking Fintech for Tapping Export Opportunities"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 5</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">29 May 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">11:00 AM to 01:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Unlocking Fintech for Tapping Export
+                                    Opportunities"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 4 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=Opportunities for Indian CAs in Gulf - Oman Perspective&series=Series - 4&date=06 Jun 2025&time=12:00 noon to 02:00 PM (IST)&v=https://icaitv.com/video.php?vid=3157&st=x728r8b7&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=Opportunities for Indian CAs in Gulf - Oman Perspective&series=Series - 4&date=06 Jun 2025&time=12:00 noon to 02:00 PM (IST)&v=https://icaitv.com/video.php?vid=3157&st=x728r8b7&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 4.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 4</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">06 Jun 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">12:00 noon to 02:00 PM (IST)</span></div>
-                                <div class="topic-title-row">Topic : "Opportunities in African Region: Focus on Egypt"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 4</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">06 Jun 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">12:00 noon to 02:00 PM (IST)</span></div>
+                                <div class="topic-title-row">Topic : "Opportunities in African Region: Focus on Egypt"
+                                </div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 3 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=The Global Opportunities: Insights from the UK Market&series=Series - 3&date=17th April, 2025&time=3:30 pm to 5:30 pm&v=https://icaitv.com/video.php?vid=3058&st=4fkreorq&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=The Global Opportunities: Insights from the UK Market&series=Series - 3&date=17th April, 2025&time=3:30 pm to 5:30 pm&v=https://icaitv.com/video.php?vid=3058&st=4fkreorq&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 3.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 3</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">17th April, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">3:30 pm to 5:30 pm</span></div>
-                                <div class="topic-title-row">Topic : "The Global Opportunities: Insights from the UK Market"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 3</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">17th April, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">3:30 pm to 5:30 pm</span></div>
+                                <div class="topic-title-row">Topic : "The Global Opportunities: Insights from the UK
+                                    Market"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 2 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=The Global Trade Revolution and India's Trade Policies- Role of Chartered Accountants&series=Series - 2&date=11th April, 2025&time=3:00 pm to 5:00 pm&v=https://icaitv.com/video.php?vid=2973&st=1v2h0t0u&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=The Global Trade Revolution and India's Trade Policies- Role of Chartered Accountants&series=Series - 2&date=11th April, 2025&time=3:00 pm to 5:00 pm&v=https://icaitv.com/video.php?vid=2973&st=1v2h0t0u&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 2.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 2</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">11th April, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">3:00 pm to 5:00 pm</span></div>
-                                <div class="topic-title-row">Topic : "The Global Trade Revolution and India's Trade Policies – Role of Chartered Accountants"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 2</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">11th April, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">3:00 pm to 5:00 pm</span></div>
+                                <div class="topic-title-row">Topic : "The Global Trade Revolution and India's Trade
+                                    Policies – Role of Chartered Accountants"</div>
                             </div>
                         </div>
                     </a>
                 </div>
                 <!-- Series 1 -->
                 <div class="col-12 col-lg-6 webinar-col">
-                    <a href="video-player.html?title=GCCs in India : Navigating The Accounting Profession&series=Series - 1&date=4th April, 2025&time=3:00 pm to 5:00 pm&v=https://icaitv.com/video.php?vid=2957&st=l3c75q6s&raw=1" class="webinar-card-link">
+                    <a href="video-player.html?title=GCCs in India : Navigating The Accounting Profession&series=Series - 1&date=4th April, 2025&time=3:00 pm to 5:00 pm&v=https://icaitv.com/video.php?vid=2957&st=l3c75q6s&raw=1"
+                        class="webinar-card-link">
                         <div class="webinar-grid-card scroll-reveal">
                             <div class="card-poster-area">
                                 <img src="images/globaludaan/series 1.jpg" alt="Global Udaan">
                             </div>
                             <div class="card-content-area">
-                                <div class="detail-row"><span class="detail-label">Series :</span> <span class="detail-value">Series - 1</span></div>
-                                <div class="detail-row"><span class="detail-label">Date :</span> <span class="detail-value">4th April, 2025</span></div>
-                                <div class="detail-row"><span class="detail-label">Time :</span> <span class="detail-value">3:00 pm to 5:00 pm</span></div>
-                                <div class="topic-title-row">Topic : "GCCs in India: Navigating the Accounting Profession"</div>
+                                <div class="detail-row"><span class="detail-label">Series :</span> <span
+                                        class="detail-value">Series - 1</span></div>
+                                <div class="detail-row"><span class="detail-label">Date :</span> <span
+                                        class="detail-value">4th April, 2025</span></div>
+                                <div class="detail-row"><span class="detail-label">Time :</span> <span
+                                        class="detail-value">3:00 pm to 5:00 pm</span></div>
+                                <div class="topic-title-row">Topic : "GCCs in India: Navigating the Accounting
+                                    Profession"</div>
                             </div>
                         </div>
                     </a>
@@ -1092,7 +1351,9 @@
                     <ul class="footer-list">
                         <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
                         <li><a href="#">Training & Capacity Building</a></li>
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member Opportunities</a></li>
+                        <li><a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member
+                                Opportunities</a></li>
                         <li><a href="events.html">Previous events</a></li>
                     </ul>
                 </div>
@@ -1104,7 +1365,7 @@
                         <li><a href="reports-publications.html">Reports & Publications</a></li>
                         <li><a href="#">Research & Insights</a></li>
                         <li><a href="#">Guidelines & Policies</a></li>
-                        
+
                     </ul>
                 </div>
 
@@ -1163,4 +1424,5 @@
         }
     </script>
 </body>
+
 </html>

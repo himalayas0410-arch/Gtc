@@ -2024,8 +2024,8 @@ h6,
     position: absolute;
     right: 20px;
     top: 20px;
-    color: rgba(255, 255, 255, 0.15);
-    /* Subtle as requested */
+    color: rgba(255, 255, 255, 0.3);
+    /* Slightly more visible as requested */
     pointer-events: none;
     z-index: 1;
     line-height: 1;
@@ -2072,8 +2072,8 @@ h6,
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
-.board.is-stacked .deck-card .card-title,
-.board.is-stacked .deck-card .number {
+.board.is-stacked .deck-card:not(.active) .card-title,
+.board.is-stacked .deck-card:not(.active) .number {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;

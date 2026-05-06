@@ -94,12 +94,16 @@
         }
 
         /* Force remove any dark backgrounds, borders, or shadows from the banner */
-        .hero-container, #carouselExample, .carousel-inner, .carousel-item {
+        .hero-container,
+        #carouselExample,
+        .carousel-inner,
+        .carousel-item {
             background-color: transparent !important;
             border: none !important;
             box-shadow: none !important;
             outline: none !important;
         }
+
         .hero-container.container {
             padding-left: 0 !important;
             padding-right: 0 !important;
@@ -132,7 +136,7 @@
                 <!-- Right: Global Logo & Mobile Toggle -->
                 <div class="header-top-right reveal-up">
                     <img src="images/logogloba.png" class="logo-secondary" />
-                    
+
                     <div class="mobile-controls">
                         <button class="menu-toggle" onclick="toggleMobileMenu()">
                             <span class="material-symbols-outlined">menu</span>
@@ -176,8 +180,7 @@
                                                     <span class="nav-panel-title">GCC Initiatives</span>
                                                 </div>
                                             </a>
-                                            <a href="global-udaan.html"
-                                                class="nav-panel-item">
+                                            <a href="global-udaan.html" class="nav-panel-item">
                                                 <i class="bi bi-rocket-takeoff"></i>
                                                 <div class="nav-panel-content">
                                                     <span class="nav-panel-title">Global Udaan</span>
@@ -210,7 +213,8 @@
                                             Matrix</a>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous events</a></li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous
+                                        events</a></li>
                             </ul>
                         </div>
                     </div>
@@ -218,7 +222,8 @@
                     <div class="nav-search reveal-up" style="animation-delay: 0.6s">
                         <div class="search-container" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                            <span class="material-symbols-outlined search-icon"
+                                onclick="toggleMobileSearch()">search</span>
                         </div>
                     </div>
 
@@ -263,15 +268,15 @@
                     <ul class="mobile-sub-menu">
                         <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
                         <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
-                        <li><a href="global-udaan.html"
-                                onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="global-udaan.html" onclick="toggleMobileMenu()">Global Udaan</a></li>
                         <li><a href="itec-programs.html" onclick="toggleMobileMenu()">ITEC Programs</a></li>
                         <li><a href="certificate-courses.html" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
                 </li>
                 <li class="mobile-has-dropdown">
                     <a href="#"
-                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming events <span class="material-symbols-outlined">expand_more</span></a>
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming
+                        events <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
                         <li><a href="ifsca.html" onclick="toggleMobileMenu()">ICAI Delegation
                                 visit to Gift City - IFSCA</a></li>
@@ -286,7 +291,8 @@
         </nav>
     </div>
     <div class="hero-container container mt-4">
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" style="box-shadow: none !important; border: none !important; background: transparent !important;">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel"
+            style="box-shadow: none !important; border: none !important; background: transparent !important;">
             <div class="carousel-inner">
                 <!-- Slide 1: Video -->
                 <div class="carousel-item active">
@@ -349,103 +355,210 @@
     <div class="section-warm" style="position:relative;">
         <div class="container py-5">
             <div class="board" id="pillar-board">
-                <div class="deck-card card1" data-index="1"><div class="deck-overlay"></div><div class="card-title">Trade &amp; Market Integration</div><div class="number">1</div></div>
-                <div class="deck-card card2" data-index="2"><div class="deck-overlay"></div><div class="card-title">Global Services &amp; Professional Mobility</div><div class="number">2</div></div>
-                <div class="deck-card card3" data-index="3"><div class="deck-overlay"></div><div class="card-title">Policy, Multilateral &amp; Government Affairs</div><div class="number">3</div></div>
-                <div class="deck-card card4" data-index="4"><div class="deck-overlay"></div><div class="card-title">GCC &amp; Emerging Global Ecosystems</div><div class="number">4</div></div>
-                <div class="deck-card card5" data-index="5"><div class="deck-overlay"></div><div class="card-title">Capacity Building Programs</div><div class="number">5</div></div>
+                <div class="deck-card card1" data-index="1">
+                    <div class="deck-overlay"></div>
+                    <div class="card-title">Trade &amp; Market Integration</div>
+                    <div class="number">1</div>
+                </div>
+                <div class="deck-card card2" data-index="2">
+                    <div class="deck-overlay"></div>
+                    <div class="card-title">Global Services &amp; Professional Mobility</div>
+                    <div class="number">2</div>
+                </div>
+                <div class="deck-card card3" data-index="3">
+                    <div class="deck-overlay"></div>
+                    <div class="card-title">Policy, Multilateral &amp; Government Affairs</div>
+                    <div class="number">3</div>
+                </div>
+                <div class="deck-card card4" data-index="4">
+                    <div class="deck-overlay"></div>
+                    <div class="card-title">GCC &amp; Emerging Global Ecosystems</div>
+                    <div class="number">4</div>
+                </div>
+                <div class="deck-card card5" data-index="5">
+                    <div class="deck-overlay"></div>
+                    <div class="card-title">Capacity Building Programs</div>
+                    <div class="number">5</div>
+                </div>
 
                 <div class="details-panel" id="pillar-details">
                     <div class="panel-content" data-for="1">
                         <h3 class="panel-heading">Trade &amp; Market Integration</h3>
                         <div class="card-hover" id="hover-card-1">
-                            <div class="hover-main-view active"><ul class="hover-list">
-                                <li onclick="switchCardView(1, 'sub', event)"><span>Deliverables of Existing MoU</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Engaging with Indo Chambers of Commerce</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Involving State Government in promoting trade</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Liaisoning with Export Promotion Councils for trade</span> <i class="bi bi-chevron-right"></i></li>
-                            </ul></div>
-                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(1, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>MoU Deliverables</h6></div>
-                            <div class="sub-view-content">
-                                <p class="sub-view-description">Strengthening global trade through strategic collaborations with key institutions to enhance export potential, policy engagement, and international partnerships.</p>
-                                <div class="sub-card-grid">
-                                    <a href="#" class="sub-mini-card">
-                                        <img src="images/eco_partners/logo-investindia.png" alt="Invest India">
-                                        <span>Invest India</span>
-                                    </a>
-                                    <a href="#" class="sub-mini-card">
-                                        <i class="bi bi-globe"></i>
-                                        <span>EPC for EOUs & SEZs</span>
-                                    </a>
-                                    <a href="sepc.html" class="sub-mini-card">
-                                        <img src="images/eco_partners/images.png" alt="SEPC">
-                                        <span>SEPC</span>
-                                    </a>
-                                    <a href="ifsca.html" class="sub-mini-card">
-                                        <img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="IFSCA" style="border-radius: 50%; object-fit: cover;">
-                                        <span>IFSCA</span>
-                                    </a>
+                            <div class="hover-main-view active">
+                                <ul class="hover-list">
+                                    <li onclick="switchCardView(1, 'sub', event)"><span>Deliverables of Existing
+                                            MoU</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>Engaging with Indo Chambers of Commerce</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li><span>Involving State Government in promoting trade</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li><span>Liaisoning with Export Promotion Councils for trade</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                </ul>
+                            </div>
+                            <div class="hover-sub-view">
+                                <div class="sub-view-header"><button class="back-btn"
+                                        onclick="switchCardView(1, 'main', event)"><i class="bi bi-arrow-left"></i>
+                                        Back</button>
+                                    <h6>MoU Deliverables</h6>
+                                </div>
+                                <div class="sub-view-content">
+                                    <p class="sub-view-description">Strengthening global trade through strategic
+                                        collaborations with key institutions to enhance export potential, policy
+                                        engagement, and international partnerships.</p>
+                                    <div class="sub-card-grid">
+                                        <a href="#" class="sub-mini-card">
+                                            <img src="images/eco_partners/logo-investindia.png" alt="Invest India">
+                                            <span>Invest India</span>
+                                        </a>
+                                        <a href="#" class="sub-mini-card">
+                                            <i class="bi bi-globe"></i>
+                                            <span>EPC for EOUs & SEZs</span>
+                                        </a>
+                                        <a href="sepc.html" class="sub-mini-card">
+                                            <img src="images/eco_partners/images.png" alt="SEPC">
+                                            <span>SEPC</span>
+                                        </a>
+                                        <a href="ifsca.html" class="sub-mini-card">
+                                            <img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="IFSCA"
+                                                style="border-radius: 50%; object-fit: cover;">
+                                            <span>IFSCA</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-</div>
                         </div>
                     </div>
                     <div class="panel-content" data-for="2">
                         <h3 class="panel-heading">Global Services &amp; Professional Mobility</h3>
                         <div class="card-hover" id="hover-card-2">
-                            <div class="hover-main-view active"><ul class="hover-list">
-                                <li><span>APO portal</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Co-ordination with various Embassies in India and Indian High Commissions abroad for professional opportunities abroad</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Participation and Exhibition at domestic and international events</span> <i class="bi bi-chevron-right"></i></li>
-                                <li onclick="switchCardView(2, 'sub', event)"><span>Support to International professional organization</span> <i class="bi bi-chevron-right"></i></li>
-                            </ul></div>
-                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(2, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>Professional Bodies</h6></div>
-                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-globe-americas"></i><span>IFAC</span></a><a href="#" class="sub-mini-card"><i class="bi bi-map"></i><span>CAPA</span></a><a href="#" class="sub-mini-card"><i class="bi bi-compass"></i><span>SAFA</span></a><a href="#" class="sub-mini-card"><i class="bi bi-people"></i><span>International Organizations</span></a></div></div>
+                            <div class="hover-main-view active">
+                                <ul class="hover-list">
+                                    <li><span>APO portal</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>Co-ordination with various Embassies in India and Indian High Commissions
+                                            abroad for professional opportunities abroad</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li><span>Participation and Exhibition at domestic and international events</span>
+                                        <i class="bi bi-chevron-right"></i></li>
+                                    <li onclick="switchCardView(2, 'sub', event)"><span>Support to International
+                                            professional organization</span> <i class="bi bi-chevron-right"></i></li>
+                                </ul>
+                            </div>
+                            <div class="hover-sub-view">
+                                <div class="sub-view-header"><button class="back-btn"
+                                        onclick="switchCardView(2, 'main', event)"><i class="bi bi-arrow-left"></i>
+                                        Back</button>
+                                    <h6>Professional Bodies</h6>
+                                </div>
+                                <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-globe-americas"></i><span>IFAC</span></a><a href="#"
+                                        class="sub-mini-card"><i class="bi bi-map"></i><span>CAPA</span></a><a href="#"
+                                        class="sub-mini-card"><i class="bi bi-compass"></i><span>SAFA</span></a><a
+                                        href="#" class="sub-mini-card"><i class="bi bi-people"></i><span>International
+                                            Organizations</span></a></div>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-content" data-for="3">
                         <h3 class="panel-heading">Policy, Multilateral &amp; Government Affairs</h3>
                         <div class="card-hover" id="hover-card-3">
-                            <div class="hover-main-view active"><ul class="hover-list">
-                                <li><span>Representing ICAI views on various barriers to trade in services under WTO regime</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Inbound and outbound delegations</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Ambassador program</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>ITEC program</span> <i class="bi bi-chevron-right"></i></li>
-                                <li onclick="switchCardView(3, 'sub', event)"><span>Ministerial consultations</span> <i class="bi bi-chevron-right"></i></li>
-                            </ul></div>
-                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(3, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>Ministerial Consultations</h6></div>
-                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-building-gear"></i><span>Ministry of Corporate Affairs</span></a><a href="#" class="sub-mini-card"><i class="bi bi-cash-stack"></i><span>Ministry of Finance</span></a><a href="#" class="sub-mini-card"><i class="bi bi-cart-check"></i><span>Ministry of Commerce</span></a><a href="#" class="sub-mini-card"><i class="bi bi-passport"></i><span>Ministry of External Affairs</span></a></div></div>
+                            <div class="hover-main-view active">
+                                <ul class="hover-list">
+                                    <li><span>Representing ICAI views on various barriers to trade in services under WTO
+                                            regime</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>Inbound and outbound delegations</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li><span>Ambassador program</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>ITEC program</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li onclick="switchCardView(3, 'sub', event)"><span>Ministerial consultations</span>
+                                        <i class="bi bi-chevron-right"></i></li>
+                                </ul>
+                            </div>
+                            <div class="hover-sub-view">
+                                <div class="sub-view-header"><button class="back-btn"
+                                        onclick="switchCardView(3, 'main', event)"><i class="bi bi-arrow-left"></i>
+                                        Back</button>
+                                    <h6>Ministerial Consultations</h6>
+                                </div>
+                                <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-building-gear"></i><span>Ministry of Corporate
+                                            Affairs</span></a><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-cash-stack"></i><span>Ministry of Finance</span></a><a href="#"
+                                        class="sub-mini-card"><i class="bi bi-cart-check"></i><span>Ministry of
+                                            Commerce</span></a><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-passport"></i><span>Ministry of External Affairs</span></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-content" data-for="4">
                         <h3 class="panel-heading">GCC &amp; Emerging Global Ecosystems</h3>
                         <div class="card-hover" id="hover-card-4">
-                            <div class="hover-main-view active"><ul class="hover-list">
-                                <li><span>State Government Policy advocacy and awareness</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Formulation of GCC Maturity &amp; Governance Model</span> <i class="bi bi-chevron-right"></i></li>
-                                <li onclick="switchCardView(4, 'sub', event)"><span>GCC Summits across the globe</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Facilitate engagement between State Governments &amp; GCC investors</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Recognition of globally professional services providers</span> <i class="bi bi-chevron-right"></i></li>
-                            </ul></div>
-                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(4, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>GCC Summits</h6></div>
-                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>Middle East</span></a><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>South East Asia</span></a><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>Europe</span></a><a href="#" class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>Americas</span></a></div></div>
+                            <div class="hover-main-view active">
+                                <ul class="hover-list">
+                                    <li><span>State Government Policy advocacy and awareness</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li><span>Formulation of GCC Maturity &amp; Governance Model</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li onclick="switchCardView(4, 'sub', event)"><span>GCC Summits across the
+                                            globe</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>Facilitate engagement between State Governments &amp; GCC investors</span>
+                                        <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>Recognition of globally professional services providers</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                </ul>
+                            </div>
+                            <div class="hover-sub-view">
+                                <div class="sub-view-header"><button class="back-btn"
+                                        onclick="switchCardView(4, 'main', event)"><i class="bi bi-arrow-left"></i>
+                                        Back</button>
+                                    <h6>GCC Summits</h6>
+                                </div>
+                                <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-geo-alt"></i><span>Middle East</span></a><a href="#"
+                                        class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>South East
+                                            Asia</span></a><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-geo-alt"></i><span>Europe</span></a><a href="#"
+                                        class="sub-mini-card"><i class="bi bi-geo-alt"></i><span>Americas</span></a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="panel-content" data-for="5">
                         <h3 class="panel-heading">Capacity Building Programs</h3>
                         <div class="card-hover" id="hover-card-5">
-                            <div class="hover-main-view active"><ul class="hover-list">
-                                <li><span>Foreign Language courses</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Organize Webinars/Seminars/Workshops for members</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Publications including Quarterly E-newsletters</span> <i class="bi bi-chevron-right"></i></li>
-                                <li onclick="switchCardView(5, 'sub', event)"><span>Certificate Courses and Residential Programs</span> <i class="bi bi-chevron-right"></i></li>
-                                <li><span>Roundtable with various stakeholders</span> <i class="bi bi-chevron-right"></i></li>
-                            </ul></div>
-                            <div class="hover-sub-view"><div class="sub-view-header"><button class="back-btn" onclick="switchCardView(5, 'main', event)"><i class="bi bi-arrow-left"></i> Back</button><h6>Certificate Courses</h6></div>
-                            <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i class="bi bi-calculator"></i><span>Finance &amp; Accounts</span></a><a href="#" class="sub-mini-card"><i class="bi bi-journal-check"></i><span>Audit &amp; Assurance</span></a><a href="#" class="sub-mini-card"><i class="bi bi-file-earmark-bar-graph"></i><span>Taxation Laws</span></a><a href="#" class="sub-mini-card"><i class="bi bi-person-workspace"></i><span>Leadership Skills</span></a></div></div>
+                            <div class="hover-main-view active">
+                                <ul class="hover-list">
+                                    <li><span>Foreign Language courses</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>Organize Webinars/Seminars/Workshops for members</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li><span>Publications including Quarterly E-newsletters</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                    <li onclick="switchCardView(5, 'sub', event)"><span>Certificate Courses and
+                                            Residential Programs</span> <i class="bi bi-chevron-right"></i></li>
+                                    <li><span>Roundtable with various stakeholders</span> <i
+                                            class="bi bi-chevron-right"></i></li>
+                                </ul>
+                            </div>
+                            <div class="hover-sub-view">
+                                <div class="sub-view-header"><button class="back-btn"
+                                        onclick="switchCardView(5, 'main', event)"><i class="bi bi-arrow-left"></i>
+                                        Back</button>
+                                    <h6>Certificate Courses</h6>
+                                </div>
+                                <div class="sub-card-grid"><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-calculator"></i><span>Finance &amp; Accounts</span></a><a
+                                        href="#" class="sub-mini-card"><i class="bi bi-journal-check"></i><span>Audit
+                                            &amp; Assurance</span></a><a href="#" class="sub-mini-card"><i
+                                            class="bi bi-file-earmark-bar-graph"></i><span>Taxation Laws</span></a><a
+                                        href="#" class="sub-mini-card"><i
+                                            class="bi bi-person-workspace"></i><span>Leadership Skills</span></a></div>
+                            </div>
                         </div>
                     </div>
-                    <button class="deck-reset-btn" id="deck-reset-btn"><i class="bi bi-arrow-left"></i> Back to All</button>
+                    <button class="deck-reset-btn" id="deck-reset-btn"><i class="bi bi-arrow-left"></i> Back to
+                        All</button>
                 </div>
             </div>
         </div>
@@ -455,42 +568,119 @@
     <section class="partners-section">
         <div class="container">
             <div class="text-center mb-2">
-                <h3 style="color: #1e293b; font-weight: 800; font-size: 2rem; letter-spacing: 0.5px; opacity: 1;">ECO PARTNERS</h3>
+                <h3 style="color: #1e293b; font-weight: 800; font-size: 2rem; letter-spacing: 0.5px; opacity: 1;">ECO
+                    PARTNERS</h3>
             </div>
             <div class="logo-carousel-wrapper">
                 <div class="logo-track">
                     <!-- Partner Logos -->
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/BxVE0Xj6.jpg" alt="Partner Logo"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="SEPC"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/gift.jfif" alt="Gift City"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/ihub.png" alt="iHub"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/images (1).png" alt="Partner Logo"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/images.png" alt="Partner Logo"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/Indian_Institute_of_Management_Sambalpur_Logo.svg" alt="IIM Sambalpur"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/logo-investindia.png" alt="Invest India"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/mcec.png" alt="MCEC"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/mceit.jfif" alt="MCEIT"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/Ministry_of_Commerce_and_Industry.svg" alt="Ministry of Commerce and Industry"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/National_Forensic_Sciences_University_Logo.png" alt="NFSU"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/niti aayog.png" alt="NITI Aayog"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/Rashtriya_Raksha_University_logo.png" alt="Rashtriya Raksha University"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/unnamed.jpg" alt="Partner Logo"></div></div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/BxVE0Xj6.jpg" alt="Partner Logo"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="SEPC"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/gift.jfif" alt="Gift City"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/ihub.png" alt="iHub"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/images (1).png" alt="Partner Logo">
+                        </div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/images.png" alt="Partner Logo"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img
+                                src="images/eco_partners/Indian_Institute_of_Management_Sambalpur_Logo.svg"
+                                alt="IIM Sambalpur"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/logo-investindia.png"
+                                alt="Invest India"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/mcec.png" alt="MCEC"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/mceit.jfif" alt="MCEIT"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/Ministry_of_Commerce_and_Industry.svg"
+                                alt="Ministry of Commerce and Industry"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img
+                                src="images/eco_partners/National_Forensic_Sciences_University_Logo.png" alt="NFSU">
+                        </div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/niti aayog.png" alt="NITI Aayog"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/Rashtriya_Raksha_University_logo.png"
+                                alt="Rashtriya Raksha University"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/unnamed.jpg" alt="Partner Logo"></div>
+                    </div>
                     <!-- Doubled for infinite scroll -->
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/BxVE0Xj6.jpg" alt="Partner Logo"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="SEPC"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/gift.jfif" alt="Gift City"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/ihub.png" alt="iHub"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/images (1).png" alt="Partner Logo"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/images.png" alt="Partner Logo"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/Indian_Institute_of_Management_Sambalpur_Logo.svg" alt="IIM Sambalpur"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/logo-investindia.png" alt="Invest India"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/mcec.png" alt="MCEC"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/mceit.jfif" alt="MCEIT"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/Ministry_of_Commerce_and_Industry.svg" alt="Ministry of Commerce and Industry"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/National_Forensic_Sciences_University_Logo.png" alt="NFSU"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/niti aayog.png" alt="NITI Aayog"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/Rashtriya_Raksha_University_logo.png" alt="Rashtriya Raksha University"></div></div>
-                    <div class="logo-item"><div class="partner-card"><img src="images/eco_partners/unnamed.jpg" alt="Partner Logo"></div></div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/BxVE0Xj6.jpg" alt="Partner Logo"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/ewNuuGnL_400x400.jpg" alt="SEPC"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/gift.jfif" alt="Gift City"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/ihub.png" alt="iHub"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/images (1).png" alt="Partner Logo">
+                        </div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/images.png" alt="Partner Logo"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img
+                                src="images/eco_partners/Indian_Institute_of_Management_Sambalpur_Logo.svg"
+                                alt="IIM Sambalpur"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/logo-investindia.png"
+                                alt="Invest India"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/mcec.png" alt="MCEC"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/mceit.jfif" alt="MCEIT"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/Ministry_of_Commerce_and_Industry.svg"
+                                alt="Ministry of Commerce and Industry"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img
+                                src="images/eco_partners/National_Forensic_Sciences_University_Logo.png" alt="NFSU">
+                        </div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/niti aayog.png" alt="NITI Aayog"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/Rashtriya_Raksha_University_logo.png"
+                                alt="Rashtriya Raksha University"></div>
+                    </div>
+                    <div class="logo-item">
+                        <div class="partner-card"><img src="images/eco_partners/unnamed.jpg" alt="Partner Logo"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -562,8 +752,7 @@
 
                 </div>
                 <div class="col-sm-8">
-                    <div id="world-map"
-                        style="width: 100%;height: 450px;background-color: transparent;margin-top: 0;"
+                    <div id="world-map" style="width: 100%;height: 450px;background-color: transparent;margin-top: 0;"
                         class="jvm-container"></div>
                     <script src="https://cdn.jsdelivr.net/npm/jsvectormap"></script>
                     <script src="https://cdn.jsdelivr.net/npm/jsvectormap/dist/maps/world.js"></script>
@@ -688,7 +877,9 @@
                     <ul class="footer-list">
                         <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
                         <li><a href="#">Training & Capacity Building</a></li>
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member Opportunities</a></li>
+                        <li><a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member
+                                Opportunities</a></li>
                         <li><a href="events.html">Previous events</a></li>
                     </ul>
                 </div>
@@ -700,7 +891,7 @@
                         <li><a href="reports-publications.html">Reports & Publications</a></li>
                         <li><a href="#">Research & Insights</a></li>
                         <li><a href="#">Guidelines & Policies</a></li>
-                        
+
                     </ul>
                 </div>
 
