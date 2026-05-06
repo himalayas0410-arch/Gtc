@@ -2294,63 +2294,7 @@ h6,
     color: #334155;
 }
 
-/* Custom Map Tooltip Styling */
-.jvm-tooltip {
-    background: #1e293b !important; /* Dark Navy */
-    border: none !important;
-    border-radius: 16px !important;
-    padding: 20px !important;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
-    color: #ffffff !important;
-    font-family: 'Poppins', sans-serif !important;
-    min-width: 220px;
-}
-
-.map-tooltip-content {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.map-tooltip-header h3 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: 800;
-    color: #ffffff;
-    letter-spacing: -0.02em;
-}
-
-.map-tooltip-header small {
-    display: block;
-    font-size: 11px;
-    font-weight: 700;
-    color: #60a5fa; /* Muted Blue */
-    letter-spacing: 1px;
-    margin-top: 2px;
-    text-transform: uppercase;
-}
-
-.map-tooltip-divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.15);
-    margin: 2px 0;
-}
-
-.map-tooltip-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.map-tooltip-pill {
-    display: inline-block;
-    padding: 8px 16px;
-    background: rgba(255, 255, 255, 0.1); /* Subtle gray/transparent pill */
-    border-radius: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #e2e8f0;
-}
+/* Reset Button */
 .deck-reset-btn {
     margin-top: auto;
     padding: 10px 20px;
@@ -3400,53 +3344,54 @@ h6,
 
 /* Map Tooltip Theming */
 .jvm-tooltip {
-    background: rgba(15, 23, 42, 0.9) !important;
-    /* var(--text-dark) with opacity */
-    backdrop-filter: blur(10px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    background: #FFFFFF !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
     border-radius: 16px !important;
-    padding: 20px !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
-    color: #fff !important;
+    padding: 22px !important;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12) !important;
+    color: #1E293B !important;
     font-family: 'Inter', sans-serif !important;
-    min-width: 200px !important;
+    min-width: 220px !important;
 }
 
 .jvm-tooltip h2 {
-    font-size: 22px !important;
-    font-weight: 800 !important;
-    margin: 0 0 4px 0 !important;
-    color: #fff !important;
+    font-size: 24px !important;
+    font-weight: 850 !important;
+    margin: 0 0 6px 0 !important;
+    color: #0F172A !important;
     background: none !important;
     -webkit-text-fill-color: initial !important;
+    letter-spacing: -0.02em !important;
 }
 
 .jvm-tooltip h5 {
-    font-size: 12px !important;
-    font-weight: 600 !important;
-    color: var(--blue-primary) !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #10B981 !important; /* Green matching selected regions */
     text-transform: uppercase !important;
-    letter-spacing: 1.5px !important;
+    letter-spacing: 2px !important;
     margin-bottom: 15px !important;
-    opacity: 0.8;
+    opacity: 1 !important;
 }
 
 .jvm-tooltip p {
-    font-size: 14px !important;
-    margin: 0 0 6px 0 !important;
-    color: rgba(255, 255, 255, 0.9) !important;
+    font-size: 15px !important;
+    margin: 0 0 8px 0 !important;
+    color: #475569 !important;
+    line-height: 1.4 !important;
+    font-weight: 500 !important;
 }
 
 .jvm-tooltip .tooltip-action {
     margin-top: 15px !important;
-    padding-top: 12px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-    font-weight: 700 !important;
-    color: var(--orange-secondary) !important;
+    padding-top: 15px !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.06) !important;
+    font-weight: 800 !important;
+    color: #F48C06 !important;
     display: block !important;
-    font-size: 13px !important;
+    font-size: 12px !important;
     text-transform: uppercase !important;
-    letter-spacing: 0.5px !important;
+    letter-spacing: 1px !important;
 }
 
 /* Navigation Dropdown Menu */

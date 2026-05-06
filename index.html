@@ -635,21 +635,26 @@
                             },
                              */
 
-                                tooltip.text(
-                                    `<div class="map-tooltip-content">
-                                        <div class="map-tooltip-header">
-                                            <h3>${data.name}</h3>
-                                            <small>${data.hq ? 'GLOBAL HEADQUARTERS' : 'ICAI PRESENCE'}</small>
-                                        </div>
-                                        <div class="map-tooltip-divider"></div>
-                                        <div class="map-tooltip-stats">
-                                            ${data.hq ? '<span class="map-tooltip-pill">5 Regional Councils</span>' : ''}
-                                            ${data.chapters > 0 ? `<span class="map-tooltip-pill">${data.chapters} Chapter${data.chapters > 1 ? 's' : ''}</span>` : ''}
-                                            ${data.offices > 0 ? `<span class="map-tooltip-pill">${data.offices} Representative Office${data.offices > 1 ? 's' : ''}</span>` : ''}
-                                        </div>
-                                    </div>`, 
-                                    true
-                                );
+                            onRegionTooltipShow: function (event, tooltip, code) {
+                                const data = countryData[code];
+                                if (!data) return;
+
+                                let html = "";
+                                if (data.hq) {
+                                    html = `<h2>India</h2><h5>ICAI Headquarters</h5><p>12 Regional Offices</p><p>50+ Global Chapters</p>`;
+                                } else {
+                                    html = `<h2>${data.name}</h2><h5>ICAI Presence</h5>`;
+                                    if (data.chapters > 0) {
+                                        html += `<p>${data.chapters} Chapter${data.chapters > 1 ? 's' : ''}</p>`;
+                                    }
+                                    if (data.offices > 0) {
+                                        html += `<p>${data.offices} Representative Office${data.offices > 1 ? 's' : ''}</p>`;
+                                    }
+                                    // Removed action span
+                                }
+
+                                tooltip.text(html, true);
+                            }
                         });
                     </script>
                 </div>
