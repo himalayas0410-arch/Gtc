@@ -81,38 +81,21 @@
         }
 
         .shine-border::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 2px;
-            background: linear-gradient(90deg, transparent, #4EA5D9, #8B5CF6, #F97316, #22C55E, transparent);
-            background-size: 300% 300%;
-            animation: shineBorder 4s ease infinite;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            z-index: 2;
+            display: none;
         }
 
-        /* --- Hero Section with Mesh Gradient --- */
+        /* --- Hero Section — Clean Light --- */
         .members-hero {
             position: relative;
-            padding: 100px 0 60px;
-            background: linear-gradient(160deg, #eef2ff 0%, #e0e7ff 25%, #f0e7ff 50%, #e8f5ff 75%, #f0fdf4 100%);
-            overflow: hidden;
+            padding: 80px 0 40px;
+            background: #ffffff;
             text-align: center;
             z-index: 1;
         }
 
-        /* Mesh gradient blobs */
+        /* Mesh gradient blobs - hidden for clean design */
         .mesh-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.25;
-            animation: blobFloat 20s ease-in-out infinite;
+            display: none;
         }
 
         .mesh-blob-1 {
@@ -190,19 +173,17 @@
         .hero-pill {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 10px 24px;
-            background: rgba(78, 165, 217, 0.1);
-            border: 1px solid rgba(78, 165, 217, 0.25);
+            gap: 8px;
+            padding: 6px 16px;
+            background: rgba(78, 165, 217, 0.08);
+            border: 1px solid rgba(78, 165, 217, 0.2);
             border-radius: 50px;
             color: #2563eb;
-            font-size: 0.82rem;
+            font-size: 0.75rem;
             font-weight: 700;
-            letter-spacing: 2px;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            margin-bottom: 28px;
-            backdrop-filter: blur(10px);
-            animation: pillGlow 3s ease-in-out infinite alternate;
+            margin-bottom: 16px;
         }
 
         @keyframes pillGlow {
@@ -239,12 +220,12 @@
 
         .members-hero h1 {
             font-family: 'Manrope', sans-serif;
-            font-size: 4rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 20px;
-            letter-spacing: -1.5px;
-            line-height: 1.1;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
         }
 
         .members-hero p.hero-desc {
@@ -379,54 +360,33 @@
 
         .section-heading {
             font-family: 'Manrope', sans-serif;
-            font-size: 2.6rem;
+            font-size: 1.8rem;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 40px;
+            margin-bottom: 28px;
             letter-spacing: -0.5px;
         }
 
         .section-desc {
-            font-size: 1.05rem;
+            font-size: 0.95rem;
             color: var(--text-light);
             max-width: 560px;
-            margin: 0 auto 56px;
-            line-height: 1.8;
+            margin: 0 auto 40px;
+            line-height: 1.7;
         }
 
-        /* --- Leadership Cards (Neon Gradient Card inspired) --- */
+        /* --- Leadership Cards Section — Clean Light --- */
         .leadership-section {
-            padding: 60px 0 40px;
-            background: linear-gradient(135deg, #fce7f3 0%, #dbeafe 35%, #d1fae5 65%, #fef3c7 100%);
+            padding: 60px 0;
+            background: #ffffff;
             position: relative;
             z-index: 1;
-            overflow: hidden;
         }
 
-        /* Dot grid pattern */
-        .leadership-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(139, 92, 246, 0.12) 1.5px, transparent 1.5px);
-            background-size: 28px 28px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        /* Floating gradient orbs on leadership section */
+        /* Disable heavy patterns */
+        .leadership-section::before,
         .leadership-section::after {
-            content: '';
-            position: absolute;
-            top: 10%;
-            right: -8%;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(78, 165, 217, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(60px);
-            z-index: 0;
-            animation: blobFloat 18s ease-in-out infinite;
+            display: none;
         }
 
         .leadership-section .container {
@@ -434,295 +394,172 @@
             z-index: 1;
         }
 
-        /* Decorative floating shapes */
-        .decor-shape {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .decor-1 {
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
-            bottom: 10%;
-            left: -5%;
-            filter: blur(40px);
-            animation: blobFloat 22s ease-in-out infinite reverse;
-        }
-
-        .decor-2 {
-            width: 16px;
-            height: 16px;
-            background: linear-gradient(135deg, #4EA5D9, #8B5CF6);
-            top: 15%;
-            left: 8%;
-            opacity: 0.2;
-            animation: floatShape 8s ease-in-out infinite;
-        }
-
-        .decor-3 {
-            width: 12px;
-            height: 12px;
-            background: linear-gradient(135deg, #F97316, #FACC15);
-            top: 25%;
-            right: 12%;
-            opacity: 0.25;
-            animation: floatShape 10s ease-in-out infinite 2s;
-        }
-
-        .decor-4 {
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(135deg, #22C55E, #4EA5D9);
-            bottom: 20%;
-            right: 6%;
-            opacity: 0.15;
-            border-radius: 4px;
-            animation: floatShape 12s ease-in-out infinite 4s;
-            transform: rotate(45deg);
-        }
-
+        /* Hide all decorative floating shapes */
+        .decor-shape,
+        .decor-1,
+        .decor-2,
+        .decor-3,
+        .decor-4,
         .decor-5 {
-            width: 10px;
-            height: 10px;
-            background: #8B5CF6;
-            bottom: 35%;
-            left: 15%;
-            opacity: 0.2;
-            border-radius: 3px;
-            animation: floatShape 9s ease-in-out infinite 1s;
-            transform: rotate(30deg);
-        }
-
-        @keyframes floatShape {
-
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(180deg);
-            }
+            display: none;
         }
 
         .neon-card {
             position: relative;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border-radius: 24px;
-            padding: 48px 32px 40px;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px 24px 36px;
             text-align: center;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
             cursor: default;
-            border: 1px solid rgba(0, 0, 0, 0.04);
+            border: 1px solid #e8ecf1;
+            overflow: hidden;
         }
 
-        /* Neon glow on hover */
         .neon-card::after {
-            content: '';
-            position: absolute;
-            inset: -2px;
-            border-radius: inherit;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: -1;
-        }
-
-        .neon-card.blue-glow::after {
-            background: conic-gradient(from 0deg, #4EA5D9, #8B5CF6, #4EA5D9);
-            filter: blur(12px);
-        }
-
-        .neon-card.purple-glow::after {
-            background: conic-gradient(from 0deg, #8B5CF6, #4EA5D9, #8B5CF6);
-            filter: blur(12px);
-        }
-
-        .neon-card.orange-glow::after {
-            background: conic-gradient(from 0deg, #F97316, #FACC15, #F97316);
-            filter: blur(12px);
-        }
-
-        .neon-card.green-glow::after {
-            background: conic-gradient(from 0deg, #22C55E, #4EA5D9, #22C55E);
-            filter: blur(12px);
+            display: none;
         }
 
         .neon-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
         }
 
-        .neon-card:hover::after {
-            opacity: 0.6;
-        }
-
-        /* Top accent bar */
+        /* Bottom accent bar */
         .neon-card .card-accent {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            border-radius: 24px 24px 0 0;
+            height: 5px;
+            border-radius: 0 0 14px 14px;
         }
 
         .neon-card .card-accent.blue-bar {
-            background: linear-gradient(90deg, #4EA5D9, #8B5CF6);
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
         }
 
         .neon-card .card-accent.purple-bar {
-            background: linear-gradient(90deg, #8B5CF6, #4EA5D9);
+            background: linear-gradient(90deg, #22c55e, #06b6d4);
         }
 
         .neon-card .card-accent.orange-bar {
-            background: linear-gradient(90deg, #F97316, #FACC15);
+            background: linear-gradient(90deg, #f59e0b, #f97316);
         }
 
         .neon-card .card-accent.green-bar {
-            background: linear-gradient(90deg, #22C55E, #4EA5D9);
+            background: linear-gradient(90deg, #ef4444, #ec4899);
         }
 
-        /* Photo with animated ring */
+        /* Photo with thin dashed ring */
         .photo-container {
             position: relative;
-            width: 140px;
-            height: 140px;
-            margin: 0 auto 24px;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
         }
 
-        @keyframes rotateRing {
-            from {
-                transform: rotate(0deg);
-            }
-
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
+        /* Restore thin dashed ring — subtle, non-animated */
         .photo-ring {
+            display: block;
             position: absolute;
-            inset: -5px;
+            inset: -6px;
             border-radius: 50%;
-            border: 2px dashed transparent;
-            animation: rotateRing 15s linear infinite;
-        }
-
-        .photo-ring.ring-blue {
-            border-color: rgba(78, 165, 217, 0.3);
-        }
-
-        .photo-ring.ring-purple {
-            border-color: rgba(139, 92, 246, 0.3);
-        }
-
-        .photo-ring.ring-orange {
-            border-color: rgba(249, 115, 22, 0.3);
-        }
-
-        .photo-ring.ring-green {
-            border-color: rgba(34, 197, 94, 0.3);
-        }
-
-        .neon-card:hover .photo-ring {
-            border-style: solid;
-            animation-duration: 5s;
+            border: 1.5px dashed rgba(0, 0, 0, 0.12);
+            animation: none;
         }
 
         .photo-ring-inner {
-            position: absolute;
-            inset: -12px;
-            border-radius: 50%;
-            border: 2px dashed transparent;
-            animation: rotateRing 20s linear infinite reverse;
+            display: none;
         }
 
-        .photo-ring-inner.ring-blue {
-            border-color: rgba(139, 92, 246, 0.15);
+        /* Override ring colors to be subtle for each role */
+        .photo-ring.ring-blue {
+            border-color: rgba(59, 130, 246, 0.25);
         }
 
-        .photo-ring-inner.ring-purple {
-            border-color: rgba(78, 165, 217, 0.15);
+        .photo-ring.ring-purple {
+            border-color: rgba(34, 197, 94, 0.25);
         }
 
-        .photo-ring-inner.ring-orange {
-            border-color: rgba(250, 204, 21, 0.15);
+        .photo-ring.ring-orange {
+            border-color: rgba(249, 115, 22, 0.25);
         }
 
-        .photo-ring-inner.ring-green {
-            border-color: rgba(78, 165, 217, 0.15);
+        .photo-ring.ring-green {
+            border-color: rgba(239, 68, 68, 0.25);
         }
 
         .leader-photo {
-            width: 140px;
-            height: 140px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
-            border: 4px solid white;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            border: 3px solid white;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
             position: relative;
             z-index: 1;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
         .neon-card:hover .leader-photo {
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
-            transform: scale(1.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
         }
 
-        /* Role badge */
+        /* Role badge — tiny pill */
         .role-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 20px;
+            padding: 6px 14px;
             border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 700;
+            font-size: 0.65rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 2.5px;
-            margin-bottom: 16px;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+
+        .role-badge i {
+            font-size: 0.65rem;
         }
 
         .role-badge.blue {
-            background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+            background: #EFF6FF;
             color: #2563EB;
         }
 
         .role-badge.purple {
-            background: linear-gradient(135deg, #F5F3FF, #EDE9FE);
-            color: #7C3AED;
+            background: #F0FDF4;
+            color: #16A34A;
         }
 
         .role-badge.orange {
-            background: linear-gradient(135deg, #FFF7ED, #FFEDD5);
+            background: #FFF7ED;
             color: #EA580C;
         }
 
         .role-badge.green {
-            background: linear-gradient(135deg, #F0FDF4, #DCFCE7);
-            color: #16A34A;
+            background: #FEF2F2;
+            color: #DC2626;
         }
 
         .leader-name {
             font-family: 'Manrope', sans-serif;
-            font-size: 1.4rem;
+            font-size: 1.15rem;
             font-weight: 800;
-            color: var(--text-dark);
+            color: #0f172a;
             margin-bottom: 6px;
+            line-height: 1.3;
         }
 
         .leader-subtitle {
-            font-size: 0.9rem;
-            color: var(--text-light);
-            line-height: 1.6;
+            font-size: 0.85rem;
+            color: #64748b;
+            line-height: 1.4;
+            margin-bottom: 4px;
         }
 
         .leader-subtitle strong {
@@ -730,42 +567,40 @@
         }
 
         .leader-subtitle .term {
-            color: var(--blue-primary);
+            display: block;
+            margin-top: 4px;
+            font-size: 0.75rem;
             font-weight: 700;
         }
 
-        /* --- Members Section with Magic Card Effect --- */
+        /* Color-code the term text to match role */
+        .neon-card.blue-glow .leader-subtitle .term {
+            color: #2563EB;
+        }
+
+        .neon-card.purple-glow .leader-subtitle .term {
+            color: #16A34A;
+        }
+
+        .neon-card.orange-glow .leader-subtitle .term {
+            color: #EA580C;
+        }
+
+        .neon-card.green-glow .leader-subtitle .term {
+            color: #DC2626;
+        }
+
+        /* --- Members Section — Clean --- */
         .members-section {
-            padding: 60px 0;
-            background: linear-gradient(160deg, #dbeafe 0%, #e9d5ff 30%, #fce7f3 60%, #d1fae5 100%);
+            padding: 40px 0;
+            background: #ffffff;
             position: relative;
             z-index: 1;
-            overflow: hidden;
         }
 
-        /* Dot grid pattern on members section */
-        .members-section::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(78, 165, 217, 0.12) 1.5px, transparent 1.5px);
-            background-size: 32px 32px;
-            z-index: 0;
-            pointer-events: none;
-        }
-
+        .members-section::before,
         .members-section::after {
-            content: '';
-            position: absolute;
-            bottom: -10%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(80px);
-            z-index: 0;
-            animation: blobFloat 25s ease-in-out infinite;
+            display: none;
         }
 
         .members-section .container {
@@ -775,12 +610,11 @@
 
         .magic-card {
             position: relative;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            background: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 16px;
-            padding: 28px 28px 28px 125px;
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border-radius: 12px;
+            padding: 20px 20px 20px 100px;
+            transition: all 0.3s ease;
             cursor: default;
             overflow: hidden;
         }
@@ -825,9 +659,8 @@
         }
 
         .magic-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-            border-color: rgba(78, 165, 217, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
         }
 
         .magic-card:hover::before {
@@ -839,23 +672,22 @@
 
         .member-photo {
             position: absolute;
-            left: 20px;
+            left: 16px;
             top: 50%;
             transform: translateY(-50%);
-            width: 85px;
-            height: 85px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             object-fit: cover;
             object-position: center;
             border: 2px solid #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             z-index: 1;
-            transition: all 0.4s ease;
+            transition: all 0.3s ease;
         }
 
         .magic-card:hover .member-photo {
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
 
@@ -878,17 +710,16 @@
             z-index: 1;
         }
 
-        /* --- Co-opted Section --- */
+        /* --- Co-opted Section — Clean --- */
         .coopted-section {
-            padding: 60px 0;
-            background: linear-gradient(160deg, #f0e7ff 0%, #e8f5ff 35%, #f0fdf4 65%, #fef3c7 100%);
+            padding: 40px 0;
+            background: #ffffff;
             position: relative;
             z-index: 1;
-            overflow: hidden;
         }
 
         .coopted-section .mesh-blob {
-            opacity: 0.2;
+            display: none;
         }
 
         .coopted-section .section-heading {
@@ -901,44 +732,23 @@
 
         .coopted-card {
             position: relative;
-            background: rgba(255, 255, 255, 0.85);
+            background: #ffffff;
             border: 1px solid rgba(0, 0, 0, 0.06);
-            border-radius: 20px;
-            padding: 36px 24px;
+            border-radius: 16px;
+            padding: 24px 16px;
             text-align: center;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            transition: all 0.3s ease;
             overflow: hidden;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
         }
 
-        /* Shine border on coopted cards */
         .coopted-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(90deg, transparent, #8B5CF6, #4EA5D9, transparent);
-            background-size: 300% 300%;
-            animation: shineBorder 6s ease infinite;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
-            z-index: 2;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .coopted-card:hover::before {
-            opacity: 1;
+            display: none;
         }
 
         .coopted-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 20px 60px rgba(139, 92, 246, 0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
         }
 
         .coopted-avatar {
@@ -1073,17 +883,17 @@
         /* --- Responsive --- */
         @media (max-width: 768px) {
             .members-hero {
-                padding: 130px 20px 70px;
+                padding: 100px 16px 30px;
             }
 
             .members-hero h1 {
-                font-size: 2.4rem;
+                font-size: 1.6rem;
             }
 
             .hero-stats-bar {
                 flex-direction: column;
-                max-width: 250px;
-                border-radius: 16px;
+                max-width: 220px;
+                border-radius: 12px;
             }
 
             .stat-block+.stat-block::before {
@@ -1091,56 +901,63 @@
                 height: 1px;
                 top: 0;
                 left: 20%;
-                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
             }
 
             .stat-num {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             .section-heading {
-                font-size: 1.9rem;
+                font-size: 1.4rem;
+                margin-bottom: 20px;
             }
 
             .neon-card {
-                padding: 36px 24px 32px;
+                padding: 16px 12px 20px;
             }
 
             .photo-container {
-                width: 110px;
-                height: 110px;
+                width: 64px;
+                height: 64px;
             }
 
             .leader-photo {
-                width: 110px;
-                height: 110px;
+                width: 64px;
+                height: 64px;
             }
 
             .leader-name {
-                font-size: 1.15rem;
+                font-size: 0.85rem;
             }
 
             .magic-card {
-                padding: 22px 22px 22px 105px;
+                padding: 16px 16px 16px 85px;
+            }
+
+            .member-photo {
+                width: 55px;
+                height: 55px;
+                left: 14px;
             }
 
             .member-num {
                 left: auto;
-                top: 12px;
-                right: 12px;
-                width: 28px;
-                height: 28px;
-                font-size: 0.75rem;
-            }
-
-            .member-photo {
-                width: 70px;
-                height: 70px;
-                left: 18px;
+                top: 10px;
+                right: 10px;
+                width: 24px;
+                height: 24px;
+                font-size: 0.7rem;
             }
 
             .mesh-blob {
-                opacity: 0.2;
+                display: none;
+            }
+
+            .coopted-avatar {
+                width: 52px;
+                height: 52px;
+                font-size: 1.1rem;
+                margin-bottom: 12px;
             }
         }
     </style>
@@ -1205,8 +1022,7 @@
                                                     <span class="nav-panel-title">GCC Initiatives</span>
                                                 </div>
                                             </a>
-                                            <a href="global-udaan.html"
-                                                class="nav-panel-item">
+                                            <a href="global-udaan.html" class="nav-panel-item">
                                                 <i class="bi bi-rocket-takeoff"></i>
                                                 <div class="nav-panel-content">
                                                     <span class="nav-panel-title">Global Udaan</span>
@@ -1239,7 +1055,8 @@
                                             Matrix</a>
                                     </div>
                                 </li>
-                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous events</a></li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous
+                                        events</a></li>
                             </ul>
                         </div>
                     </div>
@@ -1247,7 +1064,8 @@
                     <div class="nav-search reveal-up" style="animation-delay: 0.6s">
                         <div class="search-container" id="searchContainer">
                             <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                            <span class="material-symbols-outlined search-icon"
+                                onclick="toggleMobileSearch()">search</span>
                         </div>
                     </div>
 
@@ -1292,15 +1110,15 @@
                     <ul class="mobile-sub-menu">
                         <li><a href="https://apo.icai.org/" onclick="toggleMobileMenu()">APO Programs</a></li>
                         <li><a href="https://gcc.icai.org/" onclick="toggleMobileMenu()">GCC Initiatives</a></li>
-                        <li><a href="global-udaan.html"
-                                onclick="toggleMobileMenu()">Global Udaan</a></li>
+                        <li><a href="global-udaan.html" onclick="toggleMobileMenu()">Global Udaan</a></li>
                         <li><a href="itec-programs.html" onclick="toggleMobileMenu()">ITEC Programs</a></li>
                         <li><a href="certificate-courses.html" onclick="toggleMobileMenu()">Certificate Courses</a></li>
                     </ul>
                 </li>
                 <li class="mobile-has-dropdown">
                     <a href="#"
-                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming events <span class="material-symbols-outlined">expand_more</span></a>
+                        onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming
+                        events <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
                         <li><a href="ifsca.html" onclick="toggleMobileMenu()">ICAI Delegation
                                 visit to Gift City - IFSCA</a></li>
@@ -1320,92 +1138,82 @@
 
 
 
-        <div class="container">
-            <div class="text-center mb-5">
-                <div class="section-chip blue scroll-reveal"><i class="bi bi-shield-check"></i> Committee Leadership
-                </div>
-                <h2 class="section-heading scroll-reveal">President, Vice-President, Chairman & Vice-Chairman</h2>
+    <div class="container">
+        <div class="text-center mb-5">
+            <div class="section-chip blue scroll-reveal"><i class="bi bi-shield-check"></i> Committee Leadership
             </div>
-            <div class="row justify-content-center g-4">
-                <!-- President -->
-                <div class="col-md-6 col-lg-3 d-flex">
-                    <div class="neon-card blue-glow shine-border scroll-reveal stagger-1 flex-fill">
-                        <div class="card-accent blue-bar"></div>
-                        <div class="photo-container">
-                            <div class="photo-ring ring-blue"></div>
-                            <div class="photo-ring-inner ring-blue"></div>
-                            <img alt="CA. Prasanna Kumar D" class="leader-photo" src="images/pp.jpg" />
-                        </div>
-                        <div class="role-badge blue"><i class="bi bi-star-fill"></i> President</div>
-                        <h4 class="leader-name">CA. Prasanna Kumar D</h4>
-                        <p class="leader-subtitle">President, ICAI<br /><span class="term">Council Term: 2026–27</span>
-                        </p>
+            <h2 class="section-heading scroll-reveal">President, Vice-President, Chairman & Vice-Chairman</h2>
+        </div>
+        <div class="row justify-content-center g-4">
+            <!-- President -->
+            <div class="col-md-6 col-lg-3 d-flex">
+                <div class="neon-card blue-glow shine-border scroll-reveal stagger-1 flex-fill">
+                    <div class="card-accent blue-bar"></div>
+                    <div class="photo-container">
+                        <div class="photo-ring ring-blue"></div>
+                        <div class="photo-ring-inner ring-blue"></div>
+                        <img alt="CA. Prasanna Kumar D" class="leader-photo" src="images/pp.jpg" />
                     </div>
+                    <div class="role-badge blue"><i class="bi bi-star-fill"></i> President</div>
+                    <h4 class="leader-name">CA. Prasanna Kumar D</h4>
+                    <p class="leader-subtitle">President, ICAI<br /><span class="term">Council Term: 2026–27</span>
+                    </p>
                 </div>
-                <!-- Vice President -->
-                <div class="col-md-6 col-lg-3 d-flex">
-                    <div class="neon-card purple-glow shine-border scroll-reveal stagger-2 flex-fill">
-                        <div class="card-accent purple-bar"></div>
-                        <div class="photo-container">
-                            <div class="photo-ring ring-purple"></div>
-                            <div class="photo-ring-inner ring-purple"></div>
-                            <img alt="CA. Mangesh P. Kinare" class="leader-photo" src="images/vp.jpg"
-                                style="object-position: top center;" />
-                        </div>
-                        <div class="role-badge purple"><i class="bi bi-star-fill"></i> Vice President</div>
-                        <h4 class="leader-name">CA. Mangesh P. Kinare</h4>
-                        <p class="leader-subtitle">Vice-President, ICAI<br /><span class="term">Council Term:
-                                2026–27</span></p>
+            </div>
+            <!-- Vice President -->
+            <div class="col-md-6 col-lg-3 d-flex">
+                <div class="neon-card purple-glow shine-border scroll-reveal stagger-2 flex-fill">
+                    <div class="card-accent purple-bar"></div>
+                    <div class="photo-container">
+                        <div class="photo-ring ring-purple"></div>
+                        <div class="photo-ring-inner ring-purple"></div>
+                        <img alt="CA. Mangesh P. Kinare" class="leader-photo" src="images/vp.jpg"
+                            style="object-position: top center;" />
                     </div>
+                    <div class="role-badge purple"><i class="bi bi-star-fill"></i> Vice President</div>
+                    <h4 class="leader-name">CA. Mangesh P. Kinare</h4>
+                    <p class="leader-subtitle">Vice-President, ICAI<br /><span class="term">Council Term:
+                            2026–27</span></p>
                 </div>
-                <!-- Chairman -->
-                <div class="col-md-6 col-lg-3 d-flex">
-                    <div class="neon-card orange-glow shine-border scroll-reveal stagger-3 flex-fill">
-                        <div class="card-accent orange-bar"></div>
-                        <div class="photo-container">
-                            <div class="photo-ring ring-orange"></div>
-                            <div class="photo-ring-inner ring-orange"></div>
-                            <img alt="CA. Sanjib Sanghi" class="leader-photo" src="images/chairman.jpg" />
-                        </div>
-                        <div class="role-badge orange"><i class="bi bi-trophy-fill"></i> Chairman</div>
-                        <h4 class="leader-name">CA. Sanjib Sanghi</h4>
-                        <p class="leader-subtitle">Chairman, GTC<br /><span class="term">Global Trade &amp;
-                                Services</span></p>
+            </div>
+            <!-- Chairman -->
+            <div class="col-md-6 col-lg-3 d-flex">
+                <div class="neon-card orange-glow shine-border scroll-reveal stagger-3 flex-fill">
+                    <div class="card-accent orange-bar"></div>
+                    <div class="photo-container">
+                        <div class="photo-ring ring-orange"></div>
+                        <div class="photo-ring-inner ring-orange"></div>
+                        <img alt="CA. Sanjib Sanghi" class="leader-photo" src="images/chairman.jpg" />
                     </div>
+                    <div class="role-badge orange"><i class="bi bi-trophy-fill"></i> Chairman</div>
+                    <h4 class="leader-name">CA. Sanjib Sanghi</h4>
+                    <p class="leader-subtitle">Chairman, GTC<br /><span class="term">Global Trade &amp;
+                            Services</span></p>
                 </div>
-                <!-- Vice-Chairman -->
-                <div class="col-md-6 col-lg-3 d-flex">
-                    <div class="neon-card green-glow shine-border scroll-reveal stagger-4 flex-fill">
-                        <div class="card-accent green-bar"></div>
-                        <div class="photo-container">
-                            <div class="photo-ring ring-green"></div>
-                            <div class="photo-ring-inner ring-green"></div>
-                            <img alt="CA. (Dr.) Rohit Ruwatia Agarwal" class="leader-photo"
-                                src="images/vicechairman.jpg" />
-                        </div>
-                        <div class="role-badge green"><i class="bi bi-trophy-fill"></i> Vice-Chairman</div>
-                        <h4 class="leader-name">CA. (Dr.) Rohit Ruwatia Agarwal</h4>
-                        <p class="leader-subtitle">Vice-Chairman, GTC<br /><span class="term">Global Trade &amp;
-                                Services</span></p>
+            </div>
+            <!-- Vice-Chairman -->
+            <div class="col-md-6 col-lg-3 d-flex">
+                <div class="neon-card green-glow shine-border scroll-reveal stagger-4 flex-fill">
+                    <div class="card-accent green-bar"></div>
+                    <div class="photo-container">
+                        <div class="photo-ring ring-green"></div>
+                        <div class="photo-ring-inner ring-green"></div>
+                        <img alt="CA. (Dr.) Rohit Ruwatia Agarwal" class="leader-photo" src="images/vicechairman.jpg" />
                     </div>
+                    <div class="role-badge green"><i class="bi bi-trophy-fill"></i> Vice-Chairman</div>
+                    <h4 class="leader-name">CA. (Dr.) Rohit Ruwatia Agarwal</h4>
+                    <p class="leader-subtitle">Vice-Chairman, GTC<br /><span class="term">Global Trade &amp;
+                            Services</span></p>
                 </div>
             </div>
         </div>
+    </div>
     </section>
     <!-- ========================================
          COUNCIL MEMBERS
          ======================================== -->
     <section class="members-section">
-        <!-- Decorative gradient orbs -->
-        <div
-            style="position:absolute;top:5%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(78,165,217,0.15) 0%,transparent 70%);border-radius:50%;filter:blur(50px);pointer-events:none;z-index:0;">
-        </div>
-        <div
-            style="position:absolute;top:40%;left:-8%;width:350px;height:350px;background:radial-gradient(circle,rgba(249,115,22,0.12) 0%,transparent 70%);border-radius:50%;filter:blur(60px);pointer-events:none;z-index:0;">
-        </div>
-        <div
-            style="position:absolute;bottom:10%;right:5%;width:300px;height:300px;background:radial-gradient(circle,rgba(34,197,94,0.12) 0%,transparent 70%);border-radius:50%;filter:blur(40px);pointer-events:none;z-index:0;">
-        </div>
+        <!-- Removed decorative gradient orbs for clean white background -->
         <div class="container">
             <div class="text-center mb-5">
                 <div class="section-chip purple scroll-reveal"><i class="bi bi-people-fill"></i> Council Members</div>
@@ -1566,7 +1374,9 @@
                     <ul class="footer-list">
                         <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
                         <li><a href="#">Training & Capacity Building</a></li>
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member Opportunities</a></li>
+                        <li><a
+                                href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member
+                                Opportunities</a></li>
                         <li><a href="events.html">Previous events</a></li>
                     </ul>
                 </div>
@@ -1578,7 +1388,7 @@
                         <li><a href="reports-publications.html">Reports & Publications</a></li>
                         <li><a href="#">Research & Insights</a></li>
                         <li><a href="#">Guidelines & Policies</a></li>
-                        
+
                     </ul>
                 </div>
 
