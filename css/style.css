@@ -1972,18 +1972,17 @@ h6,
 
 /* Card Number */
 .deck-card .number {
-    font-size: 240px; /* Even larger for dramatic effect */
-    font-weight: 900;
+    font-size: 110px; /* Scaled to fit fully in frame */
+    font-weight: 850;
     position: absolute;
-    right: -45px; /* Deeper move-out effect */
-    top: -35px;
-    color: rgba(255, 255, 255, 0.22);
+    right: 20px;
+    top: 20px;
+    color: rgba(255, 255, 255, 0.15); /* Subtle as requested */
     pointer-events: none;
     z-index: 1;
-    line-height: 0.8;
+    line-height: 1;
     transition: all 0.8s ease;
-    letter-spacing: -0.15em;
-    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    letter-spacing: -0.05em;
 }
 
 /* === STACKED STATE === */
