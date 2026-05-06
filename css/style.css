@@ -2113,31 +2113,36 @@ h6,
 }
 
 /* Theme Mappings matched to Pillar Card Gradients */
-.details-panel[data-theme="1"] { /* Blue - Trade & Market Integration */
+.details-panel[data-theme="1"] {
+    /* Blue - Trade & Market Integration */
     --theme-color: #0284c7;
     --theme-bg: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     --theme-border: rgba(2, 132, 199, 0.15);
 }
 
-.details-panel[data-theme="2"] { /* Green - Global Services & Professional Mobility */
+.details-panel[data-theme="2"] {
+    /* Green - Global Services & Professional Mobility */
     --theme-color: #059669;
     --theme-bg: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
     --theme-border: rgba(5, 150, 105, 0.15);
 }
 
-.details-panel[data-theme="3"] { /* Amber - Policy, Multilateral & Government Affairs */
+.details-panel[data-theme="3"] {
+    /* Amber - Policy, Multilateral & Government Affairs */
     --theme-color: #d97706;
     --theme-bg: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
     --theme-border: rgba(217, 119, 6, 0.15);
 }
 
-.details-panel[data-theme="4"] { /* Orange - GCC & Emerging Global Ecosystems */
+.details-panel[data-theme="4"] {
+    /* Orange - GCC & Emerging Global Ecosystems */
     --theme-color: #ea580c;
     --theme-bg: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
     --theme-border: rgba(234, 88, 12, 0.15);
 }
 
-.details-panel[data-theme="5"] { /* Red - Capacity Building Programs */
+.details-panel[data-theme="5"] {
+    /* Red - Capacity Building Programs */
     --theme-color: #dc2626;
     --theme-bg: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
     --theme-border: rgba(220, 38, 38, 0.15);
@@ -2702,7 +2707,7 @@ h6,
 
 .footer-dark {
     position: relative;
-    background: #0B1120;
+    background: #031e44;
     color: rgba(255, 255, 255, 0.5);
     /* Lighter text for luxury feel */
     font-size: 14px;
@@ -3449,7 +3454,7 @@ h6,
         font-size: 14px;
     }
 }
-}
+
 
 /* ===================================================
    SaaS Deep Spacing Overrides
@@ -4959,47 +4964,784 @@ a.knowmore {
     box-shadow: 0 12px 25px rgba(243, 156, 18, 0.15);
 }
 
-/* Mobile Adjustments */
+/* ============================================================
+   MOBILE OPTIMIZATIONS — MAX-WIDTH 768px
+   All desktop styles are untouched. Only mobile fixes below.
+   ============================================================ */
 @media (max-width: 768px) {
-    .partners-section {
-        padding: 60px 0 20px;
-        margin-top: 20px;
+
+    /* ── GLOBAL ── */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
     }
 
-    .quick-access-section {
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100vw;
+        width: 100%;
+    }
+
+    body {
+        font-size: 15px;
+    }
+
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* ── REDUCE HEAVY BLUR EFFECTS FOR PERFORMANCE ── */
+    .mesh-blob {
+        display: none;
+    }
+
+    .gradients-container {
+        display: none;
+    }
+
+    /* ── HEADER / NAVIGATION ── */
+    .header-top {
+        padding: 8px 0;
+    }
+
+    .home-header .header-top .container {
+        flex-wrap: nowrap;
+        gap: 8px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-top-left,
+    .header-top-right {
+        flex: 0 0 auto;
+        width: auto;
+    }
+
+    .header-top-center {
+        flex: 1 1 auto;
+        order: 0;
+        width: auto;
+    }
+
+    .header .logo,
+    .header .logo-secondary {
+        width: 110px !important;
+    }
+
+    .committee-name {
+        font-size: 11px !important;
+        white-space: normal !important;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .mobile-controls {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        padding: 8px;
+        min-height: 44px;
+        min-width: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-nav {
+        display: none;
+    }
+
+    /* ── MOBILE OVERLAY MENU ── */
+    .mobile-overlay {
+        padding: 20px 20px;
+        overflow-y: auto;
+    }
+
+    .overlay-header {
+        margin-bottom: 24px;
+        padding-bottom: 18px;
+    }
+
+    .mb-committee {
+        font-size: 13px;
+        max-width: 180px;
+    }
+
+    .mb-parent {
+        font-size: 10px;
+    }
+
+    .close-overlay span {
+        font-size: 32px !important;
+    }
+
+    .mobile-menu-search {
+        margin-bottom: 20px;
+    }
+
+    .mobile-search-box {
+        display: flex;
+        align-items: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 10px 14px;
+        gap: 10px;
+    }
+
+    .mobile-search-input {
+        background: transparent;
+        border: none;
+        outline: none;
+        color: #fff;
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .mobile-search-input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+    .mobile-search-icon {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 20px !important;
+    }
+
+    .mobile-nav ul {
+        text-align: left;
+    }
+
+    .mobile-nav li {
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mobile-nav > ul > li:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-nav a {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 4px;
+        min-height: 48px;
+    }
+
+    .mobile-nav a .material-symbols-outlined {
+        font-size: 18px !important;
+        opacity: 0.6;
+        transition: transform 0.3s ease;
+    }
+
+    .mobile-sub-menu {
+        list-style: none;
+        padding: 0 0 8px 16px;
+        margin: 0;
+        display: none;
+    }
+
+    .mobile-sub-menu.active {
+        display: block;
+    }
+
+    .mobile-sub-menu li {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .mobile-sub-menu a {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 4px;
+        min-height: 40px;
+        opacity: 0.85;
+    }
+
+    /* ── HERO / BANNER ── */
+    .hero-container {
+        width: 100% !important;
+        margin: 0 0 8px !important;
+        border-radius: 0;
+    }
+
+    .hero-container .carousel-inner {
+        border-radius: 0;
+        aspect-ratio: 16 / 9;
+    }
+
+    .hero-container::before,
+    .hero-container::after {
+        display: none;
+    }
+
+    .carousel-caption {
+        padding: 0 16px 20px;
+        bottom: 10px;
+        left: 0;
+        right: 0;
+        text-align: left;
+    }
+
+    .carousel-caption h1.display-2 {
+        font-size: clamp(22px, 7vw, 36px) !important;
+        line-height: 1.15;
+        margin-bottom: 6px;
+    }
+
+    .carousel-caption .lead {
+        font-size: 13px;
+        opacity: 0.9;
+        margin-bottom: 0;
+    }
+
+    .carousel-indicators {
+        bottom: 8px;
+    }
+
+    /* ── SECTION SPACING ── */
+    .section-warm {
+        padding: 10px 0;
+    }
+
+    .section-block {
+        padding: 30px 0;
+    }
+
+    .py-5 {
+        padding-top: 30px !important;
         padding-bottom: 30px !important;
     }
 
-    .ql-bar-item {
-        padding: 12px 18px;
+    .pt-5 {
+        padding-top: 30px !important;
     }
 
-    .ql-label {
+    .pb-5 {
+        padding-bottom: 30px !important;
+    }
+
+    /* ── SECTION TITLES ── */
+    .section-title {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    .section-tag {
+        font-size: 10px;
+        padding: 4px 12px;
+    }
+
+    /* ── PILLAR DECK CARDS — physical deck animation on mobile ── */
+
+    .board {
+        position: relative !important;
+        width: 100% !important;
+        height: 420px !important; /* 5 cards * 76px + 4 * 10px gaps */
+        min-height: unset !important;
+        display: block !important;
+        margin-top: 10px;
+        transition: height 0.4s ease;
+    }
+
+    .deck-card {
+        position: absolute !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 76px !important;
+        border-radius: 14px !important;
+        z-index: 5 !important;
+        display: flex !important;
+        align-items: center !important;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Spread State (Vertical) */
+    .deck-card[data-index="1"] { top: 0 !important; }
+    .deck-card[data-index="2"] { top: 86px !important; }
+    .deck-card[data-index="3"] { top: 172px !important; }
+    .deck-card[data-index="4"] { top: 258px !important; }
+    .deck-card[data-index="5"] { top: 344px !important; }
+
+    .deck-card .card-title {
         font-size: 13px;
+        font-weight: 700;
+        padding: 0 56px 0 16px;
+        text-align: left;
+        z-index: 5;
+        position: relative;
+        line-height: 1.3;
+        letter-spacing: 0;
+        text-transform: uppercase;
+        bottom: auto !important;
     }
 
-    .logo-item {
-        width: 160px;
-        height: 80px;
+    .deck-card .number {
+        font-size: 64px;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.22;
     }
 
-    .logo-track {
-        width: calc(160px * 14 + 20px * 14);
-        gap: 20px;
+    /* === STACKED STATE (Mobile) === */
+    .board.is-stacked {
+        height: auto !important;
+        min-height: 400px !important;
+        padding-top: 100px !important; /* Space for the stacked absolute cards */
     }
 
-    .partner-card {
-        padding: 15px;
+    /* All cards stack at the top */
+    .board.is-stacked .deck-card {
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Subtle rotations to look like a physical deck */
+    .board.is-stacked .deck-card:not(.active)[data-index="1"] { transform: translate(-3px, 3px) rotate(-2deg) !important; z-index: 1 !important; }
+    .board.is-stacked .deck-card:not(.active)[data-index="2"] { transform: translate(-1.5px, 1.5px) rotate(-1deg) !important; z-index: 2 !important; }
+    .board.is-stacked .deck-card:not(.active)[data-index="3"] { transform: translate(0, 0) rotate(0deg) !important; z-index: 3 !important; }
+    .board.is-stacked .deck-card:not(.active)[data-index="4"] { transform: translate(1.5px, -1.5px) rotate(1deg) !important; z-index: 4 !important; }
+    .board.is-stacked .deck-card:not(.active)[data-index="5"] { transform: translate(3px, -3px) rotate(2deg) !important; z-index: 5 !important; }
+
+    .board.is-stacked .deck-card.active {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.28) !important;
+        transform: scale(1.02) !important;
+        z-index: 10 !important;
+    }
+
+    /* Fade out text on inactive stacked cards to keep it clean */
+    .board.is-stacked .deck-card:not(.active) .card-title,
+    .board.is-stacked .deck-card:not(.active) .number {
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+
+    /* Details Panel */
+    .details-panel {
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 260px !important;
+        padding: 18px 16px !important;
+        border-radius: 14px !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        z-index: -1 !important;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .board.is-stacked .details-panel {
+        position: relative !important;
+        top: auto !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin-top: 0 !important; /* Rely on board's padding-top to prevent margin collapse */
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        z-index: 1 !important;
+        transition-delay: 0.1s !important;
+    }
+
+    .panel-heading {
+        font-size: 1.05rem;
+    }
+
+    .details-panel .hover-list li {
+        font-size: 13px;
+        padding: 11px 12px;
+        margin-bottom: 7px;
+    }
+
+    .details-panel .sub-mini-card {
+        padding: 10px 12px;
+        min-height: 56px;
+        gap: 10px;
+    }
+
+    .details-panel .sub-mini-card i {
+        font-size: 26px;
+    }
+
+    .details-panel .sub-mini-card img {
+        width: 34px;
+        height: 34px;
+    }
+
+    /* ── STAT BANNER ── */
+    .stat-banner {
+        padding: 24px 0;
+    }
+
+    .stat-banner-number {
+        font-size: 30px;
+    }
+
+    .stat-banner-suffix {
+        font-size: 22px;
+    }
+
+    .stat-banner-label {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    /* ── EVENTS SECTION ── */
+    .events-section .container {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .event-card {
+        margin-bottom: 16px;
+        padding: 20px 16px;
+    }
+
+    .event-content h5 {
+        font-size: 16px;
+        padding-right: 70px;
+        line-height: 1.3;
+    }
+
+    .event-content p {
+        font-size: 13px;
+        padding-right: 70px;
+    }
+
+    .event-date {
+        top: 16px;
+        right: 14px;
+        padding: 6px 10px;
+    }
+
+    .event-date span {
+        font-size: 16px;
+    }
+
+    .event-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .event-btn {
+        font-size: 13px;
+        padding: 9px 18px;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .view-all-btn {
+        font-size: 13px;
+        padding: 9px 20px;
+    }
+
+    /* ── QUICK LINKS TABS ── */
+    .quick-links-tabs-section {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .tabs-wrapper {
+        gap: 8px;
+        padding: 10px 18px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tab-pill {
+        padding: 10px 16px;
+        font-size: 13px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    /* ── QUICK ACCESS LINKS (blue/purple/orange bar) ── */
+    .quick-access-section {
+        padding: 0 0 16px !important;
+    }
+
+    .ql-bar-item {
+        padding: 12px 14px !important;
+        border-radius: 14px;
+        min-height: 54px;
+    }
+
+    .ql-icon-box {
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .ql-text-content {
+        font-size: 13px !important;
+        padding: 0 12px !important;
+        line-height: 1.3 !important;
+    }
+
+    /* ── MODERN CARDS ── */
+    .modern-card {
+        min-height: 280px;
+        padding: 24px 18px;
+        margin-bottom: 16px;
+    }
+
+    .modern-card h4 {
+        font-size: 20px;
+    }
+
+    .modern-card p {
+        font-size: 14px;
+    }
+
+    /* ── MAP SECTION ── */
+    .map-section {
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+
+    .mapcontainer {
+        padding: 20px 16px !important;
         border-radius: 16px;
     }
 
-    @keyframes scrollLogos {
-        0% {
-            transform: translateX(0);
-        }
+    .maptext {
+        margin-top: 0 !important;
+        margin-bottom: 20px;
+    }
 
-        100% {
-            transform: translateX(calc(-160px * 7 - 20px * 7));
-        }
+    .maptext h3 {
+        font-size: 28px;
+    }
+
+    .maptext p {
+        font-size: 14px;
+        margin-top: 12px;
+        margin-bottom: 16px;
+    }
+
+    .mapcontainer .row {
+        flex-direction: column;
+    }
+
+    .mapcontainer .col-sm-4,
+    .mapcontainer .col-sm-8 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    #world-map {
+        height: 260px !important;
+        margin-top: 12px;
+    }
+
+    .stat-grid {
+        gap: 10px;
+        margin-top: 16px;
+    }
+
+    .stat-card {
+        padding: 16px 10px;
+    }
+
+    .stat-number {
+        font-size: 26px;
+    }
+
+    .stat-suffix {
+        font-size: 18px;
+    }
+
+    .stat-label {
+        font-size: 12px;
+    }
+
+    .blur-btn2 {
+        padding: 12px 24px;
+        font-size: 14px;
+        width: 100%;
+        justify-content: center;
+        margin-top: 16px;
+    }
+
+    /* ── PARTNERS CAROUSEL ── */
+    .partners-section {
+        padding: 20px 0;
+        margin-top: 0;
+    }
+
+    .logo-item {
+        width: 140px;
+        height: 60px;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider {
+        margin: 0 18px;
+    }
+
+    /* ── FOOTER ── */
+    .footer-dark {
+        padding-bottom: 20px;
+    }
+
+    .footer-dark .container {
+        padding-left: 18px !important;
+        padding-right: 18px !important;
+    }
+
+    .footer-dark .row {
+        flex-direction: column;
+    }
+
+    .footer-dark .col-lg-3,
+    .footer-dark .col-md-6 {
+        width: 100%;
+        max-width: 100%;
+        flex: 0 0 100%;
+        padding-right: 0 !important;
+        margin-bottom: 28px;
+    }
+
+    .footer-title {
+        font-size: 14px;
+        margin-bottom: 14px;
+    }
+
+    .footer-text {
+        font-size: 13px;
+        line-height: 1.7;
+        max-width: 100%;
+    }
+
+    .footer-list li {
+        margin-bottom: 8px;
+    }
+
+    .footer-list a {
+        font-size: 13px;
+    }
+
+    .footer-contact-item {
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .social-icons {
+        margin-top: 16px !important;
+    }
+
+    .social-icons a {
+        font-size: 18px;
+        min-width: 36px;
+        min-height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .footer-links a {
+        margin-left: 0;
+        font-size: 12px;
+    }
+
+    .footer-divider {
+        margin: 20px 0 12px;
+    }
+
+    /* ── BANNER TEXT (inner page banners) ── */
+    .banner {
+        height: 220px;
+    }
+
+    .banner-text {
+        margin-top: 50px;
+    }
+
+    .banner-text h1 {
+        font-size: 30px;
+    }
+
+    .banner-text h3 {
+        font-size: 22px;
+    }
+
+    .banner-text p {
+        font-size: 15px;
+    }
+
+    /* ── BUTTONS — bigger tap targets ── */
+    .blur-btn,
+    .blur-btn2,
+    .gradient-btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* ── AMBIENT ORBS — disable on mobile ── */
+    .ambient-orb {
+        display: none;
+    }
+
+    /* ── VIBRANT HEADING ── */
+    .vibrant-heading {
+        font-size: 20px !important;
+    }
+
+    /* ── SCROLL REVEAL — no stagger lag on mobile ── */
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+    }
+
+    .scroll-reveal.revealed {
+        opacity: 1;
+        transform: none;
     }
 }
+
+
