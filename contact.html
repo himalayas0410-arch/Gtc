@@ -148,34 +148,17 @@
     <div id="scrollProgress"></div>
     <div class="header home-header">
         <div class="header-top">
-            <div class="container header-top-container">
-                <a href="index.html" class="header-logo reveal-up">
-                    <div class="logo-group">
-                        <img src="images/logo.png" class="logo" />
-                        <span class="logo-divider"></span>
-                        <img src="images/logogloba.png" class="logo-secondary" />
-                    </div>
-                    <div class="branding-text">
-                        <h3 class="committee-name">Global Trade & Services Committee</h3>
-                    </div>
-                </a>
-
-                <!-- Utility Actions moved here -->
-                <div class="header-actions-group">
-                    <div class="header-actions">
-                        <div class="search-container top-tier" id="searchContainer">
-                            <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon"
-                                onclick="toggleMobileSearch()">search</span>
-                        </div>
-                    </div>
-
-                    <!-- Mobile Toggle Buttons -->
-                    <div class="mobile-controls">
-                        <button class="menu-toggle" onclick="toggleMobileMenu()">
-                            <span class="material-symbols-outlined">menu</span>
-                        </button>
-                    </div>
+            <div class="container">
+                <div class="header-top-left">
+                    <a href="index.html" class="reveal-up">
+                        <img src="images/logo.png" class="header-logo-img" />
+                    </a>
+                </div>
+                <div class="header-top-center reveal-up">
+                    <h1 class="committee-title">Global Trade & Services Committee</h1>
+                </div>
+                <div class="header-top-right reveal-up">
+                    <img src="images/logogloba.png" class="logo-right" />
                 </div>
             </div>
         </div>
@@ -183,7 +166,7 @@
         <!-- Bottom Tier: Navigation Only -->
         <div class="header-nav">
             <div class="container">
-                <div class="header-nav-inner" style="position: relative; width: 100%;">
+                <div class="header-nav-inner">
                     <!-- Desktop Menu -->
                     <div class="desktop-menu">
                         <div class="menu">
@@ -240,7 +223,7 @@
                                     <a href="#">Upcoming events <span class="material-symbols-outlined"
                                             style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
-                                        <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift
+                                        <a href="ifsca.html">ICAI Delegation visit to Gift
                                             City - IFSCA</a>
                                         <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at
                                             Accountex London</a>
@@ -250,6 +233,13 @@
                                 </li>
                                 <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous events</a></li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div class="nav-search">
+                        <div class="search-container">
+                            <input type="text" placeholder="Search..." class="search-input">
+                            <span class="material-symbols-outlined search-icon">search</span>
                         </div>
                     </div>
 
@@ -304,7 +294,7 @@
                     <a href="#"
                         onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming events <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
-                        <li><a href="images/delegates.pdf" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
+                        <li><a href="ifsca.html" onclick="toggleMobileMenu()">ICAI Delegation
                                 visit to Gift City - IFSCA</a></li>
                         <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">ICAI Delegation
                                 & Exhibit at Accountex London</a></li>
@@ -316,6 +306,10 @@
             </ul>
         </nav>
     </div>
+
+
+
+
 
     <!-- MAIN CONTENT -->
     <div class="container py-5 mt-5">
