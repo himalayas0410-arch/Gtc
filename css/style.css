@@ -1919,12 +1919,12 @@ h6,
     pointer-events: auto !important;
 }
 
-/* Theme Backgrounds & Gradients - Restoring original photos with new vibrant theme */
+/* Theme Backgrounds & Gradients - Hybrid Original/New set */
 .deck-card.card1 { background-image: linear-gradient(to bottom, rgba(56, 189, 248, 0.4), rgba(30, 64, 175, 0.95)), url('../images/1.jpg'); }
 .deck-card.card2 { background-image: linear-gradient(to bottom, rgba(52, 211, 153, 0.4), rgba(6, 95, 70, 0.95)), url('../images/2.jpg'); }
 .deck-card.card3 { background-image: linear-gradient(to bottom, rgba(251, 191, 36, 0.4), rgba(180, 83, 9, 0.95)), url('../images/3.jpg'); }
 .deck-card.card4 { background-image: linear-gradient(to bottom, rgba(251, 146, 60, 0.4), rgba(154, 52, 18, 0.95)), url('../images/4.jpg'); }
-.deck-card.card5 { background-image: linear-gradient(to bottom, rgba(248, 113, 113, 0.4), rgba(153, 27, 27, 0.95)), url('../images/webinar_general.png'); }
+.deck-card.card5 { background-image: linear-gradient(to bottom, rgba(248, 113, 113, 0.4), rgba(153, 27, 27, 0.95)), url('../images/pillar_cards/pillar5.png'); }
 
 /* Make every child non-intercepting so the card itself takes the click */
 .deck-card > * {
