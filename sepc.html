@@ -315,17 +315,23 @@
 
     <div class="header home-header">
         <div class="header-top">
-            <div class="container">
-                <div class="header-top-left">
-                    <a href="index.html" class="reveal-up">
-                        <img src="images/logo.png" class="header-logo-img" />
+            <div class="container header-top-container">
+                <!-- Left: Primary Logo -->
+                <div class="header-top-left reveal-up">
+                    <a href="index.html">
+                        <img src="images/logo.png" class="logo" />
                     </a>
                 </div>
+
+                <!-- Center: Committee Text -->
                 <div class="header-top-center reveal-up">
-                    <h1 class="committee-title">Global Trade & Services Committee</h1>
+                    <h3 class="committee-name">Global Trade & Services Committee</h3>
                 </div>
+
+                <!-- Right: Global Logo & Mobile Toggle -->
                 <div class="header-top-right reveal-up">
-                    <img src="images/logogloba.png" class="logo-right" />
+                    <img src="images/logogloba.png" class="logo-secondary" />
+
                     <div class="mobile-controls">
                         <button class="menu-toggle" onclick="toggleMobileMenu()">
                             <span class="material-symbols-outlined">menu</span>
