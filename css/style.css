@@ -655,8 +655,7 @@ h6,
 }
 
 .committee-name {
-    font-size: clamp(14px, 1.4vw, 24px);
-    /* Slightly smaller minimum to ensure one line */
+    font-size: 30px;
     font-weight: 800;
     margin: 0;
     color: var(--navy-orbit);

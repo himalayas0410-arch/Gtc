@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GTC - Online Foreign Language Courses</title>
+    <meta name="description"
+        content="Online Foreign Language Courses for ICAI Members and Students by Global Trade & Services Committee, ICAI.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Dynamic Theme System */
+        :root {
+            --current-theme: #0284c7; 
+            --current-bg: #f0f9ff;
+            --current-border: #e0f2fe;
+        }
+
+        .reports-hero {
+            background: var(--current-bg);
+            padding: 40px 0 20px 0;
+            border-bottom: 1px solid var(--current-border);
+            margin-bottom: 30px;
+            transition: all 0.5s ease;
+        }
+
+        .reports-hero h1 {
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            border-left: 5px solid var(--current-theme);
+            padding-left: 20px;
+            transition: border-color 0.5s ease;
+        }
+
+        .reports-hero p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 800px;
+        }
+
+        .course-tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .course-tab {
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            border: 2px solid var(--border-brand);
+            background: #fff;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-tab img {
+            border-radius: 2px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        /* Tab Specific Colors */
+        .course-tab[data-color="blue"].active { --tab-color: #0284c7; }
+        .course-tab[data-color="amber"].active { --tab-color: #d97706; }
+        .course-tab[data-color="green"].active { --tab-color: #059669; }
+        .course-tab[data-color="orange"].active { --tab-color: #ea580c; }
+        .course-tab[data-color="red"].active { --tab-color: #dc2626; }
+        .course-tab[data-color="purple"].active { --tab-color: #8B5CF6; }
+
+        .course-tab.active {
+            background: var(--tab-color);
+            border-color: var(--tab-color);
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+
+        .course-tab:hover:not(.active) {
+            border-color: var(--text-dark);
+            color: var(--text-dark);
+            transform: translateY(-2px);
+        }
+
+        .course-section {
+            display: none;
+            margin-bottom: 80px;
+        }
+
+        .course-section.active {
+            display: block;
+        }
+
+        .info-card {
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid var(--border-brand);
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .info-card h2 {
+            color: var(--current-theme);
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--current-border);
+            padding-bottom: 10px;
+            transition: color 0.5s ease, border-color 0.5s ease;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+
+        .info-list li i {
+            color: var(--current-theme);
+            transition: color 0.5s ease;
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        .info-label {
+            font-weight: 800;
+            color: var(--text-dark);
+            min-width: 150px;
+        }
+
+        .batch-alert {
+            background: var(--current-bg);
+            border-left: 5px solid var(--current-theme);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: all 0.5s ease;
+        }
+
+        .batch-alert h4 {
+            font-weight: 800;
+            color: var(--current-theme);
+            margin-bottom: 10px;
+            transition: color 0.5s ease;
+        }
+
+        .overview-links {
+            margin-top: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .overview-btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-gtc {
+            background: var(--current-theme);
+            color: #fff;
+            transition: background 0.5s ease;
+        }
+
+        .btn-outline-gtc {
+            border: 2px solid var(--current-theme);
+            color: var(--current-theme);
+            transition: all 0.5s ease;
+        }
+
+        .btn-primary-gtc:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body class="tactile-depth">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+    <div id="scrollProgress"></div>
+    
+    <div class="header home-header">
+        <div class="header-top">
+            <div class="container header-top-container">
+                <div class="header-top-left reveal-up">
+                    <a href="index.html">
+                        <img src="images/logo.png" class="logo" />
+                    </a>
+                </div>
+                <div class="header-top-center reveal-up">
+                    <h3 class="committee-name">Global Trade & Services Committee</h3>
+                </div>
+                <div class="header-top-right reveal-up">
+                    <img src="images/logogloba.png" class="logo-secondary" />
+                    <div class="mobile-controls">
+                        <button class="menu-toggle" onclick="toggleMobileMenu()">
+                            <span class="material-symbols-outlined">menu</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-nav">
+            <div class="container">
+                <div class="header-nav-inner" style="position: relative; width: 100%;">
+                    <div class="desktop-menu">
+                        <div class="menu">
+                            <ul>
+                                <li style="animation-delay: 0.1s" class="reveal-up"><a href="index.html">Home</a></li>
+                                <li style="animation-delay: 0.2s" class="reveal-up has-dropdown">
+                                    <a href="about.html">About <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown">
+                                        <a href="about.html">About the Committee</a>
+                                        <a href="members.html">Member of the Committee</a>
+                                    </div>
+                                </li>
+                                <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
+                                    <a href="#">Global Initiatives <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown nav-panel">
+                                        <div class="nav-panel-grid">
+                                            <a href="https://apo.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-globe"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">APO Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="https://gcc.icai.org/" class="nav-panel-item">
+                                                <i class="bi bi-diagram-3"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">GCC Initiatives</span>
+                                                </div>
+                                            </a>
+                                            <a href="global-udaan.html" class="nav-panel-item">
+                                                <i class="bi bi-rocket-takeoff"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Global Udaan</span>
+                                                </div>
+                                            </a>
+                                            <a href="itec-programs.html" class="nav-panel-item">
+                                                <i class="bi bi-journal-text"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">ITEC Programs</span>
+                                                </div>
+                                            </a>
+                                            <a href="certificate-courses.html" class="nav-panel-item">
+                                                <i class="bi bi-patch-check"></i>
+                                                <div class="nav-panel-content">
+                                                    <span class="nav-panel-title">Certificate Courses</span>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
+                                    <a href="#">Upcoming events <span class="material-symbols-outlined"
+                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
+                                    <div class="nav-dropdown">
+                                        <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift City - IFSCA</a>
+                                        <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at Accountex London</a>
+                                        <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship Matrix</a>
+                                    </div>
+                                </li>
+                                <li style="animation-delay: 0.5s" class="reveal-up"><a href="events.html">Previous events</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-search reveal-up" style="animation-delay: 0.6s">
+                        <div class="search-container" id="searchContainer">
+                            <input type="text" placeholder="Search..." class="search-input">
+                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Screen Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="overlay-header">
+            <a href="index.html" class="mobile-branding-text" style="text-decoration: none; color: inherit;">
+                <span class="mb-committee">Global Trade & Services Committee</span>
+                <span class="mb-parent">The Institute of Chartered Accountants of India</span>
+            </a>
+            <button class="close-overlay" onclick="toggleMobileMenu()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        <div class="mobile-menu-search">
+            <div class="mobile-search-box">
+                <span class="material-symbols-outlined mobile-search-icon">search</span>
+                <input type="text" placeholder="Search..." class="mobile-search-input">
+            </div>
+        </div>
+        <div class="mobile-nav-list">
+            <a href="index.html">Home</a>
+            <div class="mobile-nav-item has-submenu">
+                <div class="submenu-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span>About</span>
+                    <span class="material-symbols-outlined">expand_more</span>
+                </div>
+                <div class="submenu-content">
+                    <a href="about.html">About the Committee</a>
+                    <a href="members.html">Member of the Committee</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item has-submenu">
+                <div class="submenu-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Global Initiatives</span>
+                    <span class="material-symbols-outlined">expand_more</span>
+                </div>
+                <div class="submenu-content">
+                    <a href="https://apo.icai.org/">APO Programs</a>
+                    <a href="https://gcc.icai.org/">GCC Initiatives</a>
+                    <a href="global-udaan.html">Global Udaan</a>
+                    <a href="itec-programs.html">ITEC Programs</a>
+                    <a href="certificate-courses.html">Certificate Courses</a>
+                </div>
+            </div>
+            <div class="mobile-nav-item has-submenu">
+                <div class="submenu-header" onclick="this.parentElement.classList.toggle('open')">
+                    <span>Upcoming events</span>
+                    <span class="material-symbols-outlined">expand_more</span>
+                </div>
+                <div class="submenu-content">
+                    <a href="images/delegates.pdf" target="_blank">ICAI Delegation visit to Gift City - IFSCA</a>
+                    <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at Accountex London</a>
+                    <a href="images/Sponsorship matrix 13-04-2026.pdf" target="_blank">Sponsorship Matrix</a>
+                </div>
+            </div>
+            <a href="events.html">Previous events</a>
+        </div>
+    </div>
+
+    <header class="reports-hero">
+        <div class="container">
+            <h1>Online Foreign Language Courses</h1>
+            <p>Empowering ICAI Members and Students to overcome language barriers and enhance global professional opportunities.</p>
+        </div>
+    </header>
+
+    <div class="container text-center">
+        <div class="course-tabs">
+            <button class="course-tab active" data-color="blue" onclick="switchTab('overview', this)">
+                <i class="bi bi-globe"></i> Overview
+            </button>
+            <button class="course-tab" data-color="amber" onclick="switchTab('spanish', this)">
+                <img src="https://flagcdn.com/w40/es.png" width="20" alt="Spain"> Spanish
+            </button>
+            <button class="course-tab" data-color="green" onclick="switchTab('french', this)">
+                <img src="https://flagcdn.com/w40/fr.png" width="20" alt="France"> French
+            </button>
+            <button class="course-tab" data-color="orange" onclick="switchTab('japanese', this)">
+                <img src="https://flagcdn.com/w40/jp.png" width="20" alt="Japan"> Japanese
+            </button>
+            <button class="course-tab" data-color="red" onclick="switchTab('german', this)">
+                <img src="https://flagcdn.com/w40/de.png" width="20" alt="Germany"> German
+            </button>
+            <button class="course-tab" data-color="purple" onclick="switchTab('english', this)">
+                <img src="https://flagcdn.com/w40/gb.png" width="20" alt="UK"> Business English
+            </button>
+        </div>
+    </div>
+
+    <main class="container mb-5">
+        <!-- Overview Section -->
+        <div class="course-section active" id="section-overview">
+            <div class="info-card">
+                <h2>Overview</h2>
+                <p>With an aim to overcome language barrier and thereby to have enhanced professional opportunities overseas and to better cater to the diverse needs of our esteemed members and students, ICAI under the aegis of Global Trade & Services Committee of ICAI is conducting following foreign language courses through <strong>virtual modes on weekends only</strong> :-</p>
+                <ul class="info-list">
+                    <li><i class="bi bi-check2-circle"></i> Online Spanish Language Course</li>
+                    <li><i class="bi bi-check2-circle"></i> Online French Language Course</li>
+                    <li><i class="bi bi-check2-circle"></i> Online Japanese Language Course</li>
+                    <li><i class="bi bi-check2-circle"></i> Online German Language Course</li>
+                    <li><i class="bi bi-check2-circle"></i> Online Business English Language Course</li>
+                </ul>
+                <div class="overview-links">
+                    <a href="images/foreign/survery.pdf" target="_blank" class="overview-btn btn-primary-gtc">Survey for Preference - Click here</a>
+                </div>
+                <p class="mt-4">For further details of above upcoming batches you may kindly contact at <a href="mailto:global@icai.in" style="color: inherit; text-decoration: none;"><strong>global@icai.in</strong></a></p>
+            </div>
+        </div>
+
+        <!-- Spanish Section -->
+        <div class="course-section" id="section-spanish">
+            <div class="info-card">
+                <h2>Online Spanish Language Course</h2>
+                <p>The Development of International Trade, Services & GTC Directorate of ICAI has made tie up with Instituto Cervantes, Spanish Embassy Cultural Centre, for organizing Exclusive blended online Spanish Learning Program for ICAI members and students in order to overcome language barriers abroad. The major highlights of the course at present are as under:-</p>
+                <ul class="info-list">
+                    <li><i class="bi bi-clock"></i> <span class="info-label">Duration:</span> 60 hours</li>
+                    <li><i class="bi bi-currency-rupee"></i> <span class="info-label">Current Fees:</span> Rs. 9520/- for each level</li>
+                    <li><i class="bi bi-calendar-event"></i> <span class="info-label">Time:</span> 10.00 am to 12.00 noon or 5.00 pm to 7.00 pm (on weekends)</li>
+                    <li><i class="bi bi-info-circle"></i> <span class="info-label">Format:</span> The sessions, offered via video conference, with an instructor imparting the lesson will have duration of 2 hours per session and there will a total of 15 sessions. In addition, another 30 hours of digital sessions will be provided to the students in the form of the AVE Global online course.</li>
+                    <li><i class="bi bi-layers"></i> <span class="info-label">Levels:</span> Levels organized till date in collaboration with Instituto Cervantes are A1.1, A1.2, A2.1 and A2.2</li>
+                </ul>
+                <div class="mt-4">
+                    <h5>Course Content:</h5>
+                    <ul class="info-list">
+                        <li><i class="bi bi-dot"></i> Initial contacts. Greetings and personal information</li>
+                        <li><i class="bi bi-dot"></i> Family and Friends. Physical description and frame of mind</li>
+                        <li><i class="bi bi-dot"></i> Cultural Contents</li>
+                    </ul>
+                </div>
+                <div class="batch-alert">
+                    <h4>Upcoming Batch</h4>
+                    <p>Registration for Next Batch of A1.1 Level (Beginners level) w.e.f. 17th January, 2026 to 7th March, 2026.</p>
+                    <p><strong>LAST DATE: 28/12/2025</strong></p>
+                    <a href="images/foreign/(Registration for Next Batch of A1.1 Level of Online Spanish Language Course (Beginners level) w.e.f. 17th January, 2026 to 7th.pdf" target="_blank" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- French Section -->
+        <div class="course-section" id="section-french">
+            <div class="info-card">
+                <h2>Online French Language Course</h2>
+                <p>The Development of International Trade, Services & GTC Directorate of ICAI has made tie up with Alliance Francaise Hyderabad for organizing online French Language course for its members and students in order to overcome language barriers abroad. The major highlights of the course at present are as under:-</p>
+                <ul class="info-list">
+                    <li><i class="bi bi-clock"></i> <span class="info-label">Duration:</span> The duration of the course of 120 hours of A1 Level (includes A1.1 and A1.2)</li>
+                    <li><i class="bi bi-currency-rupee"></i> <span class="info-label">Current Fees:</span> Rs. 18526/- for each level</li>
+                    <li><i class="bi bi-calendar-event"></i> <span class="info-label">Time:</span> 10.00 am to 2.00 pm (on weekends)</li>
+                    <li><i class="bi bi-info-circle"></i> <span class="info-label">Format:</span> The online courses have an entire digital framework for teaching and learning French language used by most of the Alliance Francaise network in the world (800 centers). The interface is very user friendly for the teachers and students alike.</li>
+                    <li><i class="bi bi-layers"></i> <span class="info-label">Levels:</span> Levels organized by ICAI in collaboration with Alliance Francaise till date is A1</li>
+                </ul>
+                <div class="mt-4">
+                    <h5>Course Content:</h5>
+                    <p>Can understand and use familiar everyday expressions and very basic phrases aimed at the satisfaction of needs of a concrete type. Can introduce him/herself and others and can ask and answer questions about personal details such as where he/she lives, people he/she knows and things he/she has. Can interact in a simple way provided the other person talks slowly and clearly and is prepared to help.</p>
+                </div>
+                <div class="batch-alert">
+                    <h4>Upcoming Batches</h4>
+                    <p>The details of upcoming batches will be hosted here and under What's New soon.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Japanese Section -->
+        <div class="course-section" id="section-japanese">
+            <div class="info-card">
+                <h2>Online Japanese Language Course</h2>
+                <p>The Development of International Trade, Services & GTC Directorate of ICAI had made a tie up with Faculty of Japan Foundation, Official learning Institute through Embassy of Japan to organize Online Japanese Language Course to promote Japanese language amongst its members in order to overcome language barriers abroad. The major highlights of the course at present are as under:-</p>
+                <ul class="info-list">
+                    <li><i class="bi bi-clock"></i> <span class="info-label">Duration:</span> 64 hours</li>
+                    <li><i class="bi bi-currency-rupee"></i> <span class="info-label">Current Fees:</span> Rs. 6490/- for each level</li>
+                    <li><i class="bi bi-calendar-event"></i> <span class="info-label">Time:</span> 10.00 am to 12.00 noon or 5.00 pm to 7.00 pm (on weekends)</li>
+                    <li><i class="bi bi-layers"></i> <span class="info-label">Levels:</span> A1.1 Katsudoo, A1.1 Rikai, A2-1.1 Katsudoo & Rikai and A2-1.2 Katsudoo & Rikai</li>
+                </ul>
+                <div class="mt-4">
+                    <h5>Course Content:</h5>
+                    <p>In this course, you will be introduced to Japanese culture through learning how to communicate in Japanese. At the same time, we will discuss the differences and similarities of culture, way of thought and customs in India and Japan. This conversation course aims at improving communication skills in Japanese, without giving too much stress on grammar and reading and writing Japanese script.</p>
+                </div>
+                <div class="batch-alert">
+                    <h4>Upcoming Batch</h4>
+                    <p>Registration for Online Japanese Language Course w.e.f. 7th February, 2026 A1 Katsudoo Level for ICAI Members and Students.</p>
+                    <p><strong>LAST DATE: 01.02.2026</strong></p>
+                    <a href="images/foreign/Registration for Online Japanese Language Course w.ef. 7th February, 2026 A1 Katsudoo Level for ICAI Members and Students - LAST DATE 01.02.2026.pdf" target="_blank" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- German Section -->
+        <div class="course-section" id="section-german">
+            <div class="info-card">
+                <h2>Online German Language Course</h2>
+                <p>The Development of International Trade, Services & GTC Directorate of ICAI has made a tie up with Goethe-Institut / Max Mueller Bhavan Kolkata for organising Online German Language Course for ICAI members and students in order to overcome language barriers abroad. The major highlights of the course at present are as under:-</p>
+                <ul class="info-list">
+                    <li><i class="bi bi-clock"></i> <span class="info-label">Duration:</span> Around 120 hours</li>
+                    <li><i class="bi bi-currency-rupee"></i> <span class="info-label">Current Fees:</span> Rs. 28500/- for each level</li>
+                    <li><i class="bi bi-calendar-event"></i> <span class="info-label">Time:</span> 9.00 am to 1.30 pm (on weekends)</li>
+                    <li><i class="bi bi-layers"></i> <span class="info-label">Levels:</span> Levels organized till date in collaboration with Goethe Institut/Max Mueller Bhavan, Kolkatat is A1.1</li>
+                    <li><i class="bi bi-gift"></i> <span class="info-label">Subsidy:</span> Grant of Subsidy of Rs. 10,000/- to the candidates after successful completion of the course.</li>
+                </ul>
+                <div class="mt-4">
+                    <h5>Course Content:</h5>
+                    <p>After completion of A1 level one can understand and use familiar, everyday expressions and very simple sentences, which relate to the satisfying of concrete needs. Can introduce him/herself and others as well as ask others about themselves - e.g. where they live, who they know and what they own - and can respond to questions of this nature. Can communicate in a simple manner if the person they are speaking to speaks slowly and clearly and is willing to help.</p>
+                </div>
+                <div class="batch-alert">
+                    <h4>Upcoming Batch</h4>
+                    <p>Registration for Next Batch of A1 Level (Beginners level) w.e.f. 29th November, 2025 to 29th March, 2026.</p>
+                    <p><strong>LAST DATE: 17/11/2025</strong></p>
+                    <a href="images/foreign/Registration for Next Batch of A1 Level of Online German Language Course (Beginners level) w.e.f. 29th November, 2025 to 29th March.pdf" target="_blank" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business English Section -->
+        <div class="course-section" id="section-english">
+            <div class="info-card">
+                <h2>Online Business English Language Course</h2>
+                <p>The Development of International Trade, Services & GTC Directorate in collaboration with <strong>British Council</strong> is organizing Online weekend batches of Business English Language course covering advance business communication for ICAI members and students.</p>
+                <ul class="info-list">
+                    <li><i class="bi bi-clock"></i> <span class="info-label">Duration:</span> 108 hours</li>
+                    <li><i class="bi bi-currency-rupee"></i> <span class="info-label">Current Fees:</span> Rs. 14672/- for each level</li>
+                    <li><i class="bi bi-info-circle"></i> <span class="info-label">Format:</span> Each week you will complete 3 hours online exercises before your class, attend a 55 minute live online class at a timing of your choice, attend two Live25 teacher-led webinars of your choice and complete 1-hour online exercises after your class.</li>
+                    <li><i class="bi bi-layers"></i> <span class="info-label">Levels:</span> Pre-Intermediate, Intermediate, Upper Intermediate</li>
+                </ul>
+                <div class="mt-4">
+                    <h5>Course Content:</h5>
+                    <p>The British Council offers the English for Work course that helps develop business English skills to communicate with confidence in professional situations. Topics you may study include job interviews, CV or resume writing, describing experience and interests, future plans, travel for work, work routines and schedules, making arrangements, expressing opinions, handling complaints, email writing, negotiations, figures and statistics, writing business proposals and meeting reports, performance appraisals, managing change and projects, suggest solutions, strategic reviews.</p>
+                </div>
+                <div class="batch-alert">
+                    <h4>Upcoming Batch</h4>
+                    <p>Registration for Online Business English Language Course in collaboration with British Council from 25th March, 2026 onwards.</p>
+                    <a href="images/foreign/Registration for Online Business English Language Course in collaboration with British Council from 25th March, 2026 onwards.pdf" target="_blank" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-dark py-5" style="padding-bottom: 5px !important;">
+        <div class="container">
+            <div class="row gy-5" style="padding-top: 0px !important;">
+                <!-- About -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">About Global ICAI</h5>
+                    <p class="footer-text mb-4">The Global Trade & Services Committee of
+                        ICAI is committed to strengthening India’s presence in global services trade by promoting
+                        international collaboration, enhancing professional opportunities, and positioning accounting
+                        and finance as key export services in the evolving global economy. The Committee works closely
+                        with government bodies, industry stakeholders, and international institutions to facilitate
+                        trade integration, policy engagement, and global professional mobility.</p>
+                </div>
+
+                <!-- Programs -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Programs</h5>
+                    <ul class="footer-list">
+                        <li><a href="https://gcc.icai.org/">Global Initiatives</a></li>
+                        <li><a href="#">Training & Capacity Building</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdHkFQqMV6Mnt3ZXMu47Hw8XIR6fu59ZP5wSWu5MsYAXgiuLg/viewform">Member Opportunities</a></li>
+                        <li><a href="events.html">Previous events</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Resources</h5>
+                    <ul class="footer-list">
+                        <li><a href="reports-publications.html">Reports & Publications</a></li>
+                        <li><a href="#">Research & Insights</a></li>
+                        <li><a href="#">Guidelines & Policies</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-title">Contact Us</h5>
+                    <div class="footer-contact-item">
+                        <span>Global Trade & Services Committee</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <span>The Institute of Chartered Accountants of India,<br>(Set up by an Act of
+                            Parliament)<br>'ICAI BHAWAN', Indraprastha Marg,<br>New Delhi - 110002</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="bi bi-telephone"></i>
+                        <span>011-30110542</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="bi bi-envelope"></i>
+                        <span>global@icai.in</span>
+                    </div>
+                    <div class="social-icons mt-4">
+                        <a href="https://www.linkedin.com/company/gcc-icai/"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://x.com/globalicai/"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom d-flex justify-content-between flex-wrap">
+                <div>
+                    © 2026 The Institute of Chartered Accountants of India
+                </div>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-of-use.html">Terms of Use</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const themeMap = {
+            blue: { main: '#0284c7', bg: '#f0f9ff', border: '#e0f2fe' },
+            amber: { main: '#d97706', bg: '#fffbeb', border: '#fef3c7' },
+            green: { main: '#059669', bg: '#f0fdf4', border: '#dcfce7' },
+            orange: { main: '#ea580c', bg: '#fff7ed', border: '#ffedd5' },
+            red: { main: '#dc2626', bg: '#fef2f2', border: '#fee2e2' },
+            purple: { main: '#8B5CF6', bg: '#F5F3FF', border: '#EDE9FE' }
+        };
+
+        // Scroll Progress Logic
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement,
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            const progressEl = document.getElementById('scrollProgress');
+            if(progressEl) progressEl.style.width = percent + '%';
+        });
+
+        function switchTab(sectionId, btn) {
+            const colorKey = btn.getAttribute('data-color');
+            const theme = themeMap[colorKey] || themeMap.blue;
+
+            // Update Root Variables
+            document.documentElement.style.setProperty('--current-theme', theme.main);
+            document.documentElement.style.setProperty('--current-bg', theme.bg);
+            document.documentElement.style.setProperty('--current-border', theme.border);
+
+            // Update Tabs
+            document.querySelectorAll('.course-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Update Sections
+            document.querySelectorAll('.course-section').forEach(s => s.classList.remove('active'));
+            document.getElementById('section-' + sectionId).classList.add('active');
+        }
+
+        // Initialize with correct theme for active tab
+        window.addEventListener('DOMContentLoaded', () => {
+            const activeBtn = document.querySelector('.course-tab.active');
+            if (activeBtn) switchTab('overview', activeBtn);
+        });
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function toggleMobileSearch() {
+            if (window.innerWidth < 1200) {
+                const container = document.getElementById('searchContainer');
+                if(container) container.classList.toggle('mobile-expanded');
+            }
+        }
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+
+</html>
