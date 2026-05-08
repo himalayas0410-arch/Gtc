@@ -491,7 +491,7 @@ h6,
 .section-title,
 .committee-name {
     font-family: "Poppins", sans-serif;
-    color: var(--text-dark);
+    color: #233459;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -1030,7 +1030,7 @@ h6,
 }
 
 .mb-committee {
-    color: #fff;
+    color: #233459;
     font-size: 14px;
     /* Scaled up for readability */
     font-weight: 800;
@@ -4739,30 +4739,22 @@ a.knowmore {
     }
 }
 
-/* ===== ECOSYSTEM PARTNERS CAROUSEL (Glass Theme) ===== */
-/* ===== ECOSYSTEM PARTNERS SECTION (Tightened) ===== */
+/* ===== ECOSYSTEM PARTNERS SECTION (Scrolling Box Format) ===== */
 .partners-section {
     background: transparent;
-    padding: 20px 0;
+    padding: 40px 0;
     position: relative;
     z-index: 10;
-    margin-top: 0;
-}
-
-.partners-section .vibrant-heading {
-    margin-bottom: 15px !important;
+    overflow: hidden;
 }
 
 .logo-carousel-wrapper {
-    background: #ffffff;
-    /* Moved white strip here */
+    background: transparent;
     overflow: hidden;
-    padding: 10px 0;
+    padding: 20px 0;
     position: relative;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    /* Make it full width even if container is smaller */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Gradient mask for smooth edges */
@@ -4779,74 +4771,94 @@ a.knowmore {
 .logo-carousel-wrapper::before {
     left: 0;
     top: 0;
-    background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+    background: linear-gradient(to right, rgba(248, 250, 252, 1) 0%, transparent 100%);
 }
 
 .logo-carousel-wrapper::after {
     right: 0;
     top: 0;
-    background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+    background: linear-gradient(to left, rgba(248, 250, 252, 1) 0%, transparent 100%);
 }
 
 .logo-track {
     display: flex;
-    width: calc(200px * 14 + 50px * 14);
+    gap: 30px;
     animation: scrollLogos 40s linear infinite;
-    gap: 50px;
+    width: max-content;
 }
 
-.logo-item {
-    width: 200px;
-    height: 80px;
+.partner-box {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 16px;
+    width: 220px;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 12px; /* Reduced from 20px */
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     flex-shrink: 0;
 }
 
-.partner-card {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    position: relative;
+.partner-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+    border-color: var(--blue-primary);
 }
 
-.partner-card:hover {
-    transform: translateY(-5px) scale(1.05);
-}
-
-.partner-card img {
-    max-width: 85%;
-    max-height: 85%;
+.partner-box img {
+    width: 160px; /* Standardized bounding box width */
+    height: 75px; /* Standardized bounding box height */
     object-fit: contain;
-    transition: all 0.4s ease;
-    mix-blend-mode: normal;
-    /* Removed multiply since background is white now */
-    filter: none;
-    /* Let natural logos show */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.02));
+    transition: transform 0.4s ease;
 }
 
-/* Specific Fix for IFSCA */
-.partner-card img[src*="ewNuuGnL"] {
+/* Animation */
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-250px * 13)); } /* Width + Gap */
+}
+
+/* Pause on hover */
+.logo-track:hover {
+    animation-play-state: paused;
+}
+
+/* Specific Fix for Circular Logos - Now handled by general normalization */
+.partner-box img[src*="ewNuuGnL"] {
     border-radius: 50%;
-    object-fit: cover;
-    width: 80px;
-    /* Reduced from 120px */
-    height: 80px;
-    mix-blend-mode: normal;
-    filter: none;
 }
 
-.partner-card img[src*=".svg"] {
-    mix-blend-mode: normal;
-    filter: none;
+.presence-text {
+    color: #233459;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.presence-text strong {
+    font-weight: 800;
+    font-size: 1.2em;
+}
+
+@media (max-width: 768px) {
+    .partner-box {
+        width: 180px;
+        height: 90px;
+        padding: 15px;
+    }
+    
+    .partner-box img {
+        width: 140px;
+        height: 60px;
+    }
+    
+    @keyframes scrollLogos {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-210px * 13)); }
+    }
 }
 
 .partner-card:hover img {
