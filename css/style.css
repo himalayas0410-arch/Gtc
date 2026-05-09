@@ -491,7 +491,7 @@ h6,
 .section-title,
 .committee-name {
     font-family: "Poppins", sans-serif;
-    color: #233459;
+    color: #233459 !important;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -859,10 +859,11 @@ h6,
 
 .header-nav-inner {
     display: flex;
+    justify-content: center;
     align-items: center;
     width: 100%;
-    justify-content: center;
     position: relative;
+    padding: 0 20px;
 }
 
 .desktop-menu {
@@ -871,10 +872,16 @@ h6,
 }
 
 .nav-search {
-    position: absolute;
-    right: 0;
+    position: absolute !important;
+    right: 20px !important;
     top: 50%;
     transform: translateY(-50%);
+    display: flex !important;
+    align-items: center;
+    z-index: 1001; /* Above sticky header z-index 999 */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
 }
 
 .header-actions-group {
@@ -913,12 +920,12 @@ h6,
     display: flex;
     align-items: center;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.nav-search {
-    flex-shrink: 0;
-    margin-left: 20px;
-}
+/* Unified nav-search styling handled above */
 
 .search-input {
     width: 180px;
@@ -961,7 +968,7 @@ h6,
 .search-icon {
     position: absolute;
     right: 12px;
-    color: #660024;
+    color: #233459;
     font-size: 20px !important;
     cursor: pointer;
     z-index: 2;
@@ -1030,7 +1037,7 @@ h6,
 }
 
 .mb-committee {
-    color: #233459;
+    color: #233459 !important;
     font-size: 14px;
     /* Scaled up for readability */
     font-weight: 800;
@@ -2619,7 +2626,7 @@ h6,
 }
 
 .maptext h3 {
-    color: #0F172A;
+    color: #233459;
     font-size: 46px;
     font-weight: 850;
     letter-spacing: -0.03em;
@@ -2722,7 +2729,7 @@ h6,
 }
 
 .footer-title {
-    color: #fff;
+    color: #fff !important;
     font-weight: 700;
     font-size: 16px;
     margin-bottom: 20px;
@@ -3808,9 +3815,7 @@ h6,
     margin-left: 8px;
 }
 
-.nav-search {
-    display: none !important;
-}
+/* Removed redundant hide rule */
 
 @media (max-width: 1200px) {
     .header-top-container {
@@ -4789,7 +4794,11 @@ a.knowmore {
 
 .partner-box {
     background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Multi-color gradient border using background-clip technique */
+    border: 2px solid transparent;
+    background-image: linear-gradient(#fff, #fff), var(--grad-glow);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     border-radius: 16px;
     width: 220px;
     height: 110px;
@@ -4805,7 +4814,7 @@ a.knowmore {
 .partner-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
-    border-color: var(--blue-primary);
+    filter: brightness(0.98); /* Subtle feedback since border is always colorful */
 }
 
 .partner-box img {
@@ -4822,10 +4831,10 @@ a.knowmore {
     100% { transform: translateX(calc(-250px * 13)); } /* Width + Gap */
 }
 
-/* Pause on hover */
-.logo-track:hover {
+/* Pause on hover removed per request */
+/* .logo-track:hover {
     animation-play-state: paused;
-}
+} */
 
 /* Specific Fix for Circular Logos - Now handled by general normalization */
 .partner-box img[src*="ewNuuGnL"] {
