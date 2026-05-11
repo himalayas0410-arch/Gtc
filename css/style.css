@@ -5820,20 +5820,25 @@ a.knowmore {
     font-size: 14px !important; 
     font-weight: 700 !important; 
     text-decoration: none !important;
-    white-space: nowrap !important; /* Force one line */
+    white-space: nowrap !important; 
 }
 .nav-dropdown a:hover { background: var(--tint-blue); color: var(--blue-primary) !important; }
 
 /* Tiered Hover Show Logic */
-.has-tiered:hover > .tiered-menu,
-.has-flyout:hover > .tiered-menu { 
+.has-tiered:hover > .tiered-menu { 
     opacity: 1 !important; 
     visibility: visible !important; 
-    transform: translate(0, 0) !important; 
+    transform: translateY(0) !important; 
 }
 
 /* Tiered Link Styling */
-.tiered-menu li { position: relative; list-style: none; width: 100%; }
+.tiered-menu li { 
+    position: relative; 
+    list-style: none; 
+    width: 100%; 
+    transition: all 0.2s ease-in-out;
+}
+
 .tiered-menu a {
     display: flex !important;
     align-items: center;
@@ -5848,14 +5853,64 @@ a.knowmore {
     white-space: nowrap; 
 }
 .tiered-menu a:hover { background: var(--tint-blue); color: var(--blue-primary) !important; }
-.tiered-menu a i { font-size: 12px; margin-left: 15px; opacity: 0.6; }
+.tiered-menu a i { font-size: 12px; margin-left: 15px; opacity: 0.6; transition: transform 0.3s ease; }
 
-/* Sub-Level Positioning (Flyouts) */
-.has-flyout > .tiered-menu {
+/* Sub-Level Positioning (Tier 2 Flyout) */
+.has-flyout > .tiered-menu.level-2 {
     top: 0;
     left: 100%;
-    margin-top: -10px;
     transform: translateX(15px);
+    opacity: 0;
+    visibility: hidden;
+    display: block !important;
+}
+.has-flyout:hover > .tiered-menu.level-2 {
+    opacity: 1 !important; 
+    visibility: visible !important; 
+    transform: translateX(0) !important; 
+}
+
+/* Level 3 IN-PLACE Interaction (Accordion style) */
+.level-2 li { overflow: hidden; }
+
+/* Hide siblings ONLY when hovering over an item that actually HAS a level-3 sub-menu */
+.level-2 > li.has-flyout:hover ~ li { height: 0 !important; opacity: 0 !important; padding: 0 !important; margin: 0 !important; pointer-events: none !important; }
+.level-2 > li:has(~ li.has-flyout:hover) { height: 0 !important; opacity: 0 !important; padding: 0 !important; margin: 0 !important; pointer-events: none !important; }
+
+.level-3 {
+    position: static !important; 
+    display: none !important; /* STRICTLY HIDDEN BY DEFAULT */
+    width: 100%;
+    background: rgba(78, 165, 217, 0.05) !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 0 10px 0 !important;
+    margin: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Show ONLY when the specific parent is hovered */
+li.has-flyout:hover > .level-3 {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+li.has-flyout:hover > a i {
+    transform: rotate(90deg);
+}
+
+.level-3 a {
+    padding: 8px 25px 8px 45px !important; 
+    font-size: 13px !important;
+    opacity: 0.8;
+    text-transform: none !important;
+}
+.level-3 a:hover {
+    opacity: 1;
+    background: transparent !important;
+    color: var(--blue-primary) !important;
 }
 
 /* Mobile Consistency */
@@ -5872,7 +5927,7 @@ a.knowmore {
         min-width: 100% !important;
     }
     .active { display: block !important; }
-    .nav-dropdown a, .tiered-menu a { white-space: normal !important; } /* Allow wrap on mobile */
+    .nav-dropdown a, .tiered-menu a { white-space: normal !important; }
 }
 
 
