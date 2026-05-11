@@ -102,6 +102,12 @@
             margin-bottom: 100px;
         }
 
+        /* Ensure dynamic header is on top */
+        #header-placeholder {
+            position: relative;
+            z-index: 9999;
+        }
+
         /* Distinctive colors for different states */
         .card-karnataka { border-top: 6px solid #3B82F6; }
         .card-delhi { border-top: 6px solid #EF4444; }
@@ -116,99 +122,9 @@
 <body class="tactile-depth">
 
     <div id="scrollProgress"></div>
-
-    <div class="header home-header">
-        <div class="header-top">
-            <div class="container header-top-container">
-                <div class="header-top-left reveal-up">
-                    <a href="index.html">
-                        <img src="images/logo.png" class="logo" />
-                    </a>
-                </div>
-                <div class="header-top-center reveal-up">
-                    <h3 class="committee-name">Global Trade & Services Committee</h3>
-                </div>
-                <div class="header-top-right reveal-up">
-                    <img src="images/logogloba.png" class="logo-secondary" />
-                    <div class="mobile-controls">
-                        <button class="menu-toggle" onclick="toggleMobileMenu()">
-                            <span class="material-symbols-outlined">menu</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="header-nav">
-            <div class="container">
-                <div class="header-nav-inner">
-                    <div class="desktop-menu">
-                        <div class="menu">
-                            <ul>
-                                <li style="animation-delay: 0.1s" class="reveal-up"><a href="index.html">Home</a></li>
-                                <li style="animation-delay: 0.2s" class="reveal-up has-dropdown">
-                                    <a href="about.html">About <span class="material-symbols-outlined"
-                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
-                                    <div class="nav-dropdown">
-                                        <a href="about.html">About the Committee</a>
-                                        <a href="members.html">Member of the Committee</a>
-                                    </div>
-                                </li>
-                                <li style="animation-delay: 0.3s" class="reveal-up has-dropdown">
-                                    <a href="#">Global Initiatives <span class="material-symbols-outlined"
-                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
-                                    <div class="nav-dropdown">
-                                        <a href="https://gcc.icai.org/">GCC Initiatives</a>
-                                        <a href="global-udaan.html">Global Udaan</a>
-                                    </div>
-                                </li>
-                                <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
-                                    <a href="#">Upcoming events <span class="material-symbols-outlined"
-                                            style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
-                                    <div class="nav-dropdown">
-                                        <a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at Accountex London</a>
-                                        <a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank">Sponsorship Matrix</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="nav-search">
-                        <div class="search-container" id="searchContainer">
-                            <input type="text" placeholder="Search..." class="search-input">
-                            <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mobile Overlay -->
-    <div class="mobile-overlay" id="mobileOverlay">
-        <div class="overlay-header">
-            <a href="index.html" class="mobile-branding-text" style="text-decoration: none; color: inherit;">
-                <span class="mb-committee">Global Trade & Services Committee</span>
-                <span class="mb-parent">The Institute of Chartered Accountants of India</span>
-            </a>
-            <button class="close-overlay" onclick="toggleMobileMenu()">
-                <span class="material-symbols-outlined">close</span>
-            </button>
-        </div>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="index.html" onclick="toggleMobileMenu()">Home</a></li>
-                <li class="mobile-has-dropdown">
-                    <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">About <span class="material-symbols-outlined">expand_more</span></a>
-                    <ul class="mobile-sub-menu">
-                        <li><a href="about.html" onclick="toggleMobileMenu()">About the Committee</a></li>
-                        <li><a href="members.html" onclick="toggleMobileMenu()">Member of the Committee</a></li>
-                    </ul>
-                </li>
-                <li><a href="global-udaan.html" onclick="toggleMobileMenu()">Global Udaan</a></li>
-            </ul>
-        </nav>
-    </div>
+    
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
     <header class="policy-hero">
@@ -220,6 +136,7 @@
 
     <!-- Main Content -->
     <main class="policy-grid">
+        <!-- ... (cards remain the same) ... -->
         <div class="container">
             <div class="row g-4">
                 
@@ -307,34 +224,35 @@
         </div>
     </main>
 
-    <footer class="footer-dark py-5">
-        <div class="container">
-            <div class="row gy-5">
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">About Global ICAI</h5>
-                    <p class="footer-text">The Global Trade & Services Committee of ICAI is committed to strengthening India's presence in global services trade.</p>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">Quick Links</h5>
-                    <ul class="footer-list">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="reports-publications.html">Reports</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <h5 class="footer-title">Contact Us</h5>
-                    <p class="footer-text">ICAI Bhawan, Indraprastha Marg,<br>New Delhi - 110002</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <!-- Dynamic Footer -->
+    <div id="footer-placeholder"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Component Loader Logic
+        async function loadComponent(id, file) {
+            try {
+                const res = await fetch(file);
+                const text = await res.text();
+                document.getElementById(id).innerHTML = text;
+                
+                // Re-trigger reveal animations for the newly loaded components
+                if (window.revealObserver) {
+                    document.querySelectorAll('#' + id + ' .reveal-up').forEach(el => revealObserver.observe(el));
+                }
+            } catch (err) {
+                console.error('Failed to load component:', file, err);
+            }
+        }
+
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
-            overlay.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        }
+
+        function toggleMobileSearch() {
+            const container = document.getElementById('searchContainer');
+            if (container) container.classList.toggle('mobile-expanded');
         }
 
         const revealObserver = new IntersectionObserver((entries) => {
@@ -345,7 +263,12 @@
             });
         }, { threshold: 0.1 });
 
+        window.revealObserver = revealObserver; // Make it global for component loader
         document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+
+        // Initial Load
+        loadComponent('header-placeholder', 'header.html');
+        loadComponent('footer-placeholder', 'footer.html');
     </script>
 </body>
 </html>
