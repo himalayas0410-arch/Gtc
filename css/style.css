@@ -2743,7 +2743,7 @@ h6,
 
 .footer-text {
     color: rgba(255, 255, 255, 0.6);
-    line-height: 1.8;
+    line-height: 1.5;
     font-weight: 400;
     max-width: 320px;
     /* Control line length for better distribution */
@@ -5657,7 +5657,7 @@ a.knowmore {
 
     .footer-text {
         font-size: 13px;
-        line-height: 1.7;
+        line-height: 1.5;
         max-width: 100%;
     }
 
