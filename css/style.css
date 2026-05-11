@@ -4770,7 +4770,7 @@ a.knowmore {
 .logo-track {
     display: flex;
     gap: 30px;
-    animation: scrollLogos 40s linear infinite;
+    animation: scrollLogos 60s linear infinite;
     width: max-content;
 }
 
@@ -4782,8 +4782,8 @@ a.knowmore {
     background-origin: border-box;
     background-clip: padding-box, border-box;
     border-radius: 16px;
-    width: 220px;
-    height: 110px;
+    width: 280px;
+    height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -4800,8 +4800,8 @@ a.knowmore {
 }
 
 .partner-box img {
-    width: 160px; /* Standardized bounding box width */
-    height: 75px; /* Standardized bounding box height */
+    width: 200px; /* Standardized bounding box width */
+    height: 95px; /* Standardized bounding box height */
     object-fit: contain;
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.02));
     transition: transform 0.4s ease;
@@ -4810,13 +4810,13 @@ a.knowmore {
 /* Animation */
 @keyframes scrollLogos {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-250px * 13)); } /* Width + Gap */
+    100% { transform: translateX(calc(-310px * 13)); } /* Width (280) + Gap (30) */
 }
 
 /* Pause on hover removed per request */
-/* .logo-track:hover {
+.logo-track:hover {
     animation-play-state: paused;
-} */
+}
 
 /* Specific Fix for Circular Logos - Now handled by general normalization */
 .partner-box img[src*="ewNuuGnL"] {
