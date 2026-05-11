@@ -5763,4 +5763,125 @@ a.knowmore {
     }
 }
 
-
+
+/* Isolated Deep-Tiered Navigation Implementation */
+.has-tiered { position: relative; }
+.has-tiered > a { display: flex; align-items: center; gap: 4px; }
+
+/* Level 1 Base for Global Initiatives */
+.tiered-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff !important;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    padding: 10px 0;
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 5000;
+    border: 1px solid rgba(0,0,0,0.08);
+    list-style: none;
+    margin: 0;
+    display: block !important;
+}
+
+/* Standard Dropdown Fix (About, Upcoming Events) */
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff !important;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    padding: 10px 0;
+    min-width: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s ease;
+    z-index: 4000;
+    border: 1px solid rgba(0,0,0,0.08);
+    list-style: none;
+    margin: 0;
+    display: flex !important;
+    flex-direction: column !important;
+}
+.has-dropdown:hover > .nav-dropdown { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
+
+.nav-dropdown li { width: 100%; list-style: none; }
+.nav-dropdown a { 
+    display: block !important; 
+    padding: 12px 25px !important; 
+    color: #233459 !important; 
+    font-size: 14px !important; 
+    font-weight: 700 !important; 
+    text-decoration: none !important;
+    white-space: nowrap !important; /* Force one line */
+}
+.nav-dropdown a:hover { background: var(--tint-blue); color: var(--blue-primary) !important; }
+
+/* Tiered Hover Show Logic */
+.has-tiered:hover > .tiered-menu,
+.has-flyout:hover > .tiered-menu { 
+    opacity: 1 !important; 
+    visibility: visible !important; 
+    transform: translate(0, 0) !important; 
+}
+
+/* Tiered Link Styling */
+.tiered-menu li { position: relative; list-style: none; width: 100%; }
+.tiered-menu a {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 25px !important;
+    color: #233459 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    line-height: 1.4;
+    white-space: nowrap; 
+}
+.tiered-menu a:hover { background: var(--tint-blue); color: var(--blue-primary) !important; }
+.tiered-menu a i { font-size: 12px; margin-left: 15px; opacity: 0.6; }
+
+/* Sub-Level Positioning (Flyouts) */
+.has-flyout > .tiered-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -10px;
+    transform: translateX(15px);
+}
+
+/* Mobile Consistency */
+@media (max-width: 1200px) {
+    .tiered-menu, .nav-dropdown { 
+        position: static !important; 
+        opacity: 1 !important; 
+        visibility: visible !important; 
+        transform: none !important; 
+        box-shadow: none !important; 
+        border: none !important; 
+        display: none !important; 
+        padding-left: 20px !important; 
+        min-width: 100% !important;
+    }
+    .active { display: block !important; }
+    .nav-dropdown a, .tiered-menu a { white-space: normal !important; } /* Allow wrap on mobile */
+}
+
+
+/* Mega Sub Menu Styling */
+.has-mega-sub { position: relative; }
+.mega-sub-menu { list-style: none; padding: 0 0 0 15px; margin: 5px 0 10px 0; border-left: 1px solid rgba(78, 165, 217, 0.2); display: flex; flex-direction: column; gap: 4px; }
+.mega-sub-menu li a { font-size: 12px !important; color: #64748b !important; font-weight: 500 !important; padding: 2px 0 !important; }
+.mega-sub-menu li a:hover { color: #4EA5D9 !important; transform: translateX(3px) !important; }
+.mega-links > li > a { display: flex; align-items: center; justify-content: space-between; }
+.mega-links > li > a i { font-size: 10px; transition: transform 0.3s ease; }
+.has-mega-sub:hover > a i { transform: rotate(90deg); }
+
