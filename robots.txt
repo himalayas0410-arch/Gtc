@@ -12,5 +12,5 @@ Allow: /css/
 Allow: /js/
 Allow: /images/
 
-# Sitemap — Replace YOUR-DOMAIN.com with final domain
-Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
+# Sitemap
+Sitemap: https://global.icai.org/sitemap.xml

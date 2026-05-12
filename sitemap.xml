@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- NOTE: Replace https://YOUR-DOMAIN.com with your final domain before deployment -->
-  <url><loc>https://YOUR-DOMAIN.com/index.html</loc><lastmod>2026-05-13</lastmod><priority>1.0</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/about.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/members.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/events.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/contact.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/global-udaan.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/certificate-courses.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/itec-programs.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/foreign-language-courses.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/reports-publications.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/ifsca.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/sepc.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/policy-engagements.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/state-policy.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/chintan-shivir.html</loc><lastmod>2026-05-13</lastmod><priority>0.5</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/mou-options.html</loc><lastmod>2026-05-13</lastmod><priority>0.5</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/video-player.html</loc><lastmod>2026-05-13</lastmod><priority>0.4</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/privacy-policy.html</loc><lastmod>2026-05-13</lastmod><priority>0.3</priority></url>
-  <url><loc>https://YOUR-DOMAIN.com/terms-of-use.html</loc><lastmod>2026-05-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://global.icai.org/index.html</loc><lastmod>2026-05-13</lastmod><priority>1.0</priority></url>
+  <url><loc>https://global.icai.org/about.html</loc><lastmod>2026-05-13</lastmod><priority>0.8</priority></url>
+  <url><loc>https://global.icai.org/members.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/events.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/contact.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/global-udaan.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/certificate-courses.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/itec-programs.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/foreign-language-courses.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/reports-publications.html</loc><lastmod>2026-05-13</lastmod><priority>0.7</priority></url>
+  <url><loc>https://global.icai.org/ifsca.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
+  <url><loc>https://global.icai.org/sepc.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
+  <url><loc>https://global.icai.org/policy-engagements.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
+  <url><loc>https://global.icai.org/state-policy.html</loc><lastmod>2026-05-13</lastmod><priority>0.6</priority></url>
+  <url><loc>https://global.icai.org/chintan-shivir.html</loc><lastmod>2026-05-13</lastmod><priority>0.5</priority></url>
+  <url><loc>https://global.icai.org/mou-options.html</loc><lastmod>2026-05-13</lastmod><priority>0.5</priority></url>
+  <url><loc>https://global.icai.org/video-player.html</loc><lastmod>2026-05-13</lastmod><priority>0.4</priority></url>
+  <url><loc>https://global.icai.org/privacy-policy.html</loc><lastmod>2026-05-13</lastmod><priority>0.3</priority></url>
+  <url><loc>https://global.icai.org/terms-of-use.html</loc><lastmod>2026-05-13</lastmod><priority>0.3</priority></url>
 </urlset>

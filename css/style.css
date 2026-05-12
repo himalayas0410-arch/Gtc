@@ -883,7 +883,8 @@ h6,
     transform: translateY(-50%);
     display: flex !important;
     align-items: center;
-    z-index: 1001; /* Above sticky header z-index 999 */
+    z-index: 1001;
+    /* Above sticky header z-index 999 */
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
@@ -927,7 +928,7 @@ h6,
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     background: #fff;
     border-radius: 50px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Unified nav-search styling handled above */
@@ -1238,7 +1239,8 @@ h6,
 
 /* Gradient transition to next section */
 .hero-container::after {
-    display: none; /* Removed shadow to prevent interference with banner text */
+    display: none;
+    /* Removed shadow to prevent interference with banner text */
 }
 
 .hero-container .carousel-inner {
@@ -1249,7 +1251,8 @@ h6,
     background: #000;
 }
 
-.banner-video, .banner-img {
+.banner-video,
+.banner-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1275,7 +1278,8 @@ h6,
 
 /* 2. KEEP IMAGE CLEAN - VERY SUBTLE OVERLAY FOR READABILITY ONLY */
 .hero-container .carousel-item::after {
-    display: none; /* Removed overlay to restore full image brightness */
+    display: none;
+    /* Removed overlay to restore full image brightness */
 }
 
 .hero-container .carousel-item img,
@@ -4790,7 +4794,8 @@ a.knowmore {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px; /* Reduced from 20px */
+    padding: 12px;
+    /* Reduced from 20px */
     transition: all 0.4s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     flex-shrink: 0;
@@ -4799,21 +4804,31 @@ a.knowmore {
 .partner-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
-    filter: brightness(0.98); /* Subtle feedback since border is always colorful */
+    filter: brightness(0.98);
+    /* Subtle feedback since border is always colorful */
 }
 
 .partner-box img {
-    width: 200px; /* Standardized bounding box width */
-    height: 95px; /* Standardized bounding box height */
+    width: 200px;
+    /* Standardized bounding box width */
+    height: 95px;
+    /* Standardized bounding box height */
     object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.02));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.02));
     transition: transform 0.4s ease;
 }
 
 /* Animation */
 @keyframes scrollLogos {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-310px * 13)); } /* Width (280) + Gap (30) */
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-310px * 13));
+    }
+
+    /* Width (280) + Gap (30) */
 }
 
 /* Pause on hover removed per request */
@@ -4843,15 +4858,20 @@ a.knowmore {
         height: 90px;
         padding: 15px;
     }
-    
+
     .partner-box img {
         width: 140px;
         height: 60px;
     }
-    
+
     @keyframes scrollLogos {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(calc(-210px * 13)); }
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-210px * 13));
+        }
     }
 }
 
@@ -5132,7 +5152,7 @@ a.knowmore {
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .mobile-nav > ul > li:last-child {
+    .mobile-nav>ul>li:last-child {
         border-bottom: none;
     }
 
@@ -5254,7 +5274,8 @@ a.knowmore {
     .board {
         position: relative !important;
         width: 100% !important;
-        height: 420px !important; /* 5 cards * 76px + 4 * 10px gaps */
+        height: 420px !important;
+        /* 5 cards * 76px + 4 * 10px gaps */
         min-height: unset !important;
         display: block !important;
         margin-top: 10px;
@@ -5276,11 +5297,25 @@ a.knowmore {
     }
 
     /* Spread State (Vertical) */
-    .deck-card[data-index="1"] { top: 0 !important; }
-    .deck-card[data-index="2"] { top: 86px !important; }
-    .deck-card[data-index="3"] { top: 172px !important; }
-    .deck-card[data-index="4"] { top: 258px !important; }
-    .deck-card[data-index="5"] { top: 344px !important; }
+    .deck-card[data-index="1"] {
+        top: 0 !important;
+    }
+
+    .deck-card[data-index="2"] {
+        top: 86px !important;
+    }
+
+    .deck-card[data-index="3"] {
+        top: 172px !important;
+    }
+
+    .deck-card[data-index="4"] {
+        top: 258px !important;
+    }
+
+    .deck-card[data-index="5"] {
+        top: 344px !important;
+    }
 
     .deck-card .card-title {
         font-size: 13px;
@@ -5307,7 +5342,8 @@ a.knowmore {
     .board.is-stacked {
         height: auto !important;
         min-height: 400px !important;
-        padding-top: 100px !important; /* Space for the stacked absolute cards */
+        padding-top: 100px !important;
+        /* Space for the stacked absolute cards */
     }
 
     /* All cards stack at the top */
@@ -5318,11 +5354,30 @@ a.knowmore {
     }
 
     /* Subtle rotations to look like a physical deck */
-    .board.is-stacked .deck-card:not(.active)[data-index="1"] { transform: translate(-3px, 3px) rotate(-2deg) !important; z-index: 1 !important; }
-    .board.is-stacked .deck-card:not(.active)[data-index="2"] { transform: translate(-1.5px, 1.5px) rotate(-1deg) !important; z-index: 2 !important; }
-    .board.is-stacked .deck-card:not(.active)[data-index="3"] { transform: translate(0, 0) rotate(0deg) !important; z-index: 3 !important; }
-    .board.is-stacked .deck-card:not(.active)[data-index="4"] { transform: translate(1.5px, -1.5px) rotate(1deg) !important; z-index: 4 !important; }
-    .board.is-stacked .deck-card:not(.active)[data-index="5"] { transform: translate(3px, -3px) rotate(2deg) !important; z-index: 5 !important; }
+    .board.is-stacked .deck-card:not(.active)[data-index="1"] {
+        transform: translate(-3px, 3px) rotate(-2deg) !important;
+        z-index: 1 !important;
+    }
+
+    .board.is-stacked .deck-card:not(.active)[data-index="2"] {
+        transform: translate(-1.5px, 1.5px) rotate(-1deg) !important;
+        z-index: 2 !important;
+    }
+
+    .board.is-stacked .deck-card:not(.active)[data-index="3"] {
+        transform: translate(0, 0) rotate(0deg) !important;
+        z-index: 3 !important;
+    }
+
+    .board.is-stacked .deck-card:not(.active)[data-index="4"] {
+        transform: translate(1.5px, -1.5px) rotate(1deg) !important;
+        z-index: 4 !important;
+    }
+
+    .board.is-stacked .deck-card:not(.active)[data-index="5"] {
+        transform: translate(3px, -3px) rotate(2deg) !important;
+        z-index: 5 !important;
+    }
 
     .board.is-stacked .deck-card.active {
         box-shadow: 0 8px 25px rgba(0, 0, 0, 0.28) !important;
@@ -5359,7 +5414,8 @@ a.knowmore {
         top: auto !important;
         left: 0 !important;
         width: 100% !important;
-        margin-top: 0 !important; /* Rely on board's padding-top to prevent margin collapse */
+        margin-top: 0 !important;
+        /* Rely on board's padding-top to prevent margin collapse */
         opacity: 1 !important;
         visibility: visible !important;
         pointer-events: auto !important;
@@ -5379,7 +5435,8 @@ a.knowmore {
 
     .details-panel .sub-mini-card {
         padding: 12px 16px;
-        height: 64px; /* Fixed height for uniformity */
+        height: 64px;
+        /* Fixed height for uniformity */
         gap: 12px;
         align-items: center;
     }
@@ -5768,8 +5825,15 @@ a.knowmore {
 
 
 /* Isolated Deep-Tiered Navigation Implementation */
-.has-tiered { position: relative; }
-.has-tiered > a { display: flex; align-items: center; gap: 4px; }
+.has-tiered {
+    position: relative;
+}
+
+.has-tiered>a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
 
 /* Level 1 Base for Global Initiatives */
 .tiered-menu {
@@ -5777,7 +5841,7 @@ a.knowmore {
     top: 100%;
     left: 0;
     background: #ffffff !important;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
     padding: 10px 0;
     min-width: 280px;
@@ -5786,7 +5850,7 @@ a.knowmore {
     transform: translateY(15px);
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     z-index: 5000;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     list-style: none;
     margin: 0;
     display: block !important;
@@ -5798,7 +5862,7 @@ a.knowmore {
     top: 100%;
     left: 0;
     background: #ffffff !important;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
     border-radius: 12px;
     padding: 10px 0;
     min-width: 240px;
@@ -5807,38 +5871,51 @@ a.knowmore {
     transform: translateY(15px);
     transition: all 0.3s ease;
     z-index: 4000;
-    border: 1px solid rgba(0,0,0,0.08);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     list-style: none;
     margin: 0;
     display: flex !important;
     flex-direction: column !important;
 }
-.has-dropdown:hover > .nav-dropdown { opacity: 1 !important; visibility: visible !important; transform: translateY(0) !important; }
 
-.nav-dropdown li { width: 100%; list-style: none; }
-.nav-dropdown a { 
-    display: block !important; 
-    padding: 12px 25px !important; 
-    color: #233459 !important; 
-    font-size: 14px !important; 
-    font-weight: 700 !important; 
-    text-decoration: none !important;
-    white-space: nowrap !important; 
+.has-dropdown:hover>.nav-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
-.nav-dropdown a:hover { background: var(--tint-blue); color: var(--blue-primary) !important; }
+
+.nav-dropdown li {
+    width: 100%;
+    list-style: none;
+}
+
+.nav-dropdown a {
+    display: block !important;
+    padding: 12px 25px !important;
+    color: #233459 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    white-space: nowrap !important;
+}
+
+.nav-dropdown a:hover {
+    background: var(--tint-blue);
+    color: var(--blue-primary) !important;
+}
 
 /* Tiered Hover Show Logic */
-.has-tiered:hover > .tiered-menu { 
-    opacity: 1 !important; 
-    visibility: visible !important; 
-    transform: translateY(0) !important; 
+.has-tiered:hover>.tiered-menu {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
 }
 
 /* Tiered Link Styling */
-.tiered-menu li { 
-    position: relative; 
-    list-style: none; 
-    width: 100%; 
+.tiered-menu li {
+    position: relative;
+    list-style: none;
+    width: 100%;
     transition: all 0.2s ease-in-out;
 }
 
@@ -5853,13 +5930,23 @@ a.knowmore {
     text-decoration: none !important;
     transition: all 0.2s ease;
     line-height: 1.4;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
-.tiered-menu a:hover { background: var(--tint-blue); color: var(--blue-primary) !important; }
-.tiered-menu a i { font-size: 12px; margin-left: 15px; opacity: 0.6; transition: transform 0.3s ease; }
+
+.tiered-menu a:hover {
+    background: var(--tint-blue);
+    color: var(--blue-primary) !important;
+}
+
+.tiered-menu a i {
+    font-size: 12px;
+    margin-left: 15px;
+    opacity: 0.6;
+    transition: transform 0.3s ease;
+}
 
 /* Sub-Level Positioning (Tier 2 Flyout) */
-.has-flyout > .tiered-menu.level-2 {
+.has-flyout>.tiered-menu.level-2 {
     top: 0;
     left: 100%;
     transform: translateX(15px);
@@ -5867,17 +5954,19 @@ a.knowmore {
     visibility: hidden;
     display: block !important;
 }
-.has-flyout:hover > .tiered-menu.level-2 {
-    opacity: 1 !important; 
-    visibility: visible !important; 
-    transform: translateX(0) !important; 
+
+.has-flyout:hover>.tiered-menu.level-2 {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
 }
 
 /* Level 3 IN-PLACE Interaction (Accordion style extending downwards) */
 /* Keeps level-3 open if hovering on it OR if hovering on any sibling item below it */
 .level-3 {
-    position: static !important; 
-    display: none !important; /* STRICTLY HIDDEN BY DEFAULT */
+    position: static !important;
+    display: none !important;
+    /* STRICTLY HIDDEN BY DEFAULT */
     width: 100%;
     background: rgba(78, 165, 217, 0.05) !important;
     border: none !important;
@@ -5888,24 +5977,25 @@ a.knowmore {
     visibility: hidden !important;
 }
 
-li.has-flyout:hover > .level-3,
-li.has-flyout:has(~ li:hover) > .level-3 {
+li.has-flyout:hover>.level-3,
+li.has-flyout:has(~ li:hover)>.level-3 {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
 }
 
-li.has-flyout:hover > a i,
-li.has-flyout:has(~ li:hover) > a i {
+li.has-flyout:hover>a i,
+li.has-flyout:has(~ li:hover)>a i {
     transform: rotate(90deg);
 }
 
 .level-3 a {
-    padding: 8px 25px 8px 45px !important; 
+    padding: 8px 25px 8px 45px !important;
     font-size: 13px !important;
     opacity: 0.8;
     text-transform: none !important;
 }
+
 .level-3 a:hover {
     opacity: 1;
     background: transparent !important;
@@ -5914,28 +6004,69 @@ li.has-flyout:has(~ li:hover) > a i {
 
 /* Mobile Consistency */
 @media (max-width: 1200px) {
-    .tiered-menu, .nav-dropdown { 
-        position: static !important; 
-        opacity: 1 !important; 
-        visibility: visible !important; 
-        transform: none !important; 
-        box-shadow: none !important; 
-        border: none !important; 
-        display: none !important; 
-        padding-left: 20px !important; 
+
+    .tiered-menu,
+    .nav-dropdown {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        border: none !important;
+        display: none !important;
+        padding-left: 20px !important;
         min-width: 100% !important;
     }
-    .active { display: block !important; }
-    .nav-dropdown a, .tiered-menu a { white-space: normal !important; }
+
+    .active {
+        display: block !important;
+    }
+
+    .nav-dropdown a,
+    .tiered-menu a {
+        white-space: normal !important;
+    }
 }
 
 
 /* Mega Sub Menu Styling */
-.has-mega-sub { position: relative; }
-.mega-sub-menu { list-style: none; padding: 0 0 0 15px; margin: 5px 0 10px 0; border-left: 1px solid rgba(78, 165, 217, 0.2); display: flex; flex-direction: column; gap: 4px; }
-.mega-sub-menu li a { font-size: 12px !important; color: #64748b !important; font-weight: 500 !important; padding: 2px 0 !important; }
-.mega-sub-menu li a:hover { color: #4EA5D9 !important; transform: translateX(3px) !important; }
-.mega-links > li > a { display: flex; align-items: center; justify-content: space-between; }
-.mega-links > li > a i { font-size: 10px; transition: transform 0.3s ease; }
-.has-mega-sub:hover > a i { transform: rotate(90deg); }
+.has-mega-sub {
+    position: relative;
+}
 
+.mega-sub-menu {
+    list-style: none;
+    padding: 0 0 0 15px;
+    margin: 5px 0 10px 0;
+    border-left: 1px solid rgba(78, 165, 217, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mega-sub-menu li a {
+    font-size: 12px !important;
+    color: #64748b !important;
+    font-weight: 500 !important;
+    padding: 2px 0 !important;
+}
+
+.mega-sub-menu li a:hover {
+    color: #4EA5D9 !important;
+    transform: translateX(3px) !important;
+}
+
+.mega-links>li>a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mega-links>li>a i {
+    font-size: 10px;
+    transition: transform 0.3s ease;
+}
+
+.has-mega-sub:hover>a i {
+    transform: rotate(90deg);
+}
