@@ -116,6 +116,14 @@
         .card-telangana { border-top: 6px solid #8B5CF6; }
         .card-mp { border-top: 6px solid #14B8A6; }
 
+        /* Enforce strict single-column layout for mobile and tablet viewports */
+        @media (max-width: 991.98px) {
+            .policy-grid .row > [class*='col-'] {
+                width: 100% !important;
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+            }
+        }
     </style>
 </head>
 
@@ -141,7 +149,7 @@
             <div class="row g-4">
                 
                 <!-- Karnataka -->
-                <div class="col-lg-6 reveal-up" style="animation-delay: 0.1s">
+                <div class="col-12 col-lg-6 reveal-up" style="animation-delay: 0.1s">
                     <div class="policy-card card-karnataka">
                         <span class="state-badge">Karnataka</span>
                         <h3 class="policy-title">Karnataka GCC Policy (2024-29)</h3>
@@ -154,7 +162,7 @@
                 </div>
 
                 <!-- Telangana -->
-                <div class="col-lg-6 reveal-up" style="animation-delay: 0.2s">
+                <div class="col-12 col-lg-6 reveal-up" style="animation-delay: 0.2s">
                     <div class="policy-card card-telangana">
                         <span class="state-badge">Telangana</span>
                         <h3 class="policy-title">Telangana's Second ICT Policy (2021-2026)</h3>
@@ -167,7 +175,7 @@
                 </div>
 
                 <!-- Delhi -->
-                <div class="col-lg-6 reveal-up" style="animation-delay: 0.3s">
+                <div class="col-12 col-lg-6 reveal-up" style="animation-delay: 0.3s">
                     <div class="policy-card card-delhi">
                         <span class="state-badge">NCT of Delhi</span>
                         <h3 class="policy-title">Start-up Policy for NCT of Delhi (2019)</h3>
@@ -180,7 +188,7 @@
                 </div>
 
                 <!-- Madhya Pradesh -->
-                <div class="col-lg-6 reveal-up" style="animation-delay: 0.4s">
+                <div class="col-12 col-lg-6 reveal-up" style="animation-delay: 0.4s">
                     <div class="policy-card card-mp">
                         <span class="state-badge">Madhya Pradesh</span>
                         <h3 class="policy-title">Madhya Pradesh GCC Policy (2025)</h3>
@@ -194,7 +202,7 @@
                 </div>
 
                 <!-- Maharashtra -->
-                <div class="col-lg-6 reveal-up" style="animation-delay: 0.5s">
+                <div class="col-12 col-lg-6 reveal-up" style="animation-delay: 0.5s">
                     <div class="policy-card card-maharashtra">
                         <span class="state-badge">Maharashtra</span>
                         <h3 class="policy-title">Maharashtra GCC Policy (2025)</h3>
@@ -208,7 +216,7 @@
                 </div>
 
                 <!-- Tamil Nadu -->
-                <div class="col-lg-6 reveal-up" style="animation-delay: 0.6s">
+                <div class="col-12 col-lg-6 reveal-up" style="animation-delay: 0.6s">
                     <div class="policy-card card-tamilnadu">
                         <span class="state-badge">Tamil Nadu</span>
                         <h3 class="policy-title">Tamil Nadu Semiconductor and Advanced Electronics Policy (2024)</h3>
