@@ -5870,13 +5870,8 @@ a.knowmore {
     transform: translateX(0) !important; 
 }
 
-/* Level 3 IN-PLACE Interaction (Accordion style) */
-.level-2 li { overflow: hidden; }
-
-/* Hide siblings ONLY when hovering over an item that actually HAS a level-3 sub-menu */
-.level-2 > li.has-flyout:hover ~ li { height: 0 !important; opacity: 0 !important; padding: 0 !important; margin: 0 !important; pointer-events: none !important; }
-.level-2 > li:has(~ li.has-flyout:hover) { height: 0 !important; opacity: 0 !important; padding: 0 !important; margin: 0 !important; pointer-events: none !important; }
-
+/* Level 3 IN-PLACE Interaction (Accordion style extending downwards) */
+/* Keeps level-3 open if hovering on it OR if hovering on any sibling item below it */
 .level-3 {
     position: static !important; 
     display: none !important; /* STRICTLY HIDDEN BY DEFAULT */
@@ -5890,14 +5885,15 @@ a.knowmore {
     visibility: hidden !important;
 }
 
-/* Show ONLY when the specific parent is hovered */
-li.has-flyout:hover > .level-3 {
+li.has-flyout:hover > .level-3,
+li.has-flyout:has(~ li:hover) > .level-3 {
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
 }
 
-li.has-flyout:hover > a i {
+li.has-flyout:hover > a i,
+li.has-flyout:has(~ li:hover) > a i {
     transform: rotate(90deg);
 }
 
