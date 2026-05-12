@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sitemap - Global Trade & Services Committee, ICAI</title>
+    <meta name="description"
+        content="Complete directory and visual sitemap of the Global Trade & Services Committee, ICAI portal. Easily navigate all initiatives, programs, and member resources.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sitemap - GTC, ICAI">
+    <meta property="og:description" content="Visual directory navigation for the Global Trade & Services Committee website.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:site_name" content="Global Trade & Services Committee, ICAI">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Sitemap - GTC, ICAI">
+    <meta name="twitter:description" content="Visual directory navigation for the Global Trade & Services Committee website.">
+    <meta name="twitter:image" content="images/logo.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        /* Premium Sitemap Custom Styles */
+        .sitemap-hero {
+            padding: 80px 0 40px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--tint-blue), transparent);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .sitemap-hero h1 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.03em;
+        }
+
+        .sitemap-grid {
+            padding: 60px 0 80px;
+        }
+
+        .sitemap-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 20px;
+            padding: 32px 28px;
+            height: 100%;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .sitemap-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--blue-primary);
+            transition: height 0.3s ease;
+        }
+
+        .sitemap-card.card-blue::before { background: linear-gradient(90deg, #3B82F6, #60A5FA); }
+        .sitemap-card.card-purple::before { background: linear-gradient(90deg, #8B5CF6, #A78BFA); }
+        .sitemap-card.card-orange::before { background: linear-gradient(90deg, #F97316, #FBBF24); }
+        .sitemap-card.card-green::before { background: linear-gradient(90deg, #10B981, #34D399); }
+        .sitemap-card.card-red::before { background: linear-gradient(90deg, #EF4444, #F87171); }
+
+        .sitemap-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: rgba(78, 165, 217, 0.2);
+        }
+
+        .sitemap-card:hover::before {
+            height: 8px;
+        }
+
+        .sitemap-icon-box {
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 22px;
+            background: var(--bg-soft);
+        }
+
+        .card-blue .sitemap-icon-box { color: #3B82F6; background: #EFF6FF; }
+        .card-purple .sitemap-icon-box { color: #8B5CF6; background: #F5F3FF; }
+        .card-orange .sitemap-icon-box { color: #F97316; background: #FFF7ED; }
+        .card-green .sitemap-icon-box { color: #10B981; background: #ECFDF5; }
+        .card-red .sitemap-icon-box { color: #EF4444; background: #FEF2F2; }
+
+        .sitemap-card h3 {
+            font-family: 'Manrope', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 18px;
+            letter-spacing: -0.01em;
+        }
+
+        .sitemap-links-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sitemap-links-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+            padding-bottom: 8px;
+        }
+
+        .sitemap-links-list li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .sitemap-links-list a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.98rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+
+        .sitemap-links-list a span {
+            position: relative;
+        }
+
+        .sitemap-links-list a i {
+            font-size: 0.85rem;
+            opacity: 0;
+            transform: translateX(-5px);
+            transition: all 0.3s ease;
+            color: var(--blue-primary);
+        }
+
+        .sitemap-links-list a:hover {
+            color: var(--blue-primary);
+            padding-left: 6px;
+        }
+
+        .sitemap-links-list a:hover i {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .xml-banner {
+            background: #F8FAFC;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            padding: 20px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .xml-banner-text p {
+            margin: 0;
+            font-size: 0.92rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .xml-banner-text strong {
+            color: var(--text-dark);
+        }
+
+        .xml-btn {
+            background: #fff;
+            border: 1px solid var(--border-brand);
+            padding: 8px 18px;
+            border-radius: 10px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--blue-primary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .xml-btn:hover {
+            background: var(--blue-primary);
+            color: #fff;
+            border-color: var(--blue-primary);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background Decorators -->
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div id="scrollProgress"></div>
+    
+    <!-- Dynamic Header Injection -->
+    <div id="header-placeholder"></div>
+
+    <!-- Sitemap Title Hero -->
+    <section class="sitemap-hero scroll-reveal">
+        <div class="container">
+            <div class="section-tag">Portal Index</div>
+            <h1>Website Directory</h1>
+            <p class="lead text-muted max-w-2xl mx-auto">Explore all active institutional gateways, advisory modules, global chapters, and functional resources hosted on the Global Trade & Services portal.</p>
+        </div>
+    </section>
+
+    <!-- Sitemap Directory Content Grid -->
+    <section class="sitemap-grid">
+        <div class="container">
+            <div class="row g-4 justify-content-center">
+                
+                <!-- Main Core -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="sitemap-card card-blue scroll-reveal stagger-1">
+                        <div class="sitemap-icon-box"><i class="bi bi-house-door-fill"></i></div>
+                        <h3>Primary Pages</h3>
+                        <ul class="sitemap-links-list">
+                            <li><a href="index.html"><span>Home Portal</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="about.html"><span>About the Committee</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="members.html"><span>Committee Members</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="events.html"><span>Upcoming & Past Events</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="contact.html"><span>Contact Information</span><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Global Ecosystems -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="sitemap-card card-purple scroll-reveal stagger-2">
+                        <div class="sitemap-icon-box"><i class="bi bi-globe-americas"></i></div>
+                        <h3>Ecosystem Integration</h3>
+                        <ul class="sitemap-links-list">
+                            <li><a href="ifsca.html"><span>GIFT City - IFSCA Delegation</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="sepc.html"><span>SEPC Trade Engagements</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="mou-options.html"><span>MoU Deliverables & Outcomes</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="https://gcc.icai.org/" target="_blank" rel="noopener noreferrer"><span>GCC Global Portal</span><i class="bi bi-box-arrow-up-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Government & Policy -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="sitemap-card card-orange scroll-reveal stagger-3">
+                        <div class="sitemap-icon-box"><i class="bi bi-bank2"></i></div>
+                        <h3>Policy Engagements</h3>
+                        <ul class="sitemap-links-list">
+                            <li><a href="policy-engagements.html"><span>Government Representations</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="state-policy.html"><span>State Policy Advocacy</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="chintan-shivir.html"><span>Chintan Shivir 2025</span><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capacity Building -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="sitemap-card card-green scroll-reveal stagger-4">
+                        <div class="sitemap-icon-box"><i class="bi bi-mortarboard-fill"></i></div>
+                        <h3>Capacity Building</h3>
+                        <ul class="sitemap-links-list">
+                            <li><a href="global-udaan.html"><span>Global Udaan Initiative</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="certificate-courses.html"><span>Certificate Courses</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="itec-programs.html"><span>ITEC Training Programs</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="foreign-language-courses.html"><span>Foreign Language Courses</span><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Media & Resources -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="sitemap-card card-red scroll-reveal stagger-5">
+                        <div class="sitemap-icon-box"><i class="bi bi-journal-bookmark-fill"></i></div>
+                        <h3>Knowledge Resources</h3>
+                        <ul class="sitemap-links-list">
+                            <li><a href="reports-publications.html"><span>Reports & Publications</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="video-player.html"><span>Video Player Gateway</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="privacy-policy.html"><span>Privacy Policy</span><i class="bi bi-chevron-right"></i></a></li>
+                            <li><a href="terms-of-use.html"><span>Terms of Use</span><i class="bi bi-chevron-right"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Backend Machine XML Notification/Link -->
+            <div class="xml-banner scroll-reveal stagger-6">
+                <div class="xml-banner-text">
+                    <p><strong>Are you a web crawler or systems integrator?</strong> Access our automated backend map config directly.</p>
+                </div>
+                <a href="sitemap.xml" class="xml-btn"><i class="bi bi-filetype-xml"></i> Engine Sitemap.xml</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Dynamic Footer Injection -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Script Loaders -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        async function loadComponent(id, file) {
+            try {
+                const res = await fetch(file);
+                const text = await res.text();
+                document.getElementById(id).innerHTML = text;
+                const obs = window.revealObserver || window.observer;
+                if (obs) {
+                    document.querySelectorAll('#' + id + ' .reveal-up').forEach(el => obs.observe(el));
+                }
+            } catch (err) {
+                console.error('Failed to load component:', file, err);
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement,
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            if (document.getElementById('scrollProgress')) {
+                document.getElementById('scrollProgress').style.width = percent + '%';
+            }
+        });
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            if (overlay) {
+                overlay.classList.toggle('active');
+                document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+            }
+        }
+
+        // Standard Scroll Reveal Animation setup
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                    }, i * 60);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+        window.revealObserver = observer;
+
+        loadComponent('header-placeholder', 'header.html');
+        loadComponent('footer-placeholder', 'footer.html');
+    </script>
+</body>
+
+</html>
