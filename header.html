@@ -36,6 +36,8 @@
       const gscBtn = document.querySelector('button.gsc-search-button');
       if (gscInput && gscBtn) {
         gscInput.value = input.value;
+        gscInput.dispatchEvent(new Event('input', { bubbles: true }));
+        gscInput.dispatchEvent(new Event('change', { bubbles: true }));
         gscBtn.click();
       } else {
         window.location.href = '?q=' + encodeURIComponent(input.value.trim());
@@ -209,10 +211,27 @@
                         <input type="text" placeholder="Search..." class="search-input" id="customSearchInput" onkeydown="if(event.key === 'Enter') submitCustomSearch()">
                         <span class="material-symbols-outlined search-icon" onclick="submitCustomSearch()">search</span>
                     </div>
-                    <!-- Visually hidden GCSE engine container powering the native search overlay -->
-                    <div style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none;">
-                        <div class="gcse-search"></div>
-                    </div>
+                    <!-- GCSE Engine instance directly in the DOM flow with styling overrides to keep only the overlay visible -->
+                    <div class="gcse-search"></div>
+                    <style>
+                        /* Hide Google's default input form so only our beautiful custom pill search bar is visible */
+                        .gsc-search-box {
+                            display: none !important;
+                        }
+                        /* Remove layout padding from Google's root container so it remains invisible when idle */
+                        .gsc-control-cse {
+                            padding: 0 !important;
+                            margin: 0 !important;
+                            background: transparent !important;
+                            border: none !important;
+                        }
+                        /* Ensure the pop-up search results overlay displays perfectly above all page content */
+                        .gsc-results-wrapper-overlay {
+                            z-index: 2147483647 !important;
+                            opacity: 1 !important;
+                            pointer-events: auto !important;
+                        }
+                    </style>
                 </div>
 
             </div>
