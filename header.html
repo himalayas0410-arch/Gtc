@@ -75,7 +75,7 @@
             <!-- Left: Primary Logo -->
             <div class="header-top-left reveal-up">
                 <a href="index.html">
-                    <img src="images/logo.png" class="logo" />
+                    <img src="images/logo.png" class="logo" alt="ICAI Logo" />
                 </a>
             </div>
 
@@ -86,7 +86,7 @@
 
             <!-- Right: Global Logo & Mobile Toggle -->
             <div class="header-top-right reveal-up">
-                <img src="images/logogloba.png" class="logo-secondary" />
+                <img src="images/logogloba.png" class="logo-secondary" alt="ICAI Global Logo" />
 
                 <div class="mobile-controls">
                     <button class="menu-toggle" onclick="toggleMobileMenu()">
@@ -143,7 +143,7 @@
                                     <li class="has-flyout">
                                         <a href="#">Global Services & Mobility <i class="bi bi-chevron-right"></i></a>
                                         <ul class="tiered-menu level-2">
-                                            <li><a href="https://apo.icai.org/" target="_blank">APO Portal</a></li>
+                                            <li><a href="https://apo.icai.org/" target="_blank" rel="noopener noreferrer">APO Portal</a></li>
                                             <li><a href="#">Embassy & High Commission Coordination</a></li>
                                             <li><a href="#">Domestic & International Events</a></li>
                                             <li class="has-flyout">
@@ -175,7 +175,7 @@
                                         <ul class="tiered-menu level-2">
                                             <li><a href="state-policy.html">State Policy Advocacy & Awareness</a></li>
                                             <li><a href="chintan-shivir.html">Chintan Shivir 2025</a></li>
-                                            <li><a href="https://gcc.icai.org/" target="_blank">GCC Summits</a></li>
+                                            <li><a href="https://gcc.icai.org/" target="_blank" rel="noopener noreferrer">GCC Summits</a></li>
                                         </ul>
                                     </li>
 
@@ -196,8 +196,8 @@
                             <li style="animation-delay: 0.4s" class="reveal-up has-dropdown">
                                 <a href="#">Upcoming events <span class="material-symbols-outlined">expand_more</span></a>
                                 <ul class="nav-dropdown">
-                                    <li><a href="images/accountax.jpg" target="_blank">ICAI Delegation & Exhibit at Accountex London</a></li>
-                                    <li><a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank">Sponsorship Matrix</a></li>
+                                    <li><a href="images/accountax.jpg" target="_blank" rel="noopener noreferrer">ICAI Delegation & Exhibit at Accountex London</a></li>
+                                    <li><a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank" rel="noopener noreferrer">Sponsorship Matrix</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -227,6 +227,13 @@
         <button class="close-overlay" onclick="toggleMobileMenu()">
             <span class="material-symbols-outlined">close</span>
         </button>
+    </div>
+    <!-- Mobile Search Bar -->
+    <div class="mobile-menu-search">
+        <div class="mobile-search-box">
+            <span class="material-symbols-outlined mobile-search-icon">search</span>
+            <input type="text" class="mobile-search-input" placeholder="Search..." id="mobileSearchInput" onkeydown="if(event.key === 'Enter') { document.getElementById('customSearchInput').value = this.value; submitCustomSearch(); toggleMobileMenu(); }">
+        </div>
     </div>
     <nav class="mobile-nav">
         <ul>
@@ -263,7 +270,7 @@
                     <li class="mobile-has-dropdown">
                         <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Global Services & Mobility <span class="material-symbols-outlined">expand_more</span></a>
                         <ul class="mobile-sub-menu">
-                            <li><a href="https://apo.icai.org/" target="_blank" onclick="toggleMobileMenu()">APO Portal</a></li>
+                            <li><a href="https://apo.icai.org/" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">APO Portal</a></li>
                             <li><a href="#" onclick="toggleMobileMenu()">Embassy Coordination</a></li>
                             <li class="mobile-has-dropdown">
                                 <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Support to Int Orgs <span class="material-symbols-outlined">expand_more</span></a>
@@ -289,7 +296,7 @@
                     <li class="mobile-has-dropdown">
                         <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">GCC Ecosystems <span class="material-symbols-outlined">expand_more</span></a>
                         <ul class="mobile-sub-menu">
-                            <li><a href="https://gcc.icai.org/" target="_blank" onclick="toggleMobileMenu()">GCC Summits</a></li>
+                            <li><a href="https://gcc.icai.org/" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">GCC Summits</a></li>
                             <li><a href="chintan-shivir.html" onclick="toggleMobileMenu()">Chintan Shivir 2025</a></li>
                             <li><a href="state-policy.html" onclick="toggleMobileMenu()">State Policy Advocacy</a></li>
                         </ul>
@@ -309,8 +316,8 @@
             <li class="mobile-has-dropdown">
                 <a href="#" onclick="event.preventDefault(); this.nextElementSibling.classList.toggle('active');">Upcoming Events <span class="material-symbols-outlined">expand_more</span></a>
                 <ul class="mobile-sub-menu">
-                    <li><a href="images/accountax.jpg" target="_blank" onclick="toggleMobileMenu()">Accountex London</a></li>
-                    <li><a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank" onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
+                    <li><a href="images/accountax.jpg" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">Accountex London</a></li>
+                    <li><a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
                 </ul>
             </li>
         </ul>

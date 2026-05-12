@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Disallow private/internal files
+Disallow: /images/Member images.docx
+Disallow: /images/ifsca/IFSCA .docx
+Disallow: /images/sepc/SEPC.docx
+Disallow: /ICAI Chapters & RO regionwise 16-03-2026.docx
+
+# Allow crawling of CSS, JS, and images for rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap — Replace YOUR-DOMAIN.com with final domain
+Sitemap: https://YOUR-DOMAIN.com/sitemap.xml
