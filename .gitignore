@@ -1,0 +1,8 @@
+# Internal Administration Tools (Local Use Only)
+admin-builder.html
+
+# System Cache & Artifacts
+.DS_Store
+Thumbs.db
+node_modules/
+.vscode/
