@@ -32,16 +32,31 @@
   window.submitCustomSearch = function() {
     const input = document.getElementById('customSearchInput');
     if (input && input.value.trim()) {
-      const gscInput = document.querySelector('input.gsc-input');
-      const gscBtn = document.querySelector('button.gsc-search-button');
-      if (gscInput && gscBtn) {
-        gscInput.value = input.value;
-        gscInput.dispatchEvent(new Event('input', { bubbles: true }));
-        gscInput.dispatchEvent(new Event('change', { bubbles: true }));
-        gscBtn.click();
-      } else {
-        window.location.href = '?q=' + encodeURIComponent(input.value.trim());
+      const query = input.value.trim();
+      const resultsBox = document.getElementById('searchResultsBox');
+      if (resultsBox) {
+        resultsBox.classList.add('active');
       }
+      
+      // Waits for Google CSE input and button via polling
+      let checkCount = 0;
+      const cseInterval = setInterval(function() {
+        checkCount++;
+        const gscInput = document.querySelector('input.gsc-input');
+        const gscBtn = document.querySelector('button.gsc-search-button');
+        
+        if (gscInput && gscBtn) {
+          clearInterval(cseInterval);
+          gscInput.value = query;
+          gscInput.dispatchEvent(new Event('focus', { bubbles: true }));
+          gscInput.dispatchEvent(new Event('input', { bubbles: true }));
+          gscInput.dispatchEvent(new Event('change', { bubbles: true }));
+          gscBtn.click();
+        } else if (checkCount > 20) {
+          clearInterval(cseInterval);
+          window.location.href = '?q=' + encodeURIComponent(query);
+        }
+      }, 100);
     }
   };
   this.remove();
@@ -324,33 +339,78 @@
     </nav>
 </div>
 
-<!-- Standalone Decoupled Root-Level Container for Google Custom Search Engine -->
-<div id="gcse-root-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 0; z-index: 2147483647; pointer-events: none;">
+<!-- Google Custom Search Normal Inline Results Section below the header -->
+<div id="searchResultsBox">
     <div class="gcse-search"></div>
+    <div class="gcse-searchresults-only"></div>
     <style>
-        /* Hide Google's native search input form completely, leaving only the beautifully formatted overlay results active */
-        #gcse-root-container .gsc-search-box {
+        /* Results section hidden by default, shown after search */
+        #searchResultsBox {
+            display: none;
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            z-index: 1000; /* Safely layered below the header without overlapping */
+            box-sizing: border-box;
+        }
+        #searchResultsBox.active {
+            display: block;
+        }
+        /* Hide Google's search box form and tabs area as requested */
+        #searchResultsBox .gsc-search-box,
+        #searchResultsBox .gsc-tabsArea {
             display: none !important;
         }
-        /* Remove framework padding and borders from Google's root wrappers so they remain 100% invisible when idle */
-        #gcse-root-container .gsc-control-cse {
+        /* Remove borders and background from Google control wrapper */
+        #searchResultsBox .gsc-control-cse {
             padding: 0 !important;
             margin: 0 !important;
             background: transparent !important;
             border: none !important;
         }
-        /* Ensure the pop-up search results overlay displays perfectly above all page content and catches pointer events */
-        .gsc-results-wrapper-overlay {
-            z-index: 2147483647 !important;
-            opacity: 1 !important;
-            pointer-events: auto !important;
+        /* Cleanly style result items */
+        #searchResultsBox .gsc-webResult.gsc-result {
+            padding: 15px 0 !important;
+            border-bottom: 1px solid #E5E7EB !important;
+            background: transparent !important;
         }
-        /* Protect Google Custom Search result image rendering from inheriting conflicting application flexbox or max-width resets */
-        .gsc-results-wrapper-overlay img {
-            max-width: 100% !important;
+        #searchResultsBox .gs-title,
+        #searchResultsBox .gs-title * {
+            color: #4EA5D9 !important;
+            text-decoration: none !important;
+            font-size: 18px !important;
+            font-weight: 600 !important;
+        }
+        #searchResultsBox .gs-title:hover,
+        #searchResultsBox .gs-title *:hover {
+            text-decoration: underline !important;
+        }
+        #searchResultsBox .gs-snippet {
+            color: #334155 !important;
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+            margin-top: 6px !important;
+        }
+        /* Style thumbnails cleanly without breaking layout grids */
+        #searchResultsBox .gsc-thumbnail img {
+            max-width: 120px !important;
             height: auto !important;
-            position: static !important;
-            display: inline-block !important;
+            border-radius: 6px !important;
+            object-fit: cover !important;
+        }
+        /* Override default modal overlay behavior to force inline layout rendering */
+        .gsc-results-wrapper-overlay {
+            display: none !important;
         }
     </style>
+    <script>
+        // Auto-show results box if a search query is present in the URL parameter
+        if (window.location.search.includes('q=')) {
+            document.getElementById('searchResultsBox').classList.add('active');
+        }
+    </script>
 </div>
