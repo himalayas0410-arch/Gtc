@@ -1,3 +1,49 @@
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FGG26QMM73"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FGG26QMM73');
+</script>
+<!-- Google Custom Search Engine -->
+<script async src="https://cse.google.com/cse.js?cx=e786f5c3606dc480d"></script>
+<!-- Dynamic execution loader for innerHTML injection -->
+<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="display:none;" onload="
+  if(!window.gtagLoaded) {
+    window.gtagLoaded = true;
+    const s1 = document.createElement('script');
+    s1.async = true;
+    s1.src = 'https://www.googletagmanager.com/gtag/js?id=G-FGG26QMM73';
+    document.head.appendChild(s1);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-FGG26QMM73');
+  }
+  if(!window.gcseLoaded) {
+    window.gcseLoaded = true;
+    const s2 = document.createElement('script');
+    s2.async = true;
+    s2.src = 'https://cse.google.com/cse.js?cx=e786f5c3606dc480d';
+    document.head.appendChild(s2);
+  }
+  window.submitCustomSearch = function() {
+    const input = document.getElementById('customSearchInput');
+    if (input && input.value.trim()) {
+      const gscInput = document.querySelector('input.gsc-input');
+      const gscBtn = document.querySelector('button.gsc-search-button');
+      if (gscInput && gscBtn) {
+        gscInput.value = input.value;
+        gscBtn.click();
+      } else {
+        window.location.href = '?q=' + encodeURIComponent(input.value.trim());
+      }
+    }
+  };
+  this.remove();
+" />
 <div class="header home-header">
     <div class="header-top">
         <div class="container header-top-container">
@@ -160,8 +206,12 @@
                 <!-- Search -->
                 <div class="nav-search" style="animation-delay: 0.6s">
                     <div class="search-container" id="searchContainer">
-                        <input type="text" placeholder="Search..." class="search-input">
-                        <span class="material-symbols-outlined search-icon" onclick="toggleMobileSearch()">search</span>
+                        <input type="text" placeholder="Search..." class="search-input" id="customSearchInput" onkeydown="if(event.key === 'Enter') submitCustomSearch()">
+                        <span class="material-symbols-outlined search-icon" onclick="submitCustomSearch()">search</span>
+                    </div>
+                    <!-- Visually hidden GCSE engine container powering the native search overlay -->
+                    <div style="position: absolute; width: 0; height: 0; overflow: hidden; opacity: 0; pointer-events: none;">
+                        <div class="gcse-search"></div>
                     </div>
                 </div>
 
