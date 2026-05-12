@@ -52,6 +52,14 @@
           gscInput.dispatchEvent(new Event('input', { bubbles: true }));
           gscInput.dispatchEvent(new Event('change', { bubbles: true }));
           gscBtn.click();
+          
+          // Force Google CSE to switch back to the classic Web Search tab to clear cached Image tab modes
+          setTimeout(function() {
+            const tabs = document.querySelectorAll('.gsc-tabHeader');
+            if (tabs && tabs.length > 0) {
+              tabs[0].click(); // Tab 0 is always Web results
+            }
+          }, 300);
         } else if (checkCount > 20) {
           clearInterval(cseInterval);
           window.location.href = '?q=' + encodeURIComponent(query);
@@ -377,6 +385,12 @@
             padding: 15px 0 !important;
             border-bottom: 1px solid #E5E7EB !important;
             background: transparent !important;
+            display: block !important;
+            width: 100% !important;
+        }
+        #searchResultsBox td.gsc-table-result {
+            display: block !important;
+            width: 100% !important;
         }
         #searchResultsBox .gs-title,
         #searchResultsBox .gs-title * {
@@ -384,6 +398,7 @@
             text-decoration: none !important;
             font-size: 18px !important;
             font-weight: 600 !important;
+            display: inline-block !important;
         }
         #searchResultsBox .gs-title:hover,
         #searchResultsBox .gs-title *:hover {
@@ -394,13 +409,18 @@
             font-size: 14px !important;
             line-height: 1.6 !important;
             margin-top: 6px !important;
+            display: block !important;
+        }
+        #searchResultsBox .gsc-url-top,
+        #searchResultsBox .gsc-url-bottom {
+            display: block !important;
+            color: #22C55E !important;
+            font-size: 13px !important;
+            margin-top: 2px !important;
         }
         /* Style thumbnails cleanly without breaking layout grids */
-        #searchResultsBox .gsc-thumbnail img {
-            max-width: 120px !important;
-            height: auto !important;
-            border-radius: 6px !important;
-            object-fit: cover !important;
+        #searchResultsBox .gsc-thumbnail {
+            display: none !important; /* Hide redundant promotional preview images inside classic web text search results */
         }
         /* Override default modal overlay behavior to force inline layout rendering */
         .gsc-results-wrapper-overlay {
