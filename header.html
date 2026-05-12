@@ -211,27 +211,6 @@
                         <input type="text" placeholder="Search..." class="search-input" id="customSearchInput" onkeydown="if(event.key === 'Enter') submitCustomSearch()">
                         <span class="material-symbols-outlined search-icon" onclick="submitCustomSearch()">search</span>
                     </div>
-                    <!-- GCSE Engine instance directly in the DOM flow with styling overrides to keep only the overlay visible -->
-                    <div class="gcse-search"></div>
-                    <style>
-                        /* Hide Google's default input form so only our beautiful custom pill search bar is visible */
-                        .gsc-search-box {
-                            display: none !important;
-                        }
-                        /* Remove layout padding from Google's root container so it remains invisible when idle */
-                        .gsc-control-cse {
-                            padding: 0 !important;
-                            margin: 0 !important;
-                            background: transparent !important;
-                            border: none !important;
-                        }
-                        /* Ensure the pop-up search results overlay displays perfectly above all page content */
-                        .gsc-results-wrapper-overlay {
-                            z-index: 2147483647 !important;
-                            opacity: 1 !important;
-                            pointer-events: auto !important;
-                        }
-                    </style>
                 </div>
 
             </div>
@@ -343,4 +322,35 @@
             </li>
         </ul>
     </nav>
+</div>
+
+<!-- Standalone Decoupled Root-Level Container for Google Custom Search Engine -->
+<div id="gcse-root-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 0; z-index: 2147483647; pointer-events: none;">
+    <div class="gcse-search"></div>
+    <style>
+        /* Hide Google's native search input form completely, leaving only the beautifully formatted overlay results active */
+        #gcse-root-container .gsc-search-box {
+            display: none !important;
+        }
+        /* Remove framework padding and borders from Google's root wrappers so they remain 100% invisible when idle */
+        #gcse-root-container .gsc-control-cse {
+            padding: 0 !important;
+            margin: 0 !important;
+            background: transparent !important;
+            border: none !important;
+        }
+        /* Ensure the pop-up search results overlay displays perfectly above all page content and catches pointer events */
+        .gsc-results-wrapper-overlay {
+            z-index: 2147483647 !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+        /* Protect Google Custom Search result image rendering from inheriting conflicting application flexbox or max-width resets */
+        .gsc-results-wrapper-overlay img {
+            max-width: 100% !important;
+            height: auto !important;
+            position: static !important;
+            display: inline-block !important;
+        }
+    </style>
 </div>
