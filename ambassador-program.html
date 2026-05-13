@@ -102,6 +102,7 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
             margin-top: 20px;
+            align-items: start;
         }
 
         .glimpse-item {
@@ -112,18 +113,20 @@
 
         .glimpse-img {
             width: 100%;
-            height: 220px;
+            height: auto;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
             margin-bottom: 12px;
             border: 1px solid rgba(0,0,0,0.05);
+            background: #ffffff;
         }
 
         .glimpse-img img {
+            display: block;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             transition: transform 0.4s ease;
         }
 
