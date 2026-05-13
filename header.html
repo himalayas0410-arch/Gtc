@@ -67,6 +67,26 @@
       }, 100);
     }
   };
+  if (!window.outsideSearchListenerAdded) {
+    window.outsideSearchListenerAdded = true;
+    document.addEventListener('click', function(event) {
+      const resultsBox = document.getElementById('searchResultsBox');
+      const searchInput = document.getElementById('customSearchInput');
+      const searchIcon = document.querySelector('.search-icon');
+      const mobileSearchBox = document.querySelector('.mobile-search-box');
+      
+      if (resultsBox && resultsBox.classList.contains('active')) {
+        const isClickInsideResults = resultsBox.contains(event.target);
+        const isClickInsideInput = searchInput && searchInput.contains(event.target);
+        const isClickInsideIcon = searchIcon && searchIcon.contains(event.target);
+        const isClickInsideMobile = mobileSearchBox && mobileSearchBox.contains(event.target);
+        
+        if (!isClickInsideResults && !isClickInsideInput && !isClickInsideIcon && !isClickInsideMobile) {
+          resultsBox.classList.remove('active');
+        }
+      }
+    });
+  }
   this.remove();
 " />
 <div class="header home-header">
@@ -409,24 +429,5 @@
         if (window.location.search.includes('q=')) {
             document.getElementById('searchResultsBox').classList.add('active');
         }
-
-        // Close search results box when clicking outside of the results container and search input fields
-        document.addEventListener('click', function(event) {
-            const resultsBox = document.getElementById('searchResultsBox');
-            const searchInput = document.getElementById('customSearchInput');
-            const searchIcon = document.querySelector('.search-icon');
-            const mobileSearchBox = document.querySelector('.mobile-search-box');
-            
-            if (resultsBox && resultsBox.classList.contains('active')) {
-                const isClickInsideResults = resultsBox.contains(event.target);
-                const isClickInsideInput = searchInput && searchInput.contains(event.target);
-                const isClickInsideIcon = searchIcon && searchIcon.contains(event.target);
-                const isClickInsideMobile = mobileSearchBox && mobileSearchBox.contains(event.target);
-                
-                if (!isClickInsideResults && !isClickInsideInput && !isClickInsideIcon && !isClickInsideMobile) {
-                    resultsBox.classList.remove('active');
-                }
-            }
-        });
     </script>
 </div>
