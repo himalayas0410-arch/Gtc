@@ -183,6 +183,130 @@
             padding-left: 0 !important;
             padding-right: 0 !important;
         }
+
+        /* Event Gallery Grid & Carousel Styling */
+        .gallery-grid-section {
+            background: var(--bg-soft);
+            padding: 60px 0;
+            border-bottom: 1px solid var(--border-brand);
+        }
+
+        .homepage-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 30px;
+        }
+
+        .homepage-gallery-card {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-brand);
+            background: #f8fafc;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .homepage-gallery-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--blue-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-carousel-inner {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .gallery-carousel-inner img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: 1;
+        }
+
+        .gallery-carousel-inner img.active {
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.45);
+            border: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .carousel-arrow i {
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .homepage-gallery-card:hover .carousel-arrow {
+            opacity: 1;
+        }
+
+        .carousel-arrow:hover {
+            background-color: var(--blue-primary);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-arrow.prev-arrow {
+            left: 15px;
+        }
+
+        .carousel-arrow.next-arrow {
+            right: 15px;
+        }
+
+        @media (max-width: 1100px) {
+            .homepage-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .homepage-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .carousel-arrow {
+                opacity: 0.7; /* Always visible on mobile/touch screens */
+            }
+        }
+
+        .ql-green {
+            background: linear-gradient(135deg, #22C55E 0%, #15803d 100%) !important;
+        }
+
+        .ql-green:hover {
+            box-shadow: 0 12px 25px rgba(34, 197, 94, 0.15);
+        }
     </style>
 </head>
 
@@ -284,10 +408,10 @@
                                             style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
 
-                                        <a href="images/accountax.jpg" target="_blank" rel="noopener noreferrer">ICAI Delegation & Exhibit at
-                                            Accountex London</a>
-                                        <a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank" rel="noopener noreferrer">Sponsorship
-                                            Matrix</a>
+                                        <a href="reportspdf/Updated%20ITEC%20Brochure%2024th%20Aug%20to%205th%20Sept%202026%20(3%20pages)%2014-05-2026.pdf" target="_blank" rel="noopener noreferrer">ITEC Brochure 24th Aug to 5th Sept 2026</a>
+                                        <a href="reportspdf/3rd-Batch-Certificate-Course-Overseas-Outsourcing-UK_compressed.pdf" target="_blank" rel="noopener noreferrer">Certificate course on Overseas Outsourcing Services - Batch 3rd UK</a>
+                                        <a href="foreign-language-courses.html#spanish">Online Spanish Language Course – A1.1 Level</a>
+                                        <a href="foreign-language-courses.html#german">Online German Language Course – A1 level</a>
                                     </div>
                                 </li>
                                 
@@ -355,7 +479,8 @@
                         events <span class="material-symbols-outlined">expand_more</span></a>
                     <ul class="mobile-sub-menu">
 
-                        <li><a href="images/accountax.jpg" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">ICAI Delegation
+                        <li><a href="reportspdf/Updated%20ITEC%20Brochure%2024th%20Aug%20to%205th%20Sept%202026%20(3%20pages)%2014-05-2026.pdf" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">ITEC Brochure 24th Aug to 5th Sept 2026</a></li>
+<li><a href="images/accountax.jpg" target="_blank" rel="noopener noreferrer" onclick="toggleMobileMenu()">ICAI Delegation
                                 & Exhibit at Accountex London</a></li>
                         <li><a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank" rel="noopener noreferrer"
                                 onclick="toggleMobileMenu()">Sponsorship Matrix</a></li>
@@ -668,28 +793,39 @@
 <!-- NEW QUICK LINKS SECTION (Premium Dashboard Style) -->
     <section class="quick-access-section">
         <div class="container">
-		<div class="text-center mb-4">
+            <div class="text-center mb-4">
                 <h3 style="color: #233459; font-weight: 800; font-size: 2.2rem; letter-spacing: 0.5px;">UPCOMING EVENTS</h3>
             </div>
             <div class="row g-4 justify-content-center">
-                <!-- <div class="col-lg-4 col-md-6"> -->
-                    <!-- <a href="images/delegates.pdf" target="_blank" rel="noopener noreferrer" class="ql-bar-item ql-blue"> -->
-                        <!-- <div class="ql-icon-box"><i class="bi bi-people-fill"></i></div> -->
-                        <!-- <span class="ql-text-content">ICAI Delegation visit to Gift City - IFSCA</span> -->
-                        <!-- <div class="ql-arrow-box"><span class="material-symbols-outlined">arrow_forward</span></div> -->
-                    <!-- </a> -->
-                <!-- </div> -->
-                <!-- <div class="col-lg-4 col-md-6"> -->
-                    <!-- <a href="images/accountax.jpg" target="_blank" rel="noopener noreferrer" class="ql-bar-item ql-purple"> -->
-                        <!-- <div class="ql-icon-box"><i class="bi bi-calculator"></i></div> -->
-                        <!-- <span class="ql-text-content">ICAI Delegation & Exhibit at Accountex London</span> -->
-                        <!-- <div class="ql-arrow-box"><span class="material-symbols-outlined">arrow_forward</span></div> -->
-                    <!-- </a> -->
-                <!-- </div> -->
-                <div class="col-lg-4 col-md-6">
-                    <a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank" rel="noopener noreferrer" class="ql-bar-item ql-orange">
+                <!-- ITEC Program Brochure -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="reportspdf/Updated%20ITEC%20Brochure%2024th%20Aug%20to%205th%20Sept%202026%20(3%20pages)%2014-05-2026.pdf" target="_blank" rel="noopener noreferrer" class="ql-bar-item ql-blue">
                         <div class="ql-icon-box"><i class="bi bi-file-earmark-pdf-fill"></i></div>
-                        <span class="ql-text-content">Sponsorship Matrix</span>
+                        <span class="ql-text-content">ITEC Brochure (24th Aug - 5th Sept 2026)</span>
+                        <div class="ql-arrow-box"><span class="material-symbols-outlined">arrow_forward</span></div>
+                    </a>
+                </div>
+                <!-- 3rd Batch UK Certificate Course -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="reportspdf/3rd-Batch-Certificate-Course-Overseas-Outsourcing-UK_compressed.pdf" target="_blank" rel="noopener noreferrer" class="ql-bar-item ql-purple">
+                        <div class="ql-icon-box"><i class="bi bi-file-earmark-pdf-fill"></i></div>
+                        <span class="ql-text-content">3rd Batch Certificate Course (UK)</span>
+                        <div class="ql-arrow-box"><span class="material-symbols-outlined">arrow_forward</span></div>
+                    </a>
+                </div>
+                <!-- Spanish Language Course -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="foreign-language-courses.html#spanish" class="ql-bar-item ql-orange">
+                        <div class="ql-icon-box"><i class="bi bi-chat-dots-fill"></i></div>
+                        <span class="ql-text-content">Online Spanish Language Course – A1.1 Level</span>
+                        <div class="ql-arrow-box"><span class="material-symbols-outlined">arrow_forward</span></div>
+                    </a>
+                </div>
+                <!-- German Language Course -->
+                <div class="col-lg-3 col-md-6">
+                    <a href="foreign-language-courses.html#german" class="ql-bar-item ql-green">
+                        <div class="ql-icon-box"><i class="bi bi-translate"></i></div>
+                        <span class="ql-text-content">Online German Language Course – A1 level</span>
                         <div class="ql-arrow-box"><span class="material-symbols-outlined">arrow_forward</span></div>
                     </a>
                 </div>
@@ -741,7 +877,66 @@
         </div>
     </section>
 
-    
+    <!-- Event Gallery Section -->
+    <section class="gallery-grid-section scroll-reveal">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h3 style="color: #233459; font-weight: 800; font-size: 2.2rem; letter-spacing: 0.5px;">EVENT GALLERY</h3>
+            </div>
+            
+            <div class="homepage-gallery-grid">
+                <!-- Card 1: Seminar Album (starts at slide 0) -->
+                <div class="homepage-gallery-card scroll-reveal" data-card-id="1">
+                    <div class="gallery-carousel-inner">
+                        <img class="active" src="images/Seminar on Global Opportunities for Indian Chartered Accountants/1.JPG" alt="Seminar Image 1" loading="lazy">
+                        <img src="images/Seminar on Global Opportunities for Indian Chartered Accountants/2.JPG" alt="Seminar Image 2" loading="lazy">
+                        <img src="images/Seminar on Global Opportunities for Indian Chartered Accountants/DSC_5611.JPG" alt="Seminar Image 3" loading="lazy">
+                        <img src="images/Seminar on Global Opportunities for Indian Chartered Accountants/DSC_5623.JPG" alt="Seminar Image 4" loading="lazy">
+                    </div>
+                    <button class="carousel-arrow prev-arrow"><i class="bi bi-chevron-left"></i></button>
+                    <button class="carousel-arrow next-arrow"><i class="bi bi-chevron-right"></i></button>
+                </div>
+
+                <!-- Card 2: Synergy Meet Album (starts at slide 0) -->
+                <div class="homepage-gallery-card scroll-reveal" data-card-id="2">
+                    <div class="gallery-carousel-inner">
+                        <img class="active" src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/1.JPG" alt="Synergy Image 1" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/2.JPG" alt="Synergy Image 2" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5382.JPG" alt="Synergy Image 3" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5396.JPG" alt="Synergy Image 4" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5513.JPG" alt="Synergy Image 5" loading="lazy">
+                    </div>
+                    <button class="carousel-arrow prev-arrow"><i class="bi bi-chevron-left"></i></button>
+                    <button class="carousel-arrow next-arrow"><i class="bi bi-chevron-right"></i></button>
+                </div>
+
+                <!-- Card 3: Seminar Album (starts at slide 1) -->
+                <div class="homepage-gallery-card scroll-reveal" data-card-id="3">
+                    <div class="gallery-carousel-inner">
+                        <img class="active" src="images/Seminar on Global Opportunities for Indian Chartered Accountants/2.JPG" alt="Seminar Image 2" loading="lazy">
+                        <img src="images/Seminar on Global Opportunities for Indian Chartered Accountants/DSC_5611.JPG" alt="Seminar Image 3" loading="lazy">
+                        <img src="images/Seminar on Global Opportunities for Indian Chartered Accountants/DSC_5623.JPG" alt="Seminar Image 4" loading="lazy">
+                        <img src="images/Seminar on Global Opportunities for Indian Chartered Accountants/1.JPG" alt="Seminar Image 1" loading="lazy">
+                    </div>
+                    <button class="carousel-arrow prev-arrow"><i class="bi bi-chevron-left"></i></button>
+                    <button class="carousel-arrow next-arrow"><i class="bi bi-chevron-right"></i></button>
+                </div>
+
+                <!-- Card 4: Synergy Meet Album (starts at slide 1) -->
+                <div class="homepage-gallery-card scroll-reveal" data-card-id="4">
+                    <div class="gallery-carousel-inner">
+                        <img class="active" src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/2.JPG" alt="Synergy Image 2" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5382.JPG" alt="Synergy Image 3" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5396.JPG" alt="Synergy Image 4" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5513.JPG" alt="Synergy Image 5" loading="lazy">
+                        <img src="images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/1.JPG" alt="Synergy Image 1" loading="lazy">
+                    </div>
+                    <button class="carousel-arrow prev-arrow"><i class="bi bi-chevron-left"></i></button>
+                    <button class="carousel-arrow next-arrow"><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <div class="section-divider"></div>
     <div class="container py-3 my-3 section-block map-section">
@@ -1166,6 +1361,62 @@
         window.revealObserver = revealObserver;
         loadComponent('header-placeholder', 'header.html');
         loadComponent('footer-placeholder', 'footer.html');
+
+        // Homepage Gallery Carousel Logic
+        document.querySelectorAll('.homepage-gallery-card').forEach((card, cardIndex) => {
+            const inner = card.querySelector('.gallery-carousel-inner');
+            const images = inner.querySelectorAll('img');
+            let currentIndex = 0; // Starts with active slide (index 0 in each card's inner list)
+
+            const prevArrow = card.querySelector('.prev-arrow');
+            const nextArrow = card.querySelector('.next-arrow');
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    if (i === index) {
+                        img.classList.add('active');
+                    } else {
+                        img.classList.remove('active');
+                    }
+                });
+                currentIndex = index;
+            }
+
+            function nextImage() {
+                const nextIndex = (currentIndex + 1) % images.length;
+                showImage(nextIndex);
+            }
+
+            function prevImage() {
+                const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(prevIndex);
+            }
+
+            // Autoplay mechanism with staggered delay: Card 0 -> 4000ms, Card 1 -> 4800ms, etc.
+            const delay = 4000 + (cardIndex * 800);
+            let autoplayInterval = setInterval(nextImage, delay);
+
+            function resetAutoplay() {
+                clearInterval(autoplayInterval);
+                autoplayInterval = setInterval(nextImage, delay);
+            }
+
+            prevArrow.addEventListener('click', (e) => {
+                e.stopPropagation();
+                prevImage();
+                resetAutoplay();
+            });
+
+            nextArrow.addEventListener('click', (e) => {
+                e.stopPropagation();
+                nextImage();
+                resetAutoplay();
+            });
+
+            card.addEventListener('click', () => {
+                window.location.href = 'photo-gallery.html';
+            });
+        });
     </script>
 
     <!-- Gooey Filter Definiton -->

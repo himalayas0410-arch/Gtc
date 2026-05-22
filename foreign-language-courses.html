@@ -312,9 +312,11 @@
                                     <a href="#">Upcoming events <span class="material-symbols-outlined"
                                             style="font-size: 16px; vertical-align: text-bottom;">expand_more</span></a>
                                     <div class="nav-dropdown">
-                                        
-                                        <a href="images/accountax.jpg" target="_blank" rel="noopener noreferrer">ICAI Delegation & Exhibit at Accountex London</a>
-                                        <a href="images/new sponsorship matrix 29-04-2026.pdf" target="_blank" rel="noopener noreferrer">Sponsorship Matrix</a>
+
+                                        <a href="reportspdf/Updated%20ITEC%20Brochure%2024th%20Aug%20to%205th%20Sept%202026%20(3%20pages)%2014-05-2026.pdf" target="_blank" rel="noopener noreferrer">ITEC Brochure 24th Aug to 5th Sept 2026</a>
+                                        <a href="reportspdf/3rd-Batch-Certificate-Course-Overseas-Outsourcing-UK_compressed.pdf" target="_blank" rel="noopener noreferrer">Certificate course on Overseas Outsourcing Services - Batch 3rd UK</a>
+                                        <a href="foreign-language-courses.html#spanish">Online Spanish Language Course – A1.1 Level</a>
+                                        <a href="foreign-language-courses.html#german">Online German Language Course – A1 level</a>
                                     </div>
                                 </li>
                                 
@@ -462,9 +464,8 @@
                 </div>
                 <div class="batch-alert">
                     <h4>Upcoming Batch</h4>
-                    <p>Registration for Next Batch of A1.1 Level (Beginners level) w.e.f. 17th January, 2026 to 7th March, 2026.</p>
-                    <p><strong>LAST DATE: 28/12/2025</strong></p>
-                    <a href="images/foreign/(Registration for Next Batch of A1.1 Level of Online Spanish Language Course (Beginners level) w.e.f. 17th January, 2026 to 7th.pdf" target="_blank" rel="noopener noreferrer" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
+                    <p>Two batches of Online Spanish Language Course – A1.1 Level from 23rd May, 2026 to 11th July, 2026 (10.00 am to 12.00 pm) and (5.00 pm to 7.00 pm) each for ICAI members and students in collaboration with Instituto Cervantes.</p>
+                    <a href="images/foreign/newspanish.pdf" target="_blank" rel="noopener noreferrer" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
                 </div>
             </div>
         </div>
@@ -534,9 +535,8 @@
                 </div>
                 <div class="batch-alert">
                     <h4>Upcoming Batch</h4>
-                    <p>Registration for Next Batch of A1 Level (Beginners level) w.e.f. 29th November, 2025 to 29th March, 2026.</p>
-                    <p><strong>LAST DATE: 17/11/2025</strong></p>
-                    <a href="images/foreign/Registration for Next Batch of A1 Level of Online German Language Course (Beginners level) w.e.f. 29th November, 2025 to 29th March.pdf" target="_blank" rel="noopener noreferrer" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
+                    <p>One batch of Online German Language Course – A1 level from 30th May, 2026 to 27th September, 2026 (9.00 am to 01.00 pm) for ICAI members and students in collaboration with Goethe Institute.</p>
+                    <a href="images/foreign/newgerman.pdf" target="_blank" rel="noopener noreferrer" class="overview-btn btn-primary-gtc mt-3 d-inline-block">Download Registration Form</a>
                 </div>
             </div>
         </div>
@@ -699,11 +699,28 @@
             document.getElementById('section-' + sectionId).classList.add('active');
         }
 
+        function handleHashTab() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const tabBtn = document.querySelector(`.course-tab[onclick*="'${hash}'"]`);
+                if (tabBtn) {
+                    switchTab(hash, tabBtn);
+                    return true;
+                }
+            }
+            return false;
+        }
+
         // Initialize with correct theme for active tab
         window.addEventListener('DOMContentLoaded', () => {
-            const activeBtn = document.querySelector('.course-tab.active');
-            if (activeBtn) switchTab('overview', activeBtn);
+            if (!handleHashTab()) {
+                const activeBtn = document.querySelector('.course-tab.active');
+                if (activeBtn) switchTab('overview', activeBtn);
+            }
         });
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashTab);
 
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobileOverlay');
