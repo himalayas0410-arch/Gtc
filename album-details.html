@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Album Details - Global Trade & Services Committee, ICAI</title>
+    <meta name="description" content="View dynamic image archives of official events, global trade meets, and delegations by the Global Trade & Services Committee of ICAI.">
+
+    <!-- Fonts and Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        /* Base Page Setup */
+        .album-details-container {
+            padding-bottom: 140px;
+        }
+
+        /* Breadcrumb / Back Navigation */
+        .navigation-bar {
+            padding: 24px 0 12px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--blue-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 8px 16px;
+            background: rgba(78, 165, 217, 0.06);
+            border-radius: 20px;
+            border: 1px solid rgba(78, 165, 217, 0.15);
+        }
+
+        .back-link i {
+            font-size: 1.1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--blue-primary);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(78, 165, 217, 0.25);
+            border-color: var(--blue-primary);
+        }
+
+        .back-link:hover i {
+            transform: translateX(-4px);
+        }
+
+        /* Album Hero Header */
+        .album-hero {
+            background: var(--bg-soft);
+            padding: 40px 0;
+            border-bottom: 1px solid var(--border-brand);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .album-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: radial-gradient(circle, rgba(78, 165, 217, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .album-title {
+            font-weight: 800;
+            color: var(--text-dark);
+            font-size: 2.2rem;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            border-left: 5px solid var(--blue-primary);
+            padding-left: 20px;
+        }
+
+        .album-meta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 6px 14px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            margin-left: 20px;
+        }
+
+        .album-desc {
+            color: #475569;
+            font-size: 1.05rem;
+            max-width: 950px;
+            line-height: 1.75;
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        /* Responsive Visual Grid */
+        .photo-grid-wrapper {
+            margin-top: 20px;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        @media (min-width: 992px) {
+            .photo-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            /* Make 5-item grid look balanced by allowing the last item to center or layout elegantly */
+            .photo-grid.grid-5-items {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Photo Card Item */
+        .photo-card {
+            position: relative;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-brand);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            aspect-ratio: 4 / 3;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .photo-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.2) 60%, transparent 100%);
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.4s ease;
+        }
+
+        .zoom-icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            transform: scale(0.8);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Card Hover */
+        .photo-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--blue-primary);
+            box-shadow: 0 12px 30px rgba(78, 165, 217, 0.15);
+        }
+
+        .photo-card:hover img {
+            transform: scale(1.08);
+        }
+
+        .photo-card:hover .photo-card-overlay {
+            opacity: 1;
+        }
+
+        .photo-card:hover .zoom-icon-box {
+            transform: scale(1);
+        }
+
+        /* Immersive Single-Image Lightbox Viewer */
+        .image-viewer {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
+            z-index: 999999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+
+        .image-viewer.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .image-viewer img {
+            max-width: 90vw;
+            max-height: 82vh;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            transform: scale(0.95);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .image-viewer.active img {
+            transform: scale(1);
+        }
+
+        .image-viewer-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .image-viewer-close:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: rotate(90deg);
+        }
+
+        .viewer-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            user-select: none;
+        }
+
+        .viewer-nav:hover {
+            background: rgba(255, 255, 255, 0.25);
+            scale: 1.05;
+        }
+
+        .viewer-nav.prev {
+            left: 24px;
+        }
+
+        .viewer-nav.next {
+            right: 24px;
+        }
+
+        .viewer-caption {
+            position: absolute;
+            bottom: 24px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px 18px;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 576px) {
+            .viewer-nav {
+                width: 44px;
+                height: 44px;
+                font-size: 1.2rem;
+            }
+            .viewer-nav.prev { left: 10px; }
+            .viewer-nav.next { right: 10px; }
+            .image-viewer-close { top: 15px; right: 15px; }
+        }
+
+        /* Ensure header sits securely above page details */
+        #header-placeholder {
+            position: relative;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body class="tactile-depth">
+    <div id="scrollProgress"></div>
+
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <!-- Album Hero Header (Data injected dynamically) -->
+    <header class="album-hero">
+        <div class="container">
+            <div class="navigation-bar reveal-up">
+                <a href="photo-gallery.html" class="back-link">
+                    <i class="bi bi-arrow-left"></i> Back to Gallery
+                </a>
+            </div>
+            <h1 class="album-title reveal-up" id="albumTitle">Loading Album...</h1>
+            <div class="album-meta reveal-up" id="albumMeta" style="display: none;">
+                <i class="bi bi-images"></i> <span id="photoCount">0</span> Photos
+            </div>
+            <p class="album-desc reveal-up" id="albumDesc">Loading description details...</p>
+        </div>
+    </header>
+
+    <main class="container album-details-container">
+        <!-- Photo Grid Container -->
+        <div class="photo-grid-wrapper reveal-up" style="animation-delay: 0.1s;">
+            <div class="photo-grid" id="photoGrid"></div>
+        </div>
+    </main>
+
+    <!-- Immersive Single-Image Viewer Overlay -->
+    <div class="image-viewer" id="imageViewer">
+        <button class="image-viewer-close" onclick="closeViewer()" aria-label="Close viewer"><i class="bi bi-x-lg"></i></button>
+        <button class="viewer-nav prev" onclick="navigateViewer(-1)" aria-label="Previous image"><i class="bi bi-chevron-left"></i></button>
+        <img id="viewerImage" src="" alt="Full view zoomed photo">
+        <button class="viewer-nav next" onclick="navigateViewer(1)" aria-label="Next image"><i class="bi bi-chevron-right"></i></button>
+        <div class="viewer-caption" id="viewerCaption">Image 1 of 1</div>
+    </div>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- JS Bundle -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ===== Album Data Set =====
+        const albums = [
+            {
+                title: "Seminar on Global Opportunities for Indian Chartered Accountants",
+                desc: "The Global Trade & Services Committee of ICAI, hosted by EIRC at ICAI Centre of Excellence, Kolkata, organised a full-day seminar focused on global opportunities for Indian Chartered Accountants. The programme featured insightful technical sessions on US taxation, global outsourcing, Australian accounting & SMSF, and technology enablement for international outsourcing. The event concluded with an engaging panel discussion on positioning Indian CAs as global professionals, bringing together industry experts and leaders to share valuable global insights and opportunities.",
+                images: [
+                    "images/Seminar on Global Opportunities for Indian Chartered Accountants/1.JPG",
+                    "images/Seminar on Global Opportunities for Indian Chartered Accountants/2.JPG",
+                    "images/Seminar on Global Opportunities for Indian Chartered Accountants/DSC_5611.JPG",
+                    "images/Seminar on Global Opportunities for Indian Chartered Accountants/DSC_5623.JPG"
+                ]
+            },
+            {
+                title: "Stakeholders Synergy Meet 2026 | Shaping the Future of Global Services",
+                desc: "The Global Trade & Services Committee of The Institute of Chartered Accountants of India successfully organised the Stakeholders Synergy Meet 2026 on 16th–17th April 2026 at the ICAI Centre of Excellence, bringing together professionals and industry leaders to discuss global readiness, outsourcing services, policy engagement, and future opportunities in the global services ecosystem.",
+                images: [
+                    "images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/1.JPG",
+                    "images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/2.JPG",
+                    "images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5382.JPG",
+                    "images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5396.JPG",
+                    "images/Stakeholders Synergy Meet 2026  Shaping the Future of Global Services/DSC_5513.JPG"
+                ]
+            }
+        ];
+
+        let activeAlbum = null;
+        let activeImages = [];
+        let currentViewerIndex = 0;
+
+        // ===== Page Router / Loader =====
+        function initPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const albumId = parseInt(urlParams.get('album'), 10);
+
+            // Redirect back if album query is invalid
+            if (isNaN(albumId) || albumId < 0 || albumId >= albums.length) {
+                window.location.href = 'photo-gallery.html';
+                return;
+            }
+
+            activeAlbum = albums[albumId];
+            activeImages = activeAlbum.images;
+
+            // Render details
+            document.getElementById('albumTitle').textContent = activeAlbum.title;
+            document.getElementById('albumDesc').textContent = activeAlbum.desc;
+            document.getElementById('photoCount').textContent = activeImages.length;
+            document.getElementById('albumMeta').style.display = 'inline-flex';
+
+            // Document Title
+            document.title = `${activeAlbum.title} - Album Details | GTC, ICAI`;
+
+            // Grid layout configuration (special class for 5 items grid)
+            const grid = document.getElementById('photoGrid');
+            if (activeImages.length === 5) {
+                grid.classList.add('grid-5-items');
+            }
+
+            // Render dynamic grid of image cards
+            grid.innerHTML = activeImages.map((src, i) => `
+                <div class="photo-card reveal-up" style="animation-delay: ${0.05 * i}s;" onclick="openViewer(${i})">
+                    <img src="${src}" alt="${activeAlbum.title} - Photo ${i + 1}" loading="lazy">
+                    <div class="photo-card-overlay">
+                        <div class="zoom-icon-box">
+                            <i class="bi bi-zoom-in"></i>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Fire reveals
+            if (window.revealObserver) {
+                document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+            }
+        }
+
+        // ===== Zoom Lightbox Viewer =====
+        function openViewer(index) {
+            currentViewerIndex = index;
+            document.getElementById('viewerImage').src = activeImages[index];
+            updateCaption();
+            
+            const viewer = document.getElementById('imageViewer');
+            viewer.style.display = 'flex';
+            requestAnimationFrame(() => viewer.classList.add('active'));
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeViewer() {
+            const viewer = document.getElementById('imageViewer');
+            viewer.classList.remove('active');
+            setTimeout(() => {
+                viewer.style.display = 'none';
+            }, 350);
+            document.body.style.overflow = 'auto';
+        }
+
+        function navigateViewer(direction) {
+            currentViewerIndex += direction;
+            if (currentViewerIndex < 0) currentViewerIndex = activeImages.length - 1;
+            if (currentViewerIndex >= activeImages.length) currentViewerIndex = 0;
+            document.getElementById('viewerImage').src = activeImages[currentViewerIndex];
+            updateCaption();
+        }
+
+        function updateCaption() {
+            document.getElementById('viewerCaption').textContent = `Image ${currentViewerIndex + 1} of ${activeImages.length}`;
+        }
+
+        // Keyboard listeners
+        document.addEventListener('keydown', (e) => {
+            const viewer = document.getElementById('imageViewer');
+            if (viewer.classList.contains('active')) {
+                if (e.key === 'Escape') closeViewer();
+                if (e.key === 'ArrowLeft') navigateViewer(-1);
+                if (e.key === 'ArrowRight') navigateViewer(1);
+            }
+        });
+
+        // ===== Standard Utilities =====
+        async function loadComponent(id, file) {
+            try {
+                const res = await fetch(file);
+                const text = await res.text();
+                document.getElementById(id).innerHTML = text;
+                if (window.revealObserver) {
+                    document.querySelectorAll('#' + id + ' .reveal-up').forEach(el => revealObserver.observe(el));
+                }
+            } catch (err) {
+                console.error('Failed to load component:', file, err);
+            }
+        }
+
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement, b = document.body, st = 'scrollTop', sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            const progress = document.getElementById('scrollProgress');
+            if (progress) progress.style.width = percent + '%';
+        });
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    entry.target.classList.add('reveal-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        window.revealObserver = revealObserver;
+        document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            if (overlay) {
+                overlay.classList.toggle('active');
+                document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+            }
+        }
+
+        function toggleMobileSearch() {
+            const container = document.getElementById('searchContainer');
+            if (container) container.classList.toggle('mobile-expanded');
+        }
+
+        // Initialize Load
+        window.addEventListener('DOMContentLoaded', () => {
+            initPage();
+            loadComponent('header-placeholder', 'header.html');
+            loadComponent('footer-placeholder', 'footer.html');
+        });
+    </script>
+</body>
+
+</html>
