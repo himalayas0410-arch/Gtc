@@ -1300,7 +1300,29 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal-up').forEach(el => revealObserver.observe(el));
 
+        // Hash routing for tabs
+        function handleHashTab() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const buttons = document.querySelectorAll('.course-tab');
+                for (let btn of buttons) {
+                    const onclickAttr = btn.getAttribute('onclick') || '';
+                    if (onclickAttr.includes(`'${hash}'`) || onclickAttr.includes(`"${hash}"`)) {
+                        switchTab(hash, btn);
+                        const sec = document.getElementById('section-' + hash);
+                        if (sec) {
+                            sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleHashTab);
+
         renderThumbnails();
+        handleHashTab();
 
         window.revealObserver = revealObserver;
         loadComponent('header-placeholder', 'header.html');
