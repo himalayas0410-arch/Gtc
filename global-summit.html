@@ -85,83 +85,101 @@
             letter-spacing: 1px;
         }
 
-        /* Table Styling */
-        .summit-table-container {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            background: #fff;
+        /* Schedule Cards Styling */
+        .summit-schedule-container {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
             margin-top: 15px;
         }
 
-        .summit-table {
-            width: 100%;
-            margin-bottom: 0;
-            vertical-align: middle;
+        .summit-schedule-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 22px 30px;
+            border: 1px solid #e2e8f0;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border-left: 5px solid transparent;
+            position: relative;
+            text-decoration: none;
         }
 
-        .summit-table th {
-            background: #1e293b;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 18px 24px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border: none;
+        .summit-schedule-row:hover {
+            transform: translateX(8px);
+            border-left-color: var(--blue-primary);
+            box-shadow: var(--shadow-md), 0 4px 20px rgba(78, 165, 217, 0.08);
+            background-color: #fafbfc;
         }
 
-        .summit-table td {
-            padding: 18px 24px;
+        .summit-schedule-city {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+            font-weight: 750;
+            color: var(--text-dark);
+        }
+
+        .summit-schedule-city i {
+            font-size: 1.4rem;
+            color: #ef4444; /* red location pin */
+            filter: drop-shadow(0 2px 4px rgba(239, 68, 68, 0.15));
+            transition: transform 0.3s ease;
+        }
+
+        .summit-schedule-row:hover .summit-schedule-city i {
+            transform: scale(1.2) translateY(-2px);
+        }
+
+        .summit-schedule-date {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 1.05rem;
-            color: #334155;
-            border-bottom: 1px solid #f1f5f9;
-        }
-
-        .summit-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .summit-table tr {
-            transition: all 0.2s ease;
-        }
-
-        .summit-table tr:hover {
-            background-color: #f8fafc;
-        }
-
-        .city-cell {
-            font-weight: 800;
-            color: var(--blue-primary);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .city-cell i {
-            font-size: 1.25rem;
-            color: #ef4444; /* red indicator pin */
-        }
-
-        .date-cell {
             font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            color: var(--text-light);
+            background: var(--tint-blue);
+            padding: 8px 20px;
+            border-radius: 50px;
+            border: 1px solid rgba(78, 165, 217, 0.12);
+            transition: all 0.3s ease;
         }
 
-        .date-cell i {
-            color: #64748b;
+        .summit-schedule-date i {
+            color: var(--blue-primary);
+            font-size: 1.15rem;
         }
 
-        .status-badge {
-            background: #f1f5f9;
-            color: #475569;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
+        .summit-schedule-row:hover .summit-schedule-date {
+            background: var(--blue-primary);
+            color: #ffffff;
+            border-color: var(--blue-primary);
+        }
+
+        .summit-schedule-row:hover .summit-schedule-date i {
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .summit-schedule-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+                padding: 20px 24px;
+            }
+            
+            .summit-schedule-row:hover {
+                transform: translateY(-4px);
+            }
+            
+            .summit-schedule-date {
+                width: 100%;
+                justify-content: flex-start;
+            }
         }
 
         /* Ensure dynamic header is on top */
@@ -195,84 +213,78 @@
                 The Global Trade & Services Committee of ICAI organizes Global Summit chapters across various cities in India, bringing together international business delegations, trade experts, policy makers, and accounting leaders to discuss emerging services sectors and professional opportunities.
             </p>
 
-            <div class="summit-table-container table-responsive">
-                <table class="table summit-table">
-                    <thead>
-                        <tr>
-                            <th>Cities</th>
-                            <th>Dates</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="city-cell">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span>Bangalore</span>
-                            </td>
-                            <td class="date-cell">
-                                <i class="bi bi-calendar-event"></i>
-                                <span>24-25th July 2026</span>
-                            </td>
-                            <td><span class="status-badge">Planning</span></td>
-                        </tr>
-                        <tr>
-                            <td class="city-cell">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span>Delhi</span>
-                            </td>
-                            <td class="date-cell">
-                                <i class="bi bi-calendar-event"></i>
-                                <span>21-22nd August 2026</span>
-                            </td>
-                            <td><span class="status-badge">Planning</span></td>
-                        </tr>
-                        <tr>
-                            <td class="city-cell">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span>Mumbai</span>
-                            </td>
-                            <td class="date-cell">
-                                <i class="bi bi-calendar-event"></i>
-                                <span>23-24th October 2026</span>
-                            </td>
-                            <td><span class="status-badge">Planning</span></td>
-                        </tr>
-                        <tr>
-                            <td class="city-cell">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span>Hyderabad</span>
-                            </td>
-                            <td class="date-cell">
-                                <i class="bi bi-calendar-event"></i>
-                                <span>13-14th November 2026</span>
-                            </td>
-                            <td><span class="status-badge">Planning</span></td>
-                        </tr>
-                        <tr>
-                            <td class="city-cell">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span>Pune</span>
-                            </td>
-                            <td class="date-cell">
-                                <i class="bi bi-calendar-event"></i>
-                                <span>28-29th November 2026</span>
-                            </td>
-                            <td><span class="status-badge">Planning</span></td>
-                        </tr>
-                        <tr>
-                            <td class="city-cell">
-                                <i class="bi bi-geo-alt-fill"></i>
-                                <span>Chennai</span>
-                            </td>
-                            <td class="date-cell">
-                                <i class="bi bi-calendar-event"></i>
-                                <span>9-10th January 2027</span>
-                            </td>
-                            <td><span class="status-badge">Planning</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="summit-schedule-container">
+                <!-- Bangalore -->
+                <div class="summit-schedule-row">
+                    <div class="summit-schedule-city">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Bangalore</span>
+                    </div>
+                    <div class="summit-schedule-date">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>24-25th July 2026</span>
+                    </div>
+                </div>
+
+                <!-- Delhi -->
+                <div class="summit-schedule-row">
+                    <div class="summit-schedule-city">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Delhi</span>
+                    </div>
+                    <div class="summit-schedule-date">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>21-22nd August 2026</span>
+                    </div>
+                </div>
+
+                <!-- Mumbai -->
+                <div class="summit-schedule-row">
+                    <div class="summit-schedule-city">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Mumbai</span>
+                    </div>
+                    <div class="summit-schedule-date">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>23-24th October 2026</span>
+                    </div>
+                </div>
+
+                <!-- Hyderabad -->
+                <div class="summit-schedule-row">
+                    <div class="summit-schedule-city">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Hyderabad</span>
+                    </div>
+                    <div class="summit-schedule-date">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>13-14th November 2026</span>
+                    </div>
+                </div>
+
+                <!-- Pune -->
+                <div class="summit-schedule-row">
+                    <div class="summit-schedule-city">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Pune</span>
+                    </div>
+                    <div class="summit-schedule-date">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>28-29th November 2026</span>
+                    </div>
+                </div>
+
+                <!-- Chennai -->
+                <div class="summit-schedule-row">
+                    <div class="summit-schedule-city">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <span>Chennai</span>
+                    </div>
+                    <div class="summit-schedule-date">
+                        <i class="bi bi-calendar-event"></i>
+                        <span>9-10th January 2027</span>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
