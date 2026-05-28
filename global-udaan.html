@@ -398,10 +398,11 @@
         }
 
         .upcoming-content-area {
-            padding: 22px 30px;
+            padding: 20px 25px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 12px;
             height: 100%;
         }
 
@@ -539,6 +540,15 @@
             color: white;
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(217, 119, 6, 0.35);
+        }
+
+        @media (min-width: 992px) {
+            .upcoming-webinar-card {
+                max-height: 480px;
+            }
+            .upcoming-poster-wrapper {
+                height: 480px;
+            }
         }
 
         @media (max-width: 991px) {
@@ -743,7 +753,7 @@
             <h2 class="vibrant-heading scroll-reveal" style="color: #ea580c; border-left-color: #ea580c;">Upcoming Session</h2>
             <div class="row g-4">
                 <!-- Series 41 (Upcoming) -->
-                <div class="col-12">
+                <div class="col-12 col-xl-10 mx-auto">
                     <div class="upcoming-webinar-card scroll-reveal">
                         <div class="row g-0">
                             <!-- Left: Poster -->
