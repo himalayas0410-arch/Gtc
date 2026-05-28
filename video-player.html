@@ -576,6 +576,13 @@
                 }
             };
 
+            const getDirectStreamUrl = (url) => {
+                if (url && url.includes('www.dropbox.com')) {
+                    return url.replace('www.dropbox.com', 'dl.dropboxusercontent.com');
+                }
+                return url;
+            };
+
             setTimeout(hideLoading, 5000);
 
             if (videoId) {
@@ -619,7 +626,7 @@
                                 }
                                 
                                 console.log("GTC Player: Stream found! Opening native player.");
-                                videoEl.src = directLink;
+                                videoEl.src = getDirectStreamUrl(directLink);
                                 videoEl.style.display = 'block';
                                 iframe.style.display = 'none';
                                 videoEl.onloadeddata = hideLoading;
@@ -636,7 +643,7 @@
                         iframe.onerror = hideLoading;
                     })();
                 } else if (decodedUrl.toLowerCase().includes('.mp4') || decodedUrl.toLowerCase().includes('dropbox')) {
-                    videoEl.src = decodedUrl;
+                    videoEl.src = getDirectStreamUrl(decodedUrl);
                     videoEl.style.display = 'block';
                     iframe.style.display = 'none';
                     videoEl.onloadeddata = hideLoading;
