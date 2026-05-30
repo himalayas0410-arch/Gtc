@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Embassy & High Commission Coordination - Global Trade & Services Committee, ICAI</title>
+    <meta name="description" content="Official liaison and diplomatic initiatives between ICAI Global Trade & Services Committee, foreign Embassies in India, and Indian High Commissions abroad to drive professional mobility and opportunities.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Embassy & High Commission Coordination - GTC, ICAI">
+    <meta property="og:description" content="Official liaison and diplomatic initiatives between ICAI Global Trade & Services Committee, foreign Embassies in India, and Indian High Commissions abroad to drive professional mobility and opportunities.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:site_name" content="Global Trade & Services Committee, ICAI">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Embassy & High Commission Coordination - GTC, ICAI">
+    <meta name="twitter:description" content="Official liaison and diplomatic initiatives between ICAI Global Trade & Services Committee, foreign Embassies in India, and Indian High Commissions abroad to drive professional mobility and opportunities.">
+    <meta name="twitter:image" content="images/logo.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .embassy-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: clamp(25px, 4vw, 45px);
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            margin-top: 25px;
+            margin-bottom: 60px;
+        }
+
+        .embassy-title {
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .embassy-subtitle {
+            color: var(--blue-primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .embassy-intro {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 30px;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+
+        .pillar-badge {
+            background: rgba(78, 165, 217, 0.1);
+            color: var(--blue-primary);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .initiative-grid {
+            margin-top: 30px;
+        }
+
+        .initiative-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 24px 28px;
+            height: 100%;
+            border: 1px solid var(--border-brand);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .initiative-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.04);
+            border-color: var(--blue-primary);
+        }
+
+        .initiative-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        .icon-blue { background: rgba(59, 130, 246, 0.08); color: #3B82F6; }
+        .icon-purple { background: rgba(139, 92, 246, 0.08); color: #8B5CF6; }
+        .icon-orange { background: rgba(249, 115, 22, 0.08); color: #F97316; }
+        .icon-green { background: rgba(16, 185, 129, 0.08); color: #10B981; }
+
+        .initiative-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .initiative-card p {
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #64748b;
+            margin: 0;
+        }
+
+        #header-placeholder {
+            position: relative;
+            z-index: 9999;
+        }
+
+        /* Enforce strict single-column layout for mobile and tablet viewports */
+        @media (max-width: 991.98px) {
+            .initiative-grid .row > [class*='col-'] {
+                width: 100% !important;
+                flex: 0 0 100% !important;
+                max-width: 100% !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="tactile-depth">
+    <div id="scrollProgress"></div>
+
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11 embassy-content scroll-reveal">
+                
+                <div class="text-center">
+                    <span class="pillar-badge">Pillar 2: Global Services & Professional Mobility</span>
+                    <span class="embassy-subtitle">Diplomatic Coordination</span>
+                    <h1 class="embassy-title">Coordination with Embassies & High Commissions</h1>
+                    <hr style="opacity: 0.08; margin-top: 20px; margin-bottom: 25px;">
+                </div>
+
+                <div class="embassy-intro reveal-up" style="animation-delay: 0.1s">
+                    Expanding the global footprint of Indian CAs through structured diplomatic and institutional engagement.
+                </div>
+
+                <div class="initiative-grid">
+                    <div class="row g-4">
+                        
+                        <!-- 1. Liaising for Placements -->
+                        <div class="col-12 col-md-6 reveal-up" style="animation-delay: 0.15s">
+                            <div class="initiative-card">
+                                <div class="initiative-icon icon-blue">
+                                    <i class="bi bi-person-workspace"></i>
+                                </div>
+                                <h4>Global Professional Placement</h4>
+                                <p>Liaising with Embassies in India and Indian High Commissions abroad to map international talent demands and facilitate direct professional placements for Indian Chartered Accountants.</p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Supporting Professional Mobility -->
+                        <div class="col-12 col-md-6 reveal-up" style="animation-delay: 0.2s">
+                            <div class="initiative-card">
+                                <div class="initiative-icon icon-purple">
+                                    <i class="bi bi-globe-central-south-asia"></i>
+                                </div>
+                                <h4>Mobility & Cross-Border Recognition</h4>
+                                <p>Supporting global professional mobility, easing regulatory and visa protocols, and securing cross-border recognition of qualifications with key partner countries.</p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Diplomatic Channels -->
+                        <div class="col-12 col-md-6 reveal-up" style="animation-delay: 0.25s">
+                            <div class="initiative-card">
+                                <div class="initiative-icon icon-orange">
+                                    <i class="bi bi-award-fill"></i>
+                                </div>
+                                <h4>Diplomatic Footprint Expansion</h4>
+                                <p>Creating dedicated diplomatic channels to promote and expand the CA profession's brand presence and structural footprint on the global stage.</p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Institutional Relations -->
+                        <div class="col-12 col-md-6 reveal-up" style="animation-delay: 0.3s">
+                            <div class="initiative-card">
+                                <div class="initiative-icon icon-green">
+                                    <i class="bi bi-people-fill"></i>
+                                </div>
+                                <h4>Bilateral Institutional Engagements</h4>
+                                <p>Organizing strategic briefings, networking roundtables, and diplomatic events to foster continuous knowledge sharing and mutually beneficial professional ties.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Component Loader Logic
+        async function loadComponent(id, file) {
+            try {
+                const res = await fetch(file);
+                const text = await res.text();
+                document.getElementById(id).innerHTML = text;
+                if (window.revealObserver) {
+                    document.querySelectorAll('#' + id + ' .reveal-up').forEach(el => revealObserver.observe(el));
+                }
+            } catch (err) {
+                console.error('Failed to load component:', file, err);
+            }
+        }
+
+        // Scroll Progress Logic
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement,
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            const progress = document.getElementById('scrollProgress');
+            if (progress) progress.style.width = percent + '%';
+        });
+
+        // Reveal Animations on Scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    entry.target.classList.add('reveal-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        window.revealObserver = revealObserver;
+        document.querySelectorAll('.scroll-reveal, .reveal-up').forEach(el => revealObserver.observe(el));
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            if (overlay) {
+                overlay.classList.toggle('active');
+                document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+            }
+        }
+
+        function toggleMobileSearch() {
+            const container = document.getElementById('searchContainer');
+            if (container) container.classList.toggle('mobile-expanded');
+        }
+
+        // Initial Load
+        loadComponent('header-placeholder', 'header.html');
+        loadComponent('footer-placeholder', 'footer.html');
+    </script>
+</body>
+
+</html>

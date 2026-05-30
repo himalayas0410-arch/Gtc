@@ -59,6 +59,195 @@
             max-width: 800px;
         }
 
+        /* Upcoming Ad Slip Styles */
+        .upcoming-ad-slip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.04) 0%, rgba(99, 102, 241, 0.06) 100%);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            border-left: 4px solid #7c3aed;
+            border-radius: 12px;
+            padding: 16px 24px;
+            margin-top: 25px;
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.05);
+            transition: all 0.3s ease;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .upcoming-ad-slip:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(124, 58, 237, 0.1);
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.06) 0%, rgba(99, 102, 241, 0.08) 100%);
+        }
+
+        .ad-slip-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-grow: 1;
+        }
+
+        .ad-slip-badge-wrapper {
+            flex-shrink: 0;
+        }
+
+        .ad-slip-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(124, 58, 237, 0.1);
+            color: #7c3aed;
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #7c3aed;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+            animation: pulse 1.8s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.7);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 6px rgba(124, 58, 237, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(124, 58, 237, 0);
+            }
+        }
+
+        .ad-slip-info {
+            flex-grow: 1;
+        }
+
+        .ad-slip-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0 0 4px 0;
+        }
+
+        .ad-slip-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text-light);
+            font-size: 0.88rem;
+            flex-wrap: wrap;
+        }
+
+        .ad-slip-meta i {
+            color: #7c3aed;
+            font-size: 0.95rem;
+        }
+
+        .meta-separator {
+            color: rgba(124, 58, 237, 0.2);
+        }
+
+        .ad-slip-actions {
+            display: flex;
+            gap: 12px;
+            flex-shrink: 0;
+        }
+
+        .ad-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 18px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .ad-btn-primary {
+            background: #7c3aed;
+            color: #fff !important;
+            border: 1px solid #7c3aed;
+        }
+
+        .ad-btn-primary:hover {
+            background: #6d28d9;
+            border-color: #6d28d9;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.2);
+        }
+
+        .ad-btn-secondary {
+            background: #fff;
+            color: #7c3aed !important;
+            border: 1px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .ad-btn-secondary:hover {
+            background: rgba(124, 58, 237, 0.05);
+            border-color: #7c3aed;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 991px) {
+            .upcoming-ad-slip {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px;
+                gap: 16px;
+            }
+            
+            .ad-slip-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                width: 100%;
+            }
+            
+            .ad-slip-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .ad-btn {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .ad-slip-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+            .meta-separator {
+                display: none;
+            }
+            .ad-slip-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+        }
+
         /* Market Tabs */
         .course-tabs {
             display: flex;
@@ -679,6 +868,38 @@
             <h1 class="reveal-up">Certificate Courses</h1>
             <p class="reveal-up" style="animation-delay: 0.1s">Online Certificate Course on Overseas Outsourcing
                 Services — Empowering Chartered Accountants for US, UK & Australia Markets</p>
+
+            <!-- 3rd UK Batch Upcoming Banner/Flyer Slip -->
+            <div class="upcoming-ad-slip reveal-up" style="animation-delay: 0.15s">
+                <div class="ad-slip-content">
+                    <div class="ad-slip-badge-wrapper">
+                        <span class="ad-slip-badge">
+                            <span class="pulse-dot"></span>
+                            Upcoming
+                        </span>
+                    </div>
+                    <div class="ad-slip-info">
+                        <h4 class="ad-slip-title">3rd Batch (UK) — Online Certificate Course on Overseas Outsourcing Services</h4>
+                        <div class="ad-slip-meta">
+                            <span class="meta-item">
+                                <i class="bi bi-calendar3"></i> May 25, 2026 – June 22, 2026
+                            </span>
+                            <span class="meta-separator">|</span>
+                            <span class="meta-item">
+                                <i class="bi bi-clock"></i> 2:00 PM – 6:00 PM (IST)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ad-slip-actions">
+                    <a href="reportspdf/3rd-Batch-Certificate-Course-Overseas-Outsourcing-UK_compressed.pdf" target="_blank" rel="noopener noreferrer" class="ad-btn ad-btn-secondary">
+                        <i class="bi bi-file-earmark-pdf"></i> View Flyer
+                    </a>
+                    <a href="https://forms.gle/DiS9UyLQnoQN2KXt6" target="_blank" rel="noopener noreferrer" class="ad-btn ad-btn-primary">
+                        <i class="bi bi-pen"></i> Register Now
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
 
