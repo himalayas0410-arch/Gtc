@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Borderless Profession: India–UK | Pathways for Global Chartered Accountants</title>
+    <meta name="description" content="Overview and sessions of the India–UK Global Summit in London focusing on borderless profession, global mobility, and pathways for Indian CAs.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Borderless Profession: India–UK | Pathways for Global Chartered Accountants - GTC, ICAI">
+    <meta property="og:description" content="Overview and sessions of the India–UK Global Summit in London focusing on borderless profession, global mobility, and pathways for Indian CAs.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/logo.png">
+    <meta property="og:site_name" content="Global Trade & Services Committee, ICAI">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Borderless Profession: India–UK | Pathways for Global Chartered Accountants - GTC, ICAI">
+    <meta name="twitter:description" content="Overview and sessions of the India–UK Global Summit in London focusing on borderless profession, global mobility, and pathways for Indian CAs.">
+    <meta name="twitter:image" content="images/logo.png">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="shortcut icon" href="images/favicon/favicon.ico">
+    <link rel="manifest" href="images/favicon/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        .events-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: clamp(25px, 4vw, 45px);
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            margin-top: 25px;
+            margin-bottom: 60px;
+        }
+
+        .events-title {
+            font-size: clamp(22px, 3vw, 32px);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            text-align: center;
+            line-height: 1.3;
+        }
+
+        .events-subtitle {
+            color: #7c3aed;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .events-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .pillar-badge {
+            background: rgba(124, 58, 237, 0.08);
+            color: #7c3aed;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .session-box {
+            background: #fdfdfd;
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin: 25px 0;
+            border: 1px solid rgba(124, 58, 237, 0.12);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .session-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.06);
+            border-color: rgba(124, 58, 237, 0.25);
+        }
+
+        .session-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 4px;
+            background: #7c3aed;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .session-title {
+            color: #1e293b;
+            font-weight: 800;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .speaker-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0 0 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+        }
+
+        .speaker-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .speaker-item i {
+            color: #7c3aed;
+            font-size: 1.1rem;
+        }
+
+        .sponsorship-box {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.02) 0%, rgba(99, 102, 241, 0.04) 100%);
+            border: 1px dashed rgba(124, 58, 237, 0.25);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin: 30px 0;
+        }
+
+        .sponsorship-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sponsorship-title i {
+            color: #7c3aed;
+        }
+
+        #header-placeholder {
+            position: relative;
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body class="tactile-depth">
+    <div id="scrollProgress"></div>
+
+    <!-- Dynamic Header -->
+    <div id="header-placeholder"></div>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-11 events-content scroll-reveal">
+                
+                <div class="text-center">
+                    <span class="pillar-badge">Pillar 2: Global Services & Professional Mobility</span>
+                    <span class="events-subtitle">Events & Exhibitions</span>
+                    <h1 class="events-title">Borderless Profession: India–UK | Pathways for Global Chartered Accountants</h1>
+                    <hr style="opacity: 0.08; margin-top: 20px; margin-bottom: 25px;">
+                </div>
+
+                <!-- Text block 1 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.1s">
+                    The recently concluded India–UK Global Summit at the prestigious ICAEW Auditorium, London, marked an important step towards strengthening collaboration between two of the world’s most respected accounting ecosystems.
+                </div>
+
+                <!-- Text block 2 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.15s">
+                    Organised by the Global Trade & Services Committee, ICAI in collaboration with ICAEW and hosted by the London (UK) Chapter of ICAI, the India–UK Global Summit in London brought together over 90 participants and coincided with the 25-member ICAI UK Delegation visit, marking a significant initiative towards strengthening India–UK professional collaboration and expanding global opportunities for Indian Chartered Accountants.
+                </div>
+
+                <!-- Text block 3 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.2s">
+                    The summit focused on one defining theme — the emergence of a truly borderless profession, where Chartered Accountants are increasingly contributing across global markets through technology, mobility, and specialised expertise.
+                </div>
+
+                <!-- Text block 4 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.25s">
+                    The programme commenced with an insightful inaugural session where distinguished dignitaries including Mr. David Franklin, Deputy CEO, ICAEW, and Ms. Nidhi Mani Tripathi, Hon’ble Minister (Economic), High Commission of India, London, shared perspectives on the growing India–UK partnership, global mobility, and the evolving role of Chartered Accountants.
+                </div>
+
+                <!-- Text block 5 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.3s">
+                    A dedicated session on “Pathways for ICAEW” featured CA Mayuri Chordia and Mr. Doug Withington discussing international pathways and opportunities for Indian Chartered Accountants.
+                </div>
+
+                <!-- Session 1 -->
+                <div class="session-box reveal-up" style="animation-delay: 0.35s">
+                    <div class="session-title">𝐈𝐧𝐝𝐢𝐚–𝐔𝐊 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐒𝐞𝐫𝐯𝐢𝐜𝐞𝐬 𝐏𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩: 𝐅𝐓𝐀, 𝐑𝐞𝐜𝐨𝐠𝐧𝐢𝐭𝐢𝐨𝐧 & 𝐌𝐨𝐛𝐢𝐥𝐢𝐭𝐲</div>
+                    <div class="events-text mb-2" style="font-size: 0.95rem; font-weight: 700; color: #64748b;">
+                        Moderator: CA Vineet Jain
+                    </div>
+                    <ul class="speaker-list">
+                        <li class="speaker-item">
+                            <i class="bi bi-person-badge-fill"></i>
+                            <span>CA Amit Jain, Eminent Speaker</span>
+                        </li>
+                        <li class="speaker-item">
+                            <i class="bi bi-person-badge-fill"></i>
+                            <span>Ms. Honey Dave, Partner, Laytons Law Firm</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Session 2 -->
+                <div class="session-box reveal-up" style="animation-delay: 0.4s">
+                    <div class="session-title">“𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐂𝐥𝐢𝐞𝐧𝐭, 𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐏𝐫𝐚𝐜𝐭𝐢𝐜𝐞: 𝐓𝐡𝐞 𝐑𝐢𝐬𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐆𝐥𝐨𝐛𝐚𝐥 𝐂𝐡𝐚𝐫𝐭𝐞𝐫𝐞𝐝 𝐀𝐜𝐜𝐨𝐮𝐧𝐭𝐚𝐧𝐭”</div>
+                    <div class="events-text mb-3">
+                        The discussion focused on how AI, technology, GCCs, and digital delivery models are reshaping global professional practice.
+                    </div>
+                    <ul class="speaker-list">
+                        <li class="speaker-item">
+                            <i class="bi bi-person-badge-fill"></i>
+                            <span>Mr. Balaji, V., Managing Partner & CEO, Audit Corpus</span>
+                        </li>
+                        <li class="speaker-item">
+                            <i class="bi bi-person-badge-fill"></i>
+                            <span>Mr. David Potts MICA, Director of Policy & Regulations, The Association of International Accountants</span>
+                        </li>
+                        <li class="speaker-item">
+                            <i class="bi bi-person-badge-fill"></i>
+                            <span>CA Vipul Kothari, Managing Partner, Kothari Auditors, Dubai – UAE</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Sponsorship Box -->
+                <div class="sponsorship-box reveal-up" style="animation-delay: 0.45s">
+                    <div class="sponsorship-title">
+                        <i class="bi bi-bookmark-star-fill"></i> Sincere Appreciation
+                    </div>
+                    <div class="events-text mb-0" style="font-size: 0.98rem; line-height: 1.65; color: #475569;">
+                        The Global Trade & Services Committee, ICAI also extends its sincere appreciation to Audit Corpus for their valuable sponsorship support towards the India–UK Global Summit, London. Their association and contribution significantly supported the initiative in fostering global professional collaboration, knowledge exchange, and international networking opportunities for Chartered Accountants.
+                    </div>
+                </div>
+
+                <!-- Text block 6 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.5s">
+                    The summit concluded with an engaging networking session fostering meaningful India–UK professional connections and collaborations.
+                </div>
+
+                <!-- Text block 7 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.55s">
+                    A recurring theme across all discussions was clear — the profession is evolving from a jurisdiction-based model to a globally connected ecosystem driven by trust, technology, collaboration, and specialised expertise.
+                </div>
+
+                <!-- Text block 8 -->
+                <div class="events-text reveal-up" style="animation-delay: 0.6s">
+                    The India–UK Global Summit reflected the growing international presence of Indian Chartered Accountants and reinforced the commitment of the Global Trade & Services Committee, ICAI towards creating greater global opportunities, professional mobility, and international collaborations for the profession.
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Dynamic Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Component Loader Logic
+        async function loadComponent(id, file) {
+            try {
+                const res = await fetch(file);
+                const text = await res.text();
+                document.getElementById(id).innerHTML = text;
+                if (window.revealObserver) {
+                    document.querySelectorAll('#' + id + ' .reveal-up').forEach(el => revealObserver.observe(el));
+                }
+            } catch (err) {
+                console.error('Failed to load component:', file, err);
+            }
+        }
+
+        // Scroll Progress Logic
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement,
+                b = document.body,
+                st = 'scrollTop',
+                sh = 'scrollHeight';
+            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
+            const progress = document.getElementById('scrollProgress');
+            if (progress) progress.style.width = percent + '%';
+        });
+
+        // Reveal Animations on Scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    entry.target.classList.add('reveal-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        window.revealObserver = revealObserver;
+        document.querySelectorAll('.scroll-reveal, .reveal-up').forEach(el => revealObserver.observe(el));
+
+        function toggleMobileMenu() {
+            const overlay = document.getElementById('mobileOverlay');
+            if (overlay) {
+                overlay.classList.toggle('active');
+                document.body.style.overflow = overlay.classList.contains('active') ? 'hidden' : 'auto';
+            }
+        }
+
+        function toggleMobileSearch() {
+            const container = document.getElementById('searchContainer');
+            if (container) container.classList.toggle('mobile-expanded');
+        }
+
+        // Initial Load
+        loadComponent('header-placeholder', 'header.html');
+        loadComponent('footer-placeholder', 'footer.html');
+    </script>
+</body>
+
+</html>
