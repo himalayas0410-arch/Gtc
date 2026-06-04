@@ -33,140 +33,372 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
     <style>
-        .events-content {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: clamp(25px, 4vw, 45px);
+        .events-container {
+            background: #fff;
             border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            margin-top: 25px;
-            margin-bottom: 60px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: clamp(25px, 4vw, 50px);
+            margin-top: 30px;
+            margin-bottom: 80px;
         }
 
-        .events-title {
-            font-size: clamp(22px, 3vw, 32px);
-            font-weight: 800;
-            color: var(--text-dark);
-            margin-bottom: 12px;
+        .events-header-box {
             text-align: center;
-            line-height: 1.3;
-        }
-
-        .events-subtitle {
-            color: #7c3aed;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            font-size: 13px;
-            margin-bottom: 20px;
-            display: block;
-            text-align: center;
-        }
-
-        .events-text {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            color: #475569;
-            margin-bottom: 20px;
-            text-align: justify;
+            margin-bottom: 40px;
         }
 
         .pillar-badge {
             background: rgba(124, 58, 237, 0.08);
             color: #7c3aed;
-            padding: 6px 16px;
+            padding: 6px 18px;
             border-radius: 50px;
             font-size: 0.85rem;
-            font-weight: 700;
+            font-weight: 800;
             display: inline-block;
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        .session-box {
-            background: #fdfdfd;
+        .events-subtitle {
+            color: #4f46e5;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .events-title {
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 800;
+            color: #0f172a;
+            line-height: 1.25;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Highlight Metric Strip */
+        .info-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 40px;
+        }
+
+        .info-strip-card {
+            background: #f8fafc;
+            border: 1px solid rgba(0, 0, 0, 0.04);
             border-radius: 16px;
-            padding: 24px 28px;
-            margin: 25px 0;
-            border: 1px solid rgba(124, 58, 237, 0.12);
+            padding: 20px;
+            text-align: center;
             transition: all 0.3s ease;
+        }
+
+        .info-strip-card:hover {
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.05);
+            border-color: rgba(124, 58, 237, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .info-strip-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin: 0 auto 12px auto;
+        }
+
+        .icon-purple-bg { background: rgba(124, 58, 237, 0.08); color: #7c3aed; }
+        .icon-blue-bg { background: rgba(59, 130, 246, 0.08); color: #3b82f6; }
+        .icon-orange-bg { background: rgba(249, 115, 22, 0.08); color: #f97316; }
+        .icon-indigo-bg { background: rgba(79, 70, 229, 0.08); color: #4f46e5; }
+
+        .info-strip-label {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .info-strip-value {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        /* Lead Intro & Quote Box */
+        .summit-overview-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 30px;
+            margin-bottom: 45px;
+            align-items: center;
+        }
+
+        @media (max-width: 991px) {
+            .summit-overview-row {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+        }
+
+        .overview-lead {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .overview-lead p {
+            margin-bottom: 18px;
+        }
+
+        .theme-quote-box {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.04) 0%, rgba(124, 58, 237, 0.04) 100%);
+            border: 1px solid rgba(79, 70, 229, 0.1);
+            border-left: 5px solid #4f46e5;
+            border-radius: 16px;
+            padding: 28px;
             position: relative;
         }
 
-        .session-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(124, 58, 237, 0.06);
-            border-color: rgba(124, 58, 237, 0.25);
-        }
-
-        .session-box::before {
-            content: '';
+        .theme-quote-box i.quote-icon {
+            font-size: 2.2rem;
+            color: rgba(79, 70, 229, 0.15);
             position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 4px;
-            background: #7c3aed;
-            border-radius: 4px 0 0 4px;
+            top: 15px;
+            left: 20px;
         }
 
-        .session-title {
-            color: #1e293b;
+        .theme-quote-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #1e1b4b;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            padding-left: 10px;
+        }
+
+        .theme-quote-label {
+            display: block;
+            margin-top: 12px;
+            font-size: 0.8rem;
             font-weight: 800;
-            font-size: 1.25rem;
-            margin-bottom: 15px;
-            line-height: 1.4;
+            color: #4f46e5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding-left: 10px;
         }
 
-        .speaker-list {
-            list-style: none;
-            padding-left: 0;
-            margin: 15px 0 0 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px;
-        }
-
-        .speaker-item {
+        /* Inaugural & Pathways Cards */
+        .section-headline {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+
+        .section-headline::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.06);
+        }
+
+        .session-panel-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 45px;
+        }
+
+        @media (max-width: 768px) {
+            .session-panel-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .modern-card {
             background: #fff;
-            padding: 10px 16px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 18px;
+            padding: 28px;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .modern-card:hover {
+            border-color: rgba(79, 70, 229, 0.25);
+            box-shadow: 0 10px 30px rgba(79, 70, 229, 0.04);
+            transform: translateY(-3px);
+        }
+
+        .card-header-area {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .card-header-icon {
+            width: 42px;
+            height: 42px;
             border-radius: 10px;
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #334155;
-        }
-
-        .speaker-item i {
-            color: #7c3aed;
-            font-size: 1.1rem;
-        }
-
-        .sponsorship-box {
-            background: linear-gradient(135deg, rgba(124, 58, 237, 0.02) 0%, rgba(99, 102, 241, 0.04) 100%);
-            border: 1px dashed rgba(124, 58, 237, 0.25);
-            border-radius: 16px;
-            padding: 24px 28px;
-            margin: 30px 0;
-        }
-
-        .sponsorship-title {
-            font-size: 1.1rem;
-            font-weight: 800;
-            color: #1e293b;
-            margin-bottom: 10px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            justify-content: center;
+            font-size: 1.15rem;
+            flex-shrink: 0;
         }
 
-        .sponsorship-title i {
-            color: #7c3aed;
+        .card-header-details h4 {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: #1e293b;
+            margin: 0 0 4px 0;
+            line-height: 1.35;
+        }
+
+        .card-header-details span {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body-text {
+            font-size: 0.98rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .people-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .people-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8fafc;
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: #334155;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .people-item i {
+            font-size: 1.1rem;
+        }
+
+        .people-item .role-tag {
+            margin-left: auto;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-blue { background: rgba(59, 130, 246, 0.08); color: #3b82f6; }
+        .tag-purple { background: rgba(124, 58, 237, 0.08); color: #7c3aed; }
+        .tag-orange { background: rgba(249, 115, 22, 0.08); color: #f97316; }
+        .tag-green { background: rgba(16, 185, 129, 0.08); color: #10b981; }
+
+        /* Appreciation Banner */
+        .appreciation-banner {
+            background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+            border-radius: 20px;
+            padding: 35px 40px;
+            color: #fff;
+            margin-bottom: 45px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(30, 27, 75, 0.2);
+        }
+
+        .appreciation-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .appreciation-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #e9d5ff;
+        }
+
+        .appreciation-title i {
+            font-size: 1.4rem;
+        }
+
+        .appreciation-text {
+            font-size: 1.02rem;
+            line-height: 1.65;
+            color: #cbd5e1;
+            margin: 0;
+            font-weight: 500;
+        }
+
+        /* Conclusion Card */
+        .takeaway-card {
+            background: #f8fafc;
+            border-radius: 18px;
+            padding: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        .takeaway-title {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .takeaway-title i {
+            color: #4f46e5;
+        }
+
+        .takeaway-text {
+            font-size: 1rem;
+            line-height: 1.65;
+            color: #475569;
+            margin-bottom: 18px;
         }
 
         #header-placeholder {
@@ -184,103 +416,230 @@
 
     <main class="container">
         <div class="row justify-content-center">
-            <div class="col-lg-11 events-content scroll-reveal">
+            <div class="col-lg-11 events-container scroll-reveal">
                 
-                <div class="text-center">
+                <div class="events-header-box">
                     <span class="pillar-badge">Pillar 2: Global Services & Professional Mobility</span>
                     <span class="events-subtitle">Events & Exhibitions</span>
                     <h1 class="events-title">Borderless Profession: India–UK | Pathways for Global Chartered Accountants</h1>
-                    <hr style="opacity: 0.08; margin-top: 20px; margin-bottom: 25px;">
+                    <hr style="opacity: 0.08; margin-top: 25px; margin-bottom: 0;">
                 </div>
 
-                <!-- Text block 1 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.1s">
-                    The recently concluded India–UK Global Summit at the prestigious ICAEW Auditorium, London, marked an important step towards strengthening collaboration between two of the world’s most respected accounting ecosystems.
-                </div>
-
-                <!-- Text block 2 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.15s">
-                    Organised by the Global Trade & Services Committee, ICAI in collaboration with ICAEW and hosted by the London (UK) Chapter of ICAI, the India–UK Global Summit in London brought together over 90 participants and coincided with the 25-member ICAI UK Delegation visit, marking a significant initiative towards strengthening India–UK professional collaboration and expanding global opportunities for Indian Chartered Accountants.
-                </div>
-
-                <!-- Text block 3 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.2s">
-                    The summit focused on one defining theme — the emergence of a truly borderless profession, where Chartered Accountants are increasingly contributing across global markets through technology, mobility, and specialised expertise.
-                </div>
-
-                <!-- Text block 4 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.25s">
-                    The programme commenced with an insightful inaugural session where distinguished dignitaries including Mr. David Franklin, Deputy CEO, ICAEW, and Ms. Nidhi Mani Tripathi, Hon’ble Minister (Economic), High Commission of India, London, shared perspectives on the growing India–UK partnership, global mobility, and the evolving role of Chartered Accountants.
-                </div>
-
-                <!-- Text block 5 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.3s">
-                    A dedicated session on “Pathways for ICAEW” featured CA Mayuri Chordia and Mr. Doug Withington discussing international pathways and opportunities for Indian Chartered Accountants.
-                </div>
-
-                <!-- Session 1 -->
-                <div class="session-box reveal-up" style="animation-delay: 0.35s">
-                    <div class="session-title">𝐈𝐧𝐝𝐢𝐚–𝐔𝐊 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐒𝐞𝐫𝐯𝐢𝐜𝐞𝐬 𝐏𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩: 𝐅𝐓𝐀, 𝐑𝐞𝐜𝐨𝐠𝐧𝐢𝐭𝐢𝐨𝐧 & 𝐌𝐨𝐛𝐢𝐥𝐢𝐭𝐲</div>
-                    <div class="events-text mb-2" style="font-size: 0.95rem; font-weight: 700; color: #64748b;">
-                        Moderator: CA Vineet Jain
+                <!-- Info Metric Strip -->
+                <div class="info-strip reveal-up" style="animation-delay: 0.1s">
+                    <div class="info-strip-card">
+                        <div class="info-strip-icon icon-purple-bg">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+                        <div class="info-strip-label">Venue</div>
+                        <div class="info-strip-value">ICAEW Auditorium, London</div>
                     </div>
-                    <ul class="speaker-list">
-                        <li class="speaker-item">
-                            <i class="bi bi-person-badge-fill"></i>
-                            <span>CA Amit Jain, Eminent Speaker</span>
-                        </li>
-                        <li class="speaker-item">
-                            <i class="bi bi-person-badge-fill"></i>
-                            <span>Ms. Honey Dave, Partner, Laytons Law Firm</span>
-                        </li>
-                    </ul>
+                    <div class="info-strip-card">
+                        <div class="info-strip-icon icon-blue-bg">
+                            <i class="bi bi-people-fill"></i>
+                        </div>
+                        <div class="info-strip-label">Attendance</div>
+                        <div class="info-strip-value">Over 90 Participants</div>
+                    </div>
+                    <div class="info-strip-card">
+                        <div class="info-strip-icon icon-orange-bg">
+                            <i class="bi bi-airplane-engines-fill"></i>
+                        </div>
+                        <div class="info-strip-label">Delegation</div>
+                        <div class="info-strip-value">25-Member UK Visit</div>
+                    </div>
+                    <div class="info-strip-card">
+                        <div class="info-strip-icon icon-indigo-bg">
+                            <i class="bi bi-building-fill"></i>
+                        </div>
+                        <div class="info-strip-label">Joint Partners</div>
+                        <div class="info-strip-value">ICAI & ICAEW</div>
+                    </div>
                 </div>
 
-                <!-- Session 2 -->
-                <div class="session-box reveal-up" style="animation-delay: 0.4s">
-                    <div class="session-title">“𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐂𝐥𝐢𝐞𝐧𝐭, 𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐏𝐫𝐚𝐜𝐭𝐢𝐜𝐞: 𝐓𝐡𝐞 𝐑𝐢𝐬𝐞 𝐨𝐟 𝐭𝐡𝐞 𝐆𝐥𝐨𝐛𝐚𝐥 𝐂𝐡𝐚𝐫𝐭𝐞𝐫𝐞𝐝 𝐀𝐜𝐜𝐨𝐮𝐧𝐭𝐚𝐧𝐭”</div>
-                    <div class="events-text mb-3">
-                        The discussion focused on how AI, technology, GCCs, and digital delivery models are reshaping global professional practice.
+                <!-- Lead Intro & Defining Theme Block -->
+                <div class="summit-overview-row">
+                    <div class="overview-lead reveal-up" style="animation-delay: 0.15s">
+                        <p>The recently concluded India–UK Global Summit at the prestigious ICAEW Auditorium, London, marked an important step towards strengthening collaboration between two of the world’s most respected accounting ecosystems.</p>
+                        <p>Organised by the Global Trade & Services Committee, ICAI in collaboration with ICAEW and hosted by the London (UK) Chapter of ICAI, the India–UK Global Summit in London brought together over 90 participants and coincided with the 25-member ICAI UK Delegation visit, marking a significant initiative towards strengthening India–UK professional collaboration and expanding global opportunities for Indian Chartered Accountants.</p>
                     </div>
-                    <ul class="speaker-list">
-                        <li class="speaker-item">
-                            <i class="bi bi-person-badge-fill"></i>
-                            <span>Mr. Balaji, V., Managing Partner & CEO, Audit Corpus</span>
-                        </li>
-                        <li class="speaker-item">
-                            <i class="bi bi-person-badge-fill"></i>
-                            <span>Mr. David Potts MICA, Director of Policy & Regulations, The Association of International Accountants</span>
-                        </li>
-                        <li class="speaker-item">
-                            <i class="bi bi-person-badge-fill"></i>
-                            <span>CA Vipul Kothari, Managing Partner, Kothari Auditors, Dubai – UAE</span>
-                        </li>
-                    </ul>
+                    <div class="reveal-up" style="animation-delay: 0.2s">
+                        <div class="theme-quote-box">
+                            <i class="bi bi-quote quote-icon"></i>
+                            <div class="theme-quote-text">
+                                The emergence of a truly borderless profession, where Chartered Accountants are increasingly contributing across global markets through technology, mobility, and specialised expertise.
+                            </div>
+                            <span class="theme-quote-label">defining theme of the summit</span>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Sponsorship Box -->
-                <div class="sponsorship-box reveal-up" style="animation-delay: 0.45s">
-                    <div class="sponsorship-title">
-                        <i class="bi bi-bookmark-star-fill"></i> Sincere Appreciation
+                <!-- Dignitaries & Pathways Sessions -->
+                <h3 class="section-headline reveal-up" style="animation-delay: 0.25s">Inaugural & Pathways</h3>
+                <div class="session-panel-grid">
+                    
+                    <!-- Card 1: Inaugural Session -->
+                    <div class="reveal-up" style="animation-delay: 0.3s">
+                        <div class="modern-card">
+                            <div class="card-header-area">
+                                <div class="card-header-icon icon-blue-bg">
+                                    <i class="bi bi-bank"></i>
+                                </div>
+                                <div class="card-header-details">
+                                    <h4>Inaugural Session</h4>
+                                    <span>Strategic Perspectives</span>
+                                </div>
+                            </div>
+                            <p class="card-body-text">
+                                The programme commenced with an insightful inaugural session where distinguished dignitaries shared perspectives on the growing India–UK partnership, global mobility, and the evolving role of Chartered Accountants.
+                            </p>
+                            <div class="people-grid">
+                                <div class="people-item">
+                                    <i class="bi bi-person-fill" style="color: #3b82f6;"></i>
+                                    <span>Mr. David Franklin</span>
+                                    <span class="role-tag tag-blue">Deputy CEO, ICAEW</span>
+                                </div>
+                                <div class="people-item">
+                                    <i class="bi bi-person-fill" style="color: #3b82f6;"></i>
+                                    <span>Ms. Nidhi Mani Tripathi</span>
+                                    <span class="role-tag tag-blue">Hon’ble Minister (Economic), HCI London</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="events-text mb-0" style="font-size: 0.98rem; line-height: 1.65; color: #475569;">
+
+                    <!-- Card 2: Pathways for ICAEW -->
+                    <div class="reveal-up" style="animation-delay: 0.35s">
+                        <div class="modern-card">
+                            <div class="card-header-area">
+                                <div class="card-header-icon icon-purple-bg">
+                                    <i class="bi bi-signpost-split-fill"></i>
+                                </div>
+                                <div class="card-header-details">
+                                    <h4>Pathways for ICAEW</h4>
+                                    <span>International Enablement</span>
+                                </div>
+                            </div>
+                            <p class="card-body-text">
+                                A dedicated session discussing international pathways and global development opportunities for Indian Chartered Accountants in the UK.
+                            </p>
+                            <div class="people-grid">
+                                <div class="people-item">
+                                    <i class="bi bi-person-fill" style="color: #7c3aed;"></i>
+                                    <span>CA Mayuri Chordia</span>
+                                    <span class="role-tag tag-purple">Pathways Expert</span>
+                                </div>
+                                <div class="people-item">
+                                    <i class="bi bi-person-fill" style="color: #7c3aed;"></i>
+                                    <span>Mr. Doug Withington</span>
+                                    <span class="role-tag tag-purple">International Lead</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Panel Discussions Section -->
+                <h3 class="section-headline reveal-up" style="animation-delay: 0.4s">Technical Panel Discussions</h3>
+                <div class="session-panel-grid">
+                    
+                    <!-- Card 3: India-UK Services Partnership -->
+                    <div class="reveal-up" style="animation-delay: 0.45s">
+                        <div class="modern-card">
+                            <div class="card-header-area">
+                                <div class="card-header-icon icon-orange-bg">
+                                    <i class="bi bi-globe2"></i>
+                                </div>
+                                <div class="card-header-details">
+                                    <h4>𝐈𝐧𝐝𝐢𝐚–𝐔𝐊 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐒𝐞𝐫𝐯𝐢𝐜𝐞𝐬 𝐏𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩</h4>
+                                    <span>FTA, Recognition & Mobility</span>
+                                </div>
+                            </div>
+                            <p class="card-body-text">
+                                Delved into details surrounding Free Trade Agreements, visa/mobility frameworks, and mutual recognition of accounting standards.
+                            </p>
+                            <div class="people-grid">
+                                <div class="people-item">
+                                    <i class="bi bi-mic-fill" style="color: #f97316;"></i>
+                                    <span>CA Vineet Jain</span>
+                                    <span class="role-tag tag-orange">Moderator</span>
+                                </div>
+                                <div class="people-item">
+                                    <i class="bi bi-person-badge-fill" style="color: #f97316;"></i>
+                                    <span>CA Amit Jain</span>
+                                    <span class="role-tag tag-orange">Eminent Speaker</span>
+                                </div>
+                                <div class="people-item">
+                                    <i class="bi bi-person-badge-fill" style="color: #f97316;"></i>
+                                    <span>Ms. Honey Dave</span>
+                                    <span class="role-tag tag-orange">Partner, Laytons Law Firm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Anywhere Client, Anywhere Practice -->
+                    <div class="reveal-up" style="animation-delay: 0.5s">
+                        <div class="modern-card">
+                            <div class="card-header-area">
+                                <div class="card-header-icon icon-indigo-bg">
+                                    <i class="bi bi-cpu-fill"></i>
+                                </div>
+                                <div class="card-header-details">
+                                    <h4>“𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐂𝐥𝐢𝐞𝐧𝐭, 𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐏𝐫𝐚𝐜𝐭𝐢𝐜𝐞”</h4>
+                                    <span>Rise of the Global CA</span>
+                                </div>
+                            </div>
+                            <p class="card-body-text">
+                                Focused on how AI, technology, GCCs, and digital delivery models are reshaping global professional practice.
+                            </p>
+                            <div class="people-grid">
+                                <div class="people-item">
+                                    <i class="bi bi-person-badge-fill" style="color: #4f46e5;"></i>
+                                    <span>Mr. Balaji, V.</span>
+                                    <span class="role-tag tag-indigo">MP & CEO, Audit Corpus</span>
+                                </div>
+                                <div class="people-item">
+                                    <i class="bi bi-person-badge-fill" style="color: #4f46e5;"></i>
+                                    <span>Mr. David Potts MICA</span>
+                                    <span class="role-tag tag-indigo">Dir of Policy & Regs, AIA</span>
+                                </div>
+                                <div class="people-item">
+                                    <i class="bi bi-person-badge-fill" style="color: #4f46e5;"></i>
+                                    <span>CA Vipul Kothari</span>
+                                    <span class="role-tag tag-indigo">MP, Kothari Auditors, Dubai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Sponsorship Appreciation Banner -->
+                <div class="appreciation-banner reveal-up" style="animation-delay: 0.55s">
+                    <div class="appreciation-title">
+                        <i class="bi bi-patch-check-fill"></i> Sincere Appreciation
+                    </div>
+                    <p class="appreciation-text">
                         The Global Trade & Services Committee, ICAI also extends its sincere appreciation to Audit Corpus for their valuable sponsorship support towards the India–UK Global Summit, London. Their association and contribution significantly supported the initiative in fostering global professional collaboration, knowledge exchange, and international networking opportunities for Chartered Accountants.
+                    </p>
+                </div>
+
+                <!-- Takeaways & Conclusion -->
+                <div class="takeaway-card reveal-up" style="animation-delay: 0.6s">
+                    <div class="takeaway-title">
+                        <i class="bi bi-lightbulb-fill"></i> Key Takeaway & Summit Conclusion
                     </div>
-                </div>
-
-                <!-- Text block 6 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.5s">
-                    The summit concluded with an engaging networking session fostering meaningful India–UK professional connections and collaborations.
-                </div>
-
-                <!-- Text block 7 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.55s">
-                    A recurring theme across all discussions was clear — the profession is evolving from a jurisdiction-based model to a globally connected ecosystem driven by trust, technology, collaboration, and specialised expertise.
-                </div>
-
-                <!-- Text block 8 -->
-                <div class="events-text reveal-up" style="animation-delay: 0.6s">
-                    The India–UK Global Summit reflected the growing international presence of Indian Chartered Accountants and reinforced the commitment of the Global Trade & Services Committee, ICAI towards creating greater global opportunities, professional mobility, and international collaborations for the profession.
+                    <p class="takeaway-text">
+                        The summit concluded with an engaging networking session fostering meaningful India–UK professional connections and collaborations.
+                    </p>
+                    <p class="takeaway-text" style="font-weight: 700; color: #1e293b;">
+                        A recurring theme across all discussions was clear — the profession is evolving from a jurisdiction-based model to a globally connected ecosystem driven by trust, technology, collaboration, and specialised expertise.
+                    </p>
+                    <p class="takeaway-text" style="margin-bottom: 0;">
+                        The India–UK Global Summit reflected the growing international presence of Indian Chartered Accountants and reinforced the commitment of the Global Trade & Services Committee, ICAI towards creating greater global opportunities, professional mobility, and international collaborations for the profession.
+                    </p>
                 </div>
 
             </div>
