@@ -231,29 +231,31 @@
             }
         }
 
-        .modern-card {
+        .summit-card {
             background: #fff;
             border: 1px solid rgba(0, 0, 0, 0.06);
             border-radius: 18px;
             padding: 28px;
             transition: all 0.3s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
-        .modern-card:hover {
+        .summit-card:hover {
             border-color: rgba(79, 70, 229, 0.25);
             box-shadow: 0 10px 30px rgba(79, 70, 229, 0.04);
             transform: translateY(-3px);
         }
 
-        .card-header-area {
+        .summit-card-header {
             display: flex;
             align-items: flex-start;
             gap: 16px;
             margin-bottom: 18px;
         }
 
-        .card-header-icon {
+        .summit-card-icon {
             width: 42px;
             height: 42px;
             border-radius: 10px;
@@ -264,7 +266,7 @@
             flex-shrink: 0;
         }
 
-        .card-header-details h4 {
+        .summit-card-details h4 {
             font-size: 1.12rem;
             font-weight: 800;
             color: #1e293b;
@@ -272,19 +274,21 @@
             line-height: 1.35;
         }
 
-        .card-header-details span {
+        .summit-card-details span {
             font-size: 0.8rem;
             font-weight: 700;
             color: #64748b;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            display: block;
         }
 
-        .card-body-text {
+        .summit-card-desc {
             font-size: 0.98rem;
             line-height: 1.6;
             color: #475569;
             margin-bottom: 15px;
+            flex-grow: 1;
         }
 
         .people-grid {
@@ -476,21 +480,19 @@
 
                 <!-- Dignitaries & Pathways Sessions -->
                 <h3 class="section-headline reveal-up" style="animation-delay: 0.25s">Inaugural & Pathways</h3>
-                <div class="session-panel-grid">
-                    
-                    <!-- Card 1: Inaugural Session -->
+                <div class="session-panel-grid">                    <!-- Card 1: Inaugural Session -->
                     <div class="reveal-up" style="animation-delay: 0.3s">
-                        <div class="modern-card">
-                            <div class="card-header-area">
-                                <div class="card-header-icon icon-blue-bg">
+                        <div class="summit-card">
+                            <div class="summit-card-header">
+                                <div class="summit-card-icon icon-blue-bg">
                                     <i class="bi bi-bank"></i>
                                 </div>
-                                <div class="card-header-details">
+                                <div class="summit-card-details">
                                     <h4>Inaugural Session</h4>
                                     <span>Strategic Perspectives</span>
                                 </div>
                             </div>
-                            <p class="card-body-text">
+                            <p class="summit-card-desc">
                                 The programme commenced with an insightful inaugural session where distinguished dignitaries shared perspectives on the growing India–UK partnership, global mobility, and the evolving role of Chartered Accountants.
                             </p>
                             <div class="people-grid">
@@ -510,17 +512,17 @@
 
                     <!-- Card 2: Pathways for ICAEW -->
                     <div class="reveal-up" style="animation-delay: 0.35s">
-                        <div class="modern-card">
-                            <div class="card-header-area">
-                                <div class="card-header-icon icon-purple-bg">
+                        <div class="summit-card">
+                            <div class="summit-card-header">
+                                <div class="summit-card-icon icon-purple-bg">
                                     <i class="bi bi-signpost-split-fill"></i>
                                 </div>
-                                <div class="card-header-details">
+                                <div class="summit-card-details">
                                     <h4>Pathways for ICAEW</h4>
                                     <span>International Enablement</span>
                                 </div>
                             </div>
-                            <p class="card-body-text">
+                            <p class="summit-card-desc">
                                 A dedicated session discussing international pathways and global development opportunities for Indian Chartered Accountants in the UK.
                             </p>
                             <div class="people-grid">
@@ -546,17 +548,17 @@
                     
                     <!-- Card 3: India-UK Services Partnership -->
                     <div class="reveal-up" style="animation-delay: 0.45s">
-                        <div class="modern-card">
-                            <div class="card-header-area">
-                                <div class="card-header-icon icon-orange-bg">
+                        <div class="summit-card">
+                            <div class="summit-card-header">
+                                <div class="summit-card-icon icon-orange-bg">
                                     <i class="bi bi-globe2"></i>
                                 </div>
-                                <div class="card-header-details">
-                                    <h4>𝐈𝐧𝐝𝐢𝐚–𝐔𝐊 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐒𝐞𝐫𝐯𝐢𝐜𝐞𝐬 𝐏𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩</h4>
+                                <div class="summit-card-details">
+                                    <h4>𝐈𝐧𝐝𝐢𝐚–𝐔𝐤 𝐏𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥 𝐒𝐞𝐫𝐯𝐢𝐜𝐞𝐬 𝐏𝐚𝐫𝐭𝐧𝐞𝐫𝐬𝐡𝐢𝐩</h4>
                                     <span>FTA, Recognition & Mobility</span>
                                 </div>
                             </div>
-                            <p class="card-body-text">
+                            <p class="summit-card-desc">
                                 Delved into details surrounding Free Trade Agreements, visa/mobility frameworks, and mutual recognition of accounting standards.
                             </p>
                             <div class="people-grid">
@@ -581,17 +583,17 @@
 
                     <!-- Card 4: Anywhere Client, Anywhere Practice -->
                     <div class="reveal-up" style="animation-delay: 0.5s">
-                        <div class="modern-card">
-                            <div class="card-header-area">
-                                <div class="card-header-icon icon-indigo-bg">
+                        <div class="summit-card">
+                            <div class="summit-card-header">
+                                <div class="summit-card-icon icon-indigo-bg">
                                     <i class="bi bi-cpu-fill"></i>
                                 </div>
-                                <div class="card-header-details">
+                                <div class="summit-card-details">
                                     <h4>“𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐂𝐥𝐢𝐞𝐧𝐭, 𝐀𝐧𝐲𝐰𝐡𝐞𝐫𝐞 𝐏𝐫𝐚𝐜𝐭𝐢𝐜𝐞”</h4>
                                     <span>Rise of the Global CA</span>
                                 </div>
                             </div>
-                            <p class="card-body-text">
+                            <p class="summit-card-desc">
                                 Focused on how AI, technology, GCCs, and digital delivery models are reshaping global professional practice.
                             </p>
                             <div class="people-grid">
